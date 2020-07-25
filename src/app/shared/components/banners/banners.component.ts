@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {  Banner } from '../../models/banner';
 
 
 
@@ -8,17 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./banners.component.scss']
 })
 export class BannersComponent implements OnInit {
- 
- 
- 
-  @Input() navUrl:string;
-  @Input() imgUrl:string;
-  @Input() discountText:string;
-  @Input() discountCategory:String;
+
+  @Input() banner = new Banner();
   constructor() {
-   
+
   }
- ngOnInit(): void {
+
+  ngOnInit(): void {
   }
 
 }

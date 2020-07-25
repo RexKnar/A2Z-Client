@@ -8,15 +8,11 @@ import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
-  
-   
+    CommonModule
   ],
-  declarations: [SharedComponent],
+  declarations: [BannersComponent],
   exports:[
     BannersComponent
-  
   ]
 })
 export class SharedModule { }
