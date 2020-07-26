@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { DomElementSchemaRegistry } from '@angular/compiler';
+import { BannersComponent } from './shared/components/banners/banners.component';
+
+
 @NgModule({
    declarations: [
       AppComponent
@@ -14,8 +17,8 @@ import { DomElementSchemaRegistry } from '@angular/compiler';
       BrowserModule,
       AppRoutingModule,
       CoreModule,
-      SharedModule,
       HomeModule,
+      SharedModule
    ],
    providers: [],
    bootstrap: [
