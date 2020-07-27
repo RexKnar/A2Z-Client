@@ -12,7 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutes,
-    SharedModule
+    SharedModule,
+ 
   ],
   declarations: [HomeComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

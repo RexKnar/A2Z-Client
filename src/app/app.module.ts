@@ -8,10 +8,11 @@ import { BannersComponent } from './shared/components/banners/banners.component'
 import {SharedModule} from './shared/shared.module';
 
 
+
 @NgModule({
    declarations: [
-      AppComponent,
-      BannersComponent
+      AppComponent
+    
      
     
    ],
@@ -20,12 +21,13 @@ import {SharedModule} from './shared/shared.module';
       AppRoutingModule,
       CoreModule,
       HomeModule,
-      SharedModule
+      SharedModule,
+     
    ],
    providers: [],
    bootstrap: [
       AppComponent
    ],
-  
+
  })
 export class AppModule { }

@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-
-
+import { Databind } from 'src/app/shared/models/databind';
 @Component({
   selector: 'app-banners',
   templateUrl: './banners.component.html',
@@ -9,13 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BannersComponent implements OnInit {
  
- 
- 
-  @Input() navUrl:string;
-  @Input() imgUrl:string;
-  @Input() discountText:string;
-  @Input() discountCategory:String;
-  constructor() {
+  @Input() databind = new Databind;
+ constructor() {
    
   }
  ngOnInit(): void {

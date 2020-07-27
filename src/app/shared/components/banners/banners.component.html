@@ -1,13 +1,30 @@
-<a href="{{navUrl}}" >
-    <div class="collection-banner p-right text-center">
-        <div class="img-part">
-            <img src="{{imgUrl}}">
-        </div>
-        <div class="contain-banner">
+<a href="{{this.databind.navUrl}}" >
+    <div class="collection-banner ">
+        <div class="img-part left ">
+            <img id="five"src="{{this.databind.imgUrl}}" >
+            </div>
+       <div class="contain-banner">
             <div>
-                <h4>{{discountText}}</h4>
-                <h2>{{discountCategory}}</h2>
+                <h4 id="one">{{this.databind.discountText}}</h4>
+                <h2 id="two">{{this.databind.discountCategory}}</h2>
             </div>
         </div>
     </div>
+   
+    <div class="collection-banner ">
+        <div class="img-part right">
+           
+            <img  id="six"src="{{this.databind.imagUrl}}"  >
+            </div>
+       <div class="contain-banner">
+            <div>
+                <h4 id="three">{{this.databind.discountTexts}}</h4>
+                <h2 id="four">{{this.databind.discountCategorys}}</h2>
+            </div>
+        </div>
+        </div>
+   
 </a>
+
+
+
