@@ -1,14 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FooterService } from 'src/app/services/footer.service';
-import { CategoriesModel } from 'src/app/models/footer/footer.model';
+import { CategoriesModel , SubscriptionsModel} from 'src/app/models/footer/footer.model';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  // tslint:disable-next-line: new-parens
+  adsubscriptions: SubscriptionsModel = new SubscriptionsModel;
   categories: CategoriesModel[];
+  subscriptions: SubscriptionsModel = new SubscriptionsModel;
   @Input() themeLogo = 'assets/images/logos/logoA2Z.png';
+  @Output()
+  isDetailsExit: EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor(private readonly _footerService: FooterService) { }
 
   ngOnInit(): void {
@@ -19,4 +24,15 @@ export class FooterComponent implements OnInit {
       this.categories = data;
     });
   }
+
+  public addSubscriptions(): void {
+    const sub = {
+      subscriberemail: this.adsubscriptions.subscriberemail,
+      userid: 0,
+    };
+    this._footerService.addSubscriptions(sub).subscribe((data) => {
+      console.log(data);
+      });
+  }
+
 }

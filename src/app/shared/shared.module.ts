@@ -3,19 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
-import {BannersComponent} from './components/banners/banners.component';
-
+import { FormsModule} from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule
   ],
-  declarations: [FooterComponent, ProductTabComponent, BannersComponent],
+  declarations: [FooterComponent, ProductTabComponent],
   exports: [
     FooterComponent,
-    BannersComponent
   ]
 })
 export class SharedModule { }
