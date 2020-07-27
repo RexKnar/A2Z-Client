@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Databind } from 'src/app/shared/models/databind';
+import { Banner } from '../../models/banner';
 @Component({
   selector: 'app-banners',
   templateUrl: './banners.component.html',
@@ -7,11 +7,12 @@ import { Databind } from 'src/app/shared/models/databind';
 })
 export class BannersComponent implements OnInit {
  
-  @Input() databind = new Databind;
+  @Input() banner = new Banner;
  constructor() {
    
   }
- ngOnInit(): void {
+
+  ngOnInit(): void {
   }
 
 }

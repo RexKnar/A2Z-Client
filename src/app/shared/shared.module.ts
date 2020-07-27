@@ -9,12 +9,10 @@ import {RouterModule} from '@angular/router';
 @NgModule({
   imports: [
     CommonModule
-
   ],
   declarations: [BannersComponent],
   exports:[
     BannersComponent
-  
   ]
 })
 export class SharedModule { }

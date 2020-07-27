@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Databind } from 'src/app/shared/models/databind';
+import { Banner } from 'src/app/shared/models/banner';
 
 
 
@@ -9,10 +9,10 @@ import { Databind } from 'src/app/shared/models/databind';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-bannerData = new Databind();
+bannerData = new Banner();
 
   constructor() {
- 
+
    }
 
    ngOnInit() {
