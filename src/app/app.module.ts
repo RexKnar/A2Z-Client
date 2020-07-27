@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { DomElementSchemaRegistry } from '@angular/compiler';
 import { BannersComponent } from './shared/components/banners/banners.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
    declarations: [
@@ -18,7 +18,8 @@ import { BannersComponent } from './shared/components/banners/banners.component'
       AppRoutingModule,
       CoreModule,
       HomeModule,
-      SharedModule
+      SharedModule,
+      HttpClientModule
    ],
    providers: [],
    bootstrap: [
