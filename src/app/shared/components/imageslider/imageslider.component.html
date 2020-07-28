@@ -1,9 +1,9 @@
 <div class="container">
     <!-- Image slider start-->
-      
+
         <owl-carousel-o [options]="ImageSlider" class="image-slider">
           <ng-template carouselSlide>
-            <div class="home text-center" [ngStyle]="{'background-image': {{this.slider.imgUrl}}}">
+            <div class="home text-center" [ngStyle]="{'background-image': this.slider.imgUrl}">
               <div class="container">
                 <div class="row">
                   <div class="col">
@@ -11,7 +11,7 @@
                       <div>
                         <h4>{{this.slider.welcomeText}}</h4>
                         <h1>{{this.slider.productCategory}}</h1>
-                        <a [routerLink]="['']" class="btn btn-solid">shop now</a>
+                        <a [href]="" class="btn btn-solid">shop now</a>
                       </div>
                     </div>
                   </div>
@@ -19,12 +19,12 @@
               </div>
             </div>
           </ng-template>
-          
+
         </owl-carousel-o>
-      
+
     <!-- Image slider End -->
     </div>
-    
+
     <div class="container section-b-space">
       <div class="row">
           <div class="col">
@@ -39,4 +39,4 @@
           </div>
       </div>
     </div>
-    
+
