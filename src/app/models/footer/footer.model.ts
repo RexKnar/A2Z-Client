@@ -4,5 +4,4 @@ export class CategoriesModel {
 }
 export class SubscriptionsModel {
   subscriberemail: string;
-  userid: number;
 }

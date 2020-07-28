@@ -18,8 +18,12 @@ export class FooterService {
   }
   addSubscriptions(subscriptions: SubscriptionsModel): Observable<SubscriptionsModel> {
     let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'application/json; charset=utf-8;application/x-www-form-urlencoded').set('Auth-Key', 'liskey');
+    headers = headers.append("Content-Type","application/json-patch+json");
+    //headers = headers.append("Accept","text/json, application/*+json, /");
+    headers = headers.append("Access-Control-Allow-Origin", "*");
+   //headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     const apiUrl = ROUTE_CONFIG. Kumraria2zURL + `/Subscriptions`;
+
     return this.httpClient.post<SubscriptionsModel>(apiUrl, subscriptions, { headers });
   }
 }

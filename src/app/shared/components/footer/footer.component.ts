@@ -27,11 +27,10 @@ export class FooterComponent implements OnInit {
 
   public addSubscriptions(): void {
     const sub = {
-      subscriberemail: this.adsubscriptions.subscriberemail,
-      userid: 0,
+      subscriberemail: this.adsubscriptions.subscriberemail
     };
     this._footerService.addSubscriptions(sub).subscribe((data) => {
-      console.log(data);
+    
       });
   }
 
