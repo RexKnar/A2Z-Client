@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Slider } from './../../shared/models/slider';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  sliderData = new Slider();
+
+  constructor() {
+
+   }
 
   ngOnInit() {
+  this.sliderData.welcomeText = 'Welcome';
+  this.sliderData.welcomeText = 'Welcome';
+  this.sliderData.productCategory = 'Men';
+  this.sliderData.productCategory = 'Women';
+  this.sliderData.imgUrl = 'abc';
+  this.sliderData.imgUrl = 'abc';
+  
   }
 
 }
