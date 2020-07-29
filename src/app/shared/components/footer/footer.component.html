@@ -25,7 +25,7 @@
                   name="subscriberemail"
                   class="form-control"
                   placeholder="Enter your email"
-                  [(ngModel)]="adsubscriptions.subscriberemail"
+                  [(ngModel)]="subscription.subscriberemail"
                   #subscriberemail="ngModel"
                 />
               </div>
@@ -91,7 +91,7 @@
               <h4>CATEGORIES</h4>
             </div>
             <div class="footer-contant" *ngFor="let category of categories | slice:0:5">
-              <ul> 
+              <ul>
                 <li><a >{{category.catName}}</a></li>
               </ul>
             </div>

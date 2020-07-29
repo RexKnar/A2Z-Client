@@ -1,20 +1,22 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { FOOTER_API_CONFIG } from "../../models/Constants";
-import { categoryName, Subscription } from '../../models/footer.model';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FOOTER_API_CONFIG, ROUTE_CONFIG } from '../../models/Constants';
+import { Category } from '../../models/Category';
+import { Subscription } from '../../models/Subscription';
+
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class FooterService {
   constructor(private readonly httpClient: HttpClient) {}
 
-  getAllCategories(): Observable<categoryName []> {
-    return this.httpClient.get<categoryName []>(FOOTER_API_CONFIG.CategoryURL);
+  getAllCategories(): Observable<Category []> {
+    return this.httpClient.get<Category []>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.categoryURL);
   }
 
-  addSubscriptions(subscriptions: Subscription): Observable<Subscription> {
-    return this.httpClient.post<Subscription>(FOOTER_API_CONFIG.SubscriptionURL, subscriptions);
+  addSubscriptions(subscription: Subscription): Observable<Subscription> {
+    return this.httpClient.post<Subscription>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.subscriptionURL, subscription);
   }
 }
