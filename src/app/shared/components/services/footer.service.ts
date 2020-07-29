@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { ROUTE_CONFIG } from "../../models/Constants";
-import { Category, subscribe } from "../../models/footer.model";
+import { FOOTER_API_CONFIG } from "../../models/Constants";
+import { categoryName, Subscription } from '../../models/footer.model';
 
 @Injectable({
   providedIn: "root",
@@ -10,13 +10,11 @@ import { Category, subscribe } from "../../models/footer.model";
 export class FooterService {
   constructor(private readonly httpClient: HttpClient) {}
 
-  getAllCategories(): Observable<Category[]> {
-    const apiUrl = ROUTE_CONFIG.Kumraria2zURL + `/Categories`;
-    return this.httpClient.get<Category[]>(apiUrl);
+  getAllCategories(): Observable<categoryName []> {
+    return this.httpClient.get<categoryName []>(FOOTER_API_CONFIG.CategoryURL);
   }
 
-  addSubscriptions(subscriptions: subscribe): Observable<subscribe> {
-    const apiUrl = ROUTE_CONFIG.Kumraria2zURL + `/Subscriptions`;
-    return this.httpClient.post<subscribe>(apiUrl, subscriptions);
+  addSubscriptions(subscriptions: Subscription): Observable<Subscription> {
+    return this.httpClient.post<Subscription>(FOOTER_API_CONFIG.SubscriptionURL, subscriptions);
   }
 }

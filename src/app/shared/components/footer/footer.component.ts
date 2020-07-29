@@ -1,15 +1,15 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Category, subscribe } from "../../models/footer.model";
 import { FooterService } from "../services/footer.service";
+import { categoryName, Subscription } from '../../models/footer.model';
 @Component({
   selector: "app-footer",
   templateUrl: "./footer.component.html",
   styleUrls: ["./footer.component.scss"],
 })
 export class FooterComponent implements OnInit {
-  adsubscriptions: subscribe = new subscribe();
-  categories: Category[];
-  @Input() themeLogo = "assets/images/logos/logoA2Z.png";
+  adsubscriptions: Subscription = new Subscription();
+  categories: categoryName [];
+  @Input() themeLogo = 'assets/images/logos/logoA2Z.png';
   @Output()
   isDetailsExit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -26,7 +26,6 @@ export class FooterComponent implements OnInit {
   }
 
   public addSubscriptions(): void {
-    console.log(this.adsubscriptions);
     this._footerService
       .addSubscriptions(this.adsubscriptions)
       .subscribe((data) => {
