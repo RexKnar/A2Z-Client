@@ -20,7 +20,7 @@ export class MenuService {
   constructor(private readonly httpClient: HttpClient) { }
 
   getMenu(): Observable<Categories[]> {
-    const apiUrl = ROUTE_CONFIG.Kumraria2zURL + `/home`;
+    const apiUrl = ROUTE_CONFIG.baseUrl + `/home`;
     return this.httpClient.get<Categories[]>(apiUrl);
   }
   

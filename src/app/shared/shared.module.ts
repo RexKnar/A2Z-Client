@@ -16,6 +16,9 @@ import { ToolsbarComponent } from './components/header/topmenu/toolsbar/toolsbar
 import { SidebarComponent } from './components/header/menubar/sidebar/sidebar.component';
 import { MenusComponent } from './components/header/menubar/menus/menus.component';
 import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProductTabComponent } from './components/product-tab/product-tab.component';
+
 
 
 @NgModule({
@@ -40,6 +43,7 @@ import { ContactinfoComponent } from './components/header/menubar/contactinfo/co
     SidebarComponent,
     MenusComponent,
     ContactinfoComponent,
+    FooterComponent
   ],
   declarations: [
     HeaderComponent,
@@ -50,7 +54,8 @@ import { ContactinfoComponent } from './components/header/menubar/contactinfo/co
     ToolsbarComponent,
     SidebarComponent,
     MenusComponent,
-    ContactinfoComponent
+    ContactinfoComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

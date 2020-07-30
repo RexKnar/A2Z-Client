@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule  } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
 
@@ -12,6 +13,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     BrowserModule,
+    SharedModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
