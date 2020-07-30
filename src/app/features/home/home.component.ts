@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
   this.sliderData.welcomeText = 'Welcome';
   this.sliderData.productCategory = 'Men';
   this.sliderData.productCategory = 'Women';
-  this.sliderData.imgUrl = 'abc';
-  this.sliderData.imgUrl = 'abc';
+  this.sliderData.imgUrl = './assets/images/slider/1.jpg';
+  this.sliderData.imgUrl = './assets/images/slider/2.jpg';
   
   }
 

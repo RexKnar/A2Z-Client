@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ImagesliderComponent } from './shared/components/imageslider/imageslider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
    declarations: [
       AppComponent
@@ -15,8 +16,8 @@ import { ImagesliderComponent } from './shared/components/imageslider/imageslide
       AppRoutingModule,
       CoreModule,
       HomeModule,
-      SharedModule
-      
+      SharedModule,
+      BrowserAnimationsModule
    ],
    providers: [],
    bootstrap: [
