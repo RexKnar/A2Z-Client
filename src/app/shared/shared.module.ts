@@ -5,14 +5,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BarRatingModule } from "ngx-bar-rating";
-import { LazyLoadImageModule, scrollPreset } from 'ng-lazyload-image';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { TranslateModule } from '@ngx-translate/core';
-import { TopComponent } from './components/header/top/top.component';
-import { LeftmenuComponent } from './components/header/menu/leftmenu/leftmenu.component';
-import { MainmenuComponent } from './components/header/menu/mainmenu/mainmenu.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MenuComponent } from './components/header/menu/menu.component';
+import { TopmenuComponent } from './components/header/topmenu/topmenu.component';
+import { MenubarComponent } from './components/header/menubar/menubar.component';
+import { LogoComponent } from './components/header/topmenu/logo/logo.component';
+import { SearchbarComponent } from './components/header/topmenu/searchbar/searchbar.component';
+import { ToolsbarComponent } from './components/header/topmenu/toolsbar/toolsbar.component';
+import { SidebarComponent } from './components/header/menubar/sidebar/sidebar.component';
+import { MenusComponent } from './components/header/menubar/menus/menus.component';
+import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
 
 
 @NgModule({
@@ -25,17 +28,29 @@ import { MenuComponent } from './components/header/menu/menu.component';
     CarouselModule,
     BarRatingModule,
     NgxSkeletonLoaderModule,
-    TranslateModule
+    TranslateModule,
   ],
- exports:[
-  
-   
-  
-   TopComponent,
-   MenuComponent,
-   MainmenuComponent,
-   LeftmenuComponent
- ],
-  declarations: [MenuComponent, TopComponent, LeftmenuComponent, MainmenuComponent, HeaderComponent]
+  exports: [
+    HeaderComponent,
+    TopmenuComponent,
+    MenubarComponent,
+    LogoComponent,
+    SearchbarComponent,
+    ToolsbarComponent,
+    SidebarComponent,
+    MenusComponent,
+    ContactinfoComponent,
+  ],
+  declarations: [
+    HeaderComponent,
+    TopmenuComponent,
+    MenubarComponent,
+    LogoComponent,
+    SearchbarComponent,
+    ToolsbarComponent,
+    SidebarComponent,
+    MenusComponent,
+    ContactinfoComponent
+  ]
 })
 export class SharedModule { }

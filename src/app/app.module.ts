@@ -5,17 +5,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
    declarations: [
-      AppComponent
+      AppComponent,
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       CoreModule,
       HomeModule,
-      SharedModule
+      SharedModule,
+      CommonModule,
+     HttpClientModule
+ 
    ],
    providers: [],
    bootstrap: [
