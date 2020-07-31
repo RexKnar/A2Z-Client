@@ -5,3 +5,7 @@ export const FOOTER_API_CONFIG  = {
     topSellingCategoryURL: '/Category/GetTopSellingCategory/5',
     subscriptionURL:'/Subscription'
 };
+export const HEADER_API_CONFIG  = {
+    menuCategoryURL: '/Category/GetMenuCategories',
+
+};
