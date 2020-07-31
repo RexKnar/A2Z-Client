@@ -1,6 +1,7 @@
-import { Component, OnInit, Input,Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Banner } from '../../models/banner';
 import { BannerService } from './banner.service';
+
 @Component({
   selector: 'app-banners',
   templateUrl: './banners.component.html',
@@ -8,15 +9,19 @@ import { BannerService } from './banner.service';
 })
 export class BannersComponent implements OnInit {
  
-  @Input() banner = new Banner;
-  @Output()
-  public persondata=[];
- constructor(private myservice:BannerService) {}
+  ban:Banner [];
+ 
+   
+  constructor(private readonly _bannerservice: BannerService) {}
 ngOnInit(): void {
-    this.myservice.getData().subscribe((data)=>{
-      this.persondata=Array.from(Object.keys(data),k=>data[k]);
-      console.log(this.persondata);
-    });
+   this.getAllBanner();
   }
-
+public getAllBanner():void{
+  this._bannerservice.getAllBanner().subscribe((data) =>{
+    //this.ban=data;
+    console.log(data);
+   
+    
+  });
+}
 }

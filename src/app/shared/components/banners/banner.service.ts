@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Banner } from '../../models/banner';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BANNER_API_CONFIG } from '../../models/Constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BannerService {
-  private finaldata=[];
-  private apiurl="http://kumaria2z-001-site1.ftempurl.com/api/banners";
-constructor(private http:HttpClient) { }
-getData(){
-  return this.http.get(this.apiurl);
+
+constructor(private readonly httpClient: HttpClient) { }
+
+getAllBanner(): Observable<Banner[]>{
+return this.httpClient.get<Banner[]>( BANNER_API_CONFIG.BannerURL);
 }
 }
