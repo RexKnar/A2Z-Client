@@ -1,0 +1,65 @@
+.mini-counter {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #ff4c3b;
+  color: white;
+  border-radius: 50%;
+  min-width: 18px;
+  padding: 0 5px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+}
+
+.count-wish {
+  bottom: 25px;
+  right: 74px;
+}
+.count-cart {
+  bottom: 26px;
+  right: 8px;
+}
+
+.count-wish-mobile {
+  bottom: 34px;
+  right: 178px;
+}
+.count-cart-mobile {
+  bottom: 36px;
+  right: 107px;
+}
+
+.iconsize {
+  font-size: 24px;
+  padding-left: 21px;
+  padding-right: 20px;
+  margin-left: 2px;
+}
+.toptab {
+  display: flex;
+  align-items: center;
+}
+
+.toptab-mobile {
+  display: flex;
+  align-items: center;
+  padding-left: 26px !important;
+  margin-top: 10px !important;
+}
+.login-btn {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.fa-icon-color {
+  color: #000;
+}
+.fa-icon-color-mobile {
+  color: darkgrey;
+  font-size: 28px;
+}
+.btn-pr:hover {
+  cursor: pointer;
+  color: #ed1c2a;
+}

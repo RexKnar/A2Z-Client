@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+      "target": "http://kumaria2z-001-site1.ftempurl.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    
+    }
+  }
