@@ -18,6 +18,7 @@ import { MenusComponent } from './components/header/menubar/menus/menus.componen
 import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
+import { QuantityComponentComponent } from './components/quantity-component/quantity-component.component';
 
 
 
@@ -43,7 +44,8 @@ import { ProductTabComponent } from './components/product-tab/product-tab.compon
     SidebarComponent,
     MenusComponent,
     ContactinfoComponent,
-    FooterComponent
+    FooterComponent,
+    QuantityComponentComponent
   ],
   declarations: [
     HeaderComponent,
@@ -55,7 +57,8 @@ import { ProductTabComponent } from './components/product-tab/product-tab.compon
     SidebarComponent,
     MenusComponent,
     ContactinfoComponent,
-    FooterComponent
+    FooterComponent,
+    QuantityComponentComponent
   ]
 })
 export class SharedModule { }
