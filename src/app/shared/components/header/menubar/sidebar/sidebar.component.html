@@ -14,16 +14,16 @@
         </div>
       </div>
       <ul id="sub-menu" class="sidebar-menu">
-        <li *ngFor="let item of menuItems">
-          <a (click)="toggletNavActive(item)">
-            {{item.name}}
-            <span class="sub-arrow" *ngIf="item.subcategory"></span>
+        <li *ngFor="let menuItem of menuItems">
+          <a (click)="toggletNavActive(menuItem)">
+            {{menuItem.name}}
+            <span class="sub-arrow" *ngIf="menuItem.subcategory"></span>
           </a>
-          <ul [class.opensub1]="item.active" *ngIf="item.subcategory">
+          <ul [class.opensub1]="menuItem.active" *ngIf="menuItem.subcategory">
             <ng-container>
-              <li *ngFor="let innerItem of item.subcategory">
-                <a [routerLink]="" *ngIf="item.subcategory">
-                  {{innerItem.name}}
+              <li *ngFor="let subcategories of menuItem.subcategory">
+                <a [routerLink]="" *ngIf="menuItem.subcategory">
+                  {{subcategories.name}}
                 </a>
               </li>
             </ng-container>

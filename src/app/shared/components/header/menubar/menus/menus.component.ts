@@ -11,17 +11,17 @@ export class MenusComponent implements OnInit {
 
   public menuItems: Menu[];
 
-  constructor(private router: Router, public navServices: NavService) {
-    this.navServices.items.subscribe(menuItems => this.menuItems = menuItems);
+  constructor(private router: Router, public navService: NavService) {
+    this.navService.items.subscribe(menuItems => this.menuItems = menuItems);
     this.router.events.subscribe((event) => {
-      this.navServices.mainMenuToggle = false;
+      this.navService.mainMenuToggle = false;
     });
   }
 
   ngOnInit(): void {
   }
   mainMenuToggle(): void {
-    this.navServices.mainMenuToggle = !this.navServices.mainMenuToggle;
+    this.navService.mainMenuToggle = !this.navService.mainMenuToggle;
   }
   toggletNavActive(item) {
     item.active = !item.active;

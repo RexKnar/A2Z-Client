@@ -22,8 +22,8 @@ export class SidebarComponent implements OnInit {
   leftMenuToggle(): void {
     this.menuService.sidebarToggle = !this.menuService.sidebarToggle;
   }
-  toggletNavActive(item) {
-    item.active = !item.active;
+  toggletNavActive(menuItem) {
+    menuItem.active = !menuItem.active;
   }
 
 }
