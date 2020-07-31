@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FooterService } from '../services/footer.service';
+import { FooterService } from '../../services/footer.service';
 import { Subscription } from '../../models/Subscription';
 import { Category } from '../../models/Category';
 
