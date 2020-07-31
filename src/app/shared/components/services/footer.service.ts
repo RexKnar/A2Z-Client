@@ -13,7 +13,7 @@ export class FooterService {
   constructor(private readonly httpClient: HttpClient) {}
 
   getAllCategories(): Observable<Category []> {
-    return this.httpClient.get<Category []>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.categoryURL);
+    return this.httpClient.get<Category []>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.topSellingCategoryURL);
   }
 
   addSubscriptions(subscription: Subscription): Observable<Subscription> {
