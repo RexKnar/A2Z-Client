@@ -1,6 +1,6 @@
 <section class="section-b-space">
-  <div class="container">
-  <app-imageslider [slider] ="sliderData"></app-imageslider>
-  </div>
+  <div class="container" *ngFor="let slides of slideData">
+  <app-imageslider [slider] ="slides"></app-imageslider>
+
+</div>
   </section>
-  
