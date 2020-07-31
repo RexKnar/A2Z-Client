@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-product-modal',
@@ -8,28 +10,25 @@ import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 export class ProductModalComponent implements OnInit {
   @ViewChild("productView", { static: false }) ProductView: TemplateRef<any>;
   public modalOpen: boolean = false;
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
   openModal() {
     this.modalOpen = true;
-    // if (isPlatformBrowser(this.platformId)) { // For SSR 
-    //   this.modalService.open(this.QuickView, { 
-    //     size: 'lg',
-    //     ariaLabelledBy: 'modal-basic-title',
-    //     centered: true,
-    //     windowClass: 'Quickview' 
-    //   }).result.then((result) => {
-    //     `Result ${result}`
-    //   }, (reason) => {
-    //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    //   });
-    // }
+    // if (isPlatformBrowser()) { // For SSR 
+    this.modalService.open(this.ProductView, {
+      size: 'lg',
+      ariaLabelledBy: 'modal-basic-title',
+      centered: true,
+      windowClass: 'Productview'
+    })
   }
+// }
+  
   ngOnDestroy() {
-    if(this.modalOpen){
-      
+      if(this.modalOpen){
+
     }
   }
 
