@@ -11,5 +11,4 @@ export const HEADER_API_CONFIG  = {
 };
 export const PRODUCTCARD_API_CONFIG  = {
     productCardURL: '/Product/GetProductDetailsByStockId/1',
-
 };

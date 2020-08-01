@@ -48,7 +48,8 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     ContactinfoComponent,
     FooterComponent,
     ProductCardComponent,
-    QuantityComponentComponent
+    QuantityComponentComponent,
+    ProductModalComponent
   ],
   declarations: [
     HeaderComponent,
@@ -64,6 +65,7 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     ProductCardComponent,
     ProductModalComponent,
     QuantityComponentComponent
-  ]
+  ],
+  entryComponents:[ProductModalComponent]
 })
 export class SharedModule { }

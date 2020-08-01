@@ -16,15 +16,13 @@ export class ProductModalComponent implements OnInit {
   }
   openModal() {
     this.modalOpen = true;
-    // if (isPlatformBrowser()) { // For SSR 
     this.modalService.open(this.ProductView, {
       size: 'lg',
       ariaLabelledBy: 'modal-basic-title',
       centered: true,
-      windowClass: 'Productview'
+      windowClass: 'Productiew'
     })
   }
-// }
   
   ngOnDestroy() {
       if(this.modalOpen){

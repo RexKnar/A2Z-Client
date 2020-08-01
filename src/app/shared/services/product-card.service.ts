@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http/http';
 import { ROUTE_CONFIG, PRODUCTCARD_API_CONFIG } from '../models/Constants';
 import { Observable } from 'rxjs';
-import { ProductCard } from '../models/ProductCard';
+import { Product } from '../models/Product';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ProductCardService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
-  getProductCard(): Observable<ProductCard[]> {
-    return this.httpClient.get<ProductCard[]>(ROUTE_CONFIG.baseUrl + PRODUCTCARD_API_CONFIG.productCardURL);
+  getProductCard(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(ROUTE_CONFIG.baseUrl + PRODUCTCARD_API_CONFIG.productCardURL);
   }
 }
