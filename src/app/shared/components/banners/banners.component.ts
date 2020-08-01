@@ -9,8 +9,7 @@ import { BannerService } from '../services/banner.service';
 })
 export class BannersComponent implements OnInit {
   @Input() banner: Banner;
-
-
+  
   constructor() { }
   ngOnInit(): void {
 
