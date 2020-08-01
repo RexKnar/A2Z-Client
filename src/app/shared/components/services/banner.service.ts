@@ -9,7 +9,8 @@ import { BANNER_API_CONFIG, ROUTE_CONFIG } from '../../models/Constants';
 })
 export class BannerService {
   constructor(private readonly httpClient: HttpClient) { }
-  getAllBanner(): Observable<Banner[]> {
-    return this.httpClient.get<Banner[]>(ROUTE_CONFIG.baseUrl + BANNER_API_CONFIG.BannerURL);
+  getBanner(position:string): Observable<Banner[]> {
+    return this.httpClient.get<Banner[]>(ROUTE_CONFIG.baseUrl + BANNER_API_CONFIG.BannerURL+position);
   }
+ 
 }

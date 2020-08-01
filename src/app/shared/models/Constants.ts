@@ -6,5 +6,5 @@ export const FOOTER_API_CONFIG  = {
     subscriptionURL:'/Subscription'
 };
 export const BANNER_API_CONFIG  = {
-    BannerURL:'/Banner/GetBannerByBannerLocation/banner1'
+    BannerURL:'/Banner/GetBannerByBannerLocation/'
 }

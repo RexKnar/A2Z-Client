@@ -2,10 +2,21 @@
    <div class="container">
       <div class="col-lg-12">
          <div class="row ">
-            <div class="col-md-6 right" *ngFor="let bannerItem of bannerData">
+            <div class="col-md-6 right" *ngFor="let bannerItem of topBannerData">
                <app-banners [banner]=bannerItem></app-banners>
             </div>
-         </div>
+         </div> 
       </div>
    </div>
 </section>
+<!-- <section>
+   <div class="container">
+      <div class="col-lg-12">
+         <div class="row ">
+            <div class="col-md-6 right" *ngFor="let bannerItem of bottomBannerData">
+               <app-banners [banner]=bannerItem></app-banners>
+            </div>
+         </div> 
+      </div>
+   </div>
+</section> -->

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Banner } from 'src/app/shared/models/banner';
 import { BannerService } from 'src/app/shared/components/services/banner.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,26 @@ import { BannerService } from 'src/app/shared/components/services/banner.service
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  bannerData: Banner[];
+  outputData: Banner[];
+  topBannerData: Banner[]=[];
+  bottomBannerData: Banner[]=[];
   constructor(private readonly _bannerservice: BannerService) { }
+  
   ngOnInit() {
-    this.getAllBanner();
+   this.topBannerData= this.getBanner('banner1');
+   this.bottomBannerData=this.getBanner('banner1');
+    console.log(this.topBannerData);
   }
-  public getAllBanner(): void {
-    this._bannerservice.getAllBanner().subscribe((data) => {
-      this.bannerData = data;
+
+  public getBanner(position:string): any {
+    let output:Banner[];
+    this._bannerservice.getBanner(position).subscribe((data:any) => { 
+      this.outputData= data;
+      return this.outputData;
+      console.log(output);
     });
+    
+    
   }
+  
 }
