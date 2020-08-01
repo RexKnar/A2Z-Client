@@ -1,0 +1,21 @@
+<div class="collection-filter" [class.openFilterbar]="mobileSidebar">
+  <!-- side-bar colleps block stat -->
+  <div class="collection-filter-block">
+    <div class="collection-mobile-back" (click)="toggleMobileSidebar()">
+      <span class="filter-back"> <i class="fa fa-angle-left" aria-hidden="true"></i> back </span>
+    </div>
+    <!-- Category filter start -->
+    <app-category-filter></app-category-filter>
+  </div>
+  <!-- silde-bar colleps block end here -->
+  <!-- side-bar colleps block stat -->
+  <div class="collection-filter-block">
+    <!-- brand filter start -->
+    <app-attribute-filter [products]="products" [brands]="brands" (brandsFilter)="updateFilter($event)">
+    </app-attribute-filter>
+
+    <!-- price filter start here -->
+    <app-price-filter [min]="minPrice" [max]="maxPrice" (priceFilter)="updateFilter($event)"> </app-price-filter>
+  </div>
+  <!-- silde-bar colleps block end here -->
+</div>

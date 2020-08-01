@@ -7,25 +7,22 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { CategoryModule } from './features/category/category.module';
 
 @NgModule({
-   declarations: [
-      AppComponent,
-   ],
-   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      CoreModule,
-      HomeModule,
-      SharedModule,
-      CommonModule,
-     HttpClientModule
- 
-   ],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CoreModule,
+    HomeModule,
+    CategoryModule,
+    SharedModule,
+    CommonModule,
+    HttpClientModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,3 +1,34 @@
-<p>
-  category works!
-</p>
+<!-- section start -->
+<section class="section-b-space">
+  <div class="collection-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <app-sidebar-filter></app-sidebar-filter>
+        </div>
+        <div class="collection-content col">
+          <div class="page-main-content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="collection-product-wrapper" id="products">
+                  <!-- <app-grid
+                    [products]="products"
+                    [paginate]="paginate"
+                    [layoutView]="layoutView"
+                    [sortBy]="sortBy"
+                    (setGrid)="updateGridLayout($event)"
+                    (setLayout)="updateLayoutView($event)"
+                    (sortedBy)="sortByFilter($event)"
+                  >
+                  </app-grid> -->
+                  <app-filter></app-filter>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section End -->
