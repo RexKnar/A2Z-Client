@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-filter',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  @Input() public products: any[] = [];
+  @Input() public products: ProductModel[] = [];
   @Input() public paginate: any = {};
   @Input() public layoutView: string = 'grid-view';
   @Input() public sortBy: string;

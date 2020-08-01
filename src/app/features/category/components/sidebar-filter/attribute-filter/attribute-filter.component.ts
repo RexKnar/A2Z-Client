@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class AttributeFilterComponent implements OnInit {
   @Input() products: any[] = [];
-  @Input() brands: any[] = [];
+  @Input() attributes: any[] = [];
 
   @Output() brandsFilter: EventEmitter<any> = new EventEmitter<any>();
 

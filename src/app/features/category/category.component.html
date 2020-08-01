@@ -4,12 +4,29 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
-          <app-sidebar-filter></app-sidebar-filter>
+          <app-sidebar-filter
+            (updateFilterEvent)="updateFilter($event)"
+            (toggleMobileSidebarEvent)="toggleMobileSidebar()"
+            [mobileSidebar]="mobileSidebar"
+            [minPrice]="minPrice"
+            [maxPrice]="maxPrice"
+            [products]="products"
+            [attributes]="attributes"
+          ></app-sidebar-filter>
         </div>
         <div class="collection-content col">
           <div class="page-main-content">
             <div class="row">
               <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="filter-main-btn" (click)="toggleMobileSidebar()">
+                      <span class="filter-btn btn btn-theme">
+                        <i class="fa fa-filter" aria-hidden="true"></i> Filter
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div class="collection-product-wrapper" id="products">
                   <!-- <app-grid
                     [products]="products"
@@ -21,7 +38,7 @@
                     (sortedBy)="sortByFilter($event)"
                   >
                   </app-grid> -->
-                  <app-filter></app-filter>
+                  <app-filter (sortedBy)="sortByFilter($event)"></app-filter>
                 </div>
               </div>
             </div>
