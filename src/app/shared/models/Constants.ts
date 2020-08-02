@@ -9,3 +9,6 @@ export const HEADER_API_CONFIG  = {
     menuCategoryURL: '/Category/GetMenuCategories',
 
 };
+export const BANNER_API_CONFIG  = {
+  BannerURL:'/Banner/GetBannerByBannerLocation/'
+}
