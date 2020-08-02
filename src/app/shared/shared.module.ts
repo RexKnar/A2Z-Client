@@ -60,7 +60,8 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
-    QuantityComponentComponent
+    QuantityComponentComponent,
+    BannerComponent
   ]
 })
 export class SharedModule { }

@@ -12,7 +12,7 @@ export class BannerService {
   constructor(private readonly httpClient: HttpClient) { }
 
   getBanner(position: string): Observable<Banner[]> {
-    return this.httpClient.get<Banner[]>(ROUTE_CONFIG.baseUrl + BANNER_API_CONFIG.BannerURL+position);
+    return this.httpClient.get<Banner[]>(ROUTE_CONFIG.baseUrl + BANNER_API_CONFIG.BannerURL + position);
   }
 
 }
