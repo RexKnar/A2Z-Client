@@ -8,6 +8,7 @@ import { SidebarFilterComponent } from './components/sidebar-filter/sidebar-filt
 import { CategoryFilterComponent } from './components/sidebar-filter/category-filter/category-filter.component';
 import { AttributeFilterComponent } from './components/sidebar-filter/attribute-filter/attribute-filter.component';
 import { PriceFilterComponent } from './components/sidebar-filter/price-filter/price-filter.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [CommonModule, CategoryRoutes, Ng5SliderModule],
@@ -18,6 +19,7 @@ import { PriceFilterComponent } from './components/sidebar-filter/price-filter/p
     CategoryFilterComponent,
     AttributeFilterComponent,
     PriceFilterComponent,
+    PaginationComponent,
   ],
 })
 export class CategoryModule {}

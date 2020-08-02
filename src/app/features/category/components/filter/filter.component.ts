@@ -7,9 +7,9 @@ import { ProductModel } from '../../models/product.model';
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  @Input() public products: ProductModel[] = [];
-  @Input() public paginate: any = {};
-  @Input() public layoutView: string = 'grid-view';
+  @Input() public products: ProductModel[];
+  @Input() public paginate: any;
+  @Input() public layoutView: string;
   @Input() public sortBy: string;
 
   @Output() setGrid: EventEmitter<any> = new EventEmitter<any>();

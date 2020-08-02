@@ -5,17 +5,22 @@
       <span class="filter-back"> <i class="fa fa-angle-left" aria-hidden="true"></i> back </span>
     </div>
     <!-- Category filter start -->
-    <app-category-filter></app-category-filter>
+    <app-category-filter [categories]="categories"></app-category-filter>
   </div>
   <!-- silde-bar colleps block end here -->
   <!-- side-bar colleps block stat -->
   <div class="collection-filter-block">
     <!-- brand filter start -->
-    <app-attribute-filter [products]="products" [attributes]="attributes" (brandsFilter)="updateFilter($event)">
+    <app-attribute-filter
+      [products]="products"
+      *ngFor="let attribute of attributes"
+      [attribute]="attribute"
+      (attributeFilter)="updateFilter($event)"
+    >
     </app-attribute-filter>
 
     <!-- price filter start here -->
-    <app-price-filter [min]="minPrice" [max]="maxPrice" (priceFilter)="updateFilter($event)"> </app-price-filter>
+    <app-price-filter [min]="minPrice" [max]="maxPrice" (priceFilter)="updatePriceFilter($event)"> </app-price-filter>
   </div>
   <!-- silde-bar colleps block end here -->
 </div>

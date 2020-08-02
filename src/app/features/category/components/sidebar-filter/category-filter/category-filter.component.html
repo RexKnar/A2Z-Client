@@ -3,9 +3,9 @@
   <div class="collection-collapse-block-content">
     <div class="collection-brand-filter">
       <ul class="category-list">
-        <li *ngFor="let category of products">
-          <a [routerLink]="['/category']" [queryParams]="{ category: category }">
-            {{ category }}
+        <li *ngFor="let category of categories">
+          <a [routerLink]="['/category']" [queryParams]="{ category: category.name }">
+            {{ category.name }}
           </a>
         </li>
       </ul>

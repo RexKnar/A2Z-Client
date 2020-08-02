@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { AttributeModel } from '../../../models/attribute.model';
 
 @Component({
   selector: 'app-attribute-filter',
@@ -7,29 +8,29 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class AttributeFilterComponent implements OnInit {
   @Input() products: any[] = [];
-  @Input() attributes: any[] = [];
+  @Input() attribute: AttributeModel;
 
-  @Output() brandsFilter: EventEmitter<any> = new EventEmitter<any>();
+  @Output() attributeFilter: EventEmitter<any> = new EventEmitter<any>();
 
   public collapse: boolean = true;
+  public selectedAttribute: any = [];
   constructor() {}
 
   ngOnInit(): void {}
 
-  appliedFilter(event) {
-    // let index = this.brands.indexOf(event.target.value);  // checked and unchecked value
-    // if (event.target.checked)
-    //   this.brands.push(event.target.value); // push in array cheked value
-    // else
-    //   this.brands.splice(index,1);  // removed in array unchecked value
-    // let brands = this.brands.length ? { brand: this.brands.join(",") } : { brand: null };
-    // this.brandsFilter.emit(brands);
+  appliedFilter(name, event) {
+    const index = this.selectedAttribute.indexOf(event.target.value); // checked and unchecked value
+    if (event.target.checked) {
+      this.selectedAttribute.push(event.target.value);
+    } else {
+      this.selectedAttribute.splice(index, 1);
+    }
+    this.attributeFilter.emit({ attributeName: name, attributeValues: this.selectedAttribute });
   }
 
-  // check if the item are selected
   checked(item) {
-    // if(this.brands.indexOf(item) != -1){
-    //   return true;
-    // }
+    if (this.attribute.values.indexOf(item) !== -1) {
+      return true;
+    }
   }
 }
