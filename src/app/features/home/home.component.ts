@@ -1,4 +1,6 @@
+import { BannerService } from 'src/app/shared/components/services/banner.service';
 import { Component, OnInit } from '@angular/core';
+import { Banner } from 'src/app/shared/models/banner';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+
+  constructor(private _bannerService: BannerService) {}
+
+  topBannerData: Banner[];
+  bottomBannerData: Banner[];
 
   ngOnInit() {
+  //  this.topBannerData = this._bannerService.ge
   }
 
 }
