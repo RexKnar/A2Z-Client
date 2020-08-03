@@ -1,23 +1,22 @@
-
-
-    <section class="section-b-space">
-      <owl-carousel-o [options]="HomeSliderConfig" class="home-slider">
-        <ng-template *ngFor="let slides of slider"  carouselSlide>
-          <div class="home text-center" [ngStyle]="{'background-image': 'url('+slides.imageUrl+')'}">
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <div class="slider-contain">
-                    <div>
-                      <h4>{{slides.discountText}}</h4>
-                      <h1>{{slides.discountCategory}}</h1>
-                      <a [routerLink]="['/shop/collection/left/sidebar']" [queryParams]="{ category: 'fashion'}" class="btn btn-solid">shop now</a>
-                    </div>
-                  </div>
+<section class="section-b-space">
+  <owl-carousel-o [options]="HomeSliderConfig" class="home-slider">
+    <ng-template *ngFor="let slides of slider" carouselSlide>
+      <div class="home text-center" [ngStyle]="{'background-image': 'url('+slides.imageUrl+')'}">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="slider-contain">
+                <div>
+                  <h4>{{slides.discountText}}</h4>
+                  <h1>{{slides.discountCategory}}</h1>
+                  <a [routerLink]=""
+                    class="btn btn-solid">shop now</a>
                 </div>
               </div>
             </div>
           </div>
-        </ng-template> 
-      </owl-carousel-o>
-    </section>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</section>

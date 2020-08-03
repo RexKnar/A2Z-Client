@@ -23,14 +23,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       SharedModule,
       BrowserAnimationsModule,
       CommonModule,
-     HttpClientModule,
-     NgbModule
- 
+      HttpClientModule,
+      NgbModule
    ],
    providers: [],
    bootstrap: [
       AppComponent
    ],
-   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

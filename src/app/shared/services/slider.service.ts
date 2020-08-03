@@ -8,7 +8,6 @@ import { ROUTE_CONFIG, SLIDER_API_CONFIG } from '../models/Constants';
   providedIn: 'root'
 })
 export class SliderService {
-
   constructor(private readonly httpClient: HttpClient) { }
 
   getSlider(position: string): Observable<Slider[]> {
