@@ -9,22 +9,24 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  // sliderData = new Slider();
+  sliderData = new Slider();
 
   constructor() {
 
    }
 
   ngOnInit() {
-  // this.sliderData.welcomeText = 'Welcome';
-  // this.sliderData.welcomeText = 'Welcome';
-  // this.sliderData.productCategory = 'Men';
-  // this.sliderData.productCategory = 'Women';
+  this.sliderData.welcomeText = 'Welcome';
+  this.sliderData.welcomeText = 'Welcome';
+  this.sliderData.productCategory = 'Men';
+  this.sliderData.productCategory = 'Women';
   
-  // this.sliderData.imgUrl = "./assets/images/slider/1.jpg";
+  this.sliderData.imgUrl = "./assets/images/slider/1.jpg";
+  this.sliderData.imgUrl = "./assets/images/slider/2.jpg";
   
   }
-  slideData:Slider[]=[
-    {imgUrl:"./assets/images/slider/1.jpg",welcomeText:"Welcome1",productCategory:"Men"},
-    {imgUrl:"./assets/images/slider/2.jpg",welcomeText:"Welcome2",productCategory:"Women"}]
+  // slideData:Slider[]=[
+  //   {imgUrl:"./assets/images/slider/1.jpg",welcomeText:"Welcome1",productCategory:"Men"},
+  //   {imgUrl:"./assets/images/slider/2.jpg",welcomeText:"Welcome2",productCategory:"Women"}
+  // ]
 }

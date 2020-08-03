@@ -9,6 +9,7 @@ import { ImagesliderComponent } from './shared/components/imageslider/imageslide
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
    declarations: [
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
       SharedModule,
       BrowserAnimationsModule,
       CommonModule,
-     HttpClientModule
+     HttpClientModule,
+     NgbModule
  
    ],
    providers: [],

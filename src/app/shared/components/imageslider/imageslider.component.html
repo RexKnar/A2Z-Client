@@ -1,9 +1,8 @@
-<!-- <div class="container"> -->
-  <div class = "container">
+<!-- <div class="container"> --
   <!-- Image slider start -->
-    <section class="section-b-space">
-        <owl-carousel-o [options]="ImageSlider" class="image-slider">
-          <ng-template carouselSlide>
+    
+        <!-- <owl-carousel-o [options]="ImageSlider" class="image-slider"> -->
+          <!-- <ng-template carouselSlide>
             
             <div class="home text-center" [ngStyle]="{'background-image': 'url('+this.slider.imgUrl+')'}">
               <div class="container">
@@ -21,12 +20,30 @@
                 </div>
               </div>
             </div>
-         </ng-template>
+         </ng-template> -->
+         <!-- <ng-template carouselSlide>
+            
+          <div class="home text-center" [ngStyle]="{'background-image': 'url('+this.slider.imgUrl+')'}">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="slider-contain">
+                    <div>
+                      
+                      <h4>{{this.slider.welcomeText}}</h4>
+                      <h1>{{this.slider.productCategory}}</h1>
+                      <a  class="btn btn-solid">shop now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       </ng-template>
         </owl-carousel-o>
-    </section>
+  -->
 
-    <!-- Image slider End -->
-    </div>
+    <!-- Image slider End --
 
     <!-- <div class="container section-b-space">
       <div class="row">
@@ -43,3 +60,27 @@
       </div>
     </div> -->
 
+
+
+    <section class="section-b-space">
+      <owl-carousel-o [options]="HomeSliderConfig" class="home-slider">
+        <ng-template carouselSlide>
+          <div class="home text-center" [ngStyle]="{'background-image': 'url('+this.slider.imgUrl+')'}">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="slider-contain">
+                    <div>
+                      <h4>{{this.slider.welcomeText}}</h4>
+                      <h1>{{this.slider.productCategory}}</h1>
+                      <a [routerLink]="['/shop/collection/left/sidebar']" [queryParams]="{ category: 'fashion'}" class="btn btn-solid">shop now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        
+      </owl-carousel-o>
+    </section>
