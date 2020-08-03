@@ -1,3 +1,4 @@
+import { BannerComponent } from './components/banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImagesliderComponent } from './components/imageslider/imageslider.component'; 
@@ -19,6 +20,10 @@ import { MenusComponent } from './components/header/menubar/menus/menus.componen
 import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
+import { QuantityComponentComponent } from './components/quantity-component/quantity-component.component';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -42,7 +47,9 @@ import { ProductTabComponent } from './components/product-tab/product-tab.compon
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
-    ImagesliderComponent
+    ImagesliderComponent,
+    QuantityComponentComponent,
+    BannerComponent
   ],
   declarations: [
     HeaderComponent,
@@ -55,7 +62,9 @@ import { ProductTabComponent } from './components/product-tab/product-tab.compon
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
-    ImagesliderComponent
+    ImagesliderComponent,
+    QuantityComponentComponent,
+    BannerComponent
   ]
 })
 export class SharedModule { }

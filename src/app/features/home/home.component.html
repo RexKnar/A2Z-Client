@@ -1,6 +1,26 @@
-<section class="section-b-space">
-  <!-- <div  *ngFor="let slides of slideData"> -->
-  <app-imageslider [slider] ="sliderData"></app-imageslider>
 
-<!-- </div> -->
+<section class="section-b-space">
+  <div  *ngFor="let slides of slider1Data | async">
+  <app-imageslider [slider] ="slides"></app-imageslider>
+
+</div>
+
   </section>
+<section>
+  <div class="col-lg-12">
+    <div class="row ">
+      <div class="col-md-6 right" *ngFor="let bannerItem of topBannerData | async">
+        <app-banner [banner]=bannerItem></app-banner>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="col-lg-12">
+    <div class="row ">
+      <div class="col-md-6 right" *ngFor="let bannerItem of bottomBannerData | async">
+        <app-banner [banner]=bannerItem></app-banner>
+      </div>
+    </div>
+  </div>
+</section>

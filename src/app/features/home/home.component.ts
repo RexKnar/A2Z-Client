@@ -1,6 +1,11 @@
 import { Slider } from './../../shared/models/slider';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
 
+
+import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Banner } from 'src/app/shared/models/Banner';
+import { BannerService } from 'src/app/shared/services/banner.service';
+import { SliderService } from 'src/app/shared/services/slider.service';
 
 @Component({
   selector: 'app-home',
@@ -9,24 +14,26 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  sliderData = new Slider();
+  
 
-  constructor() {
 
-   }
+
+  
+  constructor(private _bannerService: BannerService,
+    private _sliderService: SliderService
+    ) {}
+    slider1Data: Observable<Slider[]>;
+  
+
+ 
+  topBannerData: Observable<Banner[]>;
+  bottomBannerData: Observable<Banner[]>;
 
   ngOnInit() {
-  this.sliderData.welcomeText = 'Welcome';
-  this.sliderData.welcomeText = 'Welcome';
-  this.sliderData.productCategory = 'Men';
-  this.sliderData.productCategory = 'Women';
+    this.topBannerData = this._bannerService.getBanner('banner1');
+    this.bottomBannerData = this._bannerService.getBanner('banner2');
   
-  this.sliderData.imgUrl = "./assets/images/slider/1.jpg";
-  this.sliderData.imgUrl = "./assets/images/slider/2.jpg";
+  this.slider1Data = this._sliderService.getSlider('slider1');
   
   }
-  // slideData:Slider[]=[
-  //   {imgUrl:"./assets/images/slider/1.jpg",welcomeText:"Welcome1",productCategory:"Men"},
-  //   {imgUrl:"./assets/images/slider/2.jpg",welcomeText:"Welcome2",productCategory:"Women"}
-  // ]
 }

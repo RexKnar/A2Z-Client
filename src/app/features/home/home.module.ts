@@ -8,12 +8,14 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
+import { BannerService } from 'src/app/shared/services/banner.service';
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutes,
     SharedModule,
   ],
+  providers: [BannerService],
   declarations: [HomeComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,8 +1,12 @@
 export class Slider {
-    imgUrl:string;
-    welcomeText:string;
-    productCategory:string;
-};
+    id: Number;
+    navigationUrl: string;
+    imageUrl: string;
+    discountText: string;
+    discountCategory: string;
+    location: string;
+  }
+  
 
 export let HomeSlider: any = {
     loop: true,
