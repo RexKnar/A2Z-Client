@@ -1,0 +1,26 @@
+<div class="searchbar d-lg-inline d-none">
+    <div class="search dropdown">
+        <select class="searchfilter dropdown-toggle dropdown-menu-left" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option>ALL</option>
+            <option *ngFor="let menuItem of menuItems"> {{menuItem.name}}</option>
+        </select>
+        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+<div class="searchbar-mobile d-lg-none">
+    <div class="search dropdown">
+        <select class="searchfilter-mobile dropdown-toggle dropdown-menu-left" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option>ALL</option>
+            <option *ngFor="let menuItem of menuItems"> {{menuItem.name}}</option>
+        </select>
+        <input type="text" class="searchTerm-mobile" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>

@@ -1,25 +1,30 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Observable, async } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Banner } from 'src/app/shared/models/banner';
-import { BannerService } from 'src/app/shared/components/services/banner.service';
-import { Observable } from 'rxjs';
-
+import { BannerService } from 'src/app/shared/services/banner.service';
+import { Product } from 'src/app/shared/models/Product';
+import { ProductService } from 'src/app/shared/services/product.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
-  @Output() banner: Banner;
-  topBannerData:Banner[];
-  bottomBannerData: Banner[];
-  constructor(private readonly _bannerservice: BannerService) { }
- ngOnInit() {
-    this.topBannerData= this.getBanner('banner1')
-    this.bottomBannerData=this.getBanner('banner2');
+
+  topProductsData: Observable<Product[]>;
+  topBannerData: Observable<Banner[]>;
+  bottomBannerData: Observable<Banner[]>;
+
+  constructor(private _bannerService: BannerService, private _productService: ProductService) {}
+
+  ngOnInit() {
+    this.topBannerData = this._bannerService.getBanner('banner1');
+    this.bottomBannerData = this._bannerService.getBanner('banner2');
+    this.topProductsData = this._productService.getProduct(5);
+
   }
-  public getBanner(position:string): any {
-    return this._bannerservice.getBanner(position);
-    
-  }
-  
+
+
+
 }
