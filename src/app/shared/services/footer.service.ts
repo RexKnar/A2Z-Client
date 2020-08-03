@@ -16,7 +16,7 @@ export class FooterService {
     return this.httpClient.get<Category[]>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.topSellingCategoryURL);
   }
 
-  addSubscriptions(subscription: Subscription): Observable<Subscription> {
-    return this.httpClient.post<Subscription>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.subscriptionURL, subscription);
+  addSubscriptions(subscription: Subscription): Observable<any> {
+    return this.httpClient.post<any>(ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.subscriptionURL, subscription);
   }
 }

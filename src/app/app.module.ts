@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
    declarations: [
       AppComponent,
@@ -19,8 +21,14 @@ import { CommonModule } from '@angular/common';
       HomeModule,
       SharedModule,
       CommonModule,
-     HttpClientModule
- 
+     HttpClientModule,
+     NgbModule,
+     BrowserAnimationsModule,
+     ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: false,
+      enableHtml: true,
+    }),
    ],
    providers: [],
    bootstrap: [

@@ -16,20 +16,21 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <form
-              class="form-inline subscribe-form"
+            <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()"
+              class="form-inline subscribe-form" 
             >
               <div class="form-group mx-sm-3">
                 <input
                   type="email"
-                  name="subscriberemail"
+                  formControlName="subscriberemail"
                   class="form-control"
                   placeholder="Enter your email"
-                  [(ngModel)]="subscription.subscriberemail"
-                  #subscriberemail="ngModel"
+                  [ngClass]="{ 'is-invalid': submitted && f.subscriberemail.errors }"
                 />
+                <div *ngIf="submitted && f.subscriberemail.errors" class="text-danger">
+                </div>
               </div>
-              <button type="submit" class="btn btn-solid"  (click)="addSubscriptions()">subscribe</button>
+              <button  mat-button cdkFocusInitial class="btn btn-solid"  (click)="addSubscriptions()">subscribe</button>
             </form>
           </div>
         </div>

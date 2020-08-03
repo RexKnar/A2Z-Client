@@ -3,7 +3,7 @@ export const ROUTE_CONFIG ={
 };
 export const FOOTER_API_CONFIG  = {
     topSellingCategoryURL: '/Category/GetTopSellingCategory/5',
-    subscriptionURL:'/Subscription'
+    subscriptionURL: '/Subscription'
 };
 export const HEADER_API_CONFIG  = {
     menuCategoryURL: '/Category/GetMenuCategories',
