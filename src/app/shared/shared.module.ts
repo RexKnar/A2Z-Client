@@ -1,6 +1,7 @@
 import { BannerComponent } from './components/banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImagesliderComponent } from './components/imageslider/imageslider.component'; 
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -46,6 +47,7 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
+    ImagesliderComponent,
     QuantityComponentComponent,
     BannerComponent
   ],
@@ -60,6 +62,7 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
+    ImagesliderComponent,
     QuantityComponentComponent,
     BannerComponent
   ]

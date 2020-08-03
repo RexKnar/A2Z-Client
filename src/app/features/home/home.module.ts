@@ -8,10 +8,12 @@ import { BannerService } from 'src/app/shared/services/banner.service';
   imports: [
     CommonModule,
     HomeRoutes,
-    SharedModule
+    SharedModule,
   ],
   providers: [BannerService],
   declarations: [HomeComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }
+
+
