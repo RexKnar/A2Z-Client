@@ -1,15 +1,22 @@
-export const ROUTE_CONFIG ={
-    baseUrl:'http://kumaria2z-001-site1.ftempurl.com/api'
+export const ROUTE_CONFIG = {
+    baseUrl: 'http://kumaria2z-001-site1.ftempurl.com/api'
 };
-export const FOOTER_API_CONFIG  = {
+export const FOOTER_API_CONFIG = {
     topSellingCategoryURL: '/Category/GetTopSellingCategory/5',
-    subscriptionURL:'/Subscription'
+    subscriptionURL: '/Subscription'
 };
-export const HEADER_API_CONFIG  = {
+export const HEADER_API_CONFIG = {
     menuCategoryURL: '/Category/GetMenuCategories',
 
 };
-export const IMAGESLIDER_API_CONFIG  = {
+export const IMAGESLIDER_API_CONFIG = {
     homeSliderURL: '/Banner/GetBannerByBannerLocation/slider1',
 
 };
+export const BANNER_API_CONFIG = {
+    BannerURL: '/Banner/GetBannerByBannerLocation/'
+};
+export const PRODUCT_API_CONFIG = {
+    TopSellingProductURL: '/Product/GetTopSellingProducts/'
+};
+

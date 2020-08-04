@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductModule } from './features/product/product.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
    declarations: [
@@ -23,8 +25,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       NgbModule,
       CommonModule,
      HttpClientModule,
-     BrowserAnimationsModule
-   
+     ProductModule,
+     BrowserAnimationsModule,
+     ProductModule,
+     ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: false,
+      enableHtml: true,
+    }),
  
    ],
    providers: [],

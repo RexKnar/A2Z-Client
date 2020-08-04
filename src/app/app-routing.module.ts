@@ -7,7 +7,7 @@ const routes: Routes = [
 
   {path: '', loadChildren: () => import('./core/core.module').then(m => m.CoreModule)},
   {path: 'home', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)},
-  {path: '', loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)}
+  {path: 'product', loadChildren: () => import('./features/product/product.module').then(m => m.ProductModule)},
 ];
 
 @NgModule({
