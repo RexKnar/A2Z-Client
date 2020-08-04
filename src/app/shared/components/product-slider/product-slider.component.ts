@@ -10,8 +10,7 @@ export class ProductSliderComponent implements OnInit {
   public ProductSliderConfig: any = ProductSlider;
 
   @Input() products = new Product();
- 
- 
+
   constructor() {}
   ngOnInit(): void {
   }

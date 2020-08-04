@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
   constructor(private _bannerService: BannerService,
      private _productService: ProductService) { }
 
-  topProductsData: Observable<Product[]>;
+  topProductData: Observable<Product[]>;
   topBannerData: Observable<Banner[]>;
   bottomBannerData: Observable<Banner[]>;
 
   ngOnInit() {
     this.topBannerData = this._bannerService.getBanner('banner1');
     this.bottomBannerData = this._bannerService.getBanner('banner2');
-    this.topProductsData = this._productService.getProduct(5);
+    this.topProductData = this._productService.getProduct(5);
   }
 
 }
