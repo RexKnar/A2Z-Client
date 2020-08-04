@@ -1,12 +1,10 @@
-import { productAttributes } from './Product-attributes';
-
+import { Asset } from './Asset';
 export class Product {
-    productId:string;
-    productName:string;
-    categoryname:string;
-    subCategoryName:string;
-    price:string;
-    quantity:string;
-    description:string;
-    productAttributes: productAttributes[];
+    stockId: number;
+    productName: string;
+    price: number;
+    discount: number;
+    rating: number;
 }
+// asset: Asset[];
+

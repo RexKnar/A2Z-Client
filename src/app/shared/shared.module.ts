@@ -1,10 +1,12 @@
+import { BannerComponent } from './components/banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImagesliderComponent } from './components/imageslider/imageslider.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BarRatingModule } from "ngx-bar-rating";
+import { BarRatingModule } from 'ngx-bar-rating';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,15 +22,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductModalComponent } from './components/product-card/product-modal/product-modal.component';
-import { QuantityComponentComponent } from './components/quantity-component/quantity-component.component';
-
-
+import { QuantityComponent } from './components/quantity/quantity.component';
+import { ProductSliderComponent } from './components/product-slider/product-slider.component';
+import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
     NgbModule,
     CarouselModule,
@@ -48,10 +51,17 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     ContactinfoComponent,
     FooterComponent,
     ProductCardComponent,
-    QuantityComponentComponent,
-    ProductModalComponent
+    ProductModalComponent,
+    QuantityComponent,
+    BannerComponent,
+    ProductSliderComponent,
+    CarouselModule,
+    ImagesliderComponent,
+    BannerComponent
   ],
   declarations: [
+    FooterComponent,
+    ProductTabComponent,
     HeaderComponent,
     TopmenuComponent,
     MenubarComponent,
@@ -64,7 +74,12 @@ import { QuantityComponentComponent } from './components/quantity-component/quan
     FooterComponent,
     ProductCardComponent,
     ProductModalComponent,
-    QuantityComponentComponent
+    QuantityComponent,
+    BannerComponent,
+    ProductSliderComponent,
+    SkeletonProductCardComponent,
+    ImagesliderComponent,
+    BannerComponent
   ],
   entryComponents:[ProductModalComponent]
 })

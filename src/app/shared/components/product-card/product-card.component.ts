@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ProductModalComponent } from './product-modal/product-modal.component';
+import { Products } from '../../models/products';
 import { Product } from '../../models/Product';
 
 @Component({
@@ -22,7 +23,7 @@ export class ProductCardComponent implements OnInit {
             "image_id": 111,
             "id": 1,
             "alt": "yellow",
-            "src": "assets/images/product/fashion/39.jpg",
+            "src": "./assets/images/product/marijuana/4.jpg",
             "variant_id": [
                 101,
                 104
@@ -32,7 +33,7 @@ export class ProductCardComponent implements OnInit {
             "image_id": 112,
             "id": 1,
             "alt": "white",
-            "src": "assets/images/product/fashion/6.jpg",
+            "src": "./assets/images/product/fashion/6.jpg",
             "variant_id": [
                 102,
                 105
@@ -42,7 +43,7 @@ export class ProductCardComponent implements OnInit {
             "image_id": 113,
             "id": 1,
             "alt": "pink",
-            "src": "assets/images/product/fashion/25.jpg",
+            "src": "./assets/images/product/fashion/25.jpg",
             "variant_id": [
                 103,
                 106
