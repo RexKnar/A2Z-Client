@@ -6,10 +6,13 @@ export const FOOTER_API_CONFIG = {
     subscriptionURL: '/Subscription'
 };
 export const HEADER_API_CONFIG = {
-    menuCategoryURL: '/Category/GetMenuCategories',
+    menuCategoryURL: '/Category/GetMenuCategories'
 };
 export const BANNER_API_CONFIG = {
     BannerURL: '/Banner/GetBannerByBannerLocation/'
+};
+export const PRODUCT_API_CONFIG = {
+    TopSellingProductURL: '/Product/GetTopSellingProducts/'
 };
 export const SLIDER_API_CONFIG = {
     SliderURL: '/Banner/GetBannerByBannerLocation/'
