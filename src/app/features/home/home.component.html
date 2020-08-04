@@ -16,5 +16,5 @@
     </div>
   </div>
 </section>
-<app-product-slider *ngIf=" topProductsData | async"  [products]="topProductsData"></app-product-slider>
+<app-product-slider [products]="topProductsData | async"></app-product-slider>
 

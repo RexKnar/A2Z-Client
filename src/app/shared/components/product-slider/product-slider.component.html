@@ -17,16 +17,16 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <owl-carousel-o class="product-m no-arrow" [options]="ProductSliderConfig">
-          <ng-container *ngFor="let product of products">
-            <div class="product-box" style="width: 15%; background-color: antiquewhite;  margin:40px; height:200px"> 
+        <owl-carousel-o [options]="ProductSliderConfig" class="product-m no-arrow">
+          <ng-template *ngFor="let product of products" carouselSlide>
+            <div class="product-box" style="width: 30%; background-color: antiquewhite;  margin:40px; height:200px"> 
               
               <!-- <app-product-card
                 [product]="product"
                 [cartModal]="true">
               </app-product-card>  -->
             </div> 
-          </ng-container>
+          </ng-template>
         </owl-carousel-o>
       </div>
     </div>

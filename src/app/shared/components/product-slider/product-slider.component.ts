@@ -7,8 +7,10 @@ import { ProductSlider } from '../../data/slider-option';
   styleUrls: ['./product-slider.component.scss']
 })
 export class ProductSliderComponent implements OnInit {
-  @Input() products= new Product();
   public ProductSliderConfig: any = ProductSlider;
+
+  @Input() products = new Product();
+ 
  
   constructor() {}
   ngOnInit(): void {

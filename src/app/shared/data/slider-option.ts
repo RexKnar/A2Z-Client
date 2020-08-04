@@ -1,8 +1,9 @@
 // Product Slider
 export let ProductSlider: any = {
-    loop: false,
+    loop: true,
     dots: false,
-    navSpeed: 300,
+    autoplay:true,
+    navSpeed: 2000,
     responsive: {
         991: {
             items: 4
