@@ -1,6 +1,7 @@
 import { BannerComponent } from './components/banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImagesliderComponent } from './components/imageslider/imageslider.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,12 +20,10 @@ import { MenusComponent } from './components/header/menubar/menus/menus.componen
 import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuantityComponent } from './components/quantity/quantity.component';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
-
-
 
 @NgModule({
   imports: [
@@ -53,7 +52,9 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     QuantityComponent,
     BannerComponent,
     ProductSliderComponent,
-    CarouselModule
+    CarouselModule,
+    ImagesliderComponent,
+    BannerComponent
   ],
   declarations: [
     FooterComponent,
@@ -71,7 +72,9 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     QuantityComponent,
     BannerComponent,
     ProductSliderComponent,
-    SkeletonProductCardComponent
+    SkeletonProductCardComponent,
+    ImagesliderComponent,
+    BannerComponent
   ]
 })
 export class SharedModule { }

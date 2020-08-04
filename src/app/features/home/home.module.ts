@@ -11,10 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     HomeRoutes,
     SharedModule,
-    HttpClientModule
   ],
   providers: [BannerService],
   declarations: [HomeComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }
+
+
