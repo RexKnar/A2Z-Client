@@ -51,11 +51,11 @@ export class FooterComponent implements OnInit {
         .subscribe((data) => {
           this.subscriptionForm.reset();
           this.submitted = false;
-          this.toastr.success("Successfully Subscribe", "", { timeOut: 2000 });
+          this.toastr.success("Thank you for Subscribing", "", { timeOut: 2000 });
         });
     }
     else {
-      this.toastr.error("Please Enter Valid Email Id", "", { timeOut: 2000 });
+      this.toastr.error("Please Enter a Valid Email", "", { timeOut: 2000 });
     }
   }
 }
