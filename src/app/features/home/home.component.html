@@ -1,19 +1,4 @@
-<section class="section-b-space ">
-  <div class="row" *ngFor="let product of ProductCardList">
-    <div class="container">
-      <div class="col theme-tab">
-        <div class="no-slider row">
-          <div class="product-box">
-            <app-product-card [products]="product">
-            </app-product-card>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section class="section-b-space">
+<section class="section-b-space">
     <app-imageslider [slider]="sliderData | async"></app-imageslider>
   </section>
   <section>

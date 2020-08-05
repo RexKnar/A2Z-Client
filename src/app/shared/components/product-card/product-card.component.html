@@ -24,13 +24,13 @@
       </li>
     </ul>
     <div class="cart-info cart-wrap">
-      <a href="javascript:void(0)" title="Add to cart">
+      <a href="javascript:void(0)" title="Add to cart" (click)="addToCart(products)">
         <i class="ti-shopping-cart"></i>
       </a>
       <a href="javascript:void(0)" title="Add to Wishlist">
         <i class="ti-heart" aria-hidden="true"></i>
       </a>
-      <a href="javascript:void(0)" title="Quick View" (click)="ProductView.openModal()">
+      <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal()">
         <i class="ti-search" aria-hidden="true"></i>
       </a>
       <a href="javascript:void(0)" title="Compare">
@@ -40,16 +40,16 @@
   </div>
   <div class="product-detail">
     <div>
-      <bar-rating [rate]="5" [readOnly]="true"></bar-rating>
+      <bar-rating [rate]="products.rating" [readOnly]="true"></bar-rating>
       <a>
         <h6>{{ products?.productName | titlecase }}</h6>
       </a>
       <h4>
         ₹{{products?.price}}
-        <del *ngIf="products?.price"><span class="money">₹{{products?.price}}</span></del>
+        <del *ngIf="products?.discount"><span class="money">₹{{products?.price}}</span></del>
       </h4>
     </div>
   </div>
 </div>
-
-<app-product-modal #productView></app-product-modal>
+<app-skeleton-product-card *ngIf="loader"></app-skeleton-product-card>
+<app-product-modal #productView [productId]="1" [products]="products"></app-product-modal>

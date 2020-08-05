@@ -1,4 +1,4 @@
-export class productAttributes{
+export class ProductAttributes{
     attributeName:string;
     value:string;
 }

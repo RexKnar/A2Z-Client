@@ -80,7 +80,6 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     SkeletonProductCardComponent,
     ImagesliderComponent,
     BannerComponent
-  ],
-  entryComponents:[ProductModalComponent]
+  ]
 })
 export class SharedModule { }

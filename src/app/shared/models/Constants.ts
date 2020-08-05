@@ -12,11 +12,11 @@ export const BANNER_API_CONFIG = {
     BannerURL: '/Banner/GetBannerByBannerLocation/'
 };
 export const PRODUCT_API_CONFIG = {
-    TopSellingProductURL: '/Product/GetTopSellingProducts/'
+    TopSellingProductURL: '/Product/GetTopSellingProducts/',
+    ProductDetailURL: '/Product/GetProductDetailsByStockId/',
+    AddToCart:'/Cart'
 };
 export const SLIDER_API_CONFIG = {
     SliderURL: '/Banner/GetBannerByBannerLocation/'
 };
-export const PRODUCTCARD_API_CONFIG  = {
-    productCardURL: '/Product/GetProductDetailsByStockId/1',
-};
+

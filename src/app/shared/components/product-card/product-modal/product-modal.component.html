@@ -1,0 +1,45 @@
+<ng-template class="theme-modal" #productView let-modal>
+    <div class="modal-content quick-view-modal">
+        <div class="modal-body">
+            <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="row" *ngFor="let productDetail of ProductDetails">
+                <div class="col-lg-6  col-xs-12">
+                    <div class="quick-view-img">
+                        <!-- <img [src]="ImageSrc ? ImageSrc : product.images[0].src" [alt]="product.images[0].alt" class="img-fluid"> -->
+                    </div>
+                </div>
+                <div class="col-lg-6 rtl-text">
+                    <div class="product-right">
+                        <h2>{{ products?.productName | titlecase }}</h2>
+                        <h3>{{ products.price}}
+                            <del *ngIf="products?.discount"><span class="money">{{ products.price}}</span></del>
+                        </h3>
+                        <div class="border-product" >
+                            <h6 class="product-title">product details</h6>
+                            <p>{{ productDetail.description}} </p>
+                        </div>
+                        <div class="product-description border-product">
+                            <!-- <div class="size-box" *ngIf="Size(product.variants).length"> -->
+                                <ul>
+                                    <!-- <li *ngFor="let size of Size(product.variants)">
+                                        <a href="javascript:void(0)">{{ size | titlecase }}</a>
+                                    </li> -->
+                                </ul>
+                            <!-- </div> -->
+                            <!-- <h5 class="avalibility" *ngIf="counter <= product.stock"><span>In Stock</span></h5>
+                            <h5 class="avalibility" *ngIf="counter > product.stock"><span>Out of Stock</span></h5> -->
+                            <h6 class="product-title">quantity</h6>
+                            <app-quantity></app-quantity>
+                        </div>
+                        <div class="product-buttons">
+                            <!-- <a href="javascript:void(0)" class="btn btn-solid" [class.disabled]="counter > product.stock" (click)="addToCart(product)">add to cart</a> -->
+                            <a  class="btn btn-solid">view detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
