@@ -17,40 +17,55 @@
           </div>
           <div class="col-lg-6">
             <form
+              [formGroup]="subscriptionForm"
+              (ngSubmit)="onSubmit()"
               class="form-inline subscribe-form"
             >
               <div class="form-group mx-sm-3">
                 <input
                   type="email"
-                  name="subscriberemail"
+                  formControlName="subscriberemail"
                   class="form-control"
                   placeholder="Enter your email"
-                  [(ngModel)]="subscription.subscriberemail"
-                  #subscriberemail="ngModel"
+                  [ngClass]="{
+                    'is-invalid': submitted && f.subscriberemail.errors
+                  }"
                 />
+                <div
+                  *ngIf="submitted && f.subscriberemail.errors"
+                  class="text-danger"
+                ></div>
               </div>
-              <button type="submit" class="btn btn-solid"  (click)="addSubscriptions()">subscribe</button>
+              <button
+                mat-button
+                cdkFocusInitial
+                class="btn btn-solid"
+                (click)="addSubscriptions()"
+              >
+                subscribe
+              </button>
             </form>
           </div>
         </div>
       </section>
     </div>
   </div>
-  <section class="section-b-space light-layout">
+  <section class="section-b-space light-layout" class="light-layout">
     <div class="container">
       <div class="row footer-theme partition-f">
         <div class="col-lg-4 col-md-6">
-          <div class="footer-title footer-mobile-title">
+          <!-- <div class="footer-title footer-mobile-title">
             <h4>about</h4>
-          </div>
+          </div> -->
           <div class="footer-contant">
             <div class="footer-logo">
-              <img [src]="themeLogo" alt="logo" width="100" height="100" />
+              <img [src]="themeLogo" alt="logo" width="200" height="100" />
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam,
+              Customers can purchase items from the comfort of their own homes
+              or work place. Shopping is made easier and convenient for the
+              customer through internet. It is also easy to cancel the
+              transactions.
             </p>
             <div class="footer-social">
               <ul>
@@ -85,14 +100,19 @@
             </div>
           </div>
         </div>
-        <div class="col offset-xl-1">
+        <div class="col-lg-2 offset-xl-1">
           <div class="sub-title">
             <div class="footer-title">
               <h4>CATEGORIES</h4>
             </div>
-            <div class="footer-contant" *ngFor="let category of categories | slice:0:5">
+            <div
+              class="footer-contant"
+              *ngFor="let category of categories | slice: 0:5"
+            >
               <ul>
-                <li><a >{{category.categoryName}}</a></li>
+                <li>
+                  <a>{{ category.categoryName }}</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -107,13 +127,13 @@
                 <li><a href="javascript:void(0)">shipping & return</a></li>
                 <li><a href="javascript:void(0)">Terms and Conditions</a></li>
                 <li><a href="javascript:void(0)">Privacy</a></li>
-                <li><a href="javascript:void(0)">affiliates</a></li>
+                <li><a href="javascript:void(0)">cookie policy</a></li>
                 <li><a href="javascript:void(0)">contacts</a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-lg-3">
           <div class="sub-title">
             <div class="footer-title">
               <h4>store information</h4>
@@ -133,6 +153,19 @@
               </ul>
             </div>
           </div>
+          <div class="footer-social">
+            <ul class="img">
+              <li>
+                <a href="javascript:void(0)"
+                  ><img
+                    src="assets/images/icon/playstore.png"
+                    alt=""
+                    width="150"
+                    height="50"
+                /></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -140,34 +173,20 @@
   <div class="sub-footer">
     <div class="container">
       <div class="row">
-        <div class="col-xl-6 col-md-6 col-sm-12">
+        <div class="col-xl-8 col-md-8 col-sm-8">
           <div class="footer-end">
             <p>
-              <i class="fa fa-copyright" aria-hidden="true"></i> Copyright ©2020 A2Z. All rights reserved
+              <i class="fa fa-copyright" aria-hidden="true"></i> Copyright ©2020
+              A2Z. All rights reserved
             </p>
           </div>
         </div>
-        <div class="col-xl-6 col-md-6 col-sm-12">
-          <div class="payment-card-bottom">
-            <ul>
-              <li>
-                <a><img src="assets/images/icon/visa.png" alt="" /></a>
-              </li>
-              <li>
-                <a><img src="assets/images/icon/mastercard.png" alt="" /></a>
-              </li>
-              <li>
-                <a><img src="assets/images/icon/paypal.png" alt="" /></a>
-              </li>
-              <li>
-                <a
-                  ><img src="assets/images/icon/american-express.png" alt=""
-                /></a>
-              </li>
-              <li>
-                <a><img src="assets/images/icon/discover.png" alt="" /></a>
-              </li>
-            </ul>
+        <div class="col-xl-4 col-md-4 col-sm-4">
+          <div class="footer-end">
+            <p>
+              <i class="fa fa-copyright"></i> Powered by RexKnar Creative
+              Solutions
+            </p>
           </div>
         </div>
       </div>
