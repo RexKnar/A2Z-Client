@@ -9,14 +9,17 @@ import { Observable } from 'rxjs';
   styleUrls: ['./productcard.component.scss']
 })
 export class ProductcardComponent implements OnInit {
+ 
+  productCardDetail: any;
 
   constructor(private readonly _productService: ProductService) { }
  
-  topSellingProduct: Observable<Product[]>;
-
   ngOnInit(): void {
-
-    this.topSellingProduct = this._productService.getProduct(1);
-    console.log(this.topSellingProduct);
+    this.getProductCardDetail()
+  }
+  public getProductCardDetail(): void{
+    this._productService.getProduct(1).subscribe((data: any) => {
+       this.productCardDetail = data;
+    });
   }
 }

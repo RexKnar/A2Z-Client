@@ -6,12 +6,7 @@ export const FOOTER_API_CONFIG = {
     subscriptionURL: '/Subscription'
 };
 export const HEADER_API_CONFIG = {
-    menuCategoryURL: '/Category/GetMenuCategories',
-
-};
-export const IMAGESLIDER_API_CONFIG = {
-    homeSliderURL: '/Banner/GetBannerByBannerLocation/slider1',
-
+    menuCategoryURL: '/Category/GetMenuCategories'
 };
 export const BANNER_API_CONFIG = {
     BannerURL: '/Banner/GetBannerByBannerLocation/'
@@ -19,4 +14,6 @@ export const BANNER_API_CONFIG = {
 export const PRODUCT_API_CONFIG = {
     TopSellingProductURL: '/Product/GetTopSellingProducts/'
 };
-
+export const SLIDER_API_CONFIG = {
+    SliderURL: '/Banner/GetBannerByBannerLocation/'
+};

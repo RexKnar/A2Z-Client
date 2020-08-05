@@ -3,15 +3,19 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { BannerService } from 'src/app/shared/services/banner.service';
+import { BannerService } from '../../shared/services/banner.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutes,
-    SharedModule
+    SharedModule,
   ],
   providers: [BannerService],
   declarations: [HomeComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }
+
+

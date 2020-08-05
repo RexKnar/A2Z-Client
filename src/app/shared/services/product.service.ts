@@ -8,8 +8,8 @@ import { ROUTE_CONFIG, PRODUCT_API_CONFIG } from '../models/Constants';
   providedIn: 'root'
 })
 export class ProductService {
-  http: any;
-
+  public Currency = { name: 'Dollar', currency: 'USD', price: 1 }
+  
   constructor(private readonly httpClient: HttpClient) { }
 
   getProduct(productCount: number): Observable<Product[]> {

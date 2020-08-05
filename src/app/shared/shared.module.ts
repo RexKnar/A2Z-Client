@@ -1,11 +1,12 @@
 import { BannerComponent } from './components/banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImagesliderComponent } from './components/imageslider/imageslider.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BarRatingModule } from "ngx-bar-rating";
+import { BarRatingModule } from 'ngx-bar-rating';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,10 +20,10 @@ import { MenusComponent } from './components/header/menubar/menus/menus.componen
 import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
-import { QuantityComponentComponent } from './components/quantity-component/quantity-component.component';
-import { ProductcardComponent } from './components/productcard/productcard.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuantityComponent } from './components/quantity/quantity.component';
+import { ProductSliderComponent } from './components/product-slider/product-slider.component';
+import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { ProductcardComponent } from './components/productcard/productcard.compo
     CommonModule,
     RouterModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     NgbModule,
     CarouselModule,
     BarRatingModule,
@@ -48,11 +51,17 @@ import { ProductcardComponent } from './components/productcard/productcard.compo
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
-   ProductcardComponent,
-    QuantityComponentComponent,
-    BannerComponent
+    QuantityComponent,
+    BannerComponent,
+    ProductSliderComponent,
+    CarouselModule,
+    ImagesliderComponent,
+    BannerComponent,
+   
   ],
   declarations: [
+    FooterComponent,
+    ProductTabComponent,
     HeaderComponent,
     TopmenuComponent,
     MenubarComponent,
@@ -63,9 +72,13 @@ import { ProductcardComponent } from './components/productcard/productcard.compo
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
-    QuantityComponentComponent,
+    QuantityComponent,
     BannerComponent,
-    ProductcardComponent
+    ProductSliderComponent,
+    SkeletonProductCardComponent,
+    ImagesliderComponent,
+    BannerComponent,
+   
   ]
 })
 export class SharedModule { }
