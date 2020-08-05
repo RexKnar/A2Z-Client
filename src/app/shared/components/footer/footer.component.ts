@@ -1,3 +1,4 @@
+import { messageConstants } from './../../models/messageConstants';
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FooterService } from "../../services/footer.service";
 import { Subscription } from "../../models/Subscription";
@@ -51,11 +52,11 @@ export class FooterComponent implements OnInit {
         .subscribe((data) => {
           this.subscriptionForm.reset();
           this.submitted = false;
-          this.toastr.success("Thank you for Subscribing", "", { timeOut: 2000 });
+          this.toastr.success(messageConstants.SUBSCRIBE_SUCCESS, "", { timeOut: 2000 });
         });
     }
     else {
-      this.toastr.error("Please Enter a Valid Email", "", { timeOut: 2000 });
+      this.toastr.error(messageConstants.SUBSCRIBE_ERROR, "", { timeOut: 2000 });
     }
   }
 }
