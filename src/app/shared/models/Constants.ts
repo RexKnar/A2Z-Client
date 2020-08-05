@@ -9,3 +9,6 @@ export const HEADER_API_CONFIG  = {
     menuCategoryURL: '/Category/GetMenuCategories',
 
 };
+export class Apiresponce{
+responseCode: string;
+}

@@ -45,23 +45,15 @@ export class FooterComponent implements OnInit {
     });
   }
   addSubscriptions(): void {
-    console.log(this.subscriptionForm.valid);
     if (this.subscriptionForm.valid) {
       this._footerService
         .addSubscriptions(this.subscriptionForm.value)
-        .subscribe(
-          (data) => {
-            // console.log(data);
-            this.subscriptionForm.reset();
-            this.submitted = false;
-            this.toastr.success("Success", "Subscribe", { timeOut: 2000 });
-          },
-          (err) => {
-            console.log(err);
-          }
-        );
+        .subscribe((data) => {
+          this.subscriptionForm.reset();
+          this.submitted = false;
+          this.toastr.success("Success", "Subscribe", { timeOut: 2000 });
+        });
     }
-    // tslint:disable-next-line: align
     else {
       this.toastr.error("Failed", "Subscribe", { timeOut: 2000 });
     }
