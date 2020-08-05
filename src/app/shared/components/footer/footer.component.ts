@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   subscriptionForm: FormGroup;
   submitted = false;
   categories: Category[];
-  @Input() themeLogo = "assets/images/logos/logoA2Z.png";
+  @Input() themeLogo = "assets/images/a2z/logos/logo A2Z-01.png";
   @Output()
   isDetailsExit: EventEmitter<boolean> = new EventEmitter<boolean>();
   ngSubmit = new EventEmitter();
@@ -51,11 +51,11 @@ export class FooterComponent implements OnInit {
         .subscribe((data) => {
           this.subscriptionForm.reset();
           this.submitted = false;
-          this.toastr.success("Success", "Subscribe", { timeOut: 2000 });
+          this.toastr.success("Successfully Subscribe", "", { timeOut: 2000 });
         });
     }
     else {
-      this.toastr.error("Failed", "Subscribe", { timeOut: 2000 });
+      this.toastr.error("Please Enter Valid Email Id", "", { timeOut: 2000 });
     }
   }
 }
