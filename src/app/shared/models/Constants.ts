@@ -17,3 +17,6 @@ export const PRODUCT_API_CONFIG = {
 export const SLIDER_API_CONFIG = {
     SliderURL: '/Banner/GetBannerByBannerLocation/'
 };
+export class Apiresponce{
+responseCode: string;
+}
