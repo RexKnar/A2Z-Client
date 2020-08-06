@@ -54,6 +54,7 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     ProductSliderComponent,
     CarouselModule,
     ImagesliderComponent,
+    ProductTabComponent,
     BannerComponent
   ],
   declarations: [
@@ -74,6 +75,7 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     ProductSliderComponent,
     SkeletonProductCardComponent,
     ImagesliderComponent,
+    ProductTabComponent,
     BannerComponent
   ]
 })

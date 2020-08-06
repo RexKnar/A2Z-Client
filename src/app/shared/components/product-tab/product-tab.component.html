@@ -1,1 +1,56 @@
-<p>product-tab works!</p>
+<div class="title1 section-t-space">
+  <h4>exclusive products</h4>
+  <h2 class="title-inner1">special products</h2>
+</div>
+<section class="section-b-space p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col theme-tab">
+        <ngb-tabset [justify]="'center'" [type]="'pills'" class="tabs tab-title">
+          <ngb-tab>
+            <ng-template ngbTabTitle>New Products</ng-template>
+            <ng-template ngbTabContent>
+              <section class="section-b-space p-t-0">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <app-product-slider [products]="topProductData | async"></app-product-slider>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>Best Sellers</ng-template>
+            <ng-template ngbTabContent>
+              <section class="section-b-space p-t-0">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <app-product-slider [products]="topProductData | async"></app-product-slider>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>Top Sellers</ng-template>
+            <ng-template ngbTabContent>
+              <section class="section-b-space p-t-0">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <app-product-slider [products]="topProductData | async"></app-product-slider>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</section>

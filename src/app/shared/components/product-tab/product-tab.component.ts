@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductSlider } from '../../data/slider-option';
+import { Product } from '../../models/Product';
+import { Observable } from 'rxjs';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-tab',
@@ -6,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-tab.component.scss']
 })
 export class ProductTabComponent implements OnInit {
-
-  constructor() { }
+  public ProductSliderConfig: any = ProductSlider;
+  topProductData: Observable<Product[]>;
+  constructor(private _productService: ProductService) { }
 
   ngOnInit(): void {
+    this.topProductData = this._productService.getProduct(5);
   }
 
 }
