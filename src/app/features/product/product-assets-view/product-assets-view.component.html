@@ -1,0 +1,30 @@
+<div class="col-lg-4">
+    <owl-carousel-o [options]="ProductDetailsMainSliderConfig" #owlCar class="product-slick">
+        <ng-container >
+            <ng-template carouselSlide >
+                <div>
+                    <div class="product-box" style="width: 30%; background-color: antiquewhite;  margin:40px; height:200px">              
+                    </div> 
+                    <!-- <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid"> -->
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="slider-nav">
+                <owl-carousel-o [options]="ProductDetailsThumbConfig" class="product-slick">
+                    <ng-container >
+                        <ng-template carouselSlide>
+                            <div class="owl-thumb">
+                                <div class="product-box" style="width: 30%; background-color: antiquewhite;  margin:40px; height:200px">              
+                                </div> 
+                                <!-- <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid" (click)="owlCar.to(activeSlide = i.toString())"> -->
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>

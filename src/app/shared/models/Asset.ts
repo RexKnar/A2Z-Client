@@ -1,4 +1,6 @@
-export class Asset{
-    assetType:string;
-    assetUrl:string;
+export class Assets {
+    id: number;
+ assetLink: string;
+
 }
+

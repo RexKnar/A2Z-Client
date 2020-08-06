@@ -1,4 +1,5 @@
-// import { Asset } from './Asset';
+import { Stock } from './Stock';
+
 export class Product {
     stockId: number;
     productName: string;
@@ -7,4 +8,16 @@ export class Product {
     discount: number;
     rating: number;
 }
-// asset: Asset[];
+
+export class ProductDetails {
+        productId: number;
+        productName: string;
+        categoryId: number;
+        categoryname: string;
+        subcategoryId: number;
+        subCategoryName: string;
+        discount: number;
+        description: string;
+        stock: Stock[];
+}
+

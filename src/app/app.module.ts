@@ -6,12 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ImagesliderComponent } from './shared/components/imageslider/imageslider.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductModule } from './features/product/product.module';
-import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
    declarations: [
@@ -25,7 +26,6 @@ import { ToastrModule } from 'ngx-toastr';
       HomeModule,
       SharedModule,
       NgbModule,
-      CommonModule,
      HttpClientModule,
      ProductModule,
      BrowserAnimationsModule,

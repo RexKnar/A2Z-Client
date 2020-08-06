@@ -33,7 +33,6 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     NgbModule,
     CarouselModule,
     BarRatingModule,
