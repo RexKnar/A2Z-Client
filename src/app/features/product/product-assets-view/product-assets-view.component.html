@@ -1,10 +1,13 @@
 <div class="col-lg-4">
     <owl-carousel-o [options]="ProductDetailsMainSliderConfig" #owlCar class="product-slick">
         <ng-container >
-            <ng-template carouselSlide >
+            <ng-template *ngFor="let productDetail of productDetails" carouselSlide >
                 <div>
-                    <div class="product-box" style="width: 30%; background-color: antiquewhite;  margin:40px; height:200px">              
-                    </div> 
+                   
+                        <img [src]="themeLogo" class="img-fetch-mobile" alt="logo">
+                  
+                    <!-- <div class="product-box" style="width: 30%; background-color: rgb(14, 11, 8);  margin:40px; height:200px">              
+                    </div>  -->
                     <!-- <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid"> -->
                 </div>
             </ng-template>
@@ -15,10 +18,9 @@
             <div class="slider-nav">
                 <owl-carousel-o [options]="ProductDetailsThumbConfig" class="product-slick">
                     <ng-container >
-                        <ng-template carouselSlide>
+                        <ng-template *ngFor="let productdetail of productDetails" carouselSlide>
                             <div class="owl-thumb">
-                                <div class="product-box" style="width: 30%; background-color: antiquewhite;  margin:40px; height:200px">              
-                                </div> 
+                                <img [src]="themeLogo" class="img-fetch-mobile" alt="logo">
                                 <!-- <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid" (click)="owlCar.to(activeSlide = i.toString())"> -->
                             </div>
                         </ng-template>
