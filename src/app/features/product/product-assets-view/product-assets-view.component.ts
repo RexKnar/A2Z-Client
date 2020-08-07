@@ -8,7 +8,7 @@ import { ProductDetails } from 'src/app/shared/models/Product';
   styleUrls: ['./product-assets-view.component.scss']
 })
 export class ProductAssetsViewComponent implements OnInit {
-  @Input() themeLogo: string = 'assets/images/a2z/logos/logo A2Z-01.png';
+ 
   @Input() productDetails : ProductDetails [];
 
   public ProductDetailsMainSliderConfig: any = ProductDetailsMainSlider;

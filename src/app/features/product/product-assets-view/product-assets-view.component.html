@@ -1,32 +1,43 @@
-<div class="col-lg-4">
+
     <owl-carousel-o [options]="ProductDetailsMainSliderConfig" #owlCar class="product-slick">
-        <ng-container >
-            <ng-template *ngFor="let productDetail of productDetails" carouselSlide >
+        <ng-container *ngFor="let productDetail of productDetails">
+            <ng-template  carouselSlide >
+              <!-- <div>
+                <img [src]="productDetail.stock[0].assets[0].assetLink" class="img-fluid">
+              </div> -->
+                    
+              <!-- <ng-container *ngFor="let image of product.images; index as i">
+            <ng-template carouselSlide [id]="i"> -->
                 <div>
-                   
-                        <img [src]="themeLogo" class="img-fetch-mobile" alt="logo">
-                  
-                    <!-- <div class="product-box" style="width: 30%; background-color: rgb(14, 11, 8);  margin:40px; height:200px">              
-                    </div>  -->
-                    <!-- <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid"> -->
-                </div>
+                    <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="productDetail.assetUrl"  class="img-fluid">
+                </div> 
             </ng-template>
-        </ng-container>
+        </ng-container> 
+            <!-- </ng-template>
+        </ng-container> -->
+        
     </owl-carousel-o>
     <div class="row">
         <div class="col-12 p-0">
             <div class="slider-nav">
                 <owl-carousel-o [options]="ProductDetailsThumbConfig" class="product-slick">
-                    <ng-container >
-                        <ng-template *ngFor="let productdetail of productDetails" carouselSlide>
-                            <div class="owl-thumb">
-                                <img [src]="themeLogo" class="img-fetch-mobile" alt="logo">
-                                <!-- <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid" (click)="owlCar.to(activeSlide = i.toString())"> -->
+                    <ng-container *ngFor="let productDetail of productDetails">
+                        <ng-template  carouselSlide>
+                            <div class="owl-thumb" >
+                                <!-- <img [src]="productDetail.stock[0].assets[0].assetLink" class="img-fluid"> -->
+                                
+                                <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="productDetail.assetUrl" [alt]="productDetail.assetType" class="img-fluid" >
                             </div>
                         </ng-template>
                     </ng-container>
+                    <!-- <ng-container *ngFor="let image of product.images; index as i">
+                        <ng-template carouselSlide [id]="i">
+                            <div class="owl-thumb" [class.active]="i == activeSlide">
+                                <img [defaultImage]="'assets/images/product/placeholder.jpg'" [lazyLoad]="image.src" [alt]="image.alt" class="img-fluid" (click)="owlCar.to(activeSlide = i.toString())">
+                            </div>
+                        </ng-template>
+                    </ng-container> -->
                 </owl-carousel-o>
             </div>
         </div>
     </div>
-</div>

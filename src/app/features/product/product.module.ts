@@ -6,7 +6,7 @@ import { ProductAssetsViewComponent } from './product-assets-view/product-assets
 import { ProductAssetsDetailsComponent } from './product-assets-details/product-assets-details.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ProductComponent } from './product.component';
-
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   
@@ -14,9 +14,11 @@ import { ProductComponent } from './product.component';
     CommonModule,
     ProductRoutingModule,
     CarouselModule,
+    LazyLoadImageModule
   ],
   exports: [
     CarouselModule,
+    LazyLoadImageModule
 
   ],
   declarations: [

@@ -1,6 +1,7 @@
 export class Assets {
     id: number;
- assetLink: string;
+    assetType: number;
+    assetUrl: string;
 
 }
 
