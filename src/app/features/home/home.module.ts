@@ -5,6 +5,8 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BannerService } from '../../shared/services/banner.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from 'src/app/shared/services/product.service';
+import { SliderService } from 'src/app/shared/services/slider.service';
 
 @NgModule({
   imports: [
@@ -12,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeRoutes,
     SharedModule,
   ],
-  providers: [BannerService],
+  providers: [BannerService, ProductService, SliderService],
   declarations: [HomeComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -14,8 +14,8 @@ import { SliderService } from 'src/app/shared/services/slider.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private _bannerService: BannerService,
-    private _productService: ProductService,
-    private _sliderService: SliderService) { }
+              private _productService: ProductService,
+              private _sliderService: SliderService) { }
 
   topProductData: Observable<Product[]>;
   topBannerData: Observable<Banner[]>;
