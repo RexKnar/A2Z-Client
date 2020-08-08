@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Banner } from '../../models/banner';
+import { Banner } from '../../models/Banner';
 
 @Component({
   selector: 'app-banner',

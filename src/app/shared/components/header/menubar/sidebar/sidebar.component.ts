@@ -13,7 +13,6 @@ export class SidebarComponent implements OnInit {
   public getAllHomeMenu(): void {
     this.menuService.getMenu().subscribe((data: any) => {
       this.menuItems = data;
-      console.log(data);
     });
   }
   ngOnInit(): void {

@@ -1,3 +1,6 @@
+<section class="section-b-space">
+  <app-imageslider [slider]="sliderData | async"></app-imageslider>
+</section>
 <section>
   <div class="col-lg-12">
     <div class="row ">
@@ -12,6 +15,29 @@
     <div class="row ">
       <div class="col-md-6 right" *ngFor="let bannerItem of bottomBannerData | async">
         <app-banner [banner]=bannerItem></app-banner>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="title1  section-t-space">
+  <h4>special offer</h4>
+  <h2 class="title-inner1">top collection</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+          has been the industry's standard dummy text ever since the 1500s,</p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section-b-space p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-product-slider [products]="topProductData | async"></app-product-slider>
       </div>
     </div>
   </div>
