@@ -1,4 +1,5 @@
-export class Asset{
-    assetType:string;
-    assetUrl:string;
+export class Asset {
+    id: number;
+    assetType: number;
+    assetUrl: string;
 }

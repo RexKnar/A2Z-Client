@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     private _sliderService: SliderService
   ) {}
 
+
   topProductData: Observable<Product[]>;
   topBannerData: Observable<Banner[]>;
   bottomBannerData: Observable<Banner[]>;

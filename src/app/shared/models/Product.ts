@@ -1,25 +1,24 @@
 import { Asset } from './Asset';
 import { ProductAttributes } from './ProductAttributes';
+import { Stock } from './Stock';
+import { Reviews } from './reviews';
 export class Product {
-    stockId: number;
-    productName: string;
-    price: number;
-    discount: number;
-    imageUrl: string;
-    rating: number;
-}
-// asset: Asset[];
-
-export class ProductDetails {
-    productId:string;
-    productName:string;
-    categoryId:number;
-    categoryname:string;
-    subcategoryId:number;
-    subCategoryName:string;
-    price:string;
-    quantity:string;
-    description:string;
-    imgUrl: string;
-    productAttributes: ProductAttributes[];
+  token: string;
+  userId: string;
+  productId: string;
+  productName: string;
+  categoryId: number;
+  categoryname: string;
+  subcategoryId: number;
+  subCategoryName: string;
+  price: string;
+  discount: string;
+  quantity: string;
+  sale: boolean;
+  new: boolean;
+  rating: number;
+  description: string;
+  assets: Asset[];
+  stock: Stock[];
+  Reviews: Reviews [];
 }

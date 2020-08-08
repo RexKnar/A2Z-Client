@@ -25,7 +25,7 @@ import { ProductModalComponent } from './components/product-card/product-modal/p
 import { QuantityComponent } from './components/quantity/quantity.component';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
-
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 @NgModule({
   imports: [
     CommonModule,
@@ -38,6 +38,7 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     BarRatingModule,
     NgxSkeletonLoaderModule,
     TranslateModule,
+    LazyLoadImageModule,
   ],
   exports: [
     HeaderComponent,

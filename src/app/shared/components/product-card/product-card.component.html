@@ -1,25 +1,28 @@
 <div *ngIf="!loader">
   <div class="img-wrapper">
     <div class="lable-block">
-      <span class="lable3" *ngIf="product.new">new</span>
-      <span class="lable4" *ngIf="product.sale">on sale</span>
+      <span class="lable3" *ngIf="products.new">new</span>
+      <span class="lable4" *ngIf="products.sale">on sale</span>
     </div>
     <div class="front">
       <a>
-        <img [src]="ImageSrc ? ImageSrc : product.images[0].src" class="img-fluid lazy-loading"
-          alt="{{ product.images[0].alt }}" />
+        <img 
+          [defaultImage]="ImageSrc ? ImageSrc : './assets/images/product/placeholder.jpg'" 
+          [lazyLoad]="ImageSrc ? ImageSrc : products.assets[0].assetUrl" 
+          class="img-fluid lazy-loading" 
+          alt="{{ products.assets[0].assetType }}" />
       </a>
     </div>
     <div class="back" *ngIf="onHowerChangeImage">
       <a>
-        <img [src]="ImageSrc ? ImageSrc : product.images[1].src" class="img-fluid lazy-loading"
-          alt="{{ product.images[1].alt }}">
+        <img [src]="ImageSrc ? ImageSrc : products.assets[1].assetUrl" class="img-fluid lazy-loading"
+          alt="{{ products.assets[1].assetType }}">
       </a>
     </div>
     <ul class="product-thumb-list" *ngIf="thumbnail">
-      <li class="grid_thumb_img" [class.active]="ImageSrc == image.src" *ngFor="let image of product.images">
-        <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.src)">
-          <img [src]="image.src">
+      <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl" *ngFor="let image of products.assets">
+        <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.assetUrl)">
+          <img [lazyLoad]="image.assetUrl">
         </a>
       </li>
     </ul>
@@ -27,13 +30,13 @@
       <a href="javascript:void(0)" title="Add to cart" (click)="addToCart(products)">
         <i class="ti-shopping-cart"></i>
       </a>
-      <a href="javascript:void(0)" title="Add to Wishlist">
+      <a href="javascript:void(0)" title="Add to Wishlist" (click)="addToWishlist(products)">
         <i class="ti-heart" aria-hidden="true"></i>
       </a>
       <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal()">
         <i class="ti-search" aria-hidden="true"></i>
       </a>
-      <a href="javascript:void(0)" title="Compare">
+      <a href="javascript:void(0)" title="Compare" (click)="addToCompare(products)">
         <i class="ti-reload" aria-hidden="true"></i>
       </a>
     </div>
@@ -46,10 +49,10 @@
       </a>
       <h4>
         ₹{{products?.price}}
-        <del *ngIf="products?.discount"><span class="money">₹{{products?.price}}</span></del>
+        <del *ngIf="products?.discount"><span class="money">₹{{products?.discount}}</span></del>
       </h4>
     </div>
   </div>
 </div>
 <app-skeleton-product-card *ngIf="loader"></app-skeleton-product-card>
-<app-product-modal #productView [productId]="1" [products]="products"></app-product-modal>
+<app-product-modal #productView [products]="products"></app-product-modal>

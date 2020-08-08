@@ -1,36 +1,26 @@
-import { Component, OnInit, ViewChild, Input } from "@angular/core";
-import { ProductModalComponent } from "./product-modal/product-modal.component";
-import { Product } from "../../models/Product";
-import { ProductService } from "../../services/product.service";
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { ProductModalComponent } from './product-modal/product-modal.component';
+import { Product } from '../../models/Product';
+import { ProductService } from '../../services/product.service';
+import { Cart } from '../../models/Cart';
+import { messageConstants } from '../../models/messageConstants';
+import { ToastrService } from 'ngx-toastr';
+import { Wishlist } from '../../models/Wishlist';
 
 @Component({
-  selector: "app-product-card",
-  templateUrl: "./product-card.component.html",
-  styleUrls: ["./product-card.component.scss"],
+  selector: 'app-product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
   @Input() products: Product;
-  ImageSrc: string = null;
-  thumbnail: boolean = false;
-  loader: boolean = false;
-  onHowerChangeImage: boolean = false;
-  product: any = {
-    id: 1,
-    sale: true,
-    new: true,
-    images: [
-      {
-        image_id: 111,
-        id: 1,
-        alt: "yellow",
-        src: "./assets/images/product/fashion/39.jpg",
-      },
-    ],
-  };
+  @Input() onHowerChangeImage = false;
+  @Input() thumbnail = false;
+  @Input() loader = false;
+  @ViewChild('productView') ProductView: ProductModalComponent;
 
-  @ViewChild("productView") ProductView: ProductModalComponent;
-
-  constructor(private readonly _ProductService: ProductService) {}
+  ImageSrc: string;
+  constructor(private readonly _ProductService: ProductService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if (this.loader) {
@@ -43,19 +33,25 @@ export class ProductCardComponent implements OnInit {
   ChangeVariantsImage(src) {
     this.ImageSrc = src;
   }
-  ChangeVariants(color, product) {
-    product.variants.map((item) => {
-      if (item.color === color) {
-        product.images.map((img) => {
-          if (img.image_id === item.image_id) {
-            this.ImageSrc = img.src;
-          }
-        });
-      }
+  addToCart(product: Product) {
+    const cart: Cart = new Cart();
+    cart.userId = 6;
+    cart.stockId = 3;
+    cart.quantity = 5;
+    this._ProductService.addToCart(cart).subscribe((data) => {
+      this.toastr.success(messageConstants.CART_SUCCESS, '', { timeOut: 2000 });
     });
   }
-  addToCart(product: any) {
-    console.log(product);
-    this._ProductService.addToCart(product);
+  addToWishlist(product: Product) {
+    const wishlist: Wishlist = new Wishlist();
+    wishlist.userId = 4;
+    wishlist.stockId = 2;
+    wishlist.quantity = 1;
+    this._ProductService.addToWishlist(wishlist).subscribe((data) => {
+      this.toastr.success(messageConstants.WISHLIST_SUCESS, '', { timeOut: 2000 });
+    });
+  }
+  addToCompare(product: Product) {
+    this._ProductService.addToCompare(product);
   }
 }
