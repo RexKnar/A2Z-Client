@@ -11,12 +11,10 @@ export class Product {
   categoryname: string;
   subcategoryId: number;
   subCategoryName: string;
-  price: string;
   discount: string;
   quantity: string;
-  sale: boolean;
-  new: boolean;
-  rating: number;
+  wishlist_flag: boolean;
+  new_flag: boolean;
   description: string;
   assets: Asset[];
   stock: Stock[];

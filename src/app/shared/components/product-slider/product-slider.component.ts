@@ -9,14 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductSliderComponent implements OnInit {
   public ProductSliderConfig: any = ProductSlider;
-  products: Product[] = [];
+  @Input() products: Product;
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
-    this.getProducts();
-  }
-  getProducts() {
-    this.http.get('assets/product.json').subscribe((data: Product[]) => {
-      this.products = data;
-    });
   }
 }

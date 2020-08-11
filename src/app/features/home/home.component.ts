@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.topBannerData = this._bannerService.getBanner("banner1");
     this.bottomBannerData = this._bannerService.getBanner("banner2");
-    this.topProductData = this._productService.getProduct(5);
     this.sliderData = this._sliderService.getSlider("slider1");
+    this.topProductData = this._productService.getProduct();
   }
 }
+

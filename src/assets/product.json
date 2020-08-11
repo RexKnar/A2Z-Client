@@ -5,36 +5,17 @@
         "productId": 1,
         "productName": "redmi",
         "categoryId": 1,
-        "sale": true,
-        "new": true,
+        "new_flag": true,
         "categoryname": "Electronics",
         "subcategoryId": 2,
         "subCategoryName": "Mobiles",
         "discount": 200,
-        "price": 12500,
-        "rating": 3.5,
+        "wishlist_flag": true,
         "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
-        "assets": [
-            {
-                "id": 3,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/13.jpg"
-            },
-            {
-                "id": 4,
-                "assetType": 2,
-                "assetUrl": "./assets/images/product/3.jpg"
-            },
-            {
-                "id": 6,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/14.jpg"
-            }
-        ],
         "stock": [
             {
                 "id": 3,
-                "price": 12500,
+                "price": 12000,
                 "quantity": 5,
                 "rating": 3.5,
                 "attributes": [
@@ -42,62 +23,13 @@
                         "attributeName": "Ram",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "5GB"
+                        "attributevalue": "5GB"
                     },
                     {
                         "attributeName": "Storage",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "256GB"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "https://static.toiimg.com/photo/59267498.cms"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "https://static.toiimg.com/photo/61654288.cms"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "https://i.pcmag.com/imagery/reviews/03xdTO0Ka4H4KvEgtSPg4c2-12.fit_lpad.size_625x365.v_1569479325.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "Vijay",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "Jose",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "price": 12500,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "Ram",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "value": "5GB"
-                    },
-                    {
-                        "attributeName": "Storage",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "value": "256GB"
+                        "attributevalue": "256GB"
                     }
                 ],
                 "assets": [
@@ -129,6 +61,55 @@
                         "description": "Worth Price"
                     }
                 ]
+            },
+            {
+                "id": 2,
+                "price": 10000,
+                "quantity": 5,
+                "rating": 3.5,
+                "attributes": [
+                    {
+                        "attributeName": "Ram",
+                        "attributeGroupId": 1,
+                        "attributeGroupName": "General",
+                        "attributevalue": "8GB"
+                    },
+                    {
+                        "attributeName": "Storage",
+                        "attributeGroupId": 1,
+                        "attributeGroupName": "General",
+                        "attributevalue": "128GB"
+                    }
+                ],
+                "assets": [
+                    {
+                        "id": 3,
+                        "assetType": 1,
+                        "assetUrl": "./assets/images/product/14.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "assetType": 2,
+                        "assetUrl": "./assets/images/product/3.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "assetType": 1,
+                        "assetUrl": "./assets/images/product/13.jpg"
+                    }
+                ],
+                "reviews": [
+                    {
+                        "userName": "Vijay",
+                        "rating": "4",
+                        "description": "Nice product"
+                    },
+                    {
+                        "userName": "Jose",
+                        "rating": "3.5",
+                        "description": "Worth Price"
+                    }
+                ]
             }
         ]
     },
@@ -142,29 +123,11 @@
         "subcategoryId": 2,
         "subCategoryName": "Mobiles",
         "discount": 100,
-        "price": 1300,
-        "rating": 3,
+        "wishlist_flag": false,
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "assets": [
-            {
-                "id": 3,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/13.jpg"
-            },
-            {
-                "id": 4,
-                "assetType": 2,
-                "assetUrl": "./assets/images/product/3.jpg"
-            },
-            {
-                "id": 6,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/14.jpg"
-            }
-        ],
         "stock": [
             {
-                "id": 3,
+                "id": 9,
                 "price": 1200,
                 "quantity": 5,
                 "rating": 3.5,
@@ -173,30 +136,30 @@
                         "attributeName": "Ram",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "4GB"
+                        "attributevalue": "4GB"
                     },
                     {
                         "attributeName": "Storage",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "128GB"
+                        "attributevalue": "128GB"
                     }
                 ],
                 "assets": [
                     {
                         "id": 3,
                         "assetType": 1,
-                        "assetUrl": "https://www.91-img.com/pictures/139027-v1-nokia-2.4-mobile-phone-large-1.jpg"
+                        "assetUrl": "./assets/images/product/13.jpg"
                     },
                     {
                         "id": 4,
                         "assetType": 2,
-                        "assetUrl": "https://www.91-img.com/pictures/137996-v2-nokia-5.3-mobile-phone-large-1.jpg"
+                        "assetUrl": "./assets/images/product/3.jpg"
                     },
                     {
                         "id": 6,
                         "assetType": 1,
-                        "assetUrl": "https://images-na.ssl-images-amazon.com/images/I/71qP%2BfMtbDL._SL1500_.jpg"
+                        "assetUrl": "./assets/images/product/14.jpg"
                     }
                 ],
                 "reviews": [
@@ -224,28 +187,9 @@
         "subcategoryId": 2,
         "subCategoryName": "dress",
         "discount": 50,
-        "sale": true,
-        "new": false,
-        "price": 1800,
-        "rating": 4,
+        "new_flag": false,
+        "wishlist_flag": false,
         "description": "distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "assets": [
-            {
-                "id": 3,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/13.jpg"
-            },
-            {
-                "id": 4,
-                "assetType": 2,
-                "assetUrl": "./assets/images/product/3.jpg"
-            },
-            {
-                "id": 6,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/14.jpg"
-            }
-        ],
         "stock": [
             {
                 "id": 3,
@@ -257,25 +201,25 @@
                         "attributeName": "color",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "green"
+                        "attributevalue": "green"
                     },
                     {
                         "attributeName": "color",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "red"
+                        "attributevalue": "red"
                     },
                     {
                         "attributeName": "size",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "S"
+                        "attributevalue": "S"
                     },
                     {
                         "attributeName": "size",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "L"
+                        "attributevalue": "L"
                     }
                 ],
                 "assets": [
@@ -320,28 +264,10 @@
         "subcategoryId": 2,
         "subCategoryName": "Mobiles",
         "discount": 100,
-        "sale": false,
-        "new": true,
+        "new_flag": true,
         "price": 1300,
-        "rating": 3,
+        "wishlist_flag": false,
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "assets": [
-            {
-                "id": 3,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/13.jpg"
-            },
-            {
-                "id": 4,
-                "assetType": 2,
-                "assetUrl": "./assets/images/product/3.jpg"
-            },
-            {
-                "id": 6,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/14.jpg"
-            }
-        ],
         "stock": [
             {
                 "id": 3,
@@ -353,30 +279,79 @@
                         "attributeName": "Ram",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "4GB"
+                        "attributevalue": "4GB"
                     },
                     {
                         "attributeName": "Storage",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "128GB"
+                        "attributevalue": "128GB"
                     }
                 ],
                 "assets": [
                     {
                         "id": 3,
                         "assetType": 1,
-                        "assetUrl": "https://www.91-img.com/pictures/139027-v1-nokia-2.4-mobile-phone-large-1.jpg"
+                        "assetUrl": "./assets/images/product/13.jpg"
                     },
                     {
                         "id": 4,
                         "assetType": 2,
-                        "assetUrl": "https://www.91-img.com/pictures/137996-v2-nokia-5.3-mobile-phone-large-1.jpg"
+                        "assetUrl": "./assets/images/product/3.jpg"
                     },
                     {
                         "id": 6,
                         "assetType": 1,
-                        "assetUrl": "https://images-na.ssl-images-amazon.com/images/I/71qP%2BfMtbDL._SL1500_.jpg"
+                        "assetUrl": "./assets/images/product/14.jpg"
+                    }
+                ],
+                "reviews": [
+                    {
+                        "userName": "karthi",
+                        "rating": "4",
+                        "description": "Nice product"
+                    },
+                    {
+                        "userName": "vicky",
+                        "rating": "3.5",
+                        "description": "Worth Price"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "price": 1700,
+                "quantity": 5,
+                "rating": 3.5,
+                "attributes": [
+                    {
+                        "attributeName": "Ram",
+                        "attributeGroupId": 1,
+                        "attributeGroupName": "General",
+                        "attributevalue": "2GB"
+                    },
+                    {
+                        "attributeName": "Storage",
+                        "attributeGroupId": 1,
+                        "attributeGroupName": "General",
+                        "attributevalue": "64GB"
+                    }
+                ],
+                "assets": [
+                    {
+                        "id": 3,
+                        "assetType": 1,
+                        "assetUrl": "./assets/images/product/14.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "assetType": 2,
+                        "assetUrl": "./assets/images/product/3.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "assetType": 1,
+                        "assetUrl": "./assets/images/product/13.jpg"
                     }
                 ],
                 "reviews": [
@@ -404,28 +379,10 @@
         "subcategoryId": 2,
         "subCategoryName": "dress",
         "discount": 50,
-        "sale": true,
-        "new": true,
+        "new_flag": true,
         "price": 1800,
-        "rating": 4,
+        "wishlist_flag": false,
         "description": "distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "assets": [
-            {
-                "id": 3,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/13.jpg"
-            },
-            {
-                "id": 4,
-                "assetType": 2,
-                "assetUrl": "./assets/images/product/3.jpg"
-            },
-            {
-                "id": 6,
-                "assetType": 1,
-                "assetUrl": "./assets/images/product/14.jpg"
-            }
-        ],
         "stock": [
             {
                 "id": 3,
@@ -437,25 +394,25 @@
                         "attributeName": "color",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "green"
+                        "attributevalue": "green"
                     },
                     {
                         "attributeName": "color",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "red"
+                        "attributevalue": "red"
                     },
                     {
                         "attributeName": "size",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "S"
+                        "attributevalue": "S"
                     },
                     {
                         "attributeName": "size",
                         "attributeGroupId": 1,
                         "attributeGroupName": "General",
-                        "value": "L"
+                        "attributevalue": "L"
                     }
                 ],
                 "assets": [

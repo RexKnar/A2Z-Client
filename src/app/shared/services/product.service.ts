@@ -8,35 +8,38 @@ import { Wishlist } from '../models/Wishlist';
 import { ToastrService } from 'ngx-toastr';
 
 const state = {
-  compare: JSON.parse(localStorage.compareItems || '[]')
+  compare: JSON.parse(sessionStorage.compareItems || '[]')
 };
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   constructor(private readonly httpClient: HttpClient, private toastrService: ToastrService) { }
-
-  getProduct(productCount: number): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.TopSellingProductURL + productCount);
-
+  getProduct(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(PRODUCT_API_CONFIG.ProductListURL);
   }
   getProductDetail(productId: number): Observable<Product[]> {
     return this.httpClient.get<Product[]>(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.ProductDetailURL + productId);
   }
   addToCart(cart: Cart): Observable<any> {
-    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToCart, cart, { responseType: 'text' });
+    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToCartURL, cart, { responseType: 'text' });
   }
   addToWishlist(wishlist: Wishlist): Observable<any> {
-    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToWishlist, wishlist, { responseType: 'text' });
+    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToWishlistURL, wishlist, { responseType: 'text' });
   }
 
   addToCompare(product): any {
     const compareItem = state.compare.find(item => item.productId === product.productId);
 
     if ((!compareItem && state.compare && state.compare[0]
-      && state.compare[0].subcategoryId === product.subcategoryId)
+      && state.compare[0].subCategoryName === product.subCategoryName)
       || (!compareItem && (!state.compare || state.compare.length === 0))) {
+      if (state.compare.length === 4) {
+        this.toastrService.error('please remove any product');
+        return false;
+      }
       state.compare.push({
         ...product
       });
@@ -45,7 +48,7 @@ export class ProductService {
       return false;
     }
     this.toastrService.success('Product has been added to compare');
-    localStorage.setItem('compareItems', JSON.stringify(state.compare));
+    sessionStorage.setItem('compareItems', JSON.stringify(state.compare));
     return true;
   }
 }

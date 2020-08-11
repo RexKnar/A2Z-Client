@@ -8,6 +8,9 @@ import {
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from 'src/app/shared/models/Product';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { ProductAttributes } from 'src/app/shared/models/ProductAttributes';
+import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
+import { Stock } from 'src/app/shared/models/Stock';
 
 @Component({
   selector: 'app-product-modal',
@@ -17,7 +20,9 @@ import { ProductService } from 'src/app/shared/services/product.service';
 export class ProductModalComponent implements OnInit {
   @ViewChild('productView', { static: false }) ProductView: TemplateRef<any>;
   @Input() products: Product;
-  @Input() productId: number;
+  currentStock: Stock;
+  attributes: ProductAttributes[] = [];
+  attributeGroups: any = {};
   public modalOpen = false;
   public ImageSrc: string;
   constructor(
@@ -25,7 +30,10 @@ export class ProductModalComponent implements OnInit {
     private readonly _ProductService: ProductService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.currentStock = this.products.stock[0];
+    this.getAttribute();
+  }
   openModal() {
     this.modalOpen = true;
     this.modalService.open(this.ProductView, {
@@ -35,4 +43,39 @@ export class ProductModalComponent implements OnInit {
       windowClass: 'Productview',
     });
   }
+  getAttribute() {
+    this.products.stock.forEach(stock => {
+      stock.attributes.forEach(attribute => {
+        attribute.stockId = stock.id;
+        this.attributes.push(attribute);
+      });
+    });
+    for (let i = 0; i < Object.keys(this.attributes).length; i++) {
+      const groupName = this.attributes[i].attributeName;
+      if (!this.attributeGroups[groupName]) {
+        this.attributeGroups[groupName] = [];
+      }
+      this.attributeGroups[groupName].push(this.attributes[i]);
+    }
+  }
+  showAttributes(attribute) {
+    this.products.stock.forEach(element => {
+      if (element.id === attribute.stockId) {
+        this.currentStock = element;
+      }
+    });
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

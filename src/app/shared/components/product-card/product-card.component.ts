@@ -49,6 +49,7 @@ export class ProductCardComponent implements OnInit {
     wishlist.quantity = 1;
     this._ProductService.addToWishlist(wishlist).subscribe((data) => {
       this.toastr.success(messageConstants.WISHLIST_SUCESS, '', { timeOut: 2000 });
+      product.wishlist_flag = !product.wishlist_flag;
     });
   }
   addToCompare(product: Product) {
