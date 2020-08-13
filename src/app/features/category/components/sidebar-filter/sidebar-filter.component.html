@@ -5,7 +5,13 @@
       <span class="filter-back"> <i class="fa fa-angle-left" aria-hidden="true"></i> back </span>
     </div>
     <!-- Category filter start -->
-    <app-category-filter [categories]="categories"></app-category-filter>
+    <app-category-filter
+      [categories]="categories"
+      [isShowSubCategory]="isShowSubCategory"
+      [isShowCategory]="isShowCategory"
+      [selectedSubCategory]="selectedSubCategory"
+      (selectSubCategoryEvent)="onSelectSubCategory($event)"
+    ></app-category-filter>
   </div>
   <!-- silde-bar colleps block end here -->
   <!-- side-bar colleps block stat -->

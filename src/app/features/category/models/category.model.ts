@@ -1,10 +1,10 @@
 export interface CategoryModel {
   id: number;
-  name: string;
+  categoryName: string;
   subcategory: SubCategoryModel[];
 }
 
-interface SubCategoryModel {
+export interface SubCategoryModel {
   id: number;
-  name: string;
+  subcategoryName: string;
 }

@@ -2,10 +2,22 @@
   <h3 class="collapse-block-title" (click)="collapse = !collapse">Category</h3>
   <div class="collection-collapse-block-content">
     <div class="collection-brand-filter">
-      <ul class="category-list">
+      <ul class="category-list" *ngIf="isShowCategory">
         <li *ngFor="let category of categories">
-          <a [routerLink]="['/category']" [queryParams]="{ category: category.name }">
-            {{ category.name }}
+          <a [routerLink]="['/category']" [queryParams]="{ category: category.categoryName }">
+            {{ category.categoryName }}
+          </a>
+        </li>
+      </ul>
+      <ul class="category-list" *ngIf="!isShowCategory">
+        <li *ngFor="let subcategory of selectedSubCategory">
+          <a
+            [routerLink]="['/category']"
+            [queryParams]="{ subcategory: subcategory.subcategoryName }"
+            queryParamsHandling="merge"
+            (click)="onSelectSubCategory(subcategory)"
+          >
+            {{ subcategory.subcategoryName }}
           </a>
         </li>
       </ul>

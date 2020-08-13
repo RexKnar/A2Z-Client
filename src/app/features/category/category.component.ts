@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryModel } from './models/category.model';
+import { CategoryModel, SubCategoryModel } from './models/category.model';
 import { AttributeModel } from './models/attribute.model';
 import { ProductModel } from './models/product.model';
 import { CategoryService } from './services/category.service';
@@ -29,6 +29,9 @@ export class CategoryComponent implements OnInit {
   public pageNo: number = 1;
   public paginate: any = {}; // Pagination use only
   public loader: boolean = true;
+  public isShowSubCategory: boolean = false;
+  public isShowCategory: boolean = true;
+  public selectedSubCategory: SubCategoryModel[];
 
   constructor(
     private readonly _categoryService: CategoryService,
@@ -40,10 +43,13 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.filteredCategory = queryParams['category'];
-      if (this.filteredCategory != undefined) {
-        this.applyFilter();
+      if (this.filteredCategory == undefined) {
+        this.isShowCategory = true;
+        this.isShowSubCategory = false;
       } else {
-        this.filteredCategory = '';
+        this.isShowCategory = false;
+        this.isShowSubCategory = true;
+        this.selectedSubCategory = this._filterSubCategoryFromCategory(this.filteredCategory);
       }
       this.paginate = this.getPager(this.products.length, +this.pageNo);
     });
@@ -54,7 +60,19 @@ export class CategoryComponent implements OnInit {
   public getAllCategories(): void {
     this._categoryService.getAllCategories().subscribe((data) => {
       this.categories = data;
+      this.isShowCategory = true;
+      this.isShowSubCategory = false;
+      if (this.filteredCategory != undefined) {
+        this.isShowCategory = false;
+        this.isShowSubCategory = true;
+        this.selectedSubCategory = this._filterSubCategoryFromCategory(this.filteredCategory);
+      }
     });
+  }
+
+  private _filterSubCategoryFromCategory(categoryName): SubCategoryModel[] {
+    const selectedCategory = this.categories.find((x) => x.categoryName == categoryName);
+    return selectedCategory.subcategory;
   }
 
   private _initializeValues(): void {
@@ -101,6 +119,10 @@ export class CategoryComponent implements OnInit {
       this.filteredAttributes.splice(clearRemovedFilterIndex, 1);
     }
     this.applyFilter();
+  }
+
+  public onSelectSubCategory(element: SubCategoryModel): void {
+    console.log(element);
   }
 
   public applyFilter(): void {
@@ -251,4 +273,3 @@ export class CategoryComponent implements OnInit {
     };
   }
 }
-

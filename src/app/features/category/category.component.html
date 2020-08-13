@@ -8,12 +8,16 @@
             (updateFilterEvent)="updateFilter($event)"
             (toggleMobileSidebarEvent)="toggleMobileSidebar()"
             (updatePriceFilterEvent)="updatePriceFilterEvent($event)"
+            (selectSubCategoryEvent)="onSelectSubCategory($event)"
             [mobileSidebar]="mobileSidebar"
             [minPrice]="minPrice"
             [maxPrice]="maxPrice"
             [products]="products"
             [attributes]="attributes"
             [categories]="categories"
+            [isShowSubCategory]="isShowSubCategory"
+            [isShowCategory]="isShowCategory"
+            [selectedSubCategory]="selectedSubCategory"
           ></app-sidebar-filter>
         </div>
         <div class="collection-content col">
