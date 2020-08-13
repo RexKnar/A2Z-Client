@@ -113,12 +113,12 @@ export class CategoryComponent implements OnInit {
     if (index !== -1) {
       this.filteredAttributes.splice(index, 1);
     }
-    this.filteredAttributes.push(values);
-    const clearRemovedFilterIndex = this.filteredAttributes.findIndex((x) => x.attributeValues.length == 0);
-    if (clearRemovedFilterIndex !== -1) {
-      this.filteredAttributes.splice(clearRemovedFilterIndex, 1);
-    }
-    this.applyFilter();
+    // this.filteredAttributes.push(values);
+    // const clearRemovedFilterIndex = this.filteredAttributes.findIndex((x) => x.attributeValues.length == 0);
+    // if (clearRemovedFilterIndex !== -1) {
+    //   this.filteredAttributes.splice(clearRemovedFilterIndex, 1);
+    // }
+    // this.applyFilter();
   }
 
   public onSelectSubCategory(element: SubCategoryModel): void {
@@ -126,15 +126,15 @@ export class CategoryComponent implements OnInit {
   }
 
   public applyFilter(): void {
-    this.filteredSearch = {
-      category: this.filteredCategory,
-      attribute: this.filteredAttributes,
-      price: {
-        minPrice: this.minPrice,
-        maxPrice: this.maxPrice,
-      },
-    };
-    console.log(this.filteredSearch);
+    // this.filteredSearch = {
+    //   category: this.filteredCategory,
+    //   attribute: this.filteredAttributes,
+    //   price: {
+    //     minPrice: this.minPrice,
+    //     maxPrice: this.maxPrice,
+    //   },
+    // };
+    // console.log(this.filteredSearch);
   }
 
   public updatePriceFilterEvent(event): void {
