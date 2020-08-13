@@ -1,6 +1,6 @@
 import { Slider } from "./../../shared/models/slider";
 import { Observable } from "rxjs";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Banner } from "src/app/shared/models/Banner";
 import { BannerService } from "src/app/shared/services/banner.service";
 import { Product } from "src/app/shared/models/Product";
@@ -13,6 +13,7 @@ import { SliderService } from "src/app/shared/services/slider.service";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
+ 
   constructor(
     private _bannerService: BannerService,
     private _productService: ProductService,

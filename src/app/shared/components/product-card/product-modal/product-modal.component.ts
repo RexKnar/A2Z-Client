@@ -18,6 +18,7 @@ import { Stock } from 'src/app/shared/models/Stock';
   styleUrls: ['./product-modal.component.scss'],
 })
 export class ProductModalComponent implements OnInit {
+   isactive : string;
   @ViewChild('productView', { static: false }) ProductView: TemplateRef<any>;
   @Input() products: Product;
   currentStock: Stock;
@@ -33,6 +34,10 @@ export class ProductModalComponent implements OnInit {
   ngOnInit(): void {
     this.currentStock = this.products.stock[0];
     this.getAttribute();
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+   
+    this.isactive = this.products[0].
   }
   openModal() {
     this.modalOpen = true;
@@ -59,12 +64,19 @@ export class ProductModalComponent implements OnInit {
     }
   }
   showAttributes(attribute) {
+ 
     this.products.stock.forEach(element => {
       if (element.id === attribute.stockId) {
         this.currentStock = element;
+
       }
     });
+  
+      
+  
   }
+
+
 }
 
 

@@ -12,21 +12,26 @@
                     </div>
                 </div>
                 <div class="col-lg-6 rtl-text">
-                    <div class="product-right">
+                    <div class="product-right text-left">
                         <h2>{{ products?.productName | titlecase }}</h2>
                         <h3>₹{{ currentStock.price}}
                             <del *ngIf="products?.discount"><span
                                     class="money">₹{{ currentStock.price}}</span></del>
                         </h3>
-                        <ul *ngIf="attributeGroups">
-                            <li *ngFor="let attributeGroup of attributeGroups | keyvalue">
-                                <div class="attribute"><h3>{{attributeGroup.key}}</h3>
-                                    <div *ngFor="let attribute of attributeGroup.value">
-                                        <a><h4 style="margin-right:10px" (click)="showAttributes(attribute)">{{attribute.attributevalue}}</h4></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                       
+                        <div *ngIf="attributeGroups">
+
+                            <div class="size-box" *ngFor="let attributeGroup of attributeGroups | keyvalue">
+                                <h4>{{attributeGroup.key}}</h4>
+                                <ul>
+                                    <li  *ngFor="let attribute of attributeGroup.value">
+                                        <a (click)="showAttributes(attribute)" [ngClass]="{ 'active-box':  isactive == attribute.attributevalue }">{{attribute.attributevalue}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                       
                         <div class="border-product">
                             <h6 class="product-title">product details</h6>
                             <p>{{ products.description.substring(0, 200)+'...' }} </p>
@@ -35,7 +40,7 @@
                             <h6 class="product-title">quantity</h6>
                             <app-quantity></app-quantity>
                         </div>
-                        <div class="product-buttons">
+                        <div class="product-buttons text-center">
                             <a href="javascript:void(0)" class="btn btn-solid">add to cart</a>
                             <a class="btn btn-solid">view detail</a>
                         </div>
