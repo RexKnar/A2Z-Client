@@ -4,6 +4,8 @@ import {
   ViewChild,
   TemplateRef,
   Input,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Product } from 'src/app/shared/models/Product';
@@ -11,14 +13,15 @@ import { ProductService } from 'src/app/shared/services/product.service';
 import { ProductAttributes } from 'src/app/shared/models/ProductAttributes';
 import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
 import { Stock } from 'src/app/shared/models/Stock';
+import { Attribute } from '@angular/compiler';
 
 @Component({
   selector: 'app-product-modal',
   templateUrl: './product-modal.component.html',
   styleUrls: ['./product-modal.component.scss'],
 })
-export class ProductModalComponent implements OnInit {
-   isactive : string;
+export class ProductModalComponent implements OnInit, OnChanges {
+  public isactive: string;
   @ViewChild('productView', { static: false }) ProductView: TemplateRef<any>;
   @Input() products: Product;
   currentStock: Stock;
@@ -33,12 +36,12 @@ export class ProductModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentStock = this.products.stock[0];
+    this.isactive = this.products.stock[0].attributes[0].attributevalue;
     this.getAttribute();
   }
   ngOnChanges(changes: SimpleChanges): void {
-   
-    this.isactive = this.products[0].
   }
+
   openModal() {
     this.modalOpen = true;
     this.modalService.open(this.ProductView, {
@@ -49,6 +52,16 @@ export class ProductModalComponent implements OnInit {
     });
   }
   getAttribute() {
+    // attributrName : Ram
+    // if(attrivutes == Ram)
+    // Attribute Array Push
+
+    // isActive data
+    // data attributename == Attribute name
+    // take group id
+    // make other value as a disable
+
+    this.attributes = [];
     this.products.stock.forEach(stock => {
       stock.attributes.forEach(attribute => {
         attribute.stockId = stock.id;
@@ -63,17 +76,16 @@ export class ProductModalComponent implements OnInit {
       this.attributeGroups[groupName].push(this.attributes[i]);
     }
   }
+
+
   showAttributes(attribute) {
- 
+    this.isactive = attribute.attributevalue;
     this.products.stock.forEach(element => {
       if (element.id === attribute.stockId) {
         this.currentStock = element;
 
       }
     });
-  
-      
-  
   }
 
 
