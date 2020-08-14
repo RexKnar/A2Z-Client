@@ -1,450 +1,116 @@
 [
-    {
-        "token": "sdfnsdk",
-        "userId": "8sdhfos8e",
-        "productId": 1,
-        "productName": "redmi",
-        "categoryId": 1,
-        "new_flag": true,
-        "categoryname": "Electronics",
-        "subcategoryId": 2,
-        "subCategoryName": "Mobiles",
-        "discount": 200,
-        "wishlist_flag": true,
-        "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
-        "stock": [
-            {
-                "id": 3,
-                "price": 12000,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "Ram",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "5GB"
-                    },
-                    {
-                        "attributeName": "Storage",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "256GB"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "Vijay",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "Jose",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "price": 10000,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "Ram",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "8GB"
-                    },
-                    {
-                        "attributeName": "Storage",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "128GB"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "Vijay",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "Jose",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            }
+  {
+    "token": "sdfnsdk",
+    "userId": "8sdhfos8e",
+    "productId": 1,
+    "productName": "redmi",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stock": [
+      {
+        "id": 1,
+        "price": 12000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
         ]
-    },
-    {
-        "token": "sdfnsdkkavi",
-        "userId": "8sdhfos8eyuyutuy",
-        "productId": 2,
-        "productName": "Samsung",
-        "categoryId": 1,
-        "categoryname": "Electronics",
-        "subcategoryId": 2,
-        "subCategoryName": "Mobiles",
-        "discount": 100,
-        "wishlist_flag": false,
-        "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "stock": [
-            {
-                "id": 9,
-                "price": 1200,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "Ram",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "4GB"
-                    },
-                    {
-                        "attributeName": "Storage",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "128GB"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "karthi",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "vicky",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            }
+      },
+      {
+        "id": 3,
+        "price": 12000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
         ]
-    },
-    {
-        "token": "sdfnsdkk",
-        "userId": "8sdhfos888",
-        "productId": 3,
-        "productName": "Jeans",
-        "categoryId": 1,
-        "categoryname": "cloth",
-        "subcategoryId": 2,
-        "subCategoryName": "dress",
-        "discount": 50,
-        "new_flag": false,
-        "wishlist_flag": false,
-        "description": "distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "stock": [
-            {
-                "id": 3,
-                "price": 1500,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "color",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "green"
-                    },
-                    {
-                        "attributeName": "color",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "red"
-                    },
-                    {
-                        "attributeName": "size",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "S"
-                    },
-                    {
-                        "attributeName": "size",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "L"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "karthi",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "vicky",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "token": "sdfnsdkkavi",
-        "userId": "8sdhfos8eyuyukel",
-        "productId": 4,
-        "productName": "opppo",
-        "categoryId": 1,
-        "categoryname": "Electronics",
-        "subcategoryId": 2,
-        "subCategoryName": "Mobiles",
-        "discount": 100,
-        "new_flag": true,
-        "price": 1300,
-        "wishlist_flag": false,
-        "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "stock": [
-            {
-                "id": 3,
-                "price": 1200,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "Ram",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "4GB"
-                    },
-                    {
-                        "attributeName": "Storage",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "128GB"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "karthi",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "vicky",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            },
-            {
-                "id": 4,
-                "price": 1700,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "Ram",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "2GB"
-                    },
-                    {
-                        "attributeName": "Storage",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "64GB"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "karthi",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "vicky",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "token": "sdfnsdkk",
-        "userId": "8sdhfos111",
-        "productId": 4,
-        "productName": "Frock",
-        "categoryId": 1,
-        "categoryname": "cloth",
-        "subcategoryId": 2,
-        "subCategoryName": "dress",
-        "discount": 50,
-        "new_flag": true,
-        "price": 1800,
-        "wishlist_flag": false,
-        "description": "distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib",
-        "stock": [
-            {
-                "id": 3,
-                "price": 1500,
-                "quantity": 5,
-                "rating": 3.5,
-                "attributes": [
-                    {
-                        "attributeName": "color",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "green"
-                    },
-                    {
-                        "attributeName": "color",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "red"
-                    },
-                    {
-                        "attributeName": "size",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "S"
-                    },
-                    {
-                        "attributeName": "size",
-                        "attributeGroupId": 1,
-                        "attributeGroupName": "General",
-                        "attributevalue": "L"
-                    }
-                ],
-                "assets": [
-                    {
-                        "id": 3,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/13.jpg"
-                    },
-                    {
-                        "id": 4,
-                        "assetType": 2,
-                        "assetUrl": "./assets/images/product/3.jpg"
-                    },
-                    {
-                        "id": 6,
-                        "assetType": 1,
-                        "assetUrl": "./assets/images/product/14.jpg"
-                    }
-                ],
-                "reviews": [
-                    {
-                        "userName": "karthi",
-                        "rating": "4",
-                        "description": "Nice product"
-                    },
-                    {
-                        "userName": "vicky",
-                        "rating": "3.5",
-                        "description": "Worth Price"
-                    }
-                ]
-            }
-        ]
-    }
+      }
+    ]
+  }
 ]

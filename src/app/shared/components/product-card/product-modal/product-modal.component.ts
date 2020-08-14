@@ -6,23 +6,21 @@ import {
   Input,
   OnChanges,
   SimpleChanges,
-} from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Product } from 'src/app/shared/models/Product';
-import { ProductService } from 'src/app/shared/services/product.service';
-import { ProductAttributes } from 'src/app/shared/models/ProductAttributes';
-import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
-import { Stock } from 'src/app/shared/models/Stock';
-import { Attribute } from '@angular/compiler';
+} from "@angular/core";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Product } from "src/app/shared/models/Product";
+import { ProductService } from "src/app/shared/services/product.service";
+import { ProductAttributes } from "src/app/shared/models/ProductAttributes";
+import { Stock } from "src/app/shared/models/Stock";
 
 @Component({
-  selector: 'app-product-modal',
-  templateUrl: './product-modal.component.html',
-  styleUrls: ['./product-modal.component.scss'],
+  selector: "app-product-modal",
+  templateUrl: "./product-modal.component.html",
+  styleUrls: ["./product-modal.component.scss"],
 })
 export class ProductModalComponent implements OnInit, OnChanges {
-  public isactive: string;
-  @ViewChild('productView', { static: false }) ProductView: TemplateRef<any>;
+  public isactive: number;
+  @ViewChild("productView", { static: false }) ProductView: TemplateRef<any>;
   @Input() products: Product;
   currentStock: Stock;
   attributes: ProductAttributes[] = [];
@@ -32,38 +30,28 @@ export class ProductModalComponent implements OnInit, OnChanges {
   constructor(
     private modalService: NgbModal,
     private readonly _ProductService: ProductService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.currentStock = this.products.stock[0];
-    this.isactive = this.products.stock[0].attributes[0].attributevalue;
+    this.isactive = this.products.stock[0].id;
     this.getAttribute();
   }
-  ngOnChanges(changes: SimpleChanges): void {
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 
   openModal() {
     this.modalOpen = true;
     this.modalService.open(this.ProductView, {
-      size: 'lg',
-      ariaLabelledBy: 'modal-basic-title',
+      size: "lg",
+      ariaLabelledBy: "modal-basic-title",
       centered: true,
-      windowClass: 'Productview',
+      windowClass: "Productview",
     });
   }
+
   getAttribute() {
-    // attributrName : Ram
-    // if(attrivutes == Ram)
-    // Attribute Array Push
-
-    // isActive data
-    // data attributename == Attribute name
-    // take group id
-    // make other value as a disable
-
-    this.attributes = [];
-    this.products.stock.forEach(stock => {
-      stock.attributes.forEach(attribute => {
+    this.products.stock.forEach((stock) => {
+      stock.attributes.forEach((attribute) => {
         attribute.stockId = stock.id;
         this.attributes.push(attribute);
       });
@@ -73,33 +61,22 @@ export class ProductModalComponent implements OnInit, OnChanges {
       if (!this.attributeGroups[groupName]) {
         this.attributeGroups[groupName] = [];
       }
-      this.attributeGroups[groupName].push(this.attributes[i]);
+      this.attributeGroups[groupName].forEach((element) => {
+        console.log(element.attributevalue);
+        if (element.attributevalue != this.attributes[i].attributevalue) {
+          this.attributeGroups[groupName].push(this.attributes[i]);
+        }
+      });
     }
+    console.log(this.attributeGroups);
   }
 
-
   showAttributes(attribute) {
-    this.isactive = attribute.attributevalue;
-    this.products.stock.forEach(element => {
+    this.isactive = attribute.stockId;
+    this.products.stock.forEach((element) => {
       if (element.id === attribute.stockId) {
         this.currentStock = element;
-
       }
     });
   }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
