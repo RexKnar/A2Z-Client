@@ -61,12 +61,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
       if (!this.attributeGroups[groupName]) {
         this.attributeGroups[groupName] = [];
       }
-      this.attributeGroups[groupName].forEach((element) => {
-        console.log(element.attributevalue);
-        if (element.attributevalue != this.attributes[i].attributevalue) {
-          this.attributeGroups[groupName].push(this.attributes[i]);
-        }
-      });
+      this.attributeGroups[groupName].push(this.attributes[i]);
     }
     console.log(this.attributeGroups);
   }
