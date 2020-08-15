@@ -1,10 +1,10 @@
-import { messageConstants } from './../../models/messageConstants';
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FooterService } from "../../services/footer.service";
 import { Subscription } from "../../models/Subscription";
 import { Category } from "../../models/Category";
 import { ToastrService } from "ngx-toastr";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { MessageConstants } from '../../models/messageConstants';
 @Component({
   selector: "app-footer",
   templateUrl: "./footer.component.html",
@@ -52,11 +52,11 @@ export class FooterComponent implements OnInit {
         .subscribe((data) => {
           this.subscriptionForm.reset();
           this.submitted = false;
-          this.toastr.success(messageConstants.SUBSCRIBE_SUCCESS, "", { timeOut: 2000 });
+          this.toastr.success(MessageConstants.SUBSCRIBE_SUCCESS, "", { timeOut: 2000 });
         });
     }
     else {
-      this.toastr.error(messageConstants.SUBSCRIBE_ERROR, "", { timeOut: 2000 });
+      this.toastr.error(MessageConstants.SUBSCRIBE_ERROR, "", { timeOut: 2000 });
     }
   }
 }

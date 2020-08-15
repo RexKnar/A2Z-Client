@@ -1,5 +1,5 @@
 export class Slider {
-    id: Number;
+    id: number;
     navigationUrl: string;
     imageUrl: string;
     discountText: string;

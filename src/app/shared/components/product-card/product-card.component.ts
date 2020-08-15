@@ -3,9 +3,9 @@ import { ProductModalComponent } from './product-modal/product-modal.component';
 import { Product } from '../../models/Product';
 import { ProductService } from '../../services/product.service';
 import { Cart } from '../../models/Cart';
-import { messageConstants } from '../../models/messageConstants';
 import { ToastrService } from 'ngx-toastr';
 import { Wishlist } from '../../models/Wishlist';
+import { MessageConstants } from '../../models/messageConstants';
 
 @Component({
   selector: 'app-product-card',
@@ -39,7 +39,7 @@ export class ProductCardComponent implements OnInit {
     cart.stockId = 3;
     cart.quantity = 5;
     this._ProductService.addToCart(cart).subscribe((data) => {
-      this.toastr.success(messageConstants.CART_SUCCESS, '', { timeOut: 2000 });
+      this.toastr.success(MessageConstants.CART_SUCCESS, '', { timeOut: 2000 });
     });
   }
   addToWishlist(product: Product) {
@@ -48,7 +48,7 @@ export class ProductCardComponent implements OnInit {
     wishlist.stockId = 2;
     wishlist.quantity = 1;
     this._ProductService.addToWishlist(wishlist).subscribe((data) => {
-      this.toastr.success(messageConstants.WISHLIST_SUCESS, '', { timeOut: 2000 });
+      this.toastr.success(MessageConstants.WISHLIST_SUCESS, '', { timeOut: 2000 });
       product.wishlistFlag = !product.wishlistFlag;
     });
   }
