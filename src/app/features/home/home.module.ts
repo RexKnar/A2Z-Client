@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [BannerService],
   declarations: [HomeComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }
 

@@ -12,11 +12,15 @@ export const BANNER_API_CONFIG = {
     BannerURL: '/Banner/GetBannerByBannerLocation/'
 };
 export const PRODUCT_API_CONFIG = {
-    TopSellingProductURL: '/Product/GetTopSellingProducts/'
+    TopSellingProductURL: '/Product/GetTopSellingProducts/',
+    ProductDetailURL: '/Product/GetProductDetailsByProductId/',
+    AddToCartURL: '/Cart',
+    AddToWishlistURL: '/Wishlist',
+    ProductListURL: 'assets/product.json'
 };
 export const SLIDER_API_CONFIG = {
     SliderURL: '/Banner/GetBannerByBannerLocation/'
 };
-export class Apiresponce{
+export class Apiresponce {
 responseCode: string;
 }

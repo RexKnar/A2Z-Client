@@ -2,7 +2,7 @@
 export let ProductSlider: any = {
     loop: true,
     dots: false,
-    autoplay:true,
+    autoplay:false,
     navSpeed: 2000,
     responsive: {
         991: {

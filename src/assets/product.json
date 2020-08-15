@@ -1,0 +1,116 @@
+[
+  {
+    "token": "sdfnsdk",
+    "userId": "8sdhfos8e",
+    "productId": 1,
+    "productName": "redmi",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stock": [
+      {
+        "id": 1,
+        "price": 12000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributevalue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  }
+]

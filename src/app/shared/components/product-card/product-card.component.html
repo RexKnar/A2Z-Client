@@ -1,0 +1,57 @@
+<div *ngIf="!loader">
+  <div class="img-wrapper">
+    <div class="lable-block">
+      <span class="lable3" *ngIf="products.new_flag">new</span>
+    </div>
+    <div class="front">
+      <a>
+        <img 
+          [defaultImage]="ImageSrc ? ImageSrc : './assets/images/product/placeholder.jpg'" 
+          [lazyLoad]="ImageSrc ? ImageSrc : products.stock[0].assets[0].assetUrl" 
+          class="img-fluid lazy-loading" 
+          alt="{{ products.stock[0].assets[0].assetType }}" />
+      </a>
+    </div>
+    <div class="back" *ngIf="onHowerChangeImage">
+      <a>
+        <img [src]="ImageSrc ? ImageSrc : products.stock[0].assets[0].assetUrl" class="img-fluid lazy-loading"
+          alt="{{ products.stock[0].assets[0].assetType }}">
+      </a>
+    </div>
+    <ul class="product-thumb-list" *ngIf="thumbnail">
+      <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl" *ngFor="let image of products.stock[0].assets">
+        <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.assetUrl)">
+          <img [lazyLoad]="image.assetUrl">
+        </a>
+      </li>
+    </ul>
+    <div class="cart-info cart-wrap">
+      <a href="javascript:void(0)" title="Add to cart" (click)="addToCart(products)">
+        <i class="ti-shopping-cart"></i>
+      </a>
+      <a href="javascript:void(0)" title="Add to Wishlist" (click)="addToWishlist(products)">
+        <i class="fa"  [ngClass]="{'fa-heart' : products.wishlist_flag,'fa-heart-o' : !products.wishlist_flag}"  aria-hidden="true"></i>
+      </a>
+      <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal()">
+        <i class="ti-search" aria-hidden="true"></i>
+      </a>
+      <a href="javascript:void(0)" title="Compare" (click)="addToCompare(products)">
+        <i class="ti-reload" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="product-detail">
+    <div>
+      <bar-rating [rate]="products.stock[0].rating" [readOnly]="true"></bar-rating>
+      <a>
+        <h6>{{ products?.productName | titlecase }}</h6>
+      </a>
+      <h4>
+        ₹{{products?.stock[0].price}}
+        <del *ngIf="products?.discount"><span class="money">₹{{products?.discount}}</span></del>
+      </h4>
+    </div>
+  </div>
+</div>
+<app-skeleton-product-card *ngIf="loader"></app-skeleton-product-card>
+<app-product-modal #productView [products]="products"></app-product-modal>
