@@ -3,20 +3,18 @@ import { ProductAttributes } from './ProductAttributes';
 import { Stock } from './Stock';
 import { Reviews } from './reviews';
 export class Product {
-  token: string;
-  userId: string;
   productId: string;
   productName: string;
   categoryId: number;
-  categoryname: string;
-  subcategoryId: number;
+  categoryName: string;
+  subCategoryId: number;
   subCategoryName: string;
   discount: string;
   quantity: string;
-  wishlist_flag: boolean;
-  new_flag: boolean;
+  wishlistFlag: boolean;
+  newFlag: boolean;
   description: string;
   assets: Asset[];
-  stock: Stock[];
+  stocks: Stock[];
   Reviews: Reviews [];
 }

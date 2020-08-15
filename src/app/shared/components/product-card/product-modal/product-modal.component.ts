@@ -33,8 +33,8 @@ export class ProductModalComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.currentStock = this.products.stock[0];
-    this.isactive = this.products.stock[0].id;
+    this.currentStock = this.products.stocks[0];
+    this.isactive = this.products.stocks[0].id;
     this.getAttribute();
   }
   ngOnChanges(changes: SimpleChanges): void {}
@@ -50,7 +50,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
   }
 
   getAttribute() {
-    this.products.stock.forEach((stock) => {
+    this.products.stocks.forEach((stock) => {
       stock.attributes.forEach((attribute) => {
         attribute.stockId = stock.id;
         this.attributes.push(attribute);
@@ -68,7 +68,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
 
   showAttributes(attribute) {
     this.isactive = attribute.stockId;
-    this.products.stock.forEach((element) => {
+    this.products.stocks.forEach((element) => {
       if (element.id === attribute.stockId) {
         this.currentStock = element;
       }
