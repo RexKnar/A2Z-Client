@@ -25,7 +25,7 @@
                                 <h4>{{attributeGroup.key}}</h4>
                                 <ul>
                                     <li  *ngFor="let attribute of attributeGroup.value">
-                                        <a (click)="showAttributes(attribute)" [ngClass]="{ 'active-box':  isactive == attribute.stockId }">{{attribute.attributevalue}}</a>
+                                        <a (click)="setCurrentStockPointer(attribute.stockId)" [ngClass]="{ 'active-box':  product.stocks[currentStockPointer].id == attribute.stockId }">{{attribute.attributevalue}}</a>
                                     </li>
                                 </ul>
                             </div>
