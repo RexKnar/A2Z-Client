@@ -16,5 +16,6 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.productDetails = this._productService.getProductDetail(1);
     this.topProductData = this._productService.getProduct(5);
+   
   }
 }

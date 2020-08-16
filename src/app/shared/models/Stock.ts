@@ -5,6 +5,8 @@ export class Stock {
      id: number;
      price: number;
      quantity: number;
+     rating: number;
+     description: string;
      attributes: Attributes[];
      assets: Assets[];
 }

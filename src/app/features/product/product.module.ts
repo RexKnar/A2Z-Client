@@ -13,6 +13,8 @@ import { SpecificationComponent } from './description-tab/specification/specific
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -20,7 +22,9 @@ import { ProductService } from 'src/app/shared/services/product.service';
     ProductRoutingModule,
     CarouselModule,
     LazyLoadImageModule,
+    FormsModule,
     NgbModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   exports: [
