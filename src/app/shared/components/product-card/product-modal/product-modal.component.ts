@@ -12,6 +12,7 @@ import { Product } from "src/app/shared/models/Product";
 import { ProductService } from "src/app/shared/services/product.service";
 import { ProductAttributes } from "src/app/shared/models/ProductAttributes";
 import { Stock } from "src/app/shared/models/Stock";
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: "app-product-modal",
@@ -24,9 +25,12 @@ export class ProductModalComponent implements OnInit, OnChanges {
   @Input() product: Product;
   currentStock: Stock;
   attributes: ProductAttributes[] = [];
+  unique1: ProductAttributes[] = [];
   attributeGroups: any = {};
   public modalOpen = false;
   public ImageSrc: string;
+  currentStockPointer:number=0;
+  somevalue:any=[];
 
   constructor(
     private modalService: NgbModal,
@@ -34,16 +38,12 @@ export class ProductModalComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    console.log("hai");
-    console.log(this.product);
-    this.currentStock = this.product.stocks[0];
-    this.isactive = this.product.stocks[0].id;
+    this.currentStock = this.product.stocks[this.currentStockPointer];
     this.getAttribute();
-
   }
   ngOnChanges(changes: SimpleChanges): void {}
 
-  openModal() {
+  openModal(currentStockPtr:number) {
     this.modalOpen = true;
     this.modalService.open(this.ProductView, {
       size: "lg",
@@ -51,6 +51,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
       centered: true,
       windowClass: "Productview",
     });
+    this.currentStockPointer=currentStockPtr;
   }
 
   getAttribute() {
@@ -60,6 +61,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
         this.attributes.push(attribute);
       });
     });
+    this.attributes = this.attributes.filter((item, i, arr) => arr.findIndex((t) => t.attributeName === item.attributeName && t.attributevalue === item.attributevalue) === i);
     for (let i = 0; i < Object.keys(this.attributes).length; i++) {
       const groupName = this.attributes[i].attributeName;
       if (!this.attributeGroups[groupName]) {
@@ -67,7 +69,13 @@ export class ProductModalComponent implements OnInit, OnChanges {
       }
       this.attributeGroups[groupName].push(this.attributes[i]);
     }
-    console.log(this.attributeGroups);
+    let keys=Object.keys(this.attributeGroups);
+    keys.forEach(item =>{
+      if(this.attributeGroups[item].length<2)
+      {
+        delete this.attributeGroups[item];
+      }
+    });
   }
 
   showAttributes(attribute) {
@@ -78,4 +86,17 @@ export class ProductModalComponent implements OnInit, OnChanges {
       }
     });
   }
+  setCurrentStockPointer(stockId: number)
+  {
+    let index = 0;
+    this.product.stocks.forEach((stock) => {
+     if(stock.id === stockId) {
+      this.currentStockPointer = index;
+      this.currentStock=this.product.stocks[index];
+      return;
+     }
+     index = index + 1;
+    });
+  }
+
 }

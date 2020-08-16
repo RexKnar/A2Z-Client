@@ -7,19 +7,19 @@
       <a>
         <img
           [defaultImage]="ImageSrc ? ImageSrc : './assets/images/product/placeholder.jpg'"
-          [lazyLoad]="ImageSrc ? ImageSrc : product.stocks[0].assets[0].assetUrl"
+          [lazyLoad]="ImageSrc ? ImageSrc : product.stocks[currentStockPointer].assets[0].assetUrl"
           class="img-fluid lazy-loading"
-          alt="{{ product.stocks[0].assets[0].assetType }}" />
+          alt="{{ product.stocks[currentStockPointer].assets[0].assetType }}" />
       </a>
     </div>
     <div class="back" *ngIf="onHowerChangeImage">
       <a>
-        <img [src]="ImageSrc ? ImageSrc : product.stocks[0].assets[0].assetUrl" class="img-fluid lazy-loading"
-          alt="{{ product.stocks[0].assets[0].assetType }}">
+        <img [src]="ImageSrc ? ImageSrc : product.stocks[currentStockPointer].assets[0].assetUrl" class="img-fluid lazy-loading"
+          alt="{{ product.stocks[currentStockPointer].assets[0].assetType }}">
       </a>
     </div>
     <ul class="product-thumb-list" *ngIf="thumbnail">
-      <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl" *ngFor="let image of product.stocks[0].assets">
+      <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl" *ngFor="let image of product.stocks[currentStockPointer].assets">
         <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.assetUrl)">
           <img [lazyLoad]="image.assetUrl">
         </a>
@@ -32,7 +32,7 @@
       <a href="javascript:void(0)" title="Add to Wishlist" (click)="addToWishlist(product)">
         <i class="fa"  [ngClass]="{'fa-heart' : product.wishlistFlag,'fa-heart-o' : !product.wishlistFlag}"  aria-hidden="true"></i>
       </a>
-      <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal()">
+      <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal(currentStockPointer)">
         <i class="ti-search" aria-hidden="true"></i>
       </a>
       <a href="javascript:void(0)" title="Compare" (click)="addToCompare(product)">
@@ -42,12 +42,12 @@
   </div>
   <div class="product-detail">
     <div>
-      <bar-rating [rate]="product.stocks[0].rating" [readOnly]="true"></bar-rating>
+      <bar-rating [rate]="product.stocks[currentStockPointer].rating" [readOnly]="true"></bar-rating>
       <a>
         <h6>{{ product?.productName | titlecase }}</h6>
       </a>
       <h4>
-        ₹{{product?.stocks[0].price}}
+        ₹{{product?.stocks[currentStockPointer].price}}
         <del *ngIf="product?.discount"><span class="money">₹{{product?.discount}}</span></del>
       </h4>
     </div>

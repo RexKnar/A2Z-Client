@@ -18,8 +18,8 @@ export class ProductCardComponent implements OnInit {
   @Input() thumbnail = false;
   @Input() loader = false;
   @ViewChild('productView') ProductView: ProductModalComponent;
-
   ImageSrc: string;
+  currentStockPointer:number  =0;
   constructor(private readonly _ProductService: ProductService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
