@@ -13,7 +13,7 @@ import { MessageConstants } from '../../models/messageConstants';
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() products: Product;
+  @Input() product: Product;
   @Input() onHowerChangeImage = false;
   @Input() thumbnail = false;
   @Input() loader = false;

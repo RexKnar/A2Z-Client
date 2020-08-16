@@ -13,12 +13,12 @@
                 </div>
                 <div class="col-lg-6 rtl-text">
                     <div class="product-right text-left">
-                        <h2>{{ products?.productName | titlecase }}</h2>
+                        <h2>{{ product?.productName | titlecase }}</h2>
                         <h3>₹{{ currentStock.price}}
-                            <del *ngIf="products?.discount"><span
+                            <del *ngIf="product?.discount"><span
                                     class="money">₹{{ currentStock.price}}</span></del>
                         </h3>
-                       
+
                         <div *ngIf="attributeGroups">
 
                             <div class="size-box" *ngFor="let attributeGroup of attributeGroups | keyvalue">
@@ -31,10 +31,10 @@
                             </div>
 
                         </div>
-                       
+
                         <div class="border-product">
                             <h6 class="product-title">product details</h6>
-                            <p>{{ products.description.substring(0, 200)+'...' }} </p>
+                            <p>{{ product.description.substring(0, 200)+'...' }} </p>
                         </div>
                         <div class="product-description border-product">
                             <h6 class="product-title">quantity</h6>

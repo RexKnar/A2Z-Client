@@ -13,7 +13,7 @@ import { SliderService } from "src/app/shared/services/slider.service";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
- 
+
   constructor(
     private _bannerService: BannerService,
     private _productService: ProductService,

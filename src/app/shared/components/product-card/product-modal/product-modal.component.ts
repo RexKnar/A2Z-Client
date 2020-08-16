@@ -21,21 +21,25 @@ import { Stock } from "src/app/shared/models/Stock";
 export class ProductModalComponent implements OnInit, OnChanges {
   public isactive: number;
   @ViewChild("productView", { static: false }) ProductView: TemplateRef<any>;
-  @Input() products: Product;
+  @Input() product: Product;
   currentStock: Stock;
   attributes: ProductAttributes[] = [];
   attributeGroups: any = {};
   public modalOpen = false;
   public ImageSrc: string;
+
   constructor(
     private modalService: NgbModal,
     private readonly _ProductService: ProductService
   ) {}
 
   ngOnInit(): void {
-    this.currentStock = this.products.stocks[0];
-    this.isactive = this.products.stocks[0].id;
+    console.log("hai");
+    console.log(this.product);
+    this.currentStock = this.product.stocks[0];
+    this.isactive = this.product.stocks[0].id;
     this.getAttribute();
+
   }
   ngOnChanges(changes: SimpleChanges): void {}
 
@@ -50,7 +54,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
   }
 
   getAttribute() {
-    this.products.stocks.forEach((stock) => {
+    this.product.stocks.forEach((stock) => {
       stock.attributes.forEach((attribute) => {
         attribute.stockId = stock.id;
         this.attributes.push(attribute);
@@ -68,7 +72,7 @@ export class ProductModalComponent implements OnInit, OnChanges {
 
   showAttributes(attribute) {
     this.isactive = attribute.stockId;
-    this.products.stocks.forEach((element) => {
+    this.product.stocks.forEach((element) => {
       if (element.id === attribute.stockId) {
         this.currentStock = element;
       }
