@@ -1,1 +1,21 @@
-<p>product-tab works!</p>
+
+        <ngb-tabset [justify]="'center'" [type]="'pills'" class="tabs tab-title">
+          <ngb-tab 
+          *ngFor="let tab of tabData "
+          >
+            <ng-template ngbTabTitle>{{tab.title}}</ng-template>
+            <ng-template ngbTabContent>
+              <section class="section-b-space p-t-0">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <app-product-slider [products]="tab.data | async"></app-product-slider>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+
+    

@@ -58,6 +58,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     ProductSliderComponent,
     CarouselModule,
     ImagesliderComponent,
+    ProductTabComponent,
     BannerComponent
   ],
   declarations: [
@@ -80,6 +81,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     ProductSliderComponent,
     SkeletonProductCardComponent,
     ImagesliderComponent,
+    ProductTabComponent,
     BannerComponent
   ]
 })
