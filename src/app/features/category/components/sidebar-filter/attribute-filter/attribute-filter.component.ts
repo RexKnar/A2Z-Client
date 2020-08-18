@@ -29,7 +29,7 @@ export class AttributeFilterComponent implements OnInit {
   }
 
   checked(item) {
-    if (this.attribute.values.indexOf(item) !== -1) {
+    if (this.attribute.attributeValue.indexOf(item) !== -1) {
       return true;
     }
   }

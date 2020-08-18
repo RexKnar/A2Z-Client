@@ -1,17 +1,17 @@
 <div class="collection-collapse-block" [class.open]="collapse">
-    <h3 class="collapse-block-title" (click)="collapse = !collapse">{{attribute.name}}</h3>
+    <h3 class="collapse-block-title" (click)="collapse = !collapse">{{attribute.attributeName}}</h3>
     <div class="collection-collapse-block-content">
       <div class="collection-brand-filter">
         <div class="custom-control custom-checkbox collection-filter-checkbox" 
-            *ngFor="let value of attribute.values; let i = index">
+            *ngFor="let value of attribute.attributeValue; let i = index">
           <input 
             type="checkbox" 
-            [value]="value.name"
-            [checked]="checked(value.name)"
-            [id]="value.name"
-            (change)="appliedFilter(attribute.name,$event)"
+            [value]="value.value"
+            [checked]="checked(value.value)"
+            [id]="value.value"
+            (change)="appliedFilter(attribute.attributeName,$event)"
             class="custom-control-input" />
-          <label class="custom-control-label" for="{{ value.name }}">{{ value.name }}</label>
+          <label class="custom-control-label" for="{{ value.value }}">{{ value.value }}</label>
         </div>
       </div>
     </div>

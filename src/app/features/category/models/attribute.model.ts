@@ -1,10 +1,8 @@
 export interface AttributeModel {
-  id: number;
-  name: string;
-  values: ValuesModel[];
+  attributeName: string;
+  attributeValue: ValuesModel[];
 }
 
 interface ValuesModel {
-  id: number;
-  name: string;
+  value: string;
 }

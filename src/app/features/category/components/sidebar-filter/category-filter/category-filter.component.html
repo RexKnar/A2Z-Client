@@ -13,7 +13,7 @@
         <li *ngFor="let subcategory of selectedSubCategory">
           <a
             [routerLink]="['/category']"
-            [queryParams]="{ subcategory: subcategory.subcategoryName }"
+            [queryParams]="{ subcategory: subcategory.id }"
             queryParamsHandling="merge"
             (click)="onSelectSubCategory(subcategory)"
           >
