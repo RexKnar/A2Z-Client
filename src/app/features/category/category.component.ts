@@ -108,18 +108,18 @@ export class CategoryComponent implements OnInit {
   public applyFilter(): void {
     this.filteredSearch = {
       type: 'subcategory',
-    value: this.filteredSubcategory,
-    filter: this.filteredAttributes,
-    sorting: this.filteredSort,
-    paging: {
-      pageNo: 10,
-      noofRecords: 20,
-    },
-    rangeFilter: {
-      attributeName: 'price',
-      minValue: this.minPrice,
-      maxValue: this.maxPrice,
-    }
+      value: this.filteredSubcategory,
+      filter: this.filteredAttributes,
+      sorting: this.filteredSort,
+      paging: {
+        pageNo: 10,
+        noofRecords: 20,
+      },
+      rangeFilter: {
+        attributeName: 'price',
+        minValue: this.minPrice,
+        maxValue: this.maxPrice,
+      },
     };
     console.log(this.filteredSearch);
   }
@@ -132,17 +132,7 @@ export class CategoryComponent implements OnInit {
 
   // product Pagination
   setPage(page: number) {
-    this._router
-      .navigate([], {
-        relativeTo: this._activatedRoute,
-        queryParams: { page: page },
-        queryParamsHandling: 'merge', // preserve the existing query params in the route
-        skipLocationChange: false, // do trigger navigation
-      })
-      .finally(() => {
-        this.viewScroller.setOffset([120, 120]);
-        this.viewScroller.scrollToAnchor('products'); // Anchore Link
-      });
+    console.log(page);
   }
 
   // Change Grid Layout
@@ -150,7 +140,7 @@ export class CategoryComponent implements OnInit {
     this.grid = value;
   }
   sortByFilter(event): void {
-    this.filteredSort =  event;
+    this.filteredSort = event;
   }
 
   // Change Layout View

@@ -20,11 +20,12 @@ import { MenusComponent } from './components/header/menubar/menus/menus.componen
 import { ContactinfoComponent } from './components/header/menubar/contactinfo/contactinfo.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductTabComponent } from './components/product-tab/product-tab.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductModalComponent } from './components/product-card/product-modal/product-modal.component';
 import { QuantityComponent } from './components/quantity/quantity.component';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
-
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 @NgModule({
   imports: [
     CommonModule,
@@ -37,6 +38,7 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     BarRatingModule,
     NgxSkeletonLoaderModule,
     TranslateModule,
+    LazyLoadImageModule,
   ],
   exports: [
     HeaderComponent,
@@ -49,11 +51,14 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
+    ProductCardComponent,
+    ProductModalComponent,
     QuantityComponent,
     BannerComponent,
     ProductSliderComponent,
     CarouselModule,
     ImagesliderComponent,
+    ProductTabComponent,
     BannerComponent
   ],
   declarations: [
@@ -69,11 +74,14 @@ import { SkeletonProductCardComponent } from './components/skeleton/skeleton-pro
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,
+    ProductCardComponent,
+    ProductModalComponent,
     QuantityComponent,
     BannerComponent,
     ProductSliderComponent,
     SkeletonProductCardComponent,
     ImagesliderComponent,
+    ProductTabComponent,
     BannerComponent
   ]
 })
