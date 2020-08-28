@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryModel, SubCategoryModel } from './models/category.model';
 import { AttributeModel } from './models/attribute.model';
-import { ProductModel } from './models/product.model';
 import { CategoryService } from './services/category.service';
 import { FilterSearchModel } from './models/filter-search.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ViewportScroller } from '@angular/common';
+import { ProductService } from 'src/app/shared/services/product.service';
+import { Product } from 'src/app/shared/models/Product';
 
 @Component({
   selector: 'app-category',
@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit {
   public mobileSidebar: boolean = false;
   public minPrice: number = 0;
   public maxPrice: number = 1200;
-  public products: ProductModel[] = [];
+  public products: Product[] = [];
   public attributes: AttributeModel[] = [];
   public categories: CategoryModel[] = [];
   public filteredSearch: FilterSearchModel;
@@ -38,11 +38,11 @@ export class CategoryComponent implements OnInit {
   constructor(
     private readonly _categoryService: CategoryService,
     private readonly _activatedRoute: ActivatedRoute,
-    private viewScroller: ViewportScroller,
-    private _router: Router,
+    private readonly _producrService: ProductService,
   ) {}
 
   ngOnInit() {
+    this.filteredSort = { attributeName: 'alphabetic_order', value: 'asc' };
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.filteredCategory = queryParams['category'];
       this.filteredSubcategory = queryParams['subcategory'];
@@ -82,7 +82,11 @@ export class CategoryComponent implements OnInit {
     return selectedCategory.subcategory;
   }
 
-  private _initializeValues(): void {}
+  private _initializeValues(): void {
+    this._producrService.getProduct().subscribe((data) => {
+      this.products = data;
+    });
+  }
 
   toggleMobileSidebar() {
     this.mobileSidebar = !this.mobileSidebar;
@@ -141,6 +145,7 @@ export class CategoryComponent implements OnInit {
   }
   sortByFilter(event): void {
     this.filteredSort = event;
+    this.applyFilter();
   }
 
   // Change Layout View

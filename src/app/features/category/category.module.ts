@@ -9,9 +9,10 @@ import { CategoryFilterComponent } from './components/sidebar-filter/category-fi
 import { AttributeFilterComponent } from './components/sidebar-filter/attribute-filter/attribute-filter.component';
 import { PriceFilterComponent } from './components/sidebar-filter/price-filter/price-filter.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, CategoryRoutes, Ng5SliderModule],
+  imports: [CommonModule, CategoryRoutes, Ng5SliderModule, SharedModule],
   declarations: [
     CategoryComponent,
     FilterComponent,

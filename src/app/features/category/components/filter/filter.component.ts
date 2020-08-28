@@ -30,6 +30,18 @@ export class FilterComponent implements OnInit {
   }
 
   public sorting(event): void {
-    this.sortedBy.emit(event.target.value);
+    let selectedEvent;
+    if (event.target.value == 1) {
+      selectedEvent = { attributeName: 'alphabetic_order', value: 'asc' };
+    } else if (event.target.value == 2) {
+      selectedEvent = { attributeName: 'alphabetic_order', value: 'desc' };
+    } else if (event.target.value == 3) {
+      selectedEvent = { attributeName: 'price', value: 'asc' };
+    } else if (event.target.value == 4) {
+      selectedEvent = { attributeName: 'price', value: 'desc' };
+    } else if (event.target.value == 5) {
+      selectedEvent = { attributeName: 'by_popularity', value: 'desc' };
+    }
+    this.sortedBy.emit(selectedEvent);
   }
 }

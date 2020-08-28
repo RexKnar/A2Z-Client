@@ -1,4 +1,4 @@
-<div class="collection-collapse-block" [class.open]="collapse">
+<div class="collection-collapse-block" [class.open]="collapse" *ngIf="attribute.attributeValue.length">
     <h3 class="collapse-block-title" (click)="collapse = !collapse">{{attribute.attributeName}}</h3>
     <div class="collection-collapse-block-content">
       <div class="collection-brand-filter">

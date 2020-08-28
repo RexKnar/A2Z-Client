@@ -34,27 +34,11 @@
         <div class="product-page-filter">
           <select (change)="sorting($event)">
             <option value="">Sorting Items</option>
-            <option value="{'attributeName':'alphabetic_order','value':'asc'}" [selected]="sortBy == 'a-z'"
-              >Alphabetically A-Z</option
-            >
-            <option value="{'attributeName':'alphabetic_order','value':'desc'}" [selected]="sortBy == 'z-a'"
-              >Alphabetically Z-A</option
-            >
-            <option
-            value="{'attributeName': 'price','value':'asc'}"
-              [selected]="sortBy == 'low'"
-              >Price Low to High</option
-            >
-            <option
-            value="{'attributeName':'price','value':'desc'}"
-              [selected]="sortBy == 'high'"
-              >Price High to Low</option
-            >
-            <option
-            value="'attributeName': 'by_popularity,'value': 'desc'"
-              [selected]="sortBy == 'high'"
-              >popularity</option
-            >
+            <option value="1">Alphabetically A-Z</option>
+            <option value="2">Alphabetically Z-A</option>
+            <option value="3">Price Low to High</option>
+            <option value="4">Price High to Low</option>
+            <option value="5">popularity</option>
           </select>
         </div>
       </div>
