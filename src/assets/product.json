@@ -1,0 +1,1004 @@
+[
+  {
+    "productId": 1,
+    "productName": "redmi",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlistflag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stocks": [
+      {
+        "id": 1,
+        "price": 12000,
+        "quantity": 5,
+        "rating": 4,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          },
+          {
+            "attributeName": "Graphics",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "1GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "512GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "8GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": 2,
+    "productName": "Samsung",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stocks": [
+      {
+        "id": 6,
+        "price": 1000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          },
+          {
+            "attributeName": "Graphics",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "1GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "512GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "8GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": 3,
+    "productName": "Oppo",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stocks": [
+      {
+        "id": 9,
+        "price": 1000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          },
+          {
+            "attributeName": "Graphics",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "1GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "512GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "8GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": 4,
+    "productName": "Samsung",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stocks": [
+      {
+        "id": 12,
+        "price": 1000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          },
+          {
+            "attributeName": "Graphics",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "1GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "512GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "8GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": 5,
+    "productName": "Samsung",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stocks": [
+      {
+        "id": 15,
+        "price": 1000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          },
+          {
+            "attributeName": "Graphics",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "1GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "512GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "8GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "productId": 6,
+    "productName": "Samsung",
+    "categoryId": 1,
+    "new_flag": true,
+    "categoryname": "Electronics",
+    "subcategoryId": 2,
+    "subCategoryName": "Mobiles",
+    "discount": 200,
+    "wishlist_flag": true,
+    "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
+    "stocks": [
+      {
+        "id": 18,
+        "price": 1000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "5GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          },
+          {
+            "attributeName": "Graphics",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "1GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "10GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "512GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "price": 13000,
+        "quantity": 5,
+        "rating": 3.5,
+        "attributes": [
+          {
+            "attributeName": "Ram",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "8GB"
+          },
+          {
+            "attributeName": "Storage",
+            "attributeGroupId": 1,
+            "attributeGroupName": "General",
+            "attributeValue": "256GB"
+          }
+        ],
+        "assets": [
+          {
+            "id": 3,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/13.jpg"
+          },
+          {
+            "id": 4,
+            "assetType": 2,
+            "assetUrl": "./assets/images/product/3.jpg"
+          },
+          {
+            "id": 6,
+            "assetType": 1,
+            "assetUrl": "./assets/images/product/14.jpg"
+          }
+        ],
+        "reviews": [
+          {
+            "userName": "Vijay",
+            "rating": "4",
+            "description": "Nice product"
+          },
+          {
+            "userName": "Jose",
+            "rating": "3.5",
+            "description": "Worth Price"
+          }
+        ]
+      }
+    ]
+  }
+]

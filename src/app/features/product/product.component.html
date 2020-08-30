@@ -1,16 +1,20 @@
 <section class="section-b-space">
     <div class="collection-wrapper">
         <div class="container">
-            <div class="row">
+            <div class="row" *ngFor="let productDetail of productDetails | async">
                 <div class="col-lg-4">
-                    <app-product-assets-view [productDetail]="productDetails | async"></app-product-assets-view>
-                </div>
-                <!-- <div class="col-lg-4">
-                    <app-product-descriptions></app-product-descriptions>
+                    <app-product-assets-view [productDetail]="productDetail" [onHowerChangeImage]="true"
+                        [thumbnail]="true" [loader]="false" [newPointer]="currentStockPointer">
+                    </app-product-assets-view>
                 </div>
                 <div class="col-lg-4">
-                    <app-product-assets-details></app-product-assets-details>
-                </div> -->
+                    <app-product-descriptions [productDetail]="productDetail " [newPointer]="currentStockPointer">
+                    </app-product-descriptions>
+                </div>
+                <div class="col-lg-4">
+                    <app-product-assets-details [productDetail]="productDetail "
+                        (newCurrentPointer)="updateCurrentPointer($event)"></app-product-assets-details>
+                </div>
             </div>
             <section class="tab-product m-0">
                 <div class="row">
@@ -21,7 +25,6 @@
                                 <ng-template *ngFor="let productDescription of productDetails | async" ngbTabContent>
                                     <app-descriptions [productDescription]="productDescription "></app-descriptions>
                                 </ng-template>
-
                             </ngb-tab>
                             <ngb-tab>
                                 <ng-template ngbTabTitle>Specifications</ng-template>
@@ -32,8 +35,9 @@
                             <ngb-tab>
                                 <ng-template ngbTabTitle>Reviews</ng-template>
 
-                                <ng-template ngbTabContent>
-                                    <app-reviews-component></app-reviews-component>
+                                <ng-template *ngFor="let productDetail of productDetails | async" ngbTabContent>
+                                    <app-reviews-component [productDetail]="productDetail "
+                                        [newPointer]="currentStockPointer"></app-reviews-component>
                                 </ng-template>
                             </ngb-tab>
                         </ngb-tabset>
@@ -52,10 +56,7 @@
             </div>
         </div>
         <div class="row search-product">
-            <div class="col-xl-12 col-md-12 col-sm-12" >
-                <!-- <div class="product-box">
-                  
-                </div> -->
+            <div class="col-xl-12 col-md-12 col-sm-12">
                 <app-product-slider [products]="topProductData | async"></app-product-slider>
             </div>
         </div>

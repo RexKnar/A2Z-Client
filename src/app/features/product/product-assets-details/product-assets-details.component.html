@@ -1,55 +1,27 @@
-<!-- <div class="product-right product-form-box">
-    <h4>
-      <del
-        *ngIf="product?.discount">{{ product?.price * productService.Currency?.price | currency: productService.Currency?.currency:'symbol' }}</del>
-      <span>{{ product?.discount }}% off</span>
-    </h4>
-    <h3>
-      {{ (product?.price | discount:product) * productService.Currency?.price | currency: productService.Currency?.currency:'symbol' }}
-    </h3>
-    <ul class="color-variant" *ngIf="Color(product?.variants).length">
-      <li [class]="color" [class.active]="activeSlide == i.toString()"
-        *ngFor="let color of Color(product?.variants); index as i" [ngStyle]="{'background-color': color}"
-        (click)="owlCar.to(activeSlide = i.toString())">
-      </li>
-    </ul>
-    <div class="product-description border-product">
-      <h6 class="product-title size-text" *ngIf="Size(product.variants).length">
-        select size
-        <span>
-          <a href="javascrip:void(0)" (click)="SizeChart.openModal()">size chart</a>
-        </span>
-      </h6>
-      <div class="size-box" *ngIf="Size(product.variants).length">
-        <ul>
-          <li [class.active]="selectedSize == size" *ngFor="let size of Size(product.variants)">
-            <a href="javascript:void(0)" (click)="selectSize(size)">{{ size | titlecase }}</a>
-          </li>
-        </ul>
-      </div>
-      <h5 class="avalibility" *ngIf="counter <= product.stock"><span>In Stock</span></h5>
-      <h5 class="avalibility" *ngIf="counter > product.stock"><span>Out of Stock</span></h5>
-      <h6 class="product-title">quantity</h6>
-      <div class="qty-box">
-        <div class="input-group">
-          <span class="input-group-prepend">
-            <button type="button" class="btn quantity-left-minus" data-type="minus" (click)="decrement()">
-              <i class="ti-angle-left"></i>
-            </button>
-          </span>
-          <input type="text" name="quantity" class="form-control input-number" [value]="counter" disabled />
-          <span class="input-group-prepend">
-            <button type="button" class="btn quantity-right-plus" data-type="plus" (click)="increment()">
-              <i class="ti-angle-right"></i>
-            </button>
-          </span>
-        </div>
-      </div>
+<div class="product-right product-form-box">
+  <div *ngIf="attributeGroups">
+    <div class="size-box" *ngFor="let attributeGroup of attributeGroups | keyvalue">
+      <h4>{{attributeGroup.key}}</h4>
+      <ul>
+        <li *ngFor="let attribute of attributeGroup.value">
+          <a (click)="setCurrentStockPointer(attribute.stockId)"
+            [ngClass]="{ 'active-box':  productDetail.stock[currentStockPointer].id == attribute.stockId }">{{attribute.attributeValue}}</a>
+        </li>
+      </ul>
     </div>
-    <div class="product-buttons">
-      <a href="javascrip:void(0)" class="btn btn-solid" [class.disabled]="counter > product.stock"
-        (click)="addToCart(product)">add to cart</a>
-      <a href="javascrip:void(0)" class="btn btn-solid" [class.disabled]="counter > product.stock"
-        (click)="buyNow(product)">buy now</a>
-    </div>
-  </div> -->
+  </div>
+  <div class="product-description border-product">
+    <h5 class="avalibility" *ngIf="counter <= productDetail.stock[currentStockPointer].quantity"><span>In Stock</span>
+    </h5>
+    <h5 class="avalibility" *ngIf="counter > productDetail.stock[currentStockPointer].quantity"><span>Out of
+        Stock</span></h5>
+    <h6 class="product-title" *ngIf="counter <= productDetail.stock[currentStockPointer].quantity">quantity</h6>
+    <app-quantity [counter]="counter" (checkoutQuantity)="updateCheckoutQuantity($event)"
+      *ngIf="productDetail.stock[currentStockPointer].quantity >0"></app-quantity>
+  </div>
+  <div class="product-buttons" *ngIf="counter <= productDetail.stock[currentStockPointer].quantity">
+    <a href="javascrip:void(0)" title="Add to cart" (click)="addToCart(productDetail)" class="btn btn-solid">add to
+      cart</a>
+    <a href="javascrip:void(0)" class="btn btn-solid">buy now</a>
+  </div>
+</div>

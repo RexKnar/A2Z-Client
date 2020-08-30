@@ -1,43 +1,46 @@
-<form class="theme-form" #f="ngForm" (ngSubmit)="addReview(f)" >
+<form class="theme-form" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
         <div class="col-md-12 ">
             <div class="media">
                 <label>Your rating of this product
+                    <div class="media-body ml-3">
+                        <bar-rating (rateChange)="selectStar($event)"></bar-rating>
+                    </div>
                 </label>
-                <div class="media-body ml-3">
-                    <div>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>           
-                </div>
             </div>
         </div>
         <div class="col-md-12">
             <textarea class="form-control" placeholder="Write Your Testimonial Here...."
-             name= "ratingDescription" ngModel #ratingDescription="ngModel"    
-               rows="6">
+                formControlName="ratingDescription" [ngClass]="{
+              'is-invalid': submitted && f.ratingDescription.errors
+            }" rows="6">
             </textarea>
+            <div *ngIf="submitted && f.ratingDescription.errors" class="text-danger"></div>
         </div>
         <div class="col-md-12">
-            <button class="btn btn-solid" type="submit">Submit YOur Review</button>
+            <button mat-button cdkFocusInitial class="btn btn-solid" type="submit" (click)="addReview()">Submit YOur
+                Review</button>
         </div>
     </div>
 </form>
-
-
-<!-- <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" 
-class="form-inline subscribe-form">
-  <div class="form-group mx-sm-3">
-    <input type="email" formControlName="subscriberemail" class="form-control"
-      placeholder="Enter your email" [ngClass]="{
-        'is-invalid': submitted && f.subscriberemail.errors
-      }" />
-    <div *ngIf="submitted && f.subscriberemail.errors" class="text-danger"></div>
-  </div>
-  <button mat-button cdkFocusInitial class="btn btn-solid" (click)="addSubscriptions()">
-    subscribe
-  </button>
-</form> -->
+<div *ngFor="let productReview of productDetail.stock[0].ratings">
+    <div class="d-flex flex-row">
+        <div class="avatorlogo">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </div>
+        <div>
+            <div class="reviewname-align">
+                {{productReview.userName}}
+            </div>
+            <span class="reviewstar-align d-flex flex-row">
+                <div class="reviewcount">
+                    {{productReview.rating1}}
+                </div>
+                <bar-rating class="barstar-align" [rate]="productReview.rating1" [readOnly]="true"></bar-rating>
+            </span>
+            <p class="reviewmessage-align">
+                {{productReview.ratingDescription}}
+            </p>
+        </div>
+    </div>
+</div>

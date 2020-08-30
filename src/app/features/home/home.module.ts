@@ -16,7 +16,7 @@ import { SliderService } from 'src/app/shared/services/slider.service';
   ],
   providers: [BannerService, ProductService, SliderService],
   declarations: [HomeComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }
 

@@ -20,11 +20,13 @@
 .size-box ul li {
   width: 60px;
   height: 32px;
-  border: 1px solid #ebc17998;
+  border: 1px solid rgb(0, 0, 0);
 }
-.active-box {
-  border: 2px solid #fedf00;
+.active-box
+{
+    background-color:red;
 }
-.text-left {
-  text-align: left !important;
+
+.text-left{
+    text-align: left !important;
 }

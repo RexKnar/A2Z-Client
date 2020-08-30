@@ -1,7 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductRoutingModule } from './product-routing.module';
-import { ProductDescriptionsComponent } from './product-descriptions/product-descriptions.component';
 import { ProductAssetsViewComponent } from './product-assets-view/product-assets-view.component';
 import { ProductAssetsDetailsComponent } from './product-assets-details/product-assets-details.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -14,6 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ProductDescriptionsComponent } from './product-descriptions/product-descriptions.component';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     LazyLoadImageModule,
     FormsModule,
     NgbModule,
+    BarRatingModule,
     ReactiveFormsModule,
     SharedModule
   ],

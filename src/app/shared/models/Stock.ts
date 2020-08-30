@@ -1,5 +1,6 @@
-import { Attributes } from './Attributes';
-import { Assets } from './Asset';
+import { ProductAttributes} from "./ProductAttributes";
+import { Assets } from "./Asset";
+import {  Ratings } from "./Ratings";
 
 export class Stock {
      id: number;
@@ -7,8 +8,9 @@ export class Stock {
      quantity: number;
      rating: number;
      description: string;
-     attributes: Attributes[];
+     attributes: ProductAttributes[];
      assets: Assets[];
+     ratings: Ratings[];
 }
 
 

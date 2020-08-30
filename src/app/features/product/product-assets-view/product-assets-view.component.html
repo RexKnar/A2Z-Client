@@ -1,46 +1,25 @@
-<div *ngFor="let productimages of productDetail">
-    <div *ngFor="let stocks of productimages.stock">
-    <owl-carousel-o [options]="ProductDetailsMainSliderConfig" #owlCar class="product-slick">
-        <ng-container *ngFor="let asset of stocks.assets">
-                     
-                    <ng-template  carouselSlide>
-                      
-    
-                            <div > 
-                                <img [defaultImage]="'./assets/images/product/placeholder.jpg'"
-                                    [lazyLoad]="asset.assetUrl"                  
-                                     [alt]="asset.assetType"
-                                     class="img-fluid lazy-loading">
-                            </div>
-    
-                        
-                        
-                    </ng-template>            
-            
-        </ng-container>
-    </owl-carousel-o>
-    <div class="row">
-        <div class="col-12 p-0">
-
-            <div class="slider-nav">
-                <owl-carousel-o [options]="ProductDetailsThumbConfig" class="product-slick">
-                    <ng-container *ngFor="let asset of stocks.assets; index as i">
-                        <ng-template carouselSlide [id]="i">
-                            <div class="owl-thumb" >
-                                <img [defaultImage]="'assets/images/product/placeholder.jpg'"
-                                [lazyLoad]="asset.assetUrl"                  
-                                [alt]="asset.assetType"
-                                class="img-fluid lazy-loading">
-                            
-                            </div>
-                        </ng-template>
-                    </ng-container>
-                </owl-carousel-o>
-            </div>
-        </div>
+<div class="product-box">
+  <div class="img-wrapper ">
+    <div class="front">
+      <a>
+        <img [defaultImage]="ImageSrc ? ImageSrc : './assets/images/product/placeholder.jpg'"
+          [lazyLoad]="ImageSrc ? ImageSrc : productDetail.stock[currentStockPointer].assets[0].assetUrl"
+          class="img-fluid lazy-loading" alt="{{ productDetail.stock[currentStockPointer].assets[0].assetType }}" />
+      </a>
     </div>
+    <div class="back" *ngIf="onHowerChangeImage">
+      <a>
+        <img [src]="ImageSrc ? ImageSrc : productDetail.stock[currentStockPointer].assets[0].assetUrl"
+          class="img-fluid lazy-loading" alt="{{ productDetail.stock[currentStockPointer].assets[0].assetType }}">
+      </a>
+    </div>
+    <ul class="product-thumb-list" *ngIf="thumbnail">
+      <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl"
+        *ngFor="let image of productDetail.stock[currentStockPointer].assets">
+        <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.assetUrl)">
+          <img [lazyLoad]="image.assetUrl">
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
-</div>
-
-
-    
