@@ -13,16 +13,17 @@ import { SliderService } from 'src/app/shared/services/slider.service';
 export class HomeComponent implements OnInit {
 
 
+  
   constructor(private _bannerService: BannerService,
-    private _sliderService: SliderService) 
-    {}
-  slider1Data: Observable<Slider[]>;
+    private _sliderService: SliderService) { }
+    
   topBannerData: Observable<Banner[]>;
   bottomBannerData: Observable<Banner[]>;
-
+  sliderData: Observable<Slider[]>;
   ngOnInit() {
     this.topBannerData = this._bannerService.getBanner('banner1');
     this.bottomBannerData = this._bannerService.getBanner('banner2');
-    this.slider1Data = this._sliderService.getSlider('slider1');
+    this.sliderData = this._sliderService.getSlider('slider1');
+
   }
 }

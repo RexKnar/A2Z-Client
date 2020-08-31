@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ProductModule } from './features/product/product.module';
 @NgModule({
    declarations: [
       AppComponent,
@@ -23,14 +23,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       SharedModule,
       BrowserAnimationsModule,
       CommonModule,
-     HttpClientModule,
-     NgbModule
- 
+      HttpClientModule,
+      NgbModule,
+      ProductModule
    ],
    providers: [],
    bootstrap: [
       AppComponent
    ],
-   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
