@@ -48,7 +48,7 @@ export class ProductCardComponent implements OnInit {
     wishlist.stockId = 2;
     wishlist.quantity = 1;
     this._ProductService.addToWishlist(wishlist).subscribe((data) => {
-      this.toastr.success(MessageConstants.WISHLIST_SUCESS, '', { timeOut: 2000 });
+      this.toastr.success(MessageConstants.WISHLIST_SUCCESS, '', { timeOut: 2000 });
       product.wishlistFlag = !product.wishlistFlag;
     });
   }

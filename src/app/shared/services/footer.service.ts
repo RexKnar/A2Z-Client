@@ -13,7 +13,7 @@ import { Subscription } from "../models/Subscription";
   providedIn: "root",
 })
 export class FooterService {
-  constructor(private readonly httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) { }
 
   getAllCategories(): Observable<Category[]> {
     return this.httpClient.get<Category[]>(
@@ -23,9 +23,7 @@ export class FooterService {
 
   addSubscriptions(subscription: Subscription): Observable<any> {
     return this.httpClient.post(
-      ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.subscriptionURL,
-      subscription,
-      { responseType: "text" }
+      ROUTE_CONFIG.baseUrl + FOOTER_API_CONFIG.subscriptionURL, subscription, { responseType: "text" }
     );
   }
 }

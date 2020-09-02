@@ -1,0 +1,48 @@
+<form class="theme-form" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="col-md-12 ">
+            <div class="media">
+                <label>Your rating of this product
+                    <div class="media-body ml-3">
+                        <bar-rating (rateChange)="selectStar($event)" formControlName="productRating" [ngClass]="{
+                            'is-invalid': submitted && f.productRating.errors
+                          }"></bar-rating>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <textarea class="form-control" placeholder="Write Your Testimonial Here...."
+                formControlName="ratingDescription" [ngClass]="{
+              'is-invalid': submitted && f.ratingDescription.errors
+            }" rows="6">
+            </textarea>
+            <div *ngIf="submitted && f.ratingDescription.errors" class="text-danger"></div>
+        </div>
+        <div class="col-md-12">
+            <button mat-button cdkFocusInitial class="btn btn-solid" type="submit" (click)="addReview()">Submit YOur
+                Review</button>
+        </div>
+    </div>
+</form>
+<div *ngFor="let productReview of productDetail.reviews">
+    <div class="d-flex flex-row">
+        <div class="avatorlogo">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </div>
+        <div>
+            <div class="reviewname-align">
+                {{productReview.userName}}
+            </div>
+            <span class="reviewstar-align d-flex flex-row">
+                <div class="reviewcount">
+                    {{productReview.productRating}}
+                </div>
+                <bar-rating class="barstar-align" [rate]="productReview.productRating" [readOnly]="true"></bar-rating>
+            </span>
+            <p class="reviewmessage-align">
+                {{productReview.ratingDescription}}
+            </p>
+        </div>
+    </div>
+</div>

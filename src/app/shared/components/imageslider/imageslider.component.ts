@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Slider } from '../../models/slider';
 import { HomeSlider } from '../../data/slider-option';
 

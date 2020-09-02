@@ -33,7 +33,7 @@
         <i class="fa"  [ngClass]="{'fa-heart' : product.wishlistFlag,'fa-heart-o' : !product.wishlistFlag}"  aria-hidden="true"></i>
       </a>
       <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal(currentStockPointer)">
-        <i class="ti-search" aria-hidden="true"></i>
+        <i class="fa fa-eye" aria-hidden="true"></i>
       </a>
       <a href="javascript:void(0)" title="Compare" (click)="addToCompare(product)">
         <i class="ti-reload" aria-hidden="true"></i>
@@ -42,7 +42,7 @@
   </div>
   <div class="product-detail">
     <div>
-      <bar-rating [rate]="product.stocks[currentStockPointer].rating" [readOnly]="true"></bar-rating>
+      <bar-rating [rate]="product?.rating" [readOnly]="true"></bar-rating>
       <a>
         <h6>{{ product?.productName | titlecase }}</h6>
       </a>
