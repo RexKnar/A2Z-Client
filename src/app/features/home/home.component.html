@@ -1,8 +1,10 @@
-<section class="section-b-space">
+<section class="p-b-0 p-t-0">
   <app-imageslider [slider]="sliderData | async"></app-imageslider>
 </section>
-<section>
-  <div class="col-lg-12">
+<section class="p-t-0">
+  <app-service-info></app-service-info>
+</section>
+<section >
     <div class="row">
       <div
         class="col-md-6 right"
@@ -10,12 +12,6 @@
       >
         <app-banner [banner]="bannerItem"></app-banner>
       </div>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="col-lg-12">
-    <div class="row">
       <div
         class="col-md-6 right"
         *ngFor="let bannerItem of bottomBannerData | async"
@@ -23,7 +19,6 @@
         <app-banner [banner]="bannerItem"></app-banner>
       </div>
     </div>
-  </div>
 </section>
 <div class="title1 section-t-space">
   <h4>special offer</h4>
@@ -42,7 +37,7 @@
     </div>
   </div>
 </div>
-<section class="section-b-space p-t-0">
+<section class="p-t-0">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -53,7 +48,96 @@
     </div>
   </div>
 </section>
-<section class="section-b-space p-t-0">
+<!-- Parallax banner start-->
+<section class="p-0">
+  <div class="full-banner parallax-banner1 parallax text-center p-left"
+    [ngStyle]="{'background-image': 'url(assets/images/parallax/1.jpg)'}">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="banner-contain">
+            <h2>2018</h2>
+            <h3>fashion trends</h3>
+            <h4>special offer</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Parallax banner End -->
+
+<div class="title1 section-t-space">
+  <h4>special offer</h4>
+  <h2 class="title-inner1">top collection</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s,
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-product-slider
+          [products]="topProductData | async"
+        ></app-product-slider>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="p-t-0">
+  <div class="title1 section-t-space">
+    <h4>special offer</h4>
+    <h2 class="title-inner1">top collection</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="product-para">
+          <p class="text-center">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s,
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-product-slider
+          [products]="topProductData | async"
+        ></app-product-slider>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section >
+    <div class="row">
+      <div
+        class="col-md-12 col-lg-12  right"
+        *ngFor="let bannerItem of bottomBannerData | async"
+      >
+        <app-banner [banner]="bannerItem"></app-banner>
+      </div>
+  </div>
+</section>
+<section class="p-t-0">
   <div class="title1 section-t-space">
   <h4>exclusive products</h4>
   <h2 class="title-inner1">special products</h2>

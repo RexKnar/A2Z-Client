@@ -26,6 +26,7 @@ import { QuantityComponent } from './components/quantity/quantity.component';
 import { ProductSliderComponent } from './components/product-slider/product-slider.component';
 import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ServiceInfoComponent } from './components/service-info/service-info.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -59,7 +60,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     CarouselModule,
     ImagesliderComponent,
     ProductTabComponent,
-    BannerComponent
+    BannerComponent,
+    ServiceInfoComponent
   ],
   declarations: [
     FooterComponent,
@@ -82,7 +84,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     SkeletonProductCardComponent,
     ImagesliderComponent,
     ProductTabComponent,
-    BannerComponent
+    BannerComponent,
+    ServiceInfoComponent
   ]
 })
 export class SharedModule { }
