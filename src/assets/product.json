@@ -8,44 +8,45 @@
     "subcategoryId": 2,
     "subCategoryName": "Mobiles",
     "discount": 200,
-    "wishlist_flag": true,
+    "rating": 4,
+    "wishlistflag": true,
     "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
     "stocks": [
       {
         "id": 1,
         "price": 12000,
         "quantity": 5,
-        "rating": 3.5,
-        "attributes": [
+       
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "5GB"
+            "attributeValue": "5GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           },
           {
             "attributeName": "Graphics",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "1GB"
+            "attributeValue": "1GB"
           }
         ],
         "assets": [
           {
             "id": 3,
             "assetType": 1,
-            "assetUrl": "./assets/images/product/13.jpg"
+            "assetUrl": "./assets/images/product/3.jpg"
           },
           {
             "id": 4,
             "assetType": 2,
-            "assetUrl": "./assets/images/product/3.jpg"
+            "assetUrl": "./assets/images/product/13.jpg"
           },
           {
             "id": 6,
@@ -71,18 +72,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "10GB"
+            "attributeValue": "10GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "512GB"
+            "attributeValue": "512GB"
           }
         ],
         "assets": [
@@ -120,18 +121,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "8GB"
+            "attributeValue": "8GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           }
         ],
         "assets": [
@@ -183,24 +184,24 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "5GB"
+            "attributeValue": "5GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           },
           {
             "attributeName": "Graphics",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "1GB"
+            "attributeValue": "1GB"
           }
         ],
         "assets": [
@@ -238,18 +239,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "10GB"
+            "attributeValue": "10GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "512GB"
+            "attributeValue": "512GB"
           }
         ],
         "assets": [
@@ -287,18 +288,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "8GB"
+            "attributeValue": "8GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           }
         ],
         "assets": [
@@ -350,24 +351,24 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "5GB"
+            "attributeValue": "5GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           },
           {
             "attributeName": "Graphics",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "1GB"
+            "attributeValue": "1GB"
           }
         ],
         "assets": [
@@ -405,18 +406,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "10GB"
+            "attributeValue": "10GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "512GB"
+            "attributeValue": "512GB"
           }
         ],
         "assets": [
@@ -454,18 +455,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "8GB"
+            "attributeValue": "8GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           }
         ],
         "assets": [
@@ -517,24 +518,24 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "5GB"
+            "attributeValue": "5GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           },
           {
             "attributeName": "Graphics",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "1GB"
+            "attributeValue": "1GB"
           }
         ],
         "assets": [
@@ -572,18 +573,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "10GB"
+            "attributeValue": "10GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "512GB"
+            "attributeValue": "512GB"
           }
         ],
         "assets": [
@@ -621,18 +622,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "8GB"
+            "attributeValue": "8GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           }
         ],
         "assets": [
@@ -684,24 +685,24 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "5GB"
+            "attributeValue": "5GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           },
           {
             "attributeName": "Graphics",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "1GB"
+            "attributeValue": "1GB"
           }
         ],
         "assets": [
@@ -739,18 +740,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "10GB"
+            "attributeValue": "10GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "512GB"
+            "attributeValue": "512GB"
           }
         ],
         "assets": [
@@ -788,18 +789,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "8GB"
+            "attributeValue": "8GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           }
         ],
         "assets": [
@@ -851,24 +852,24 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "5GB"
+            "attributeValue": "5GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           },
           {
             "attributeName": "Graphics",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "1GB"
+            "attributeValue": "1GB"
           }
         ],
         "assets": [
@@ -906,18 +907,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "10GB"
+            "attributeValue": "10GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "512GB"
+            "attributeValue": "512GB"
           }
         ],
         "assets": [
@@ -955,18 +956,18 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "8GB"
+            "attributeValue": "8GB"
           },
           {
             "attributeName": "Storage",
             "attributeGroupId": 1,
             "attributeGroupName": "General",
-            "attributevalue": "256GB"
+            "attributeValue": "256GB"
           }
         ],
         "assets": [

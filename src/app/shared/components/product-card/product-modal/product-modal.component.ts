@@ -10,9 +10,9 @@ import {
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Product } from "src/app/shared/models/Product";
 import { ProductService } from "src/app/shared/services/product.service";
-import { ProductAttributes } from "src/app/shared/models/ProductAttributes";
+import { StockAttributes } from "src/app/shared/models/ProductAttributes";
 import { Stock } from "src/app/shared/models/Stock";
-import { isNgTemplate } from '@angular/compiler';
+import { isNgTemplate } from "@angular/compiler";
 
 @Component({
   selector: "app-product-modal",
@@ -24,26 +24,25 @@ export class ProductModalComponent implements OnInit, OnChanges {
   @ViewChild("productView", { static: false }) ProductView: TemplateRef<any>;
   @Input() product: Product;
   currentStock: Stock;
-  attributes: ProductAttributes[] = [];
-  unique1: ProductAttributes[] = [];
+  attributes: StockAttributes[] = [];
+  unique1: StockAttributes[] = [];
   attributeGroups: any = {};
   public modalOpen = false;
   public ImageSrc: string;
-  currentStockPointer:number=0;
-  somevalue:any=[];
+  currentStockPointer = 0;
 
   constructor(
     private modalService: NgbModal,
     private readonly _ProductService: ProductService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.currentStock = this.product.stocks[this.currentStockPointer];
     this.getAttribute();
   }
-  ngOnChanges(changes: SimpleChanges): void {}
+  ngOnChanges(changes: SimpleChanges): void { }
 
-  openModal(currentStockPtr:number) {
+  openModal(currentStockPtr: number) {
     this.modalOpen = true;
     this.modalService.open(this.ProductView, {
       size: "lg",
@@ -51,17 +50,17 @@ export class ProductModalComponent implements OnInit, OnChanges {
       centered: true,
       windowClass: "Productview",
     });
-    this.currentStockPointer=currentStockPtr;
+    this.currentStockPointer = currentStockPtr;
   }
 
   getAttribute() {
     this.product.stocks.forEach((stock) => {
-      stock.attributes.forEach((attribute) => {
+      stock.stockAttributes.forEach((attribute) => {
         attribute.stockId = stock.id;
         this.attributes.push(attribute);
       });
     });
-    this.attributes = this.attributes.filter((item, i, arr) => arr.findIndex((t) => t.attributeName === item.attributeName && t.attributevalue === item.attributevalue) === i);
+    this.attributes = this.attributes.filter((item, i, arr) => arr.findIndex((t) => t.attributeName === item.attributeName && t.attributeValue === item.attributeValue) === i);
     for (let i = 0; i < Object.keys(this.attributes).length; i++) {
       const groupName = this.attributes[i].attributeName;
       if (!this.attributeGroups[groupName]) {
@@ -69,10 +68,10 @@ export class ProductModalComponent implements OnInit, OnChanges {
       }
       this.attributeGroups[groupName].push(this.attributes[i]);
     }
-    let keys=Object.keys(this.attributeGroups);
-    keys.forEach(item =>{
-      if(this.attributeGroups[item].length<2)
-      {
+
+    const keys = Object.keys(this.attributeGroups);
+    keys.forEach(item => {
+      if (this.attributeGroups[item].length < 2) {
         delete this.attributeGroups[item];
       }
     });
@@ -86,16 +85,15 @@ export class ProductModalComponent implements OnInit, OnChanges {
       }
     });
   }
-  setCurrentStockPointer(stockId: number)
-  {
+  setCurrentStockPointer(stockId: number) {
     let index = 0;
     this.product.stocks.forEach((stock) => {
-     if(stock.id === stockId) {
-      this.currentStockPointer = index;
-      this.currentStock=this.product.stocks[index];
-      return;
-     }
-     index = index + 1;
+      if (stock.id === stockId) {
+        this.currentStockPointer = index;
+        this.currentStock = this.product.stocks[index];
+        return;
+      }
+      index = index + 1;
     });
   }
 

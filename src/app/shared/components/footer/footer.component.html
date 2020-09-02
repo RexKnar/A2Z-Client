@@ -16,32 +16,15 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <form
-              [formGroup]="subscriptionForm"
-              (ngSubmit)="onSubmit()"
-              class="form-inline subscribe-form"
-            >
+            <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()" class="form-inline subscribe-form">
               <div class="form-group mx-sm-3">
-                <input
-                  type="email"
-                  formControlName="subscriberemail"
-                  class="form-control"
-                  placeholder="Enter your email"
-                  [ngClass]="{
+                <input type="email" formControlName="subscriberemail" class="form-control"
+                  placeholder="Enter your email" [ngClass]="{
                     'is-invalid': submitted && f.subscriberemail.errors
-                  }"
-                />
-                <div
-                  *ngIf="submitted && f.subscriberemail.errors"
-                  class="text-danger"
-                ></div>
+                  }" />
+                <div *ngIf="submitted && f.subscriberemail.errors" class="text-danger"></div>
               </div>
-              <button
-                mat-button
-                cdkFocusInitial
-                class="btn btn-solid"
-                (click)="addSubscriptions()"
-              >
+              <button mat-button cdkFocusInitial class="btn btn-solid" (click)="addSubscriptions()">
                 subscribe
               </button>
             </form>
@@ -70,31 +53,15 @@
             <div class="footer-social">
               <ul>
                 <li>
-                  <a href="javascript:void(0)"
-                    ><img
-                      src="assets/images/icon/fb.png"
-                      width="50"
-                      height="60"
-                      alt=""
-                  /></a>
+                  <a href="javascript:void(0)"><img src="assets/images/icon/fb.png" width="50" height="60" alt="" /></a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)"
-                    ><img
-                      src="assets/images/icon/whats.png"
-                      width="50"
-                      height="60"
-                      alt=""
-                  /></a>
+                  <a href="javascript:void(0)"><img src="assets/images/icon/whats.png" width="50" height="60"
+                      alt="" /></a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)"
-                    ><img
-                      src="assets/images/icon/insta.png"
-                      width="50"
-                      height="60"
-                      alt=""
-                  /></a>
+                  <a href="javascript:void(0)"><img src="assets/images/icon/insta.png" width="50" height="60"
+                      alt="" /></a>
                 </li>
               </ul>
             </div>
@@ -105,10 +72,7 @@
             <div class="footer-title">
               <h4>CATEGORIES</h4>
             </div>
-            <div
-              class="footer-contant"
-              *ngFor="let category of categories | slice: 0:5"
-            >
+            <div class="footer-contant" *ngFor="let category of categories | slice: 0:5">
               <ul>
                 <li>
                   <a>{{ category.categoryName }}</a>
@@ -156,13 +120,8 @@
           <div class="footer-social">
             <ul class="img">
               <li>
-                <a href="javascript:void(0)"
-                  ><img
-                    src="assets/images/icon/playstore.png"
-                    alt=""
-                    width="150"
-                    height="50"
-                /></a>
+                <a href="javascript:void(0)"><img src="assets/images/icon/playstore.png" alt="" width="150"
+                    height="50" /></a>
               </li>
             </ul>
           </div>

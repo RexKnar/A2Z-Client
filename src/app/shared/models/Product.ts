@@ -1,7 +1,7 @@
-import { Asset } from './Asset';
+import { Stock } from "./Stock";
 import { ProductAttributes } from './ProductAttributes';
-import { Stock } from './Stock';
-import { Review } from './Review';
+import { Ratings } from './Ratings';
+
 export class Product {
   productId: string;
   productName: string;
@@ -10,11 +10,29 @@ export class Product {
   subCategoryId: number;
   subCategoryName: string;
   discount: string;
+  rating: number;
   quantity: string;
   wishlistFlag: boolean;
   newFlag: boolean;
   description: string;
-  assets: Asset[];
   stocks: Stock[];
-  Reviews: Review [];
 }
+
+export class ProductDetails {
+    productId: string;
+    productName: string;
+    categoryId: number;
+    categoryname: string;
+    subcategoryId: number;
+    subCategoryName: string;
+    discount: number;
+    rating: number;
+    description: string;
+    wishListFlag: boolean;
+    new_flag: boolean;
+    productAttributes: ProductAttributes[];
+    reviews: Ratings[];
+    stock: Stock[];
+
+}
+
