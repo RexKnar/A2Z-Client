@@ -10,12 +10,12 @@
   </div>
   <div class="border-product">
     <h3>₹{{price}}</h3>
-    <del *ngIf="discountPrice"><span class="money">₹{{ productDetail.stock[currentStockPointer].price}}</span></del>
+    <del class="font-size" *ngIf="discountPrice"><span class="money">₹{{ productDetail?.stock[currentStockPointer].price}}</span></del>
     <h4 *ngIf="productDetail.discount"><span>{{productDetail?.discount}}% off</span></h4>
   </div>
   <div class="border-product">
     <h6 class="product-title">product details</h6>
-    <p>{{ productDetail.stock[currentStockPointer].description.substring(0, 200)+'...' }}</p>
+    <p>{{ productDetail?.stock[currentStockPointer].description.substring(0, 200)+'...' }}</p>
   </div>
   <div class="single-product-tables border-product detail-section">
     <table>

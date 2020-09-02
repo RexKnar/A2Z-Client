@@ -28,7 +28,7 @@ export class ReviewsComponentComponent implements OnInit {
   ngOnInit(): void {
     this.reviewForm = this.formBuilder.group({
       ratingDescription: ["", [Validators.required]],
-      rating1: ["", [Validators.required]],
+      productRating: ["", [Validators.required]],
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -44,7 +44,7 @@ export class ReviewsComponentComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
-    if (this.reviewForm.value.rating1 < 1) {
+    if (this.reviewForm.value.productRating < 1) {
       return;
     }
     if (this.reviewForm.invalid) {
@@ -54,9 +54,9 @@ export class ReviewsComponentComponent implements OnInit {
   addReview(): void {
     this.reviewForm.value.userId = 1;
     this.reviewForm.value.stockId = 1;
-    this.reviewForm.value.rating1 = this.newRating;
+    this.reviewForm.value.productRating = this.newRating;
     if (this.reviewForm.valid) {
-      if (this.reviewForm.value.rating1 < 1) {
+      if (this.reviewForm.value.productRating < 1) {
         return;
       } else {
         this._productService

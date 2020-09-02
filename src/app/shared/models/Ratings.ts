@@ -1,6 +1,6 @@
 export class Ratings {
   userName: string;
-    rating1: number;
+    productRating: number;
     ratingDescription: string;
   userId: number;
   stockId: number;
