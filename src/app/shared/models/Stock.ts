@@ -1,16 +1,13 @@
-import { ProductAttributes} from "./ProductAttributes";
+import { StockAttributes } from "./ProductAttributes";
 import { Assets } from "./Asset";
-import {  Ratings } from "./Ratings";
 
 export class Stock {
      id: number;
      price: number;
      quantity: number;
-     rating: number;
      description: string;
-     attributes: ProductAttributes[];
+     stockAttributes: StockAttributes[];
      assets: Assets[];
-     ratings: Ratings[];
 }
 
 

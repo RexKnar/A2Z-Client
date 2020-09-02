@@ -21,14 +21,14 @@ export class ReviewsComponentComponent implements OnInit {
   submitted = false;
   newRating = 0;
   constructor(private _productService: ProductService,
-    private formBuilder: FormBuilder,
-    private toastr: ToastrService
-
+              private formBuilder: FormBuilder,
+              private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
     this.reviewForm = this.formBuilder.group({
       ratingDescription: ["", [Validators.required]],
+      rating1: ["", [Validators.required]],
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -38,7 +38,6 @@ export class ReviewsComponentComponent implements OnInit {
   }
   selectStar(stars: number) {
     this.newRating = stars;
-    console.log(stars);
   }
   get f() {
     return this.reviewForm.controls;
@@ -58,7 +57,6 @@ export class ReviewsComponentComponent implements OnInit {
     this.reviewForm.value.rating1 = this.newRating;
     if (this.reviewForm.valid) {
       if (this.reviewForm.value.rating1 < 1) {
-        this.toastr.error(MessageConstants.ADDREVIEW_ERROR, "", { timeOut: 2000 });
         return;
       } else {
         this._productService

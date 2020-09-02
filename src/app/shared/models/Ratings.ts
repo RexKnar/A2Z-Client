@@ -5,4 +5,3 @@ export class Ratings {
   userId: number;
   stockId: number;
 }
-

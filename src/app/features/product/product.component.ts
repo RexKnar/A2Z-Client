@@ -9,7 +9,7 @@ import { ProductDetails, Product } from "src/app/shared/models/Product";
   styleUrls: ["./product.component.scss"],
 })
 export class ProductComponent implements OnInit {
-  currentStockPointer=0;
+  currentStockPointer = 0;
   productDetails: Observable<ProductDetails[]>;
   topProductData: Observable<Product[]>;
   constructor(private _productService: ProductService) { }
@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
     this.productDetails = this._productService.getProductDetail(1);
     this.topProductData = this._productService.getProduct();
   }
-  updateCurrentPointer(newPointer:number){
-    this.currentStockPointer=newPointer;
+  updateCurrentPointer(newPointer: number) {
+    this.currentStockPointer = newPointer;
   }
 }

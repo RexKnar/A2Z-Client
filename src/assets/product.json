@@ -8,6 +8,7 @@
     "subcategoryId": 2,
     "subCategoryName": "Mobiles",
     "discount": 200,
+    "rating": 4,
     "wishlistflag": true,
     "description": "Samsung (means in English) is a South Korean multinational conglomerate headquartered in Samsung Town, Seoul.[1] It comprises numerous affiliated businesses, most of them united under the Samsung brand, and is the largest South Korean chaebol (business conglomerate).",
     "stocks": [
@@ -15,8 +16,8 @@
         "id": 1,
         "price": 12000,
         "quantity": 5,
-        "rating": 4,
-        "attributes": [
+       
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -71,7 +72,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -120,7 +121,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -183,7 +184,7 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -238,7 +239,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -287,7 +288,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -350,7 +351,7 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -405,7 +406,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -454,7 +455,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -517,7 +518,7 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -572,7 +573,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -621,7 +622,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -684,7 +685,7 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -739,7 +740,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -788,7 +789,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -851,7 +852,7 @@
         "price": 1000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -906,7 +907,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,
@@ -955,7 +956,7 @@
         "price": 13000,
         "quantity": 5,
         "rating": 3.5,
-        "attributes": [
+        "stockAttributes": [
           {
             "attributeName": "Ram",
             "attributeGroupId": 1,

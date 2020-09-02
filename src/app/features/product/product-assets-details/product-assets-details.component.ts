@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter } from "@angular/core";
 import { ProductDetails } from "src/app/shared/models/Product";
 import { ProductService } from "src/app/shared/services/product.service";
-import { ProductAttributes } from "src/app/shared/models/ProductAttributes";
+import { StockAttributes } from "src/app/shared/models/ProductAttributes";
 import { Stock } from "src/app/shared/models/Stock";
 import { MessageConstants } from "src/app/shared/models/messageConstants";
 import { ToastrService } from "ngx-toastr";
@@ -19,8 +19,8 @@ export class ProductAssetsDetailsComponent implements OnInit {
   public isactive: number;
   currentStockPointer = 0;
   currentStock: Stock;
-  attributes: ProductAttributes[] = [];
-  unique1: ProductAttributes[] = [];
+  stockAttributes: StockAttributes[] = [];
+  unique1: StockAttributes[] = [];
   attributeGroups: any = {};
   constructor(private readonly _ProductService: ProductService, private toastr: ToastrService) { }
 
@@ -35,18 +35,18 @@ export class ProductAssetsDetailsComponent implements OnInit {
   }
   getAttribute() {
     this.productDetail.stock.forEach((stock) => {
-      stock.attributes.forEach((attribute) => {
+      stock.stockAttributes.forEach((attribute) => {
         attribute.stockId = stock.id;
-        this.attributes.push(attribute);
+        this.stockAttributes.push(attribute);
       });
     });
-    this.attributes = this.attributes.filter((item, i, arr) => arr.findIndex((t) => t.attributeName === item.attributeName && t.attributeValue === item.attributeValue) === i);
-    for (let i = 0; i < Object.keys(this.attributes).length; i++) {
-      const groupName = this.attributes[i].attributeName;
+    this.stockAttributes = this.stockAttributes.filter((item, i, arr) => arr.findIndex((t) => t.attributeName === item.attributeName && t.attributeValue === item.attributeValue) === i);
+    for (let i = 0; i < Object.keys(this.stockAttributes).length; i++) {
+      const groupName = this.stockAttributes[i].attributeName;
       if (!this.attributeGroups[groupName]) {
         this.attributeGroups[groupName] = [];
       }
-      this.attributeGroups[groupName].push(this.attributes[i]);
+      this.attributeGroups[groupName].push(this.stockAttributes[i]);
     }
     const keys = Object.keys(this.attributeGroups);
     keys.forEach(item => {

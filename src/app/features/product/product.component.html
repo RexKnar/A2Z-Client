@@ -28,8 +28,9 @@
                             </ngb-tab>
                             <ngb-tab>
                                 <ng-template ngbTabTitle>Specifications</ng-template>
-                                <ng-template ngbTabContent>
-                                    <app-specification></app-specification>
+                                <ng-template *ngFor="let productSpecification of productDetails | async" ngbTabContent>
+                                    <app-specification [productSpecification]="productSpecification">
+                                    </app-specification>
                                 </ng-template>
                             </ngb-tab>
                             <ngb-tab>

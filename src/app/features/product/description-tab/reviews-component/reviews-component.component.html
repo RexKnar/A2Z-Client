@@ -4,7 +4,9 @@
             <div class="media">
                 <label>Your rating of this product
                     <div class="media-body ml-3">
-                        <bar-rating (rateChange)="selectStar($event)"></bar-rating>
+                        <bar-rating (rateChange)="selectStar($event)" formControlName="rating1" [ngClass]="{
+                            'is-invalid': submitted && f.rating1.errors
+                          }"></bar-rating>
                     </div>
                 </label>
             </div>
@@ -23,7 +25,7 @@
         </div>
     </div>
 </form>
-<div *ngFor="let productReview of productDetail.stock[0].ratings">
+<div *ngFor="let productReview of productDetail.reviews">
     <div class="d-flex flex-row">
         <div class="avatorlogo">
             <i class="fa fa-user-circle" aria-hidden="true"></i>

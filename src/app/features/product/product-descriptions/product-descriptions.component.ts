@@ -17,18 +17,27 @@ export class ProductDescriptionsComponent implements OnInit {
   currentStockPointer = 0;
   currentStock: Stock;
   public ImageSrc: string;
-
+  discountPrice = 0;
+  discount: any;
+  price: any;
   constructor(
     private readonly _ProductService: ProductService,
     private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
+
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.currentStockPointer = this.newPointer;
     this.currentStock = this.productDetail.stock[this.currentStockPointer];
-
+    if (this.productDetail.discount) {
+      this.discountPrice = this.productDetail.stock[this.currentStockPointer].price - (this.productDetail.stock[this.currentStockPointer].price * this.productDetail.discount) / 100;
+      this.price = this.discountPrice;
+    }
+    else {
+      this.price = this.productDetail.stock[this.currentStockPointer].price;
+    }
   }
   addToWishlist(productDetail: ProductDetails) {
     const wishlist: Wishlist = new Wishlist();

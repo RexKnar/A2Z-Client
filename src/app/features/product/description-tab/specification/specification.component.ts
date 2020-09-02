@@ -1,4 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
+import { ProductService } from 'src/app/shared/services/product.service';
+import { ProductDetails } from 'src/app/shared/models/Product';
+import { StockAttributes } from 'src/app/shared/models/ProductAttributes';
+import { Stock } from 'src/app/shared/models/Stock';
 
 @Component({
   selector: "app-specification",
@@ -6,10 +10,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./specification.component.scss"]
 })
 export class SpecificationComponent implements OnInit {
+  @Input() productSpecification: ProductDetails;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

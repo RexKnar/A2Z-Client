@@ -1,18 +1,14 @@
-<div class="single-product-tables border-product detail-section">
-  <table>
-    <tbody>
-      <tr>
-        <td>Febric:</td>
-        <td>Chiffon</td>
-      </tr>
-      <tr>
-        <td>Color:</td>
-        <td>Yellow</td>
-      </tr>
-      <tr>
-        <td>Material:</td>
-        <td>Crepe printed</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+<div class="paddingfeatures"
+  *ngFor="let productAttribute of productSpecification.productAttributes">
+      <h4 class="featuresname">{{productAttribute?.attributeGroupName}}</h4>
+      <table class="features">
+        <tbody *ngIf="productAttribute.attributes">
+          <tr  *ngFor="let stockAttribute of productAttribute.attributes">
+            <td class="featurespadding fixed-width-cell ">{{stockAttribute?.attributeName}}</td>
+            <td class="featurespaddings ">{{stockAttribute?.attributeValue}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
 </div>

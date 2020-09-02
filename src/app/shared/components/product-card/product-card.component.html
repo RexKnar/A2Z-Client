@@ -42,7 +42,7 @@
   </div>
   <div class="product-detail">
     <div>
-      <bar-rating [rate]="product.stocks[currentStockPointer].rating" [readOnly]="true"></bar-rating>
+      <bar-rating [rate]="product?.rating" [readOnly]="true"></bar-rating>
       <a>
         <h6>{{ product?.productName | titlecase }}</h6>
       </a>
