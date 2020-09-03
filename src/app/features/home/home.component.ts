@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit {
     this.newProduct.data = this.newProductData;
     this.bestSeller.title = "Top Selling Products";
     this.bestSeller.data = this.bestSellerData;
-    
     this.tabData.push(this.topProduct);
     this.tabData.push(this.newProduct);
     this.tabData.push(this.bestSeller);
