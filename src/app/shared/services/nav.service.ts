@@ -30,7 +30,7 @@ export class NavService {
 	}
 	MENUITEMS: Menu[] = [
 		{
-			path: '/', title: 'Home', type: 'link'
+			path: '/home', title: 'Home', type: 'link'
 		},
 
 		{

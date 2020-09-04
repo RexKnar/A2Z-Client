@@ -21,6 +21,7 @@ export let ProductSlider: any = {
 export let HomeSlider: any = {
     loop: true,
     nav: true,
+    autoplay: true,
     dots: false,
     navContainerClass: 'owl-nav',
     navClass: ['owl-prev', 'owl-next'],
