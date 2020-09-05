@@ -1,21 +1,126 @@
-<section class="section-b-space">
+<section class="p-b-0 p-t-0">
   <app-imageslider [slider]="sliderData | async"></app-imageslider>
 </section>
-<section>
-  <div class="col-lg-12">
-    <div class="row ">
-      <div class="col-md-6 right" *ngFor="let bannerItem of topBannerData | async">
-        <app-banner [banner]=bannerItem></app-banner>
+<section class="p-t-0 d-lg-inline d-none">
+  <app-service-info></app-service-info>
+</section>
+  <div class="title1 section-t-space">
+    <h4>special offer</h4>
+    <h2 class="title-inner1">Top Selection</h2>
+  </div>
+<section class="p-t-0">
+  <div class="container products-padding">
+    <div class="row">
+      <div class="col">
+        <app-product-slider [products]="topProductData | async"></app-product-slider>
       </div>
     </div>
   </div>
 </section>
-<section>
-  <div class="col-lg-12">
-    <div class="row ">
-      <div class="col-md-6 right" *ngFor="let bannerItem of bottomBannerData | async">
-        <app-banner [banner]=bannerItem></app-banner>
+<section class="offerbanner">
+  <div class="row">
+    <div class="col-md-6 right d-lg-inline d-none" *ngFor="let bannerItem of topBannerData | async">
+      <app-banner [banner]="bannerItem"></app-banner>
+    </div>
+    <div class="col-md-6 right" *ngFor="let bannerItem of bottomBannerData | async">
+      <app-banner [banner]="bannerItem"></app-banner>
+    </div>
+  </div>
+</section>
+<section class="p-t-0">
+  <div class="container d-lg-none">
+    <div class="row tab-top">
+      <div class="col theme-tab">
+        <app-product-tab [tabData]="tabData">
+        </app-product-tab>
       </div>
     </div>
   </div>
 </section>
+<section class="offerbanner">
+  <div class="row d-lg-none">
+    <div class="col-md-6 right " *ngFor="let bannerItem of topBannerData | async">
+      <app-banner [banner]="bannerItem"></app-banner>
+    </div>
+  </div>
+</section>
+<div class="title1 section-t-space d-lg-inline d-none">
+  <h4>special offer</h4>
+  <h2 class="title-inner1">top collection</h2>
+</div>
+  <div class="title1 section-t-space d-lg-none">
+    <h4>exclusive products</h4>
+    <h2 class="title-inner1">special products</h2>
+  </div>
+<section class="p-t-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-product-slider [products]="topProductData | async"></app-product-slider>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="p-0">
+  <div class="full-banner parallax-banner1 parallax text-center p-left"
+    [ngStyle]="{'background-image': 'url(assets/images/parallax/1.jpg)'}">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="banner-contain">
+            <h2>2018</h2>
+            <h3>fashion trends</h3>
+            <h4>special offer</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="p-t-0 d-lg-inline d-none">
+  <div class="title1 section-t-space">
+    <h4>exclusive products</h4>
+    <h2 class="title-inner1">special products</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col theme-tab">
+        <app-product-tab [tabData]="tabData">
+        </app-product-tab>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="productsbanner d-lg-inline d-none">
+  <div class="row productsbanner-row">
+    <div class="col-md-4 right" *ngFor="let bannerItem of topBannerData | async">
+      <app-banner [banner]="bannerItem"></app-banner>
+    </div>
+    <div class="col-md-4 right" *ngFor="let bannerItem of bottomBannerData | async">
+      <app-banner [banner]="bannerItem"></app-banner>
+    </div>
+    <div class="col-md-4 right" *ngFor="let bannerItem of topBannerData | async">
+      <app-banner [banner]="bannerItem"></app-banner>
+    </div>
+  </div>
+</section>
+  <div class="title1 section-t-space">
+    <h2 class="title-inner1">More to Explore</h2>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <app-product-slider [products]="topProductData | async"></app-product-slider>
+    </div>
+  </div>
+</div>
+<div class="title1 section-t-space">
+  <h2 class="title-inner1">Best Sellers in Clothing & Accessories</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <app-product-slider [products]="topProductData | async"></app-product-slider>
+    </div>
+  </div>
+</div>

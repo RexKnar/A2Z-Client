@@ -1,0 +1,25 @@
+<div class="product-box">
+  <div class="img-wrapper ">
+    <div class="front">
+      <a>
+        <img [defaultImage]="ImageSrc ? ImageSrc : './assets/images/product/placeholder.jpg'"
+          [lazyLoad]="ImageSrc ? ImageSrc : productDetail.stock[currentStockPointer].assets[0].assetUrl"
+          class="img-fluid lazy-loading" alt="{{ productDetail.stock[currentStockPointer].assets[0].assetType }}" />
+      </a>
+    </div>
+    <div class="back" *ngIf="onHowerChangeImage">
+      <a>
+        <img [src]="ImageSrc ? ImageSrc : productDetail.stock[currentStockPointer].assets[0].assetUrl"
+          class="img-fluid lazy-loading" alt="{{ productDetail.stock[currentStockPointer].assets[0].assetType }}">
+      </a>
+    </div>
+    <ul class="product-thumb-list" *ngIf="thumbnail">
+      <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl"
+        *ngFor="let image of productDetail.stock[currentStockPointer].assets">
+        <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.assetUrl)">
+          <img [lazyLoad]="image.assetUrl">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -17,7 +17,6 @@ export class SearchbarComponent implements OnInit {
   public getAllHomeMenu(): void {
     this._menuService.getMenu().subscribe((data: any) => {
       this.menuItems = data;
-      console.log(data);
     });
   }
 

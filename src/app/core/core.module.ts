@@ -10,13 +10,16 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ProfileViewComponent } from './components/profile/profile-view/profile-view.component';
 import { AddressComponent } from './components/profile/address/address.component';
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
   
 
 
 @NgModule({
   imports: [
     CommonModule,
-    CoreRoutes
+    CoreRoutes,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     CoreComponent,
@@ -27,6 +30,7 @@ import { AddressComponent } from './components/profile/address/address.component
     ForgotPasswordComponent,
     ResetPasswordComponent,
     ProfileViewComponent,
-    AddressComponent]
+    AddressComponent],
+    
 })
 export class CoreModule { }

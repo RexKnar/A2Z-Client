@@ -1,20 +1,24 @@
-<section class="login-page section-b-space">
+<section class="login-page section-b-space login-background">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h3>Login</h3>
-                <div class="theme-card">
-                    <app-loginform></app-loginform>  
+        <div class="row ">
+
+            <div class="theme-card col-3-5 sizing1 color-back  d-lg-inline d-none ">
+                <span class="text-style">Login</span>
+                <p class="para-text">
+                    <span>Get access to your Orders, Wishlist and Recommendations</span>
+                </p>
+                <span>
+                    <img src="./assets/images/a2z/login/login-page.jpg" class="login-image">
+                </span>
+            </div>
+           
+            <div class="theme-card col-lg-4 col-md-6 login-card-background ">
+                <app-loginform></app-loginform>
+                <div class="link-margin">
+                    <a [routerLink]="['/register']" class="link-color">New to KumariA2Z? Create an account</a>
                 </div>
             </div>
-            <div class="col-lg-6 right-login">
-                <h3>New Customer</h3>
-                <div class="theme-card authentication-right">
-                    <h6 class="title-font">Create A Account</h6>
-                    <p>Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
-                    <button class="btn btn-solid">Create an Account</button>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

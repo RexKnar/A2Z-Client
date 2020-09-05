@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { LoginComponent } from 'src/app/core/components/login/login.component';
 
 @Component({
   selector: 'app-toolsbar',

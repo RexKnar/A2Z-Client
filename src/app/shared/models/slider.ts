@@ -1,11 +1,4 @@
-export class Slider {
-    id: Number;
-    navigationUrl: string;
-    imageUrl: string;
-    discountText: string;
-    discountCategory: string;
-    location: string;
-}
+// Home Slider
 export let HomeSlider: any = {
     loop: true,
     nav: true,
@@ -27,4 +20,13 @@ export let HomeSlider: any = {
             items: 1
         }
     },
+};
+
+export class Slider {
+    id: number;
+    navigationUrl: string;
+    imageUrl: string;
+    discountText: string;
+    discountCategory: string;
+    location: string;
 }

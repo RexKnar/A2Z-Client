@@ -1,0 +1,51 @@
+<div class="product-right product-description-box">
+  <h2>{{ productDetail?.productName | titlecase}}</h2>
+  <div class="d-flex flex-row">
+    <div class="reviewcount">
+      {{productDetail?.rating}}
+    </div>
+    <div>
+      <bar-rating [rate]="productDetail?.rating" [readOnly]="true"></bar-rating>
+    </div>
+  </div>
+  <div class="border-product">
+    <h3>₹{{price}}</h3>
+    <del class="font-size" *ngIf="discountPrice"><span class="money">₹{{ productDetail?.stock[currentStockPointer].price}}</span></del>
+    <h4 *ngIf="productDetail.discount"><span>{{productDetail?.discount}}% off</span></h4>
+  </div>
+  <div class="border-product">
+    <h6 class="product-title">product details</h6>
+    <p>{{ productDetail?.stock[currentStockPointer].description.substring(0, 200)+'...' }}</p>
+  </div>
+  <div class="single-product-tables border-product detail-section">
+    <table>
+      <tbody>
+        <tr *ngFor="let stockAttribute of productDetail.stock[currentStockPointer].stockAttributes">
+          <td>{{stockAttribute.attributeName}}</td>
+          <td>{{stockAttribute.attributeValue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="border-product">
+    <div class="product-icon">
+      <form class="d-inline-block">
+        <button class="wishlist-btn" title="Add to Wishlist" (click)="addToWishlist(productDetail)">
+          <i class="fa "
+            [ngClass]="{'fa-heart' : productDetail.wishListFlag,'fa-heart-o' : !productDetail.wishListFlag}"
+            aria-hidden="true">
+          </i><span class="title-font">Add To WishList</span></button>
+      </form>
+    </div>
+  </div>
+  <div class="border-product">
+    <div class="product-icon">
+      <ul class="product-social">
+        <li class="iconsize"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+        <li class="iconsize"><a href="https://plus.google.com/discover"><i class="fa fa-google-plus"></i></a></li>
+        <li class="iconsize"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+        <li class="iconsize"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
