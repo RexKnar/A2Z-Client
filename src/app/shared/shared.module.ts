@@ -27,6 +27,12 @@ import { ProductSliderComponent } from './components/product-slider/product-slid
 import { SkeletonProductCardComponent } from './components/skeleton/skeleton-product-card/skeleton-product-card.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ServiceInfoComponent } from './components/service-info/service-info.component';
+import { CoreModule } from '../core/core.module';
+import { LoginComponent } from './components/modals/login/login.component';
+import { LoginformComponent } from './components/modals/login/loginform/loginform.component';
+import { ForgotPasswordComponent } from './components/modals/login/forgot-password/forgot-password.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -51,7 +57,10 @@ import { ServiceInfoComponent } from './components/service-info/service-info.com
     SidebarComponent,
     MenusComponent,
     ContactinfoComponent,
+    ForgotPasswordComponent,
     FooterComponent,
+    LoginComponent,
+    LoginformComponent,
     ProductCardComponent,
     ProductModalComponent,
     QuantityComponent,
@@ -68,11 +77,14 @@ import { ServiceInfoComponent } from './components/service-info/service-info.com
     ProductTabComponent,
     HeaderComponent,
     TopmenuComponent,
+    ForgotPasswordComponent,
     MenubarComponent,
     LogoComponent,
     SearchbarComponent,
     ToolsbarComponent,
     SidebarComponent,
+    LoginComponent,
+    LoginformComponent,
     MenusComponent,
     ContactinfoComponent,
     FooterComponent,

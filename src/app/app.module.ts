@@ -34,7 +34,9 @@ import { ProductModule } from "./features/product/product.module";
       enableHtml: true,
     }),
    ],
-   providers: [],
+   providers: [
+       ],
+     
    bootstrap: [
       AppComponent
    ],

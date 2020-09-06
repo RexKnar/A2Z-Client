@@ -11,7 +11,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ProfileViewComponent } from './components/profile/profile-view/profile-view.component';
 import { AddressComponent } from './components/profile/address/address.component';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-  
+
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
     CommonModule,
     CoreRoutes,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     CoreComponent,
@@ -31,6 +31,6 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
     ResetPasswordComponent,
     ProfileViewComponent,
     AddressComponent],
-    
+ 
 })
 export class CoreModule { }

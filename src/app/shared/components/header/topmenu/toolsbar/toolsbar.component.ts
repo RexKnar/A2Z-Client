@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { LoginComponent } from 'src/app/core/components/login/login.component';
+import { LoginComponent } from '../../../modals/login/login.component';
+
+
 
 @Component({
   selector: 'app-toolsbar',
@@ -7,10 +9,11 @@ import { LoginComponent } from 'src/app/core/components/login/login.component';
   styleUrls: ['./toolsbar.component.scss']
 })
 export class ToolsbarComponent implements OnInit {
-
+  @ViewChild("loginModal") LoginModal: LoginComponent;
+   
   constructor() { }
 
   ngOnInit(): void {
   }
-
+ 
 }

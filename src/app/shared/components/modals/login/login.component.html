@@ -1,10 +1,12 @@
-<ng-template class="theme-modal" #loginpage let-modal>
 
-<section class="login-page section-b-space login-background">
-    <div class="container">
-        <div class="row ">
-
-            <div class="theme-card col-3-5 sizing1 color-back  d-lg-inline d-none ">
+<ng-template class="theme-modal " #loginModal let-modal>
+  
+    <!-- <div class="modal-bg"> -->
+       
+    <!-- </div> -->
+        <div class="row  login-page row-style">
+           
+            <div class="theme-card col-lg-5 sizing1 color-back bgRed  d-lg-inline d-none ">
                 <span class="text-style">Login</span>
                 <p class="para-text">
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
@@ -13,15 +15,18 @@
                     <img src="./assets/images/a2z/login/login-page.jpg" class="login-image">
                 </span>
             </div>
-           
-            <div class="theme-card col-lg-4 col-md-6 login-card-background ">
+
+            <div class="theme-card col-lg-5 col-md-5 login-card-background ">
                 <app-loginform></app-loginform>
                 <div class="link-margin">
                     <a [routerLink]="['/register']" class="link-color">New to KumariA2Z? Create an account</a>
                 </div>
             </div>
+            <div>
 
+               <button class="btn-style "   data-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"> x</button>
+               </div>
         </div>
-    </div>
-</section>
+    
+   
 </ng-template>

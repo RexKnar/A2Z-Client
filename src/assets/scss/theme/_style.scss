@@ -3564,6 +3564,13 @@ header {
 #sizemodal {
     padding-right: 0 !important;
 }
+.customLoginModal{
+    .modal-dialog{
+        width: 700px !important;
+        max-width: 700px !important;
+        
+    }
+}
 
 .theme-modal {
     padding-right: 0 !important;

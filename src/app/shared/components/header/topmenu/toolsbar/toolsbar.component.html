@@ -24,7 +24,7 @@
         <i class="fa fa-user-o fa-icon-color" aria-hidden="true"></i>
         <ul class="onhover-show-div ">
             <li>
-                <a routerLink="/login" class="fa-icon-color btn-pr" >
+                <a href="javascrip:void(0)" (click)="LoginModal.openModal()" class="fa-icon-color btn-pr" >
                     Login
                 </a>
             </li>
@@ -80,3 +80,4 @@
         </ul>
     </li>
 </ul>
+<app-login #loginModal></app-login>
