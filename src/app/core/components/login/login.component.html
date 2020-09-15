@@ -1,30 +1,38 @@
-<section class="login-page section-b-space">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h3>Login</h3>
-                <div class="theme-card">
-                    <form class="theme-form">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Email" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="review">Password</label>
-                            <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
-                        </div>
-                        <button class="btn btn-solid">Login</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6 right-login">
-                <h3>New Customer</h3>
-                <div class="theme-card authentication-right">
-                    <h6 class="title-font">Create A Account</h6>
-                    <p>Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
-                    <button class="btn btn-solid">Create an Account</button>
-                </div>
-            </div>
+<ng-template class="theme-modal " #loginModal let-modal>
+    <div class="row  d-lg-inline d-none ">
+        <div class=" col-lg-5 color-back float-left">
+            <span class="text-style">KumariA2Z</span>
+            <p class="para-text">
+                <span>Get access to your Orders, Wishlist and Recommendations</span>
+            </p>
+            <span>
+                <img src="./assets/images/a2z/login/login-page.png" class="login-image ">
+            </span>
+        </div>
+        <div class=" col-lg-6 col-align float-left">
+            <container-element [ngSwitch]="formChange">
+                <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
+                    (registerBtnClick)="formChange=$event"></app-loginform>
+                <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event">
+                </app-resetpasswordform>
+                <app-registerform *ngSwitchCase="'register'"></app-registerform>
+            </container-element>
+        </div>
+        <div>
+            <button class="btn-style " data-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                x</button>
         </div>
     </div>
-</section>
+    <div class="form-align-mobileview d-lg-none">
+        <button class="btn-style btn-mobile" data-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')">
+            x</button>
+        <container-element [ngSwitch]="formChange">
+            <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
+                (registerBtnClick)="formChange=$event"></app-loginform>
+            <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event">
+            </app-resetpasswordform>
+            <app-registerform *ngSwitchCase="'register'"></app-registerform>
+        </container-element>
+    </div>
+</ng-template>

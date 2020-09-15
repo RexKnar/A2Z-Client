@@ -3,7 +3,7 @@ export const ROUTE_CONFIG = {
 };
 export const FOOTER_API_CONFIG = {
     topSellingCategoryURL: "/Category/GetTopSellingCategory/5",
-    subscriptionURL: "/Subscription"
+    subscriptionURL: "/Subscription/PostSubscription"
 };
 export const HEADER_API_CONFIG = {
     menuCategoryURL: "/Category/GetMenuCategories"
@@ -21,6 +21,9 @@ export const PRODUCT_API_CONFIG = {
 };
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
+};
+export const USER_LOGIN_API_CONFIG = {
+    loginPageURL: "/User/Login"
 };
 export class Apiresponce {
     responseCode: string;

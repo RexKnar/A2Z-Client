@@ -24,12 +24,12 @@
         <i class="fa fa-user-o fa-icon-color" aria-hidden="true"></i>
         <ul class="onhover-show-div ">
             <li>
-                <a routerLink="/" class="fa-icon-color btn-pr">
+                <a (click)="LoginModal.openModal()" class="fa-icon-color btn-pr" >
                     Login
                 </a>
             </li>
             <li>
-                <a routerLink="/" class="fa-icon-color btn-pr">
+                <a (click)="logOut()" class="fa-icon-color btn-pr">
                     Logout
                 </a>
             </li>
@@ -39,7 +39,7 @@
 
 <ul class="header-dropdown line toptab-mobile d-lg-none">
     <li class="iconsize">
-        <a routerLink="/">
+        <a routerLink="/home">
             <i class="fa fa-home fa-icon-color-mobile" aria-hidden="true"></i>
         </a>
     </li>
@@ -66,9 +66,9 @@
     </li>
     <li class="iconsize onhover-dropdown mobile-account">
         <i class="fa fa-user-o fa-icon-color-mobile" aria-hidden="true"></i>
-        <ul class="onhover-show-div">
+        <ul class="onhover-show-div user-align">
             <li>
-                <a routerLink="/" class="fa-icon-color">
+                <a (click)="LoginModal.openModal()" class="fa-icon-color btn-pr" >
                     Login
                 </a>
             </li>
@@ -80,3 +80,4 @@
         </ul>
     </li>
 </ul>
+<app-login #loginModal></app-login>

@@ -17,6 +17,7 @@ import { ProductDescriptionsComponent } from "./product-descriptions/product-des
 import { BarRatingModule } from "ngx-bar-rating";
 
 
+
 @NgModule({
   imports: [
     CommonModule,
