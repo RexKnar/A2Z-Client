@@ -1,0 +1,52 @@
+<form class="theme-form " [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <div class=" mobile-title">
+        <span class="text-style">New User</span>
+    </div>
+
+
+
+    <label for="review">MobileNumber</label>
+    <div class="input-group ">
+        <input type="text" class="form-control" placeholder="MobileNumber" formControlName="mobilenumber"
+            [ngClass]="{ 'is-invalid': submitted && f.mobilenumber.errors }">
+    </div>
+    <span class="float-right">
+        <i class="fa fa-refresh btn-pr" aria-hidden="true"></i>
+    </span>
+
+    <div *ngIf="submitted && f.mobilenumber.errors" class="text-danger">
+        <div *ngIf="f.mobilenumber.errors.required" class="par-txxt">*required</div>
+    </div>
+
+    <div class="btn-center">
+        <button [disabled]="!registerForm.valid" class="btn btn-solid" >Continue</button>
+    </div>
+    <!-- <label for="review">Verify Otp</label>
+    <div class="input-group ">
+        <input type="text" class="form-control" placeholder="enter your otp" formControlName="mobileotp"
+            [ngClass]="{ 'is-invalid': submitted && f.mobileotp.errors }">
+    </div>
+
+    <div *ngIf="submitted && f.mobileotp.errors" class="text-danger">
+        <div *ngIf="f.mobileotp.errors.required" class="par-txxt">*required</div>
+    </div>
+    <label for="review">Password</label>
+    <div class="input-group ">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+    </div>
+    <div *ngIf="submitted && f.password.errors" class="text-danger">
+        <div *ngIf="f.password.errors.required" class="par-txxt">*required</div>
+    </div> 
+
+
+
+    
+
+    <div class="btn-center">
+        <button [disabled]="!registerForm.valid" class="btn btn-solid" (click)="register()">create Account</button>
+    </div>-->
+
+
+</form>

@@ -1,20 +1,32 @@
-.btn-center{
-    text-align: center !important;
+.btn-center {
+  text-align: center !important;
 }
-.btn{
-    line-height: 6px !important;
+.btn {
+  line-height: 6px !important;
 }
-.link-margin{
-    margin-bottom: 15px;
+.forget-link-margin {
+  margin-bottom: 15px;
+  padding-top: 8%;
 }
-.theme-form input{
-    margin-bottom: 17px !important;
+.link-margin {
+  margin-bottom: 15px;
+  padding-top: 16%;
 }
-.link-color{
-    color: #172337 !important;
+.theme-form input {
+  margin-bottom: 17px !important;
 }
-.mobile-title{
-    padding-bottom: 23px;
-    font-size: 30px;
-    font-weight: 600;
+.link-color {
+  color: #172337 !important;
+}
+.mobile-title {
+  padding-bottom: 23px;
+  padding-top: 8%;
+  font-size: 24px;
+  font-weight: 600;
+}
+.btn-pr:hover {
+  cursor: pointer;
+}
+.form-control {
+  font-size: 12px !important;
 }

@@ -44,8 +44,8 @@
 .toptab-mobile {
   display: flex;
   align-items: center;
-  padding-left: 26px !important;
-  margin-top: 10px !important;
+  padding-left: 7% !important;
+    margin-top: 3% !important;
 }
 .login-btn {
   display: flex;
@@ -66,4 +66,9 @@
  .modal-dialog{
   max-width: 700px !important;
 
+}
+.user-align{
+     top: auto !important;
+    left: -15% !important;
+    bottom: 100% !important;
 }
