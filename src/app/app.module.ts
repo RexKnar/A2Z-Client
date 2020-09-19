@@ -19,7 +19,7 @@ import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 @NgModule({
    declarations: [
       AppComponent
-    ],
+   ],
    imports: [
       CommonModule,
       BrowserModule,
@@ -30,17 +30,17 @@ import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
       NgbModule,
       LoadingBarHttpClientModule,
       LoadingBarRouterModule,
-     HttpClientModule,
-     ProductModule,
-     BrowserAnimationsModule,
-     ToastrModule.forRoot({
-      timeOut: 3000,
-      progressBar: false,
-      enableHtml: true,
-    }),
+      HttpClientModule,
+      ProductModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot({
+         timeOut: 3000,
+         progressBar: false,
+         enableHtml: true,
+      }),
    ],
    providers: [
-       ],
+   ],
 
    bootstrap: [
       AppComponent

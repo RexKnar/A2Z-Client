@@ -29,12 +29,14 @@
         <button class="btn-style btn-mobile" data-dismiss="modal" aria-label="Close"
             (click)="modal.dismiss('Cross click')">
             x</button>
-        <container-element [ngSwitch]="formChange">
-            <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
-                (registerBtnClick)="formChange=$event"></app-loginform>
-            <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event">
-            </app-resetpasswordform>
-            <app-registerform *ngSwitchCase="'register'" (loginBtnClick)="formChange=$event"></app-registerform>
-        </container-element>
+            <container-element [ngSwitch]="formChange">
+                <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
+                    (registerBtnClick)="formChange=$event"></app-loginform>
+                <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event"
+                    (loginBtnClick)="formChange=$event">
+                </app-resetpasswordform>
+                <app-registerform *ngSwitchCase="'register'" (loginBtnClick)="formChange=$event">
+                </app-registerform>
+            </container-element>
     </div>
 </ng-template>
