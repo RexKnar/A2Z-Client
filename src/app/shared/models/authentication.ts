@@ -3,15 +3,7 @@ export class UserLogin {
     password: string;
     userId: number;
     otp: number;
-    newPassword: number;
+    newPassword: string;
 
-}
-export class UserLoginResponse{
-    accessToken: string;
-    roles: number;
-    userId: number;
-    userName: string;
-    isAuthorize: boolean;
-    firstName: string;
 }
 

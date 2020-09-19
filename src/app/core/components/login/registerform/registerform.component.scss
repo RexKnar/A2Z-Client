@@ -1,36 +1,40 @@
-.btn-center{
-    text-align: center !important;
-    line-height: 10;
-    padding-left: 40px;
+.btn-center {
+  text-align: center !important;
+  line-height: 10;
+  padding-left: 40px;
 }
-.btn{
-    line-height: 6px !important;
+.btn {
+  line-height: 6px !important;
 }
-.link-margin{
-    margin-bottom: 15px;
-    padding-top: 25px;
+.link-margin {
+  margin-bottom: 15px;
+  padding-top: 25px;
 }
-.theme-form input{
-    margin-bottom: 17px !important;
+.theme-form input {
+  margin-bottom: 17px !important;
 }
-.link-color{
-    color: #172337 !important;
+.link-color {
+  color: #172337 !important;
 }
-.mobile-title{
-    padding-bottom: 23px;
-    padding-top: 5%;
-    font-size: 24px;
-    font-weight: 600;
-}
-.btn-pr:hover {
-    cursor: pointer;
-}
-.form-control{
-    font-size: 12px !important;
-}
-.row-align{
-    margin-bottom: -30px;
+.mobile-title {
+  padding-bottom: 23px;
+  padding-top: 5%;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
 }
 .btn-pr:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+.form-control {
+  font-size: 12px !important;
+}
+.row-align {
+  margin-bottom: -30px;
+}
+.btn-pr:hover {
+  cursor: pointer;
+}
+.success {
+  color: green;
 }

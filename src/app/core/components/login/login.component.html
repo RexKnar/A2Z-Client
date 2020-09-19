@@ -13,9 +13,11 @@
             <container-element [ngSwitch]="formChange">
                 <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
                     (registerBtnClick)="formChange=$event"></app-loginform>
-                <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event">
+                <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event"
+                    (loginBtnClick)="formChange=$event">
                 </app-resetpasswordform>
-                <app-registerform *ngSwitchCase="'register'"></app-registerform>
+                <app-registerform *ngSwitchCase="'register'" (loginBtnClick)="formChange=$event">
+                </app-registerform>
             </container-element>
         </div>
         <div>
@@ -32,7 +34,7 @@
                 (registerBtnClick)="formChange=$event"></app-loginform>
             <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event">
             </app-resetpasswordform>
-            <app-registerform *ngSwitchCase="'register'"></app-registerform>
+            <app-registerform *ngSwitchCase="'register'" (loginBtnClick)="formChange=$event"></app-registerform>
         </container-element>
     </div>
 </ng-template>

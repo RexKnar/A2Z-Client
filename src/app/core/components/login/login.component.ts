@@ -1,8 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild, PLATFORM_ID, Inject } from "@angular/core";
 import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { isPlatformBrowser } from "@angular/common";
-import { AuthenticationService } from "src/app/shared/services/authentication.service";
-
 
 @Component({
   selector: "app-login",

@@ -1,3 +1,5 @@
+
+
 export const ROUTE_CONFIG = {
     baseUrl: "http://kumaria2z-001-site1.ftempurl.com/api"
 };
@@ -23,7 +25,12 @@ export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
 };
 export const USER_LOGIN_API_CONFIG = {
-    loginPageURL: "/User/Login"
+    loginPageURL: "/User/Login",
+    registerPageURL: "/User/Registration",
+    verifyUserURL: "/User/VerifyOtp",
+    resendOtpURL: "/User/ResendOtp",
+    forgotPasswordURL: "/User/ForgotPassword",
+    changePasswordURL: "/User/ChangePassword"
 };
 export class Apiresponce {
     responseCode: string;

@@ -17,7 +17,6 @@ export class LoginformComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   isAuthorize = false;
-  userLogin: UserLogin;
   @Output() registerBtnClick = new EventEmitter();
   @Output() forgetBtnClick = new EventEmitter();
   constructor(private formBuilder: FormBuilder,
@@ -27,19 +26,17 @@ export class LoginformComponent implements OnInit {
               private _authenticationService: AuthenticationService,
               private toastr: ToastrService
   ) { }
-
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       userName: ["", [Validators.required]],
       password: ["", [Validators.required]],
     });
   }
-
   loginUser() {
     this.loginForm.value.userId = 0;
     this.loginForm.value.otp = 0;
     this.loginForm.value.newPassword = "";
-    this._authenticationService.UserLoginResponse(this.loginForm.value).subscribe((data: any) => {
+    this._authenticationService.userLogin(this.loginForm.value).subscribe((data: any) => {
       sessionStorage.setItem("accessToken", data.access_token);
       if (data.isAuthorize) {
         this._router.navigate(["/home"]);
