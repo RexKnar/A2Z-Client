@@ -31,6 +31,7 @@ import { CoreModule } from '../core/core.module';
 import { LoginComponent } from './components/modals/login/login.component';
 import { LoginformComponent } from './components/modals/login/loginform/loginform.component';
 import { ForgotPasswordComponent } from './components/modals/login/forgot-password/forgot-password.component';
+import { DiscountPipe } from './pipes/discount.pipe';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { ForgotPasswordComponent } from './components/modals/login/forgot-passwo
     ImagesliderComponent,
     ProductTabComponent,
     BannerComponent,
-    ServiceInfoComponent
+    ServiceInfoComponent,
+    DiscountPipe
   ]
 })
 export class SharedModule { }

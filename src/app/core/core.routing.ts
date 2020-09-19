@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ProfileViewComponent } from './components/profile/profile-view/profile-view.component';
 import { AddressComponent } from './components/profile/address/address.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   
@@ -37,6 +38,10 @@ const routes: Routes = [
   { 
     path: 'address', 
     component: AddressComponent 
+  },
+  { 
+    path: 'cart', 
+    component: CartComponent 
   },
 ];
 

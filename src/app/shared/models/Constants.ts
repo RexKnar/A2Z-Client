@@ -19,6 +19,12 @@ export const PRODUCT_API_CONFIG = {
     AddToWishlistURL: "/Wishlist/AddToWhishlistByUserId",
     ProductListURL: "assets/product.json"
 };
+export const CART_API_CONFIG={
+    AddToCartURL: "/Cart/AddCartByUserId",
+    GetCartItemsURL:"/Cart/GetCartByUserId/1",
+    UpdateCartItemsURL:"/Cart/UpdateCartByCartId",
+    RemoveCartItemsURL:"/Cart/DeleteCartByCartId"
+}
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
 };

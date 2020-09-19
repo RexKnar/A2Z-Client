@@ -6,12 +6,13 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { SharedModule } from "./shared/shared.module";
 import { ImagesliderComponent } from "./shared/components/imageslider/imageslider.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule,  HTTP_INTERCEPTORS } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProductModule } from "./features/product/product.module";
+import { AuthInterceptor } from './shared/interceptors/AuthInterceptor';
 
 @NgModule({
    declarations: [
@@ -35,6 +36,11 @@ import { ProductModule } from "./features/product/product.module";
     }),
    ],
    providers: [
+      {
+         provide:HTTP_INTERCEPTORS,
+         useClass:AuthInterceptor,
+         multi:true
+      }
        ],
      
    bootstrap: [
