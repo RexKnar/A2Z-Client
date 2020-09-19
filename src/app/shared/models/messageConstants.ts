@@ -12,8 +12,9 @@ export const MessageConstants = {
     REGISTER_SUCCESS: "Registered Successfully",
     REGISTER_ERROR: "Invaild Otp",
     FORGOTPASSWORD_SUCCESS: "Password changed successfully",
-    FORGOTPASSWORD_ERROR: "Something Went Wrong",
+    FORGOTPASSWORD_ERROR: "Invaild Otp",
     USER_EXISTS: "User Already Exists",
     USER_NOT_FOUND: "No User Found",
     PASSWORD_CHANGE_SUCCESS: "Password changed successfully",
+    INVALID_DATA:"Invaild Otp"
 };

@@ -9,7 +9,6 @@ import { isPlatformBrowser } from "@angular/common";
 })
 export class LoginComponent implements OnInit {
   @ViewChild("loginModal", { static: false }) LoginModal: TemplateRef<any>;
-
   public modalOpen = false;
   public closeResult: string;
   formChange = "login";
