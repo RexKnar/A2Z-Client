@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProductModule } from "./features/product/product.module";
+import { LoadingBarModule } from "@ngx-loading-bar/core";
+import { LoadingBarHttpClientModule } from "@ngx-loading-bar/http-client";
+import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 
 @NgModule({
    declarations: [
@@ -25,6 +28,8 @@ import { ProductModule } from "./features/product/product.module";
       HomeModule,
       SharedModule,
       NgbModule,
+      LoadingBarHttpClientModule,
+      LoadingBarRouterModule,
      HttpClientModule,
      ProductModule,
      BrowserAnimationsModule,
@@ -36,7 +41,7 @@ import { ProductModule } from "./features/product/product.module";
    ],
    providers: [
        ],
-     
+
    bootstrap: [
       AppComponent
    ],
