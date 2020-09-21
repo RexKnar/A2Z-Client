@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrService } from "ngx-toastr";
 import { MessageConstants } from "src/app/shared/models/messageConstants";
 import { AuthenticationService } from "src/app/shared/services/authentication.service";
@@ -21,7 +20,6 @@ export class ResetpasswordformComponent implements OnInit {
   newPasswordForm: FormGroup;
   submitted = false;
   status = false;
-
   constructor(private formBuilder: FormBuilder,
               private _authenticationService: AuthenticationService,
               private toastr: ToastrService) { }
@@ -92,17 +90,16 @@ export class ResetpasswordformComponent implements OnInit {
     this.resetPasswordForm.value.otp = this.newPasswordForm.value.otp;
     this.resetPasswordForm.value.newPassword = this.newPasswordForm.value.newPassword;
     this._authenticationService.changePassword(this.resetPasswordForm.value).subscribe((data: any) => {
-      if (data.statusCode) {
-        this.toastr.success(MessageConstants[data.statusCode], "", { timeOut: 2000, });
-        return;
+      if (data.status) {
+        this.toastr.success(MessageConstants.FORGOTPASSWORD_SUCCESS, "", { timeOut: 2000, });
+        this.loginBtnClick.emit("login");
+      }
+      else{
+        this.toastr.success(MessageConstants.FORGOTPASSWORD_ERROR, "", { timeOut: 2000, });
       }
     });
   }
   registerPage(): void {
     this.registerBtnClick.emit("register");
   }
-  loginPage(): void {
-    this.loginBtnClick.emit("login");
-  }
-
 }
