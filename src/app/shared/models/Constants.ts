@@ -32,6 +32,10 @@ export const USER_LOGIN_API_CONFIG = {
     forgotPasswordURL: "/User/ForgotPassword",
     changePasswordURL: "/User/ChangePassword"
 };
+export const PROFILE_API_CONFIG = {
+     userProfileURL: "/Profile/AddNewProfileByUserId"
+}
+
 export class Apiresponce {
     responseCode: string;
 }

@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: "app-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-  public openDashboard: boolean = false;
+  public openDashboard = false;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  getPath(){
+  logOut() {
+    sessionStorage.removeItem("currentUser");
+    this.router.navigate(["/home"]);
+  }
+  getPath() {
     return this.router.url;
   }
   ToggleDashboard() {
