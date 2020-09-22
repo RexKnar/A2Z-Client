@@ -1,45 +1,48 @@
-.link-margin{
-    margin-top: 10px;
+.color-back {
+  background-color: #fedf00;
+  padding-bottom: 15%;
+  padding-top: 14%;
 }
-.color-back{
-    background-color: #fedf00;
+.text-style {
+  font-size: 30px;
+  font-weight: 500;
+  color: #2d2b2b;
+  line-height: 2 !important;
 }
-.sizing1{
-    width: 20% !important;
-    margin-left: 24% !important;
+.para-text {
+  font-size: 18px !important;
+  color: #615353 !important;
+  margin-top: 24px !important;
 }
-.col-3-6{
-    width: 35% !important;
+.login-image {
+  width: 100% !important;
 }
-.section-b-space
-{
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+.btn-pr:hover {
+  cursor: pointer;
 }
-.theme-card{
-    border: 1px solid #fedf0099 !important;
+.btn-style {
+  position: absolute !important;
+  right: -48px !important;
+  top: -31px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: #ffffff !important;
+  font-size: 48px !important;
+  line-height: 1 !important;
+  vertical-align: top !important;
+  font-weight: 200 !important;
 }
-.text-style{
-    font-size: 30px;
-    font-weight: 600;
-    color: #2d2b2b;
-    line-height: 2 !important;
+.btn-mobile {
+  right: 6px !important;
+  font-size: 22px !important;
 }
-.para-text{
-    font-size: 18px !important;
-    color: #615353 !important;
-    margin-top: 24px !important;
+.form-align-mobileview {
+  padding-left: 10px !important;
+  width: 95% !important;
 }
-.login-image{
-
-    width: 100% !important;
-}
-.login-background{
-    background-color: #f3f3f3;
-}
-.login-card-background{
-    background-color: white;
-}
-.link-color{
-    color: #172337 !important;
+.col-align {
+  max-width: 56% !important;
+  width: 56% !important;
 }

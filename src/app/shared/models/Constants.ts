@@ -1,9 +1,11 @@
+
+
 export const ROUTE_CONFIG = {
     baseUrl: "http://kumaria2z-001-site1.ftempurl.com/api"
 };
 export const FOOTER_API_CONFIG = {
     topSellingCategoryURL: "/Category/GetTopSellingCategory/5",
-    subscriptionURL: "/Subscription"
+    subscriptionURL: "/Subscription/PostSubscription"
 };
 export const HEADER_API_CONFIG = {
     menuCategoryURL: "/Category/GetMenuCategories"
@@ -21,12 +23,20 @@ export const PRODUCT_API_CONFIG = {
 };
 export const CART_API_CONFIG={
     AddToCartURL: "/Cart/AddCartByUserId",
-    GetCartItemsURL:"/Cart/GetCartByUserId/1",
+    GetCartItemsURL:"/Cart/GetCartByUserId",
     UpdateCartItemsURL:"/Cart/UpdateCartByCartId",
     RemoveCartItemsURL:"/Cart/DeleteCartByCartId"
 }
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
+};
+export const USER_LOGIN_API_CONFIG = {
+    loginPageURL: "/User/Login",
+    registerPageURL: "/User/Registration",
+    verifyUserURL: "/User/VerifyOtp",
+    resendOtpURL: "/User/ResendOtp",
+    forgotPasswordURL: "/User/ForgotPassword",
+    changePasswordURL: "/User/ChangePassword"
 };
 export class Apiresponce {
     responseCode: string;

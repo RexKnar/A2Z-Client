@@ -10,4 +10,12 @@ import { map, delay, withLatestFrom } from "rxjs/operators";
 })
 export class AppComponent {
   title = "myapp";
+
+  loaders = this.loader.progress$.pipe(
+    delay(1000),
+    withLatestFrom(this.loader.progress$),
+    map(v => v[1]),
+  );
+  constructor(
+    private loader: LoadingBarService) { }
 }

@@ -1,27 +1,42 @@
-<ng-template class="theme-modal" #loginpage let-modal>
-
-<section class="login-page section-b-space login-background">
-    <div class="container">
-        <div class="row ">
-
-            <div class="theme-card col-3-5 sizing1 color-back  d-lg-inline d-none ">
-                <span class="text-style">Login</span>
-                <p class="para-text">
-                    <span>Get access to your Orders, Wishlist and Recommendations</span>
-                </p>
-                <span>
-                    <img src="./assets/images/a2z/login/login-page.jpg" class="login-image">
-                </span>
-            </div>
-           
-            <div class="theme-card col-lg-4 col-md-6 login-card-background ">
-                <app-loginform></app-loginform>
-                <div class="link-margin">
-                    <a [routerLink]="['/register']" class="link-color">New to KumariA2Z? Create an account</a>
-                </div>
-            </div>
-
+<ng-template class="theme-modal " #loginModal let-modal>
+    <div class="row  d-lg-inline d-none ">
+        <div class=" col-lg-5 color-back float-left">
+            <span class="text-style">KumariA2Z</span>
+            <p class="para-text">
+                <span>Get access to your Orders, Wishlist and Recommendations</span>
+            </p>
+            <span>
+                <img src="./assets/images/a2z/login/login-page.png" class="login-image ">
+            </span>
+        </div>
+        <div class=" col-lg-6 col-align float-left">
+            <container-element [ngSwitch]="formChange">
+                <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
+                    (registerBtnClick)="formChange=$event"></app-loginform>
+                <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event"
+                    (loginBtnClick)="formChange=$event">
+                </app-resetpasswordform>
+                <app-registerform *ngSwitchCase="'register'" (loginBtnClick)="formChange=$event">
+                </app-registerform>
+            </container-element>
+        </div>
+        <div>
+            <button class="btn-style " data-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                x</button>
         </div>
     </div>
-</section>
+    <div class="form-align-mobileview d-lg-none">
+        <button class="btn-style btn-mobile" data-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss('Cross click')">
+            x</button>
+            <container-element [ngSwitch]="formChange">
+                <app-loginform *ngSwitchCase="'login'" (forgetBtnClick)="formChange=$event"
+                    (registerBtnClick)="formChange=$event"></app-loginform>
+                <app-resetpasswordform *ngSwitchCase="'reset'" (registerBtnClick)="formChange=$event"
+                    (loginBtnClick)="formChange=$event">
+                </app-resetpasswordform>
+                <app-registerform *ngSwitchCase="'register'" (loginBtnClick)="formChange=$event">
+                </app-registerform>
+            </container-element>
+    </div>
 </ng-template>

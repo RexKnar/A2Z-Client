@@ -13,11 +13,14 @@ import { ToastrModule } from "ngx-toastr";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProductModule } from "./features/product/product.module";
 import { AuthInterceptor } from './shared/interceptors/AuthInterceptor';
+import { LoadingBarModule } from "@ngx-loading-bar/core";
+import { LoadingBarHttpClientModule } from "@ngx-loading-bar/http-client";
+import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 
 @NgModule({
    declarations: [
       AppComponent
-    ],
+   ],
    imports: [
       CommonModule,
       BrowserModule,
@@ -26,14 +29,16 @@ import { AuthInterceptor } from './shared/interceptors/AuthInterceptor';
       HomeModule,
       SharedModule,
       NgbModule,
-     HttpClientModule,
-     ProductModule,
-     BrowserAnimationsModule,
-     ToastrModule.forRoot({
-      timeOut: 3000,
-      progressBar: false,
-      enableHtml: true,
-    }),
+      LoadingBarHttpClientModule,
+      LoadingBarRouterModule,
+      HttpClientModule,
+      ProductModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot({
+         timeOut: 3000,
+         progressBar: false,
+         enableHtml: true,
+      }),
    ],
    providers: [
       {
