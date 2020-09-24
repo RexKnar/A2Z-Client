@@ -5,6 +5,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CheckoutPageComponent } from "./components/checkout-page/checkout-page.component";
 import { AddressBookComponent } from "./components/dashboard/address-book/address-book.component";
 import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   { 
     path: 'cart', 
     component: CartComponent 
+  },
+  { 
+    path: 'wishlist', 
+    component: WishlistComponent 
   },
 
 ];

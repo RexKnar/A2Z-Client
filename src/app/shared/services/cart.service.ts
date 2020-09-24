@@ -68,7 +68,9 @@ export class CartService {
   }
 
   public addToCart(product): any {
-    const cartItem = state.cart.find((item) => item.id === product.id);
+
+    const cartItem = state.cart.find((item) => item.stockId === product.stockId);
+    console.log(cartItem);
     const qty = product.quantity ? product.quantity : 1;
     const items = cartItem ? cartItem : product;
     const stock = this.calculateStockCounts(items, qty);
@@ -86,6 +88,7 @@ export class CartService {
       });
       if (this.localStorageService.getAuthorizationData()) {
         const newCartItem: Cart = { stockId: product.stockId, quantity: qty };
+        console.log(newCartItem);
         this.httpClient
           .post(
             ROUTE_CONFIG.baseUrl + CART_API_CONFIG.AddToCartURL,

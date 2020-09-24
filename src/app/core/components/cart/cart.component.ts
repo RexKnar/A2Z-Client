@@ -20,16 +20,17 @@ export class CartComponent implements OnInit {
   }
   ngOnInit(): void {
     if (!localStorage.getItem("gotCart")) {
-      this.cartItems = this._cartService.getCartItems;
-      this.cartItems.subscribe((data) => {
+      this._cartService.getCartItems.subscribe((data) => {
+        this.cartItems =data;
+        console.log(this.cartItems.length);
         localStorage.setItem("cartItems", JSON.stringify(data));
       });
     } else {
       this._cartService.getCartItems.subscribe((data) => {
         this.cartItems = data;
+        console.log(this.cartItems.length);
       });
     }
-    console.log(this.cartItems )
   }
 
   public get getTotal(): Observable<number> {

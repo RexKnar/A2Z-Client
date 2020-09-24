@@ -1,7 +1,7 @@
 
 
 export const ROUTE_CONFIG = {
-    baseUrl: "http://kumaria2z-001-site1.ftempurl.com/api"
+    baseUrl: "http://a2zkumari-001-site1.atempurl.com/api"
 };
 export const FOOTER_API_CONFIG = {
     topSellingCategoryURL: "/Category/GetTopSellingCategory/5",
@@ -26,6 +26,12 @@ export const CART_API_CONFIG={
     GetCartItemsURL:"/Cart/GetCartByUserId",
     UpdateCartItemsURL:"/Cart/UpdateCartByCartId",
     RemoveCartItemsURL:"/Cart/DeleteCartByCartId"
+}
+export const WISHLIST_API_CONFIG={
+    GetWishlistItemsURL: "/Wishlist/GetWhishlistByUserId",
+    AddToWishlistURL:"/Wishlist/AddToWhishlistByUserId",
+    UpdateWishlistItemsURL:"/Wishlist/UpdateWhishlistByUserIdAndWhishlistId",
+    RemoveWishlistItemsURL:"/Wishlist/DeleteWhishlistByWhishlistId?id="
 }
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
