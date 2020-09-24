@@ -5,7 +5,8 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CheckoutPageComponent } from "./components/checkout-page/checkout-page.component";
 import { AddressBookComponent } from "./components/dashboard/address-book/address-book.component";
 import { AddressFormComponent } from "./components/dashboard/address-book/address-form/address-form.component";
-import { MyorderComponent } from './components/dashboard/myorder/myorder.component';
+import { MyorderComponent } from "./components/dashboard/myorder/myorder.component";
+import { CartComponent } from "./components/cart/cart.component";
 
 const routes: Routes = [
 
@@ -33,6 +34,11 @@ const routes: Routes = [
     path: "my_order",
     component: MyorderComponent
      },
+  {
+    path: "cart",
+    component: CartComponent
+  },
+
 ];
 
 export const CoreRoutes: ModuleWithProviders = RouterModule.forChild(routes);

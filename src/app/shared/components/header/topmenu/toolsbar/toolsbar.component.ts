@@ -18,6 +18,9 @@ export class ToolsbarComponent implements OnInit {
   }
   logOut() {
     sessionStorage.removeItem("currentUser");
+    sessionStorage.removeItem("id");
+    sessionStorage.removeItem("userId");
+    localStorage.removeItem("cartItems");
     this.router.navigate(["/home"]);
   }
 }

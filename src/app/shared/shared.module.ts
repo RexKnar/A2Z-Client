@@ -28,6 +28,9 @@ import { SkeletonProductCardComponent } from "./components/skeleton/skeleton-pro
 import { LazyLoadImageModule } from "ng-lazyload-image";
 import { ServiceInfoComponent } from "./components/service-info/service-info.component";
 import { CoreModule } from '../core/core.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/AuthInterceptor';
+import { LocalStorageService } from './utility/LocalStorageService';
 
 
 @NgModule({
@@ -90,7 +93,14 @@ import { CoreModule } from '../core/core.module';
     BannerComponent,
     ServiceInfoComponent,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }, LocalStorageService
+  ],
 
 })
 export class SharedModule { }

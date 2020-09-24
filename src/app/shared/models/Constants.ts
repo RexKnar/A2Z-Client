@@ -1,7 +1,5 @@
-
-
 export const ROUTE_CONFIG = {
-    baseUrl: "http://kumaria2z-001-site1.ftempurl.com/api"
+    baseUrl: "http://a2zkumari-001-site1.atempurl.com/api"
 };
 export const FOOTER_API_CONFIG = {
     topSellingCategoryURL: "/Category/GetTopSellingCategory/5",
@@ -21,6 +19,12 @@ export const PRODUCT_API_CONFIG = {
     AddToWishlistURL: "/Wishlist/AddToWhishlistByUserId",
     ProductListURL: "assets/product.json"
 };
+export const CART_API_CONFIG = {
+    AddToCartURL: "/Cart/AddCartByUserId",
+    GetCartItemsURL: "/Cart/GetCartByUserId",
+    UpdateCartItemsURL: "/Cart/UpdateCartByCartId",
+    RemoveCartItemsURL: "/Cart/DeleteCartByCartId"
+}
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
 };
@@ -30,12 +34,14 @@ export const USER_LOGIN_API_CONFIG = {
     verifyUserURL: "/User/VerifyOtp",
     resendOtpURL: "/User/ResendOtp",
     forgotPasswordURL: "/User/ForgotPassword",
-    changePasswordURL: "/User/ChangePassword"
+    changePasswordURL: "/User/ChangePassword",
+    changeNumberRequestURL:"/User/UserNameChangeRequest?userName=",
+    updateNumberURL:"/User/ChangeUserName"
 };
 export const PROFILE_API_CONFIG = {
-     userProfileURL: "/Profile/AddNewProfileByUserId"
+    updateUserProfileURL: "/Profile/UpdateProfileByProfileIdAndUserId",
+    getUserprofileURL: "/Profile/GetProfileByUserId"
 }
-
 export class Apiresponce {
     responseCode: string;
 }
