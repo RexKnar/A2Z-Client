@@ -24,7 +24,7 @@ export const CART_API_CONFIG = {
     GetCartItemsURL: "/Cart/GetCartByUserId",
     UpdateCartItemsURL: "/Cart/UpdateCartByCartId",
     RemoveCartItemsURL: "/Cart/DeleteCartByCartId"
-}
+};
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
 };
@@ -35,13 +35,19 @@ export const USER_LOGIN_API_CONFIG = {
     resendOtpURL: "/User/ResendOtp",
     forgotPasswordURL: "/User/ForgotPassword",
     changePasswordURL: "/User/ChangePassword",
-    changeNumberRequestURL:"/User/UserNameChangeRequest?userName=",
-    updateNumberURL:"/User/ChangeUserName"
+    changeNumberRequestURL: "/User/UserNameChangeRequest?userName=",
+    updateNumberURL: "/User/ChangeUserName"
 };
 export const PROFILE_API_CONFIG = {
     updateUserProfileURL: "/Profile/UpdateProfileByProfileIdAndUserId",
     getUserprofileURL: "/Profile/GetProfileByUserId"
-}
+};
+export const ADDRESS_API_CONFIG = {
+    addUserAddressURL: "/Address/AddNewAddress",
+    getUserAddressURL: "/Address/GetAddressByUserId",
+    updateAddressURL: "/Address/UpdateAddressByAddressId",
+    deleteAddressURL: "/Address/DeleteAddressByAddressId?id="
+};
 export class Apiresponce {
     responseCode: string;
 }

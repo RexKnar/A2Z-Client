@@ -4,60 +4,104 @@
         <div class="row">
             <div class="col-sm-12">
                 <h3>SHIPPING ADDRESS</h3>
-                <form class="theme-form dashboard-right">
+                <div class="theme-form dashboard-right" >
                     <div class="form-row dashboard">
                         <div class="col-md-6">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control"  placeholder="Enter Your name" required="">
+                            <input type="text" 
+                            value="name" [(ngModel)]="name"
+                             class="form-control"  placeholder="Enter Your name" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="review">Phone number</label>
-                            <input type="text" class="form-control"  placeholder="Enter your number" required="">
+                            <input type="text"
+                            value="phonenumber" [(ngModel)]="phonenumber"
+                           
+                              class="form-control"  placeholder="Enter your number" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="name">flat / plot</label>
-                            <input type="text" class="form-control"  placeholder="company name" required="">
+                            <input type="text" 
+                            value="flatNo" [(ngModel)]="flatNo"
+                            
+                             class="form-control"  placeholder="company name" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="name">locality</label>
-                            <input type="text" class="form-control"  placeholder="locality" required="">
+                            <input type="text"
+                            value="locality" [(ngModel)]="locality"
+                            
+                              class="form-control"  placeholder="locality" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="name">Address *</label>
-                            <input type="text" class="form-control"  placeholder="Address" required="">
+                            <input type="text" 
+                            value="address" [(ngModel)]="address"
+                            
+                             class="form-control"  placeholder="Address" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="email">Zip Code *</label>
-                            <input type="text" class="form-control"  placeholder="zip-code" required="">
+                            <input type="text" 
+                            value="pincode" [(ngModel)]="pincode"
+                           
+                             class="form-control"  placeholder="zip-code" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="review">City *</label>
-                            <input type="text" class="form-control"  placeholder="City" required="">
+                            <input type="text" 
+                            value="city" [(ngModel)]="city"
+                            
+                             class="form-control"  placeholder="City" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="review">Region/State *</label>
-                            <input type="text" class="form-control"  placeholder="Region/state" required="">
+                            <input type="text" 
+                            value="state" [(ngModel)]="state"
+                            
+                             class="form-control"  placeholder="Region/state" required="">
                         </div>
                         <div class="col-md-6">
                             <label for="name">Landmark</label>
-                            <input type="text" class="form-control"  placeholder="Landmark(optional)" required="">
+                            <input type="text" 
+                            value="landmark" [(ngModel)]="landmark"
+                           
+                            class="form-control"  placeholder="Landmark(optional)" required="">
                         </div>
                         <div class="col-md-6 select_input">
                             <label for="review">Country *</label>
-                            <select class="form-control box-size" size="1">
+                            <select class="form-control box-size"
+                        
+                            value="country" [(ngModel)]="country"
+
+                              size="1">
                                 <option value="India">India</option>
                             </select>
                         </div>
                         <div class="col-md-6 d-lg-inline d-none">
-                            <button class="btn btn-sm btn-solid" type="submit">Save setting</button>
-                            <button class="btn btn-sm " [routerLink]="['/dashboard']">Cancel</button>
+                            <button class="btn btn-sm btn-solid"
+                             type="submit"
+                              (click)="add()" 
+                              >Save</button>
+                              <button class="btn btn-sm btn-solid"
+                              type="submit"
+                               (click)="update()" 
+                               >Update</button>
+                            <button class="btn btn-sm "
+                             [routerLink]="['/address_book']"
+                             >Cancel</button>
                         </div>
                         <div class="col-md-6 d-lg-none mobile-btn-align" >
-                            <button class="btn btn-sm btn-solid" type="submit">Save setting</button>
-                            <button class="btn btn-sm " [routerLink]="['/dashboard']" >Cancel</button>
+                            <button class="btn btn-sm btn-solid"
+                             type="submit"
+                              (click)="add()"
+                              >Save</button>
+                            <button class="btn btn-sm "
+                             [routerLink]="['/address_book']"
+                              >Cancel</button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

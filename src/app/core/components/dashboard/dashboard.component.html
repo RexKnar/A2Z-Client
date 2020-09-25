@@ -19,6 +19,7 @@
                             <li><a [routerLink]="['/address_book']">Address Book</a></li>
                             <li><a [routerLink]="['/my_order']">My Orders</a></li>
                             <li><a href="javascript:void(0)">My Wishlist</a></li>
+                            <li><a href="javascript:void(0)">Change Password</a></li>
                             <li class="last"><a (click)="logOut()">Log Out</a></li>
                         </ul>
                     </div>
@@ -33,32 +34,26 @@
                                 <a (click)="cancel()" *ngIf="this.isSelectBtn" class="float-right edit-btn">Cancel</a>
                                 <a (click)="updateProfileDetails()" *ngIf="this.isSelectBtn"
                                     class="float-right edit-btn save-btn-align">Save</a>
-
                             </h2>
                         </div>
                         <div class="welcome-msg">
-                            <!-- Hello, <p>{{userProfile!.profileName}} !</p> -->
+                            Hello, <p>{{userProfile?.profileName}}</p>
                         </div>
                         <div class="box-account box-info">
                             <div class="box-head">
                                 <h3 class="text-align">Account Information
                                 </h3>
                             </div>
-
                             <div class="row">
-                                <!-- <form [formGroup]="profileForm" class="profileform-row-align"> -->
-
-
                                 <div class="col-sm-6">
                                     <div class="box">
                                         <div class="box-title profile-box-border">
                                             <h3>Name</h3>
                                         </div>
                                         <div class="box-content">
-                                            <!-- <h6>{{profileName}}</h6> -->
                                             <div class="input-group ">
                                                 <input type="text" [readonly]="isProfileForm" class="form-control"
-                                                    [(ngModel)]="profileName">
+                                                    value="profileName" [(ngModel)]="profileName">
                                             </div>
                                         </div>
                                     </div>
@@ -66,14 +61,12 @@
                                 <div class="col-sm-6">
                                     <div class="box">
                                         <div class="box-title profile-box-border">
-
                                             <h3>Email Address</h3>
                                         </div>
                                         <div class="box-content">
-                                            <!-- <h6>{{email}}</h6> -->
                                             <div class="input-group ">
                                                 <input type="text" [readonly]="isProfileForm" class="form-control"
-                                                    [(ngModel)]="email">
+                                                    value="email" [(ngModel)]="email">
                                             </div>
                                         </div>
                                     </div>
@@ -81,12 +74,15 @@
                                 <div class="col-sm-6">
                                     <div class="box">
                                         <div class="box-title profile-box-border">
-
                                             <h3>Gender</h3>
-                                            <a href="javascript:void(0)" class="float-right">Change Password</a>
-
                                         </div>
-                                        <div class="box-content">
+                                        <div class="input-group ">
+                                            <input *ngIf="gender==0" value="Male" [readonly]="isProfileForm"
+                                                class="form-control">
+                                            <input *ngIf="gender==1" value="Female" [readonly]="isProfileForm"
+                                                class="form-control">
+                                        </div>
+                                        <div class="box-content" *ngIf="this.genderDiv">
                                             <input type="radio" [(ngModel)]="gender" value=0>
                                             <label class="label-padding">men</label>
                                             <input type="radio" [(ngModel)]="gender" value=1>
@@ -94,12 +90,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- </form> -->
-
                                 <div class="col-sm-6">
                                     <div class="box">
                                         <div class="box-title profile-box-border">
-
                                             <h3>mobile Number
                                                 <a (click)="changeNumber()" *ngIf="this.showNumberDiv"
                                                     class="float-right edit-btn">Edit</a>
@@ -115,13 +108,13 @@
                                             <div *ngIf="this.numberDiv">
                                                 <label>New MobileNumber</label>
                                                 <div class="input-group ">
-                                                    <input type="text" [readonly]="isMobileForm" class="form-control"
-                                                        placeholder="MobileNumber" value="userName"
+                                                    <input type="text" required [readonly]="isMobileForm"
+                                                        class="form-control" placeholder="MobileNumber"
                                                         [(ngModel)]="newUserName">
                                                 </div>
                                                 <div>
                                                     <a (click)="requestChangeNumber()" class=" edit-btn">verfiy</a>
-                                                    <a (click)="resendNewOtp()"
+                                                    <a (click)="requestChangeNumber()"
                                                         class=" edit-btn float-right">resendOtp</a>
                                                 </div>
                                             </div>
@@ -142,7 +135,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

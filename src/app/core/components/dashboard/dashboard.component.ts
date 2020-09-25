@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { UserLogin } from "src/app/shared/models/authentication";
+import { MessageConstants } from "src/app/shared/models/messageConstants";
 import { Profile } from "src/app/shared/models/profile";
 import { AuthenticationService } from "src/app/shared/services/authentication.service";
 import { ProfileService } from "src/app/shared/services/profile.service";
@@ -16,17 +18,19 @@ export class DashboardComponent implements OnInit {
   newNumber: UserLogin;
   resendOtp: UserLogin;
   public openDashboard = false;
+  status = false;
   newUserName: string;
   userName: string;
   mobile: string;
   newMobile: number;
   email: string;
   profileName: string;
-  gender: number;
+  gender: any;
   otp: number;
   showDiv = true;
   showNumberDiv = true;
   numberDiv = false;
+  genderDiv = false;
   otpDiv = false;
   isProfileForm = true;
   isMobileForm = true;
@@ -39,6 +43,7 @@ export class DashboardComponent implements OnInit {
   password: string;
   userId: number;
   constructor(private router: Router,
+              private toastr: ToastrService,
               private readonly _router: Router,
               private _authenticationService: AuthenticationService,
               private _ProfileService: ProfileService) { }
@@ -64,60 +69,50 @@ export class DashboardComponent implements OnInit {
       this._ProfileService.getUserProfile().subscribe((data: any) => {
         sessionStorage.setItem("id", data.id);
         this.userProfile = data;
-        console.log(this.userProfile);
         this.email = this.userProfile.email;
         this.profileName = this.userProfile.profileName;
         this.mobile = this.userProfile.mobile;
-        // this.gender = this.userProfile.gender;
+        this.gender = this.userProfile.gender;
       });
       return;
     }
-
   }
   updateProfileDetails() {
     this.userProfile.email = this.email;
     this.userProfile.profileName = this.profileName;
     this.userProfile.profileId = parseInt(sessionStorage.getItem("id"));
-    this.userProfile.mobile = this.mobile;
-    this.userProfile.gender = this.gender;
+    this.userProfile.gender = parseInt(this.gender);
     this._ProfileService.updateUserProfile(this.userProfile).subscribe((data: any) => {
       this.showDiv = true;
       this.isProfileForm = true;
       this.isSelectBtn = false;
+      this.genderDiv = false;
     });
   }
   edit() {
     this.showDiv = false;
     this.isProfileForm = false;
     this.isSelectBtn = true;
+    this.genderDiv = true;
+
   }
   cancel() {
     this.showDiv = true;
     this.isProfileForm = true;
     this.isSelectBtn = false;
+    this.genderDiv = false;
 
   }
-
-
-
-
-
-
   requestChangeNumber() {
     this.userName = this.newUserName;
-    console.log(this.userName);
     this._authenticationService.changeNumberRequest(this.userName).subscribe((data: any) => {
-      this.showSuccessMessage = true;
-      this.otpDiv = true;
-    });
-  }
-  resendNewOtp() {
-    // this.resendOtp.userId = 0;
-    this.resendOtp.otp = 0;
-    this.resendOtp.newPassword = "";
-    this.resendOtp.password = "";
-    this._authenticationService.resendOtp(this.resendOtp).subscribe((data: any) => {
-      this.showSuccessMessage = true;
+      if (data.status) {
+        this.showSuccessMessage = true;
+        this.otpDiv = true;
+      } else {
+        this.toastr.error(MessageConstants.REQUESTCHANGENUMBER_ERROR, "", { timeOut: 2000, });
+      }
+
     });
   }
   updateNumber() {
@@ -129,24 +124,17 @@ export class DashboardComponent implements OnInit {
       userId: 0,
     };
     this._authenticationService.updateNewNumber(this.newNumber).subscribe((data: any) => {
-
-      this.numberDiv = false;
-      this.otpDiv = false;
-      this.showNumberDiv = true;
-      this.isEditBtn = false;
+      if (data.status) {
+        this.numberDiv = false;
+        this.otpDiv = false;
+        this.showNumberDiv = true;
+        this.isEditBtn = false;
+        this.mobile = this.userName;
+      } else {
+        this.toastr.error(MessageConstants.CHANGENUMBER_ERROR, "", { timeOut: 2000, });
+      }
     });
   }
-
-
-
-
-
-
-
-
-
-
-
   changeNumber() {
     this.showNumberDiv = false;
     this.numberDiv = true;
