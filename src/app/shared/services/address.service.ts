@@ -20,7 +20,7 @@ export class AddressService {
   getAddress(): Observable<any> {
     return this.httpClient.get<any>(ROUTE_CONFIG.baseUrl + ADDRESS_API_CONFIG.getUserAddressURL);
   }
-  getCurrentAddress(currentAddressId:any): Observable<any> {
+  getCurrentAddress(currentAddressId: any): Observable<any> {
     return this.httpClient.get<any>(ROUTE_CONFIG.baseUrl + ADDRESS_API_CONFIG.getUserCurrrentAddressURL + currentAddressId );
   }
   updateAddress(updateUserAddress: Address) {

@@ -12,5 +12,4 @@ export class Address {
     country: string;
     landmark: string;
     status: number;
-    // id: number;
 }

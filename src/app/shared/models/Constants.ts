@@ -25,6 +25,12 @@ export const CART_API_CONFIG = {
     UpdateCartItemsURL: "/Cart/UpdateCartByCartId",
     RemoveCartItemsURL: "/Cart/DeleteCartByCartId"
 };
+export const WISHLIST_API_CONFIG = {
+    GetWishlistItemsURL: "/Wishlist/GetWhishlistByUserId",
+    AddToWishlistURL: "/Wishlist/AddToWhishlistByUserId",
+    UpdateWishlistItemsURL: "/Wishlist/UpdateWhishlistByUserIdAndWhishlistId",
+    RemoveWishlistItemsURL: "/Wishlist/DeleteWhishlistByWhishlistId?id="
+};
 export const SLIDER_API_CONFIG = {
     SliderURL: "/Banner/GetBannerByBannerLocation/"
 };

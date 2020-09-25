@@ -18,6 +18,7 @@ import { CartComponent } from "./components/cart/cart.component";
 import { DiscountPipe } from "../shared/pipes/discount.pipe";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
+import { WishlistComponent } from "./components/wishlist/wishlist.component";
 
 @NgModule({
   imports: [
@@ -27,13 +28,12 @@ import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
     NgbModule,
     CoreRoutes,
     ReactiveFormsModule,
-
   ],
   exports: [LoginComponent,
     LoginformComponent,
     RegisterformComponent,
     ResetpasswordformComponent,
-   ],
+  ],
   declarations: [
     CoreComponent,
     LoginComponent,
@@ -46,15 +46,16 @@ import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
     MyorderComponent,
     AddressFormComponent,
     CartComponent,
-    DiscountPipe
+    DiscountPipe,
+    WishlistComponent
   ],
   providers: [
-     {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptor,
-        multi: true
-     }
-      ],
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
 
 })
 export class CoreModule { }
