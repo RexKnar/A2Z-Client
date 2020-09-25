@@ -12,12 +12,12 @@ export class AddressBookComponent implements OnInit {
   id: any;
   addUserAddress: Address;
   addressDetails: Address;
-  addressId=0;
-  addressType:number;
+  addressId = 0;
+  addressType: number;
+  action :boolean= true;
   constructor(private _addressService: AddressService,
-              private readonly _router: Router,
-              private route: ActivatedRoute
-    ) { }
+    private readonly _router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.get();
@@ -25,27 +25,18 @@ export class AddressBookComponent implements OnInit {
 
   get() {
     this._addressService.getAddress().subscribe((data: any) => {
-        this.addressDetails = data;
+      this.addressDetails = data;
     });
-  }
-  editBtn(id) {
-    this._router.navigate(["/address_form"]);
-    // this.route.queryParams.forEach((params) => {
-    //   if (params["id"]) {
-    //     this.addressId = params["id"];
-    //   }
-    // });
   }
   delete(id) {
     this._addressService.deleteAddress(id).subscribe((data: any) => {
-
+    this.get();
     });
   }
-  makeDefault(){
-    
- 
-    this.addUserAddress.addressType =0
-    this._addressService.addAddress(this.addUserAddress).subscribe((data: any) => {
-    });
+  makeDefault() {
+
+
+    this.addUserAddress.addressType = 0
+
   }
 }

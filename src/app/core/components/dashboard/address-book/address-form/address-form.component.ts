@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Address } from "src/app/shared/models/Address";
 import { AddressService } from "src/app/shared/services/address.service";
 
@@ -13,6 +13,8 @@ export class AddressFormComponent implements OnInit {
   addUserAddress: Address;
   updateUserAddress: Address;
   addressDetails: Address;
+  newAddress :boolean;
+  updateAddress:boolean;
   addressId: number;
   name: string;
   phonenumber: string;
@@ -26,17 +28,21 @@ export class AddressFormComponent implements OnInit {
   country: string;
   landmark: string;
   id: number;
+  currentAddressId: number;
   constructor(private _addressService: AddressService,
-              private formBuilder: FormBuilder,
               private readonly _router: Router,
+              private route: ActivatedRoute
   ) { }
- 
+
   ngOnInit(): void {
-    this.getCurrentAddress();
+    this.newAddress = Boolean(this.route.snapshot.queryParamMap.get("newType"));
+    this.currentAddressId = parseInt (this.route.snapshot.queryParamMap.get("id"));
+    this.updateAddress = Boolean(this.route.snapshot.queryParamMap.get("updateType"));
+    this.getCurrentAddress(this.currentAddressId);
   }
 
-  add() {
-    this.addUserAddress ={
+  addNewAddress() {
+    this.addUserAddress = {
         name: this.name,
         phonenumber: this.phonenumber,
         flatNo: this.flatNo,
@@ -46,38 +52,36 @@ export class AddressFormComponent implements OnInit {
         state: this.state,
         pincode: this.pincode,
         country: this.country,
-        landmark:this.landmark,
-        addressId:0,
-        addressType:0,
-        id:0,
+        landmark: this.landmark,
+        status:1,
+        addressId: 0,
+        addressType: 0,
     };
+  
     this._addressService.addAddress(this.addUserAddress).subscribe((data: any) => {
     this._router.navigate(["/address_book"]);
-
     });
   }
-  getCurrentAddress() {
-    this._addressService.getAddress().subscribe((data: any) => {
-      this.addressDetails = data;
-      console.log(this.addressDetails);
-
-      this.name = this.addressDetails.name;
-      this.phonenumber = this.addressDetails.phonenumber;
-      this.flatNo = this.addressDetails.flatNo;
-      this.city = this.addressDetails.city;
-      this.address = this.addressDetails.address;
-      this.locality = this.addressDetails.locality;
-      this.state = this.addressDetails.state;
-      this.pincode = this.addressDetails.pincode;
-      this.addressType = this.addressDetails.addressType;
-      this.country = this.addressDetails.country;
-      this.landmark = this.addressDetails.landmark;
-      this.id = this.addressDetails.id;
-
+  getCurrentAddress(currentAddressId) {
+    this._addressService.getCurrentAddress(currentAddressId).subscribe((data: any) => {
+      for (const addressDetails of data) {
+        this.name = addressDetails.name;
+        this.phonenumber = addressDetails.phonenumber;
+        this.flatNo = addressDetails.flatNo;
+        this.city = addressDetails.city;
+        this.address = addressDetails.address;
+        this.locality = addressDetails.locality;
+        this.state = addressDetails.state;
+        this.pincode = addressDetails.pincode;
+        this.addressType = addressDetails.addressType;
+        this.country = addressDetails.country;
+        this.landmark = addressDetails.landmark;
+        this.id = addressDetails.id;
+      }
     });
   }
   update() {
-    this.updateUserAddress ={
+    this.updateUserAddress = {
       name: this.name,
       phonenumber: this.phonenumber,
       flatNo: this.flatNo,
@@ -87,13 +91,13 @@ export class AddressFormComponent implements OnInit {
       state: this.state,
       pincode: this.pincode,
       country: this.country,
-      landmark:this.landmark,
-      addressId:0,
-      addressType:0,
-      id:0,
+      landmark: this.landmark,
+      status:1,
+      addressId: this.currentAddressId,
+      addressType: 0,
   };
     this._addressService.updateAddress(this.updateUserAddress).subscribe((data: any) => {
-
+      this._router.navigate(["/address_book"]);
     });
   }
 }

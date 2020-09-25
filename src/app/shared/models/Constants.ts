@@ -45,8 +45,10 @@ export const PROFILE_API_CONFIG = {
 export const ADDRESS_API_CONFIG = {
     addUserAddressURL: "/Address/AddNewAddress",
     getUserAddressURL: "/Address/GetAddressByUserId",
+    getUserCurrrentAddressURL: "/Address/GetAddressByUserId?id=",
     updateAddressURL: "/Address/UpdateAddressByAddressId",
-    deleteAddressURL: "/Address/DeleteAddressByAddressId?id="
+    deleteAddressURL: "/Address/DeleteAddressByAddressId?id=",
+    defaultAddressURL: "/Address/MakeDefaultAddressById?id="
 };
 export class Apiresponce {
     responseCode: string;
