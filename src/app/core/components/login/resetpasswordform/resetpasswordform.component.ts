@@ -95,7 +95,7 @@ export class ResetpasswordformComponent implements OnInit {
         this.loginBtnClick.emit("login");
       }
       else{
-        this.toastr.success(MessageConstants.FORGOTPASSWORD_ERROR, "", { timeOut: 2000, });
+        this.toastr.error(MessageConstants.FORGOTPASSWORD_ERROR, "", { timeOut: 2000, });
       }
     });
   }
