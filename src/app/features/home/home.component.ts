@@ -7,7 +7,7 @@ import { Product } from "src/app/shared/models/Product";
 import { ProductService } from "src/app/shared/services/product.service";
 import { SliderService } from "src/app/shared/services/slider.service";
 import { ProductTab } from "src/app/shared/models/ProductTab";
-import { async } from '@angular/core/testing';
+import { async } from "@angular/core/testing";
 
 @Component({
   selector: "app-home",
@@ -21,10 +21,10 @@ export class HomeComponent implements OnInit {
   topBannerData: Observable<Banner[]>;
   bottomBannerData: Observable<Banner[]>;
   sliderData: Observable<Slider[]>;
-  topProduct:any= [];
-  newProduct:any= [];
-  bestSeller:any= [];
-  tabData:any= [];
+  topProduct: any = [];
+  newProduct: any = [];
+  bestSeller: any = [];
+  tabData: any = [];
 
   constructor(
     private _bannerService: BannerService,
@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
     this.tabData.push(this.topProduct);
     this.tabData.push(this.newProduct);
     this.tabData.push(this.bestSeller);
-    console.log(this.tabData);
 
   }
 }
