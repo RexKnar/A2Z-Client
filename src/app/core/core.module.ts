@@ -14,6 +14,10 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { AddressBookComponent } from "./components/dashboard/address-book/address-book.component";
 import { MyorderComponent } from "./components/dashboard/myorder/myorder.component";
 import { AddressFormComponent } from "./components/dashboard/address-book/address-form/address-form.component";
+import { CartComponent } from "./components/cart/cart.component";
+import { DiscountPipe } from "../shared/pipes/discount.pipe";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
 
 @NgModule({
   imports: [
@@ -40,7 +44,17 @@ import { AddressFormComponent } from "./components/dashboard/address-book/addres
     DashboardComponent,
     AddressBookComponent,
     MyorderComponent,
-    AddressFormComponent],
+    AddressFormComponent,
+    CartComponent,
+    DiscountPipe
+  ],
+  providers: [
+     {
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+     }
+      ],
 
 })
 export class CoreModule { }

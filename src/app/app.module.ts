@@ -5,14 +5,13 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { SharedModule } from "./shared/shared.module";
-import { ImagesliderComponent } from "./shared/components/imageslider/imageslider.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule,  HTTP_INTERCEPTORS } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ProductModule } from "./features/product/product.module";
-import { LoadingBarModule } from "@ngx-loading-bar/core";
+import { AuthInterceptor } from "./shared/interceptors/AuthInterceptor";
 import { LoadingBarHttpClientModule } from "@ngx-loading-bar/http-client";
 import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 
@@ -40,7 +39,12 @@ import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
       }),
    ],
    providers: [
-   ],
+      {
+         provide: HTTP_INTERCEPTORS,
+         useClass: AuthInterceptor,
+         multi: true
+      }
+       ],
 
    bootstrap: [
       AppComponent

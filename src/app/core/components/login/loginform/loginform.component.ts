@@ -37,9 +37,9 @@ export class LoginformComponent implements OnInit {
     this.loginForm.value.otp = 0;
     this.loginForm.value.newPassword = "";
     this._authenticationService.userLogin(this.loginForm.value).subscribe((data: any) => {
-      sessionStorage.setItem("accessToken", data.access_token);
+      sessionStorage.setItem("currentUser", JSON.stringify(data));
       if (data.isAuthorize) {
-        this._router.navigate(["/home"]);
+        // this._router.navigate(["/home"]);
         this.toastr.success(MessageConstants.LOGIN_SUCCESS, "", { timeOut: 2000 });
         this.modalService.dismissAll();
       } else {

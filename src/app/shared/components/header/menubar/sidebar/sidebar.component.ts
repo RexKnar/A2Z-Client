@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getAllHomeMenu()
+    this.getAllHomeMenu();
   }
   leftMenuToggle(): void {
     this.menuService.sidebarToggle = !this.menuService.sidebarToggle;

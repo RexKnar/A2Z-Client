@@ -69,7 +69,6 @@ export class ProductAssetsDetailsComponent implements OnInit {
   }
   addToCart(productDetail: ProductDetails) {
     const cart: Cart = new Cart();
-    cart.userId = 6;
     cart.stockId = 3;
     cart.quantity = 5;
     this._ProductService.addToCart(cart).subscribe((data) => {

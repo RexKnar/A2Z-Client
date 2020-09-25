@@ -17,9 +17,9 @@
                         <ul>
                             <li class="active"><a href="javascript:void(0)">Account Info</a></li>
                             <li><a [routerLink]="['/address_book']">Address Book</a></li>
-                            <li><a href="javascript:void(0)">My Orders</a></li>
+                            <li><a [routerLink]="['/my_order']">My Orders</a></li>
                             <li><a href="javascript:void(0)">My Wishlist</a></li>
-                            <li class="last"><a href="javascript:void(0)">Log Out</a></li>
+                            <li class="last"><a (click)="logOut()">Log Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,83 +28,121 @@
                 <div class="dashboard-right">
                     <div class="dashboard">
                         <div class="page-title">
-                            <h2>My Dashboard</h2>
+                            <h2>My Dashboard
+                                <a (click)="edit()" *ngIf="this.showDiv" class="float-right edit-btn">Edit</a>
+                                <a (click)="cancel()" *ngIf="this.isSelectBtn" class="float-right edit-btn">Cancel</a>
+                                <a (click)="updateProfileDetails()" *ngIf="this.isSelectBtn"
+                                    class="float-right edit-btn save-btn-align">Save</a>
+
+                            </h2>
                         </div>
                         <div class="welcome-msg">
-                            Hello, <p>MARK JECNO !</p>
+                            <!-- Hello, <p>{{userProfile!.profileName}} !</p> -->
                         </div>
                         <div class="box-account box-info">
                             <div class="box-head">
-                                <h2>Account Information</h2>
+                                <h3 class="text-align">Account Information
+                                </h3>
                             </div>
+
                             <div class="row">
+                                <!-- <form [formGroup]="profileForm" class="profileform-row-align"> -->
+
+
                                 <div class="col-sm-6">
                                     <div class="box">
-                                        <div class="box-title">
-                                            <h3>Contact Name</h3>
-                                            <a href="javascript:void(0)">Edit</a>
+                                        <div class="box-title profile-box-border">
+                                            <h3>Name</h3>
                                         </div>
                                         <div class="box-content">
-                                            <h6>MARK JECNO</h6>
-                                           
+                                            <!-- <h6>{{profileName}}</h6> -->
+                                            <div class="input-group ">
+                                                <input type="text" [readonly]="isProfileForm" class="form-control"
+                                                    [(ngModel)]="profileName">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="box">
-                                        <div class="box-title">
+                                        <div class="box-title profile-box-border">
+
                                             <h3>Email Address</h3>
-                                            <a href="javascript:void(0)">Edit</a>
                                         </div>
                                         <div class="box-content">
-                                            <h6>MARk-JECNO@gmail.com</h6>
+                                            <!-- <h6>{{email}}</h6> -->
+                                            <div class="input-group ">
+                                                <input type="text" [readonly]="isProfileForm" class="form-control"
+                                                    [(ngModel)]="email">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="box">
-                                        <div class="box-title">
-                                            <h3>mobile Number</h3>
-                                            <a href="javascript:void(0)">Edit</a>
-                                        </div>
-                                        <div class="box-content">
-                                            <h6>9952251244</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="box">
-                                        <div class="box-title">
-                                            <h6><a href="javascript:void(0)">Change Password</a></h6>
+                                        <div class="box-title profile-box-border">
+
+                                            <h3>Gender</h3>
+                                            <a href="javascript:void(0)" class="float-right">Change Password</a>
 
                                         </div>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="box">
-                                    <div class="box-title">
-                                        <h3>Address Book</h3>
-                                        <a href="javascript:void(0)">Manage Addresses</a>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h6>Default Billing Address</h6>
-                                            <address>
-                                                You have not set a default billing address.<br>
-                                                <a [routerLink]="['/address_book']">Edit Address</a>
-                                            </address>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h6>Default Shipping Address</h6>
-                                            <address>
-                                                You have not set a default shipping address.<br>
-                                                <a [routerLink]="['/address_book']">Edit Address</a>
-                                            </address>
+                                        <div class="box-content">
+                                            <input type="radio" [(ngModel)]="gender" value=0>
+                                            <label class="label-padding">men</label>
+                                            <input type="radio" [(ngModel)]="gender" value=1>
+                                            <label class="label-padding">women</label>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- </form> -->
+
+                                <div class="col-sm-6">
+                                    <div class="box">
+                                        <div class="box-title profile-box-border">
+
+                                            <h3>mobile Number
+                                                <a (click)="changeNumber()" *ngIf="this.showNumberDiv"
+                                                    class="float-right edit-btn">Edit</a>
+                                                <a (click)="changeNumberCancel()" *ngIf="this.isEditBtn"
+                                                    class="float-right edit-btn save-btn-align">Cancel</a>
+                                            </h3>
+                                        </div>
+                                        <div class="box-content">
+                                            <div class="input-group ">
+                                                <input type="text" [readonly]="isNumberForm" class="form-control"
+                                                    value="mobile" [(ngModel)]="mobile">
+                                            </div>
+                                            <div *ngIf="this.numberDiv">
+                                                <label>New MobileNumber</label>
+                                                <div class="input-group ">
+                                                    <input type="text" [readonly]="isMobileForm" class="form-control"
+                                                        placeholder="MobileNumber" value="userName"
+                                                        [(ngModel)]="newUserName">
+                                                </div>
+                                                <div>
+                                                    <a (click)="requestChangeNumber()" class=" edit-btn">verfiy</a>
+                                                    <a (click)="resendNewOtp()"
+                                                        class=" edit-btn float-right">resendOtp</a>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="this.otpDiv">
+
+                                                <label>Enter your Otp</label>
+                                                <div class="float-right success" *ngIf="showSuccessMessage">
+                                                    OTP Send Your MobileNumber
+                                                </div>
+                                                <div class="input-group ">
+                                                    <input type="number" [readonly]="isMobileForm" class="form-control"
+                                                        placeholder="enter your otp" value="otp" [(ngModel)]="otp">
+                                                </div>
+                                                <div>
+                                                    <a (click)="updateNumber()" class=" edit-btn">Update</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,8 @@ import { Wishlist } from "../models/Wishlist";
 import { ToastrService } from "ngx-toastr";
 
 const state = {
-  compare: JSON.parse(sessionStorage.compareItems || "[]")
+  compare: JSON.parse(sessionStorage.compareItems || "[]"),
+  cart: JSON.parse(sessionStorage.cartItems || "[]")
 };
 
 
@@ -17,12 +18,16 @@ const state = {
   providedIn: "root"
 })
 export class ProductService {
-  public Currency = { name: "Dollar", currency: "USD", price: 1 };
+  public Currency = { name: "Rupee", currency: "INR", price: 1 };
   constructor(private readonly httpClient: HttpClient, private toastrService: ToastrService) { }
   getProduct(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(PRODUCT_API_CONFIG.ProductListURL);
   }
   addToCart(cart: Cart): Observable<any> {
+    // state.cartList.push({
+    //   ...cart
+    // });
+    // localStorage.setItem("cartItems", JSON.stringify(state.cartList));
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToCartURL, cart, { responseType: "text" });
   }
   addToWishlist(wishlist: Wishlist): Observable<any> {
@@ -56,5 +61,22 @@ export class ProductService {
 
   addReview(review: Ratings): Observable<any> {
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.reviewsRatingURL, review, { responseType: "text" });
+  }
+
+
+
+  public updateCartQuantity(product: Product, quantity: number): Product | boolean {
+    return state.cart.find((items, index) => {
+      if (items.id === product.categoryId) {
+        const qty = state.cart[index].quantity + quantity
+        // const stock = this.calculateStockCounts(state.cart[index], quantity)
+        const stock=1;
+        if (qty !== 0 && stock) {
+          state.cart[index].quantity = qty
+        }
+        localStorage.setItem("cartItems", JSON.stringify(state.cart));
+        return true
+      }
+    })
   }
 }

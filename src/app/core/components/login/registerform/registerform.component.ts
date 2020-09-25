@@ -98,9 +98,9 @@ export class RegisterformComponent implements OnInit {
     this.registerForm.value.password = "";
     this.registerForm.value.otp = this.otpForm.value.otp;
     this._authenticationService.verfiyUser(this.registerForm.value).subscribe((data: any) => {
-      sessionStorage.setItem("accessToken", data.access_token);
+      sessionStorage.setItem("currentUser", JSON.stringify(data));
       if (data.isAuthorize) {
-        this._router.navigate(["/home"]);
+        // this._router.navigate(["/home"]);
         this.toastr.success(MessageConstants.REGISTER_SUCCESS, "", { timeOut: 2000, });
         this.modalService.dismissAll();
       } else {
