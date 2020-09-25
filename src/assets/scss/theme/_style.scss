@@ -3568,10 +3568,14 @@ header {
     .modal-dialog{
       
         max-width: 630px !important;
-        
+        max-width: 395px !important;
     }
 }
-
+.customChangePasswordModal{
+    .modal-dialog{
+        max-width: 395px !important;
+    }
+}
 .theme-modal {
     padding-right: 0 !important;
     .modal-dialog {

@@ -1,9 +1,26 @@
 <section class="wishlist-section section-b-space">
   <div class="container">
+    <div class="row">
+      <div class="col-sm-12 ">
+        <span class="float-right back-btn-margin ">
+          <a [routerLink]="['/dashboard']">
+            <i class="fa fa-angle-double-left back-btn btn-pr" aria-hidden="true">
+              back to dashboard
+            </i>
+          </a>
+        </span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="container">
     <div class="col-md-12 empty-cart-cls text-center" *ngIf='!wishlistItems.length'>
       <img src="assets/images/empty-wishlist.png" alt="Empty cart" title="Emprt cart">
       <h3 class="mt-4"><b>Wishlist is Empty</b></h3>
       <h4>Explore more shortlist some items.</h4>
+      <a [routerLink]="['/home']" class="btn btn-solid">Shop Now</a>
     </div>
     <div class="row" *ngIf='wishlistItems.length'>
       <div class="col-sm-12">

@@ -19,6 +19,8 @@ import { DiscountPipe } from "../shared/pipes/discount.pipe";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
 import { WishlistComponent } from "./components/wishlist/wishlist.component";
+import { ChangepasswordComponent } from "./components/dashboard/changepassword/changepassword.component";
+
 
 @NgModule({
   imports: [
@@ -47,7 +49,8 @@ import { WishlistComponent } from "./components/wishlist/wishlist.component";
     AddressFormComponent,
     CartComponent,
     DiscountPipe,
-    WishlistComponent
+    WishlistComponent,
+    ChangepasswordComponent
   ],
   providers: [
     {

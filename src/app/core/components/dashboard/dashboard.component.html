@@ -18,9 +18,9 @@
                             <li class="active"><a href="javascript:void(0)">Account Info</a></li>
                             <li><a [routerLink]="['/address_book']">Address Book</a></li>
                             <li><a [routerLink]="['/my_order']">My Orders</a></li>
-                            <li><a href="javascript:void(0)">My Wishlist</a></li>
-                            <li><a href="javascript:void(0)">Change Password</a></li>
-                            <li class="last"><a (click)="logOut()">Log Out</a></li>
+                            <li><a [routerLink]="['/wishlist']">My Wishlist</a></li>
+                            <li><a class="btn-click" (click)="changePasswordModal.openModal()">Change Password</a></li>
+                            <li class="last btn-click"><a (click)="logOut()">Log Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                         </div>
                                         <div class="box-content">
                                             <div class="input-group ">
-                                                <input type="text" [readonly]="isProfileForm" class="form-control"
+                                                <input type="email" [readonly]="isProfileForm" class="form-control"
                                                     value="email" [(ngModel)]="email">
                                             </div>
                                         </div>
@@ -143,3 +143,4 @@
         </div>
     </div>
 </section>
+<app-changepassword #changePasswordModal></app-changepassword>
