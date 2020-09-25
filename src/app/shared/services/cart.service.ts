@@ -70,7 +70,8 @@ export class CartService {
   public addToCart(product): any {
 
     const cartItem = state.cart.find((item) => item.stockId === product.stockId);
-    console.log(cartItem);
+    // console.log(cartItem);
+    console.log(product);
     const qty = product.quantity ? product.quantity : 1;
     const items = cartItem ? cartItem : product;
     const stock = this.calculateStockCounts(items, qty);
@@ -81,13 +82,31 @@ export class CartService {
 
     if (cartItem) {
       cartItem.quantity += qty;
+      state.cart.find((items, index) => {
+        if (items.stockId === product.stockId) {
+          const qty = state.cart[index].quantity + 1;
+          const stock = this.calculateStockCounts(state.cart[index], 1);
+          if (qty !== 0 && stock) {
+            state.cart[index].quantity = qty;
+          }
+          if (this.localStorageService.getAuthorizationData()) {
+            const newCartItem = [{ stockId: product.stockId, quantity: qty }];
+            this.httpClient
+              .put(
+                ROUTE_CONFIG.baseUrl + CART_API_CONFIG.UpdateCartItemsURL,
+                newCartItem
+              )
+              .subscribe((val) => { });
+          }
+          
+        }
+      });
     } else {
       state.cart.push({
-        ...product,
-        quantity: qty,
+        ...product
       });
       if (this.localStorageService.getAuthorizationData()) {
-        const newCartItem: Cart = { stockId: product.stockId, quantity: qty };
+        const newCartItem: Cart[] = [{ stockId: product.stockId, quantity: qty }];
         console.log(newCartItem);
         this.httpClient
           .post(

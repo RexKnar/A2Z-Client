@@ -19,12 +19,13 @@ export class WishlistComponent implements OnInit {
   ngOnInit(): void {
     this._wishlistService.getWishlistItems().subscribe((data)=>{
       this.wishlistItems=data;
+      console.log(this.wishlistItems.length);
      
     });
   }
 
   async addToCart(product: WishlistItem) {
-    const cart=[{
+    const cart={
       stockId  : product.stockId ,
       productName : product.productName,
       imageUrl : product.imageUrl,
@@ -32,8 +33,8 @@ export class WishlistComponent implements OnInit {
       stockQuantity : 1000 ,
       discount : product.discount ,
       price : product.price ,
-      activeStatus: true,
-    }];
+      activeStatus: true
+    };
     // console.log(product);
     const d=this._cartService.addToCart(cart)
     console.log(d);
