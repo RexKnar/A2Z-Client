@@ -33,6 +33,7 @@ export class DashboardComponent implements OnInit {
   showNumberDiv = true;
   numberDiv = false;
   genderDiv = false;
+  genderbox = true;
   otpDiv = false;
   isProfileForm = true;
   isMobileForm = true;
@@ -89,6 +90,7 @@ export class DashboardComponent implements OnInit {
       this.isProfileForm = true;
       this.isSelectBtn = false;
       this.genderDiv = false;
+      this.genderbox = true;
     });
   }
   edit() {
@@ -96,6 +98,7 @@ export class DashboardComponent implements OnInit {
     this.isProfileForm = false;
     this.isSelectBtn = true;
     this.genderDiv = true;
+    this.genderbox = false;
 
   }
   cancel() {
@@ -103,7 +106,7 @@ export class DashboardComponent implements OnInit {
     this.isProfileForm = true;
     this.isSelectBtn = false;
     this.genderDiv = false;
-
+    this.genderbox = true;
   }
   requestChangeNumber() {
     this.userName = this.newUserName;

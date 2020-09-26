@@ -30,10 +30,16 @@
                     <div class="dashboard">
                         <div class="page-title">
                             <h2>My Dashboard
-                                <a (click)="edit()" *ngIf="this.showDiv" class="float-right edit-btn">Edit</a>
-                                <a (click)="cancel()" *ngIf="this.isSelectBtn" class="float-right edit-btn">Cancel</a>
+                                <a (click)="edit()" *ngIf="this.showDiv" class="float-right edit-btn">
+                                    <i class="fa fa-pencil-square-o icon-Size" aria-hidden="true"></i>
+                                </a>
+                                <a (click)="cancel()" *ngIf="this.isSelectBtn" class="float-right edit-btn">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
                                 <a (click)="updateProfileDetails()" *ngIf="this.isSelectBtn"
-                                    class="float-right edit-btn save-btn-align">Save</a>
+                                    class="float-right edit-btn save-btn-align">
+                                    <i class="fa fa-check success" aria-hidden="true"></i>
+                                </a>
                             </h2>
                         </div>
                         <div class="welcome-msg">
@@ -76,7 +82,7 @@
                                         <div class="box-title profile-box-border">
                                             <h3>Gender</h3>
                                         </div>
-                                        <div class="input-group ">
+                                        <div class="input-group " *ngIf="this.genderbox">
                                             <input *ngIf="gender==0" value="Male" [readonly]="isProfileForm"
                                                 class="form-control">
                                             <input *ngIf="gender==1" value="Female" [readonly]="isProfileForm"
@@ -84,9 +90,9 @@
                                         </div>
                                         <div class="box-content" *ngIf="this.genderDiv">
                                             <input type="radio" [(ngModel)]="gender" value=0>
-                                            <label class="label-padding">men</label>
+                                            <label class="label-padding">Male</label>
                                             <input type="radio" [(ngModel)]="gender" value=1>
-                                            <label class="label-padding">women</label>
+                                            <label class="label-padding">Female</label>
                                         </div>
                                     </div>
                                 </div>
@@ -95,9 +101,13 @@
                                         <div class="box-title profile-box-border">
                                             <h3>mobile Number
                                                 <a (click)="changeNumber()" *ngIf="this.showNumberDiv"
-                                                    class="float-right edit-btn">Edit</a>
+                                                    class="float-right edit-btn">
+                                                    <i class="fa fa-pencil-square-o icon-Size" aria-hidden="true"></i>
+                                                </a>
                                                 <a (click)="changeNumberCancel()" *ngIf="this.isEditBtn"
-                                                    class="float-right edit-btn save-btn-align">Cancel</a>
+                                                    class="float-right edit-btn save-btn-align">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
                                             </h3>
                                         </div>
                                         <div class="box-content">
