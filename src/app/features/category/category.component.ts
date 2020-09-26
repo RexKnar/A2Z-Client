@@ -6,6 +6,7 @@ import { FilterSearchModel } from './models/filter-search.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { Product } from 'src/app/shared/models/Product';
+import { ProductFilterService } from './services/product-filter-service.service';
 
 @Component({
   selector: 'app-category',
@@ -29,62 +30,183 @@ export class CategoryComponent implements OnInit {
   public pageNo: number = 1;
   public paginate: any = {}; // Pagination use only
   public loader: boolean = true;
-  public isShowSubCategory: boolean = false;
   public isShowCategory: boolean = true;
-  public selectedSubCategory: SubCategoryModel[];
-  filteredSubcategory: any;
-  filteredSort: any;
+  public selectedSubCategory: SubCategoryModel[] = [];
+  public filteredSubcategory: any;
+  public filteredSort: any;
+  public filteredProduct: any;
+  public filteredStock: any;
+  public filteredCount: any;
+  public filteredSearchString: any;
+  public filteredFeatured: any;
+  public filteredRelatedProduct: any;
+  public filteredRecentlyAddedProduct: any;
+  public filteredOfferCategory: any;
+  public filteredOfferSubcategory: any;
+  public filteredOffer: any;
+  public filterType: any = '';
+  public filterValue: string | number = 0;
 
   constructor(
     private readonly _categoryService: CategoryService,
     private readonly _activatedRoute: ActivatedRoute,
-    private readonly _producrService: ProductService,
-  ) {}
+    private readonly _productService: ProductService,
+    private readonly _productFilterService: ProductFilterService,
+  ) {
+    this.filteredSort = { attributeName: 'alphabetic_order', value: 'asc' };
+    this.filteredSearch = {
+      type: this.filterType,
+      value: this.filterValue,
+      filter: this.filteredAttributes,
+      sorting: this.filteredSort,
+      paging: {
+        pageNo: this.pageNo,
+        noofRecords: 10,
+      },
+      rangeFilter: {
+        attributeName: 'price',
+        minValue: this.minPrice,
+        maxValue: this.maxPrice,
+      },
+    };
+  }
 
   ngOnInit() {
-    this.filteredSort = { attributeName: 'alphabetic_order', value: 'asc' };
     this._activatedRoute.queryParams.subscribe((queryParams) => {
       this.filteredCategory = queryParams['category'];
       this.filteredSubcategory = queryParams['subcategory'];
-      if (this.filteredSubcategory != undefined) {
-        this._categoryService.GetProductFilterAttributeBySubCategoryId(this.filteredSubcategory).subscribe((data) => {
-          this.attributes = data;
-        });
-      }
-      if (this.filteredCategory == undefined) {
+      this.filteredProduct = queryParams['product'];
+      this.filteredStock = queryParams['stock'];
+      this.filteredCount = queryParams['count'];
+      this.filteredSearchString = queryParams['search_string'];
+      this.filteredFeatured = queryParams['featured'];
+      this.filteredRelatedProduct = queryParams['related_product'];
+      this.filteredRecentlyAddedProduct = queryParams['recently_added_product'];
+      this.filteredOfferCategory = queryParams['offer_category'];
+      this.filteredOfferSubcategory = queryParams['offer_subcategory'];
+      this.filteredOffer = queryParams['offer'];
+
+      if (
+        this.filteredCategory == undefined &&
+        this.filteredSubcategory == undefined &&
+        this.filteredProduct == undefined &&
+        this.filteredStock == undefined &&
+        this.filteredCount == undefined &&
+        this.filteredSearchString == undefined &&
+        this.filteredFeatured == undefined &&
+        this.filteredRelatedProduct == undefined &&
+        this.filteredRecentlyAddedProduct == undefined &&
+        this.filteredOfferCategory == undefined &&
+        this.filteredOfferSubcategory == undefined &&
+        this.filteredOffer == undefined
+      ) {
         this.isShowCategory = true;
-        this.isShowSubCategory = false;
-      } else {
-        this.isShowCategory = false;
-        this.isShowSubCategory = true;
+        this._initializeProducts();
         this.getAllCategories();
       }
+
+      if (this.filteredCategory != undefined) {
+        this.filterType = 'category';
+        this.filterValue = this.filteredCategory;
+        this.isShowCategory = false;
+        this.getAllCategories();
+      }
+
+      if (this.filteredSubcategory != undefined) {
+        this.filterType = 'subcategory';
+        this.filterValue = this.filteredSubcategory;
+        this.getProductFilterAttributeBySubCategoryId(this.filteredSubcategory);
+        this.applyFilter();
+      }
+
+      if (this.filteredProduct != undefined) {
+        this.filterType = 'product';
+        this.filterValue = this.filteredProduct;
+        this.applyFilter();
+      }
+
+      if (this.filteredStock != undefined) {
+        this.filterType = 'stock';
+        this.filterValue = this.filteredStock;
+        this.applyFilter();
+      }
+
+      if (this.filteredCount != undefined) {
+        this.filterType = 'count';
+        this.filterValue = this.filteredCount;
+        this.applyFilter();
+      }
+
+      if (this.filteredSearchString != undefined) {
+        this.filterType = 'search_string';
+        this.filterValue = this.filteredSearchString;
+        this.applyFilter();
+      }
+
+      if (this.filteredFeatured != undefined) {
+        this.filterType = 'featured';
+        this.filterValue = this.filteredFeatured;
+        this.applyFilter();
+      }
+
+      if (this.filteredRelatedProduct != undefined) {
+        this.filterType = 'related_product';
+        this.filterValue = this.filteredRelatedProduct;
+        this.applyFilter();
+      }
+
+      if (this.filteredRecentlyAddedProduct != undefined) {
+        this.filterType = 'recently_added_product';
+        this.filterValue = this.filteredRecentlyAddedProduct;
+        this.applyFilter();
+      }
+
+      if (this.filteredOfferCategory != undefined) {
+        this.filterType = 'offer_category';
+        this.filterValue = this.filteredOfferCategory;
+        this.applyFilter();
+      }
+
+      if (this.filteredOfferSubcategory != undefined) {
+        this.filterType = 'offer_subcategory';
+        this.filterValue = this.filteredOfferSubcategory;
+        this.applyFilter();
+      }
+
+      if (this.filteredOffer != undefined) {
+        this.filterType = 'offer';
+        this.filterValue = this.filteredOffer;
+        this.applyFilter();
+      }
     });
-    this._initializeValues();
-    this.getAllCategories();
+  }
+
+  public getProductFilterAttributeBySubCategoryId(id: any): void {
+    this._categoryService.GetProductFilterAttributeBySubCategoryId(id).subscribe((data) => {
+      this.attributes = data;
+    });
   }
 
   public getAllCategories(): void {
     this._categoryService.getAllCategories().subscribe((data) => {
       this.categories = data;
       this.isShowCategory = true;
-      this.isShowSubCategory = false;
       if (this.filteredCategory != undefined) {
         this.isShowCategory = false;
-        this.isShowSubCategory = true;
         this.selectedSubCategory = this._filterSubCategoryFromCategory(this.filteredCategory);
       }
     });
   }
 
-  private _filterSubCategoryFromCategory(categoryName): SubCategoryModel[] {
-    const selectedCategory = this.categories.find((x) => x.categoryName == categoryName);
+  private _filterSubCategoryFromCategory(categoryId): SubCategoryModel[] {
+    const selectedCategory = this.categories.find((x) => x.id == categoryId);
     return selectedCategory.subcategory;
   }
 
-  private _initializeValues(): void {
-    this._producrService.getProduct().subscribe((data) => {
+  private _initializeProducts(): void {
+    this._productService.getProduct().subscribe((data) => {
       this.products = data;
+      this.paginate = this.getPager(100, +this.pageNo);
     });
   }
 
@@ -111,13 +233,13 @@ export class CategoryComponent implements OnInit {
 
   public applyFilter(): void {
     this.filteredSearch = {
-      type: 'subcategory',
-      value: this.filteredSubcategory,
+      type: this.filterType,
+      value: this.filterValue,
       filter: this.filteredAttributes,
       sorting: this.filteredSort,
       paging: {
-        pageNo: 10,
-        noofRecords: 20,
+        pageNo: this.pageNo,
+        noofRecords: 10,
       },
       rangeFilter: {
         attributeName: 'price',
@@ -126,6 +248,10 @@ export class CategoryComponent implements OnInit {
       },
     };
     console.log(this.filteredSearch);
+    this._productFilterService.FilterSearchProduct(this.filteredSearch).subscribe((data: any) => {
+      this.products = data.productList;
+      this.paginate = this.getPager(data.totalCount, +this.pageNo);
+    });
   }
 
   public updatePriceFilterEvent(event): void {
@@ -134,9 +260,9 @@ export class CategoryComponent implements OnInit {
     this.applyFilter();
   }
 
-  // product Pagination
   setPage(page: number) {
-    console.log(page);
+    this.pageNo = page ? page : this.pageNo;
+    this.applyFilter();
   }
 
   // Change Grid Layout
@@ -156,5 +282,52 @@ export class CategoryComponent implements OnInit {
     } else {
       this.grid = 'col-xl-3 col-md-6';
     }
+  }
+
+  public getPager(totalItems: number, currentPage: number = 1, pageSize: number = 16) {
+    // calculate total pages
+    const totalPages = Math.ceil(totalItems / pageSize);
+
+    // Paginate Range
+    const paginateRange = 3;
+
+    // ensure current page isn't out of range
+    if (currentPage < 1) {
+      currentPage = 1;
+    } else if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
+    let startPage: number, endPage: number;
+    if (totalPages <= 5) {
+      startPage = 1;
+      endPage = totalPages;
+    } else if (currentPage < paginateRange - 1) {
+      startPage = 1;
+      endPage = startPage + paginateRange - 1;
+    } else {
+      startPage = currentPage - 1;
+      endPage = currentPage + 1;
+    }
+
+    // calculate start and end item indexes
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+
+    // create an array of pages to ng-repeat in the pager control
+    const pages = Array.from(Array(endPage + 1 - startPage).keys()).map((i) => startPage + i);
+
+    // return object with all pager properties required by the view
+    return {
+      totalItems: totalItems,
+      currentPage: currentPage,
+      pageSize: pageSize,
+      totalPages: totalPages,
+      startPage: startPage,
+      endPage: endPage,
+      startIndex: startIndex,
+      endIndex: endIndex,
+      pages: pages,
+    };
   }
 }

@@ -1,0 +1,30 @@
+<form class="theme-form " [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class=" mobile-title">
+        <span class="text-style">Login</span>
+    </div>
+    <label for="review">MobileNumber</label>
+    <div class="input-group ">
+        <input type="text" class="form-control" placeholder="MobileNumber" formControlName="userName"
+            [ngClass]="{ 'is-invalid': submitted && f.userName.errors }">
+    </div>
+    <div *ngIf="submitted && f.userName.errors" class="text-danger">
+        <div *ngIf="f.userName.errors.required" class="par-txxt">*required</div>
+    </div>
+    <label for="review">Password</label>
+    <div class="input-group ">
+        <input type="password" class="form-control" placeholder="password" formControlName="password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+    </div>
+    <div *ngIf="submitted && f.password.errors" class="text-danger">
+        <div *ngIf="f.password.errors.required" class="par-txxt">*Password is required</div>
+    </div>
+    <div class="forget-link-margin">
+        <a (click)="forgetPassword()" class="link-color btn-pr">Forget Password?</a>
+    </div>
+    <div class="btn-center">
+        <button class="btn btn-solid" (click)="loginUser()">Login</button>
+    </div>
+    <div class="link-margin">
+        <a (click)="registerPage()" class="link-color btn-pr">New to KumariA2Z? Create an account</a>
+    </div>
+</form>

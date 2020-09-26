@@ -1,0 +1,30 @@
+.attr-box {
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: #e9ecef;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  span {
+    margin-left: 10px;
+    text-transform: none;
+  }
+}
+.attribute {
+  display: inline-flex;
+  cursor: pointer;
+}
+.attribute-separate {
+  padding-right: 80px;
+}
+.size-box ul li {
+  width: 60px;
+  height: 32px;
+  border: 1px solid #ebc17998;
+}
+.active-box {
+  border: 2px solid #fedf00;
+}
+.text-left {
+  text-align: left !important;
+}

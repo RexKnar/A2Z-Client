@@ -194,7 +194,7 @@ section,
 }
 
 .form-control {
-    height: 50px;
+    height: 40px;
 }
 
 [data-notify="progressbar"] {
@@ -3563,6 +3563,13 @@ header {
 
 #sizemodal {
     padding-right: 0 !important;
+}
+.customLoginModal{
+    .modal-dialog{
+      
+        max-width: 630px !important;
+        
+    }
 }
 
 .theme-modal {
@@ -7352,10 +7359,10 @@ footer {
             background-color: transparent;
             border: none;
             i {
-                border-left: 1px solid $round-border;
+                // border-left: 1px solid $round-border;
                 font-size: 18px;
-                padding-left: 10px;
-                margin-left: 5px;
+                // padding-left: 10px;
+                // margin-left: 5px;
                 transition: all 0.5s ease;
             }
             span {

@@ -1,15 +1,30 @@
-<div class="collection-collapse-block border-0" [class.open]="collapse">
+<!-- category -->
+<div class="collection-collapse-block border-0" [class.open]="collapse" *ngIf="categories.length && isShowCategory">
   <h3 class="collapse-block-title" (click)="collapse = !collapse">Category</h3>
   <div class="collection-collapse-block-content">
     <div class="collection-brand-filter">
-      <ul class="category-list" *ngIf="isShowCategory">
+      <ul class="category-list">
         <li *ngFor="let category of categories">
-          <a [routerLink]="['/category']" [queryParams]="{ category: category.categoryName }">
+          <a [routerLink]="['/category']" [queryParams]="{ category: category.id }">
             {{ category.categoryName }}
           </a>
         </li>
       </ul>
-      <ul class="category-list" *ngIf="!isShowCategory">
+    </div>
+  </div>
+</div>
+
+<!-- subcategory -->
+
+<div
+  class="collection-collapse-block border-0"
+  [class.open]="collapse"
+  *ngIf="selectedSubCategory.length && !isShowCategory"
+>
+  <h3 class="collapse-block-title" (click)="collapse = !collapse">SubCategory</h3>
+  <div class="collection-collapse-block-content">
+    <div class="collection-brand-filter">
+      <ul class="category-list">
         <li *ngFor="let subcategory of selectedSubCategory">
           <a
             [routerLink]="['/category']"

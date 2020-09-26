@@ -1,5 +1,7 @@
-export class Asset {
+export class Assets {
     id: number;
     assetType: number;
     assetUrl: string;
+
 }
+

@@ -17,6 +17,11 @@
                     <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText }}</div>
                 </a>
             </li>
+            <li class="d-lg-none">
+                <a (click)="logOut()" class="fa-icon-color btn-pr">
+                    Logout
+                </a>
+            </li>
         </ul>
     </div>
 </div>

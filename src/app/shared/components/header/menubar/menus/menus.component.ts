@@ -20,6 +20,13 @@ export class MenusComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  logOut() {
+    sessionStorage.removeItem("currentUser");
+    sessionStorage.removeItem("id");
+    sessionStorage.removeItem("userId");
+    localStorage.removeItem("cartItems");
+    this.router.navigate(["/home"]);
+  }
   mainMenuToggle(): void {
     this.navService.mainMenuToggle = !this.navService.mainMenuToggle;
   }
