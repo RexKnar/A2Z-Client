@@ -13,30 +13,30 @@ export class AddressBookComponent implements OnInit {
   addUserAddress: Address;
   addressDetails: Address;
   addressId = 0;
+  defaultAddress:number;
   addressType: number;
-  action :boolean= true;
+  action: boolean = true;
   constructor(private _addressService: AddressService,
     private readonly _router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.get();
+    this.getAllAddress();
   }
 
-  get() {
+  getAllAddress() {
     this._addressService.getAddress().subscribe((data: any) => {
       this.addressDetails = data;
     });
   }
   delete(id) {
     this._addressService.deleteAddress(id).subscribe((data: any) => {
-    this.get();
+      this.getAllAddress();
     });
   }
-  makeDefault() {
-
-
-    this.addUserAddress.addressType = 0
-
+  makeDefault(id) {
+    this._addressService.defaultAddress(id).subscribe((data: any) => {
+      this.getAllAddress();
+    });
   }
 }

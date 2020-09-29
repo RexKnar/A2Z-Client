@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
@@ -7,6 +7,7 @@ import { MessageConstants } from "src/app/shared/models/messageConstants";
 import { Profile } from "src/app/shared/models/profile";
 import { AuthenticationService } from "src/app/shared/services/authentication.service";
 import { ProfileService } from "src/app/shared/services/profile.service";
+import { ChangepasswordComponent } from "./changepassword/changepassword.component";
 
 @Component({
   selector: "app-dashboard",
@@ -14,6 +15,7 @@ import { ProfileService } from "src/app/shared/services/profile.service";
   styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
+  @ViewChild("changePasswordModal") ChangePasswordModal: ChangepasswordComponent;
   userProfile: Profile;
   newNumber: UserLogin;
   resendOtp: UserLogin;
@@ -31,6 +33,7 @@ export class DashboardComponent implements OnInit {
   showNumberDiv = true;
   numberDiv = false;
   genderDiv = false;
+  genderbox = true;
   otpDiv = false;
   isProfileForm = true;
   isMobileForm = true;
@@ -87,6 +90,7 @@ export class DashboardComponent implements OnInit {
       this.isProfileForm = true;
       this.isSelectBtn = false;
       this.genderDiv = false;
+      this.genderbox = true;
     });
   }
   edit() {
@@ -94,6 +98,7 @@ export class DashboardComponent implements OnInit {
     this.isProfileForm = false;
     this.isSelectBtn = true;
     this.genderDiv = true;
+    this.genderbox = false;
 
   }
   cancel() {
@@ -101,7 +106,7 @@ export class DashboardComponent implements OnInit {
     this.isProfileForm = true;
     this.isSelectBtn = false;
     this.genderDiv = false;
-
+    this.genderbox = true;
   }
   requestChangeNumber() {
     this.userName = this.newUserName;
