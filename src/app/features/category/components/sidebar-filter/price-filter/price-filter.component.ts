@@ -17,7 +17,7 @@ export class PriceFilterComponent implements OnInit {
 
   options: any = {
     floor: 0,
-    ceil: 1000,
+    ceil: 20000,
   };
 
   price = {

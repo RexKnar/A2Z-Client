@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit {
   public layoutView: string = 'grid-view';
   public mobileSidebar: boolean = false;
   public minPrice: number = 0;
-  public maxPrice: number = 1200;
+  public maxPrice: number = 20000;
   public products: Product[] = [];
   public attributes: AttributeModel[] = [];
   public categories: CategoryModel[] = [];
@@ -101,7 +101,9 @@ export class CategoryComponent implements OnInit {
         this.filteredOffer == undefined
       ) {
         this.isShowCategory = true;
-        this._initializeProducts();
+        this.filterType = '';
+        this.filterValue = '';
+        this.applyFilter();
         this.getAllCategories();
       }
 
@@ -110,6 +112,7 @@ export class CategoryComponent implements OnInit {
         this.filterValue = this.filteredCategory;
         this.isShowCategory = false;
         this.getAllCategories();
+        this.applyFilter();
       }
 
       if (this.filteredSubcategory != undefined) {
@@ -203,13 +206,6 @@ export class CategoryComponent implements OnInit {
     return selectedCategory.subcategory;
   }
 
-  private _initializeProducts(): void {
-    this._productService.getProduct().subscribe((data) => {
-      this.products = data;
-      this.paginate = this.getPager(100, +this.pageNo);
-    });
-  }
-
   toggleMobileSidebar() {
     this.mobileSidebar = !this.mobileSidebar;
   }
@@ -249,7 +245,7 @@ export class CategoryComponent implements OnInit {
     };
     console.log(this.filteredSearch);
     this._productFilterService.FilterSearchProduct(this.filteredSearch).subscribe((data: any) => {
-      this.products = data.productList;
+      this.products = data.products;
       this.paginate = this.getPager(data.totalCount, +this.pageNo);
     });
   }
