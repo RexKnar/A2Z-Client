@@ -17,7 +17,9 @@ export const PRODUCT_API_CONFIG = {
     reviewsRatingURL: "/Rating/AddRatingByStockIdandUserId",
     AddToCartURL: "/Cart/AddCartByUserId",
     AddToWishlistURL: "/Wishlist/AddToWhishlistByUserId",
-    ProductListURL: "assets/product.json"
+    // ProductListURL: "assets/product.json",
+    ProductListURL: "/Product/GetProductsList"
+
 };
 export const CART_API_CONFIG = {
     AddToCartURL: "/Cart/AddCartByUserId",

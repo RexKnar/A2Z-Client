@@ -32,7 +32,9 @@ export class ProductDescriptionsComponent implements OnInit {
     this.currentStockPointer = this.newPointer;
     this.currentStock = this.productDetail.stock[this.currentStockPointer];
     if (this.productDetail.discount) {
-      this.discountPrice = this.productDetail.stock[this.currentStockPointer].price - (this.productDetail.stock[this.currentStockPointer].price * this.productDetail.discount) / 100;
+      this.discountPrice =
+       this.productDetail.stock[this.currentStockPointer].price - 
+       (this.productDetail.stock[this.currentStockPointer].price * this.productDetail.discount) / 100;
       this.price = this.discountPrice;
     }
     else {
