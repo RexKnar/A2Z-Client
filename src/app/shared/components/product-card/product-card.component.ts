@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from "@angular/core";
+import { Component, OnInit, ViewChild, Input, SimpleChanges } from "@angular/core";
 import { ProductModalComponent } from "./product-modal/product-modal.component";
 import { Product } from "../../models/Product";
 import { ProductService } from "../../services/product.service";
@@ -18,16 +18,24 @@ export class ProductCardComponent implements OnInit {
   @Input() thumbnail = false;
   @Input() loader = false;
   @ViewChild("productView") ProductView: ProductModalComponent;
-  ImageSrc: string;
-  currentStockPointer  = 0;
+  public ImageSrc: string;
+  public currentStockPointer:number = 0;
+  public discountPrice : number;
+  public discount:  number;
+  public price:  number;
   constructor(private readonly _ProductService: ProductService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+
     if (this.loader) {
       setTimeout(() => {
         this.loader = false;
       }, 2000); // Skeleton Loader
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+
   }
 
   ChangeVariantsImage(src) {

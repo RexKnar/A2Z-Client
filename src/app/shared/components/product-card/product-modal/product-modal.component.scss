@@ -14,19 +14,37 @@
   display: inline-flex;
   cursor: pointer;
 }
+.instock-color {
+  font-size: 15px;
+  font-weight: 600;
+  color: #28a745;
+}
+.price-space{
+  margin-left: 8px;
+}
 .attribute-separate {
   padding-right: 80px;
 }
 .size-box ul li {
   width: 60px;
   height: 32px;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid #fedf00;
 }
-.active-box
-{
-    background-color:red;
+.active-box {
+  border: 2px solid #fedf00;
+
 }
 
-.text-left{
-    text-align: left !important;
+.text-left {
+  text-align: left !important;
+}
+.price-margin{
+  margin-top: 3px;
+}
+.discount-margin{
+  margin-top: 6px;
+}
+.offer-margin{
+  margin-top: 9px;
+
 }

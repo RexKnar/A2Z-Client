@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Product, ProductDetails } from "../models/Product";
+import { GetProductList, Product, ProductDetails } from "../models/Product";
 import { ROUTE_CONFIG, PRODUCT_API_CONFIG } from "../models/Constants";
 import { Ratings } from "../models/Ratings";
 import { Cart } from "../models/Cart";
@@ -13,15 +13,21 @@ const state = {
   cart: JSON.parse(sessionStorage.cartItems || "[]")
 };
 
-
 @Injectable({
   providedIn: "root"
 })
 export class ProductService {
   public Currency = { name: "Rupee", currency: "INR", price: 1 };
   constructor(private readonly httpClient: HttpClient, private toastrService: ToastrService) { }
-  getProduct(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(PRODUCT_API_CONFIG.ProductListURL);
+
+  getProduct(getProductList: GetProductList): Observable<any> {
+    return this.httpClient.post<any>(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.ProductListURL, getProductList);
+  }
+  getProductDetail(productId: number): Observable<ProductDetails[]> {
+    return this.httpClient.get<ProductDetails[]>(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.ProductDetailsURL + productId);
+  }
+  addReview(review: Ratings): Observable<any> {
+    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.reviewsRatingURL, review, { responseType: "text" });
   }
   addToCart(cart: Cart): Observable<any> {
     // state.cartList.push({
@@ -33,7 +39,6 @@ export class ProductService {
   addToWishlist(wishlist: Wishlist): Observable<any> {
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToWishlistURL, wishlist, { responseType: "text" });
   }
-
   addToCompare(product): any {
     const compareItem = state.compare.find(item => item.productId === product.productId);
 
@@ -55,28 +60,18 @@ export class ProductService {
     sessionStorage.setItem("compareItems", JSON.stringify(state.compare));
     return true;
   }
-  getProductDetail(productId: number): Observable<ProductDetails[]> {
-    return this.httpClient.get<ProductDetails[]>(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.ProductDetailsURL + productId);
-  }
-
-  addReview(review: Ratings): Observable<any> {
-    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.reviewsRatingURL, review, { responseType: "text" });
-  }
-
-
-
   public updateCartQuantity(product: Product, quantity: number): Product | boolean {
     return state.cart.find((items, index) => {
       if (items.id === product.categoryId) {
-        const qty = state.cart[index].quantity + quantity
+        const qty = state.cart[index].quantity + quantity;
         // const stock = this.calculateStockCounts(state.cart[index], quantity)
-        const stock=1;
+        const stock = 1;
         if (qty !== 0 && stock) {
-          state.cart[index].quantity = qty
+          state.cart[index].quantity = qty;
         }
         localStorage.setItem("cartItems", JSON.stringify(state.cart));
-        return true
+        return true;
       }
-    })
+    });
   }
 }

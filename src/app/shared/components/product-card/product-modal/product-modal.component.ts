@@ -23,14 +23,17 @@ export class ProductModalComponent implements OnInit, OnChanges {
   public isactive: number;
   @ViewChild("productView", { static: false }) ProductView: TemplateRef<any>;
   @Input() product: Product;
-  currentStock: Stock;
+  currentStock: Stock = new Stock();
   attributes: StockAttributes[] = [];
   unique1: StockAttributes[] = [];
   attributeGroups: any = {};
   public modalOpen = false;
   public ImageSrc: string;
-  currentStockPointer = 0;
-
+  public currentStockPointer = 0;
+  public counter = 1;
+  public discountPrice = 0;
+  public discount: any = 0;
+  public price: any = 0;
   constructor(
     private modalService: NgbModal,
     private readonly _ProductService: ProductService
@@ -40,8 +43,11 @@ export class ProductModalComponent implements OnInit, OnChanges {
     this.currentStock = this.product.stocks[this.currentStockPointer];
     this.getAttribute();
   }
-  ngOnChanges(changes: SimpleChanges): void { }
-
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+  updateCheckoutQuantity(newCounter: number) {
+    this.counter = newCounter;
+  }
   openModal(currentStockPtr: number) {
     this.modalOpen = true;
     this.modalService.open(this.ProductView, {

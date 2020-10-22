@@ -7,41 +7,50 @@
             <div class="row">
                 <div class="col-lg-6  col-xs-12">
                     <div class="quick-view-img">
-                        <img [src]="ImageSrc ? ImageSrc : currentStock.assets[0].assetUrl"
-                            [alt]="currentStock.assets[0].assetType" class="img-fluid">
+                        <img [src]="ImageSrc ? ImageSrc : currentStock?.assets[0]?.assetUrl"
+                            [alt]="currentStock?.assets[0]?.assetType" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 rtl-text">
                     <div class="product-right text-left">
                         <h2>{{ product?.productName | titlecase }}</h2>
-                        <h3>₹{{ currentStock.price}}
-                            <del *ngIf="product?.discount"><span
-                                    class="money">₹{{ currentStock.price}}</span></del>
-                        </h3>
-
+                        <div class="d-flex">
+                            <h3 class="price-margin">₹{{this.currentStock.price-(this.currentStock.price * this.product.discount) / 100}} </h3>
+                            <del class="font-size price-space discount-margin" *ngIf="product?.discount"><span
+                                    class="money price-space">₹{{ currentStock?.price}}</span></del>
+                            <h4 *ngIf="product?.discount" class="offer-margin"><span
+                                    class="price-space ">{{product?.discount}}% off</span></h4>
+                        </div>
                         <div *ngIf="attributeGroups">
 
                             <div class="size-box" *ngFor="let attributeGroup of attributeGroups | keyvalue">
-                                <h4>{{attributeGroup.key}}</h4>
+                                <h4>{{attributeGroup?.key}}</h4>
                                 <ul>
-                                    <li  *ngFor="let attribute of attributeGroup.value">
-                                        <a (click)="setCurrentStockPointer(attribute.stockId)" [ngClass]="{ 'active-box':  product.stocks[currentStockPointer].id == attribute.stockId }">{{attribute.attributeValue}}</a>
+                                    <li *ngFor="let attribute of attributeGroup.value">
+                                        <a (click)="setCurrentStockPointer(attribute.stockId)"
+                                            [ngClass]="{ 'active-box':  product.stocks[currentStockPointer]?.id == attribute.stockId }">{{attribute.attributeValue}}</a>
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
-
                         <div class="border-product">
                             <h6 class="product-title">product details</h6>
-                            <p>{{ product.description.substring(0, 200)+'...' }} </p>
+                            <p>{{currentStock?.description.substring(0, 200)+'...' }} </p>
                         </div>
                         <div class="product-description border-product">
-                            <h6 class="product-title">quantity</h6>
-                            <app-quantity></app-quantity>
+                            <h5 class=" instock-color" *ngIf="counter <= currentStock?.quantity"><span>In
+                                    Stock</span>
+                            </h5>
+                            <h5 class="avalibility" *ngIf="counter > currentStock?.quantity">
+                                <span>Out of
+                                    Stock</span></h5>
+                            <h6 class="product-title" *ngIf="counter <= currentStock?.quantity">quantity</h6>
+                            <app-quantity [counter]="counter" (checkoutQuantity)="updateCheckoutQuantity($event)"
+                                *ngIf="currentStock?.quantity >0"></app-quantity>
                         </div>
                         <div class="product-buttons text-center">
-                            <a href="javascript:void(0)" class="btn btn-solid">add to cart</a>
+                            <a href="javascript:void(0)" *ngIf="counter <= currentStock?.quantity"
+                                class="btn btn-solid">add to cart</a>
                             <a class="btn btn-solid">view detail</a>
                         </div>
                     </div>
