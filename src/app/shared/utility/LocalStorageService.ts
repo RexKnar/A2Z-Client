@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
-import {  Authorization } from "../models/Authorization";
-import {  CartItem } from "../models/Cart";
-
+import { Authorization } from "../models/Authorization";
+import { CartItem } from "../models/Cart";
 
 @Injectable()
 export class LocalStorageService {
@@ -9,14 +8,14 @@ export class LocalStorageService {
         sessionStorage.setItem("currentUser", JSON.stringify(auth));
     }
     public getAuthorizationData(): Authorization {
-        const tokenData = JSON.parse(sessionStorage.getItem("currentUser"));
+        let tokenData = JSON.parse(sessionStorage.getItem("currentUser"));
         return tokenData == null ? null : tokenData;
     }
     public setCartData(cartItems: CartItem): void {
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }
     public getCartData(): CartItem {
-        const cartData = JSON.parse(localStorage.getItem("cartItems"));
+        let cartData = JSON.parse(localStorage.getItem("cartItems"));
         return cartData == null ? null : cartData;
     }
 }

@@ -9,13 +9,16 @@ export class Product {
   categoryName: string;
   subCategoryId: number;
   subCategoryName: string;
-  discount: string;
+  discount: number;
   rating: number;
   quantity: string;
   wishlistFlag: boolean;
   newFlag: boolean;
-  description: string;
   stocks: Stock[];
+}
+export class ProductList {
+  products: Product[];
+  totalCount: number;
 }
 
 export class ProductDetails {
@@ -33,4 +36,8 @@ export class ProductDetails {
   productAttributes: ProductAttributes[];
   reviews: Ratings[];
   stock: Stock[];
+}
+export class GetProductList {
+  type: string;
+  value: string;
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, Injector } from "@angular/core";
 import { Observable } from "rxjs";
-import { map, startWith, delay } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { ToastrService } from "ngx-toastr";
 import { Cart, CartItem } from "../models/Cart";
 import { CART_API_CONFIG, ROUTE_CONFIG } from "../models/Constants";
@@ -24,7 +24,6 @@ export class CartService {
   ) { }
   public Currency = { name: "Rupee", currency: "INR", price: 1 };
   public OpenCart = false;
-
   public get getCartItems(): Observable<CartItem[]> {
     if (
       !localStorage.getItem("cartItems") &&
@@ -44,7 +43,6 @@ export class CartService {
       return itemsStream as Observable<CartItem[]>;
     }
   }
-
   public get cartItems(): Observable<CartItem[]> {
     const itemsStream = new Observable((observer) => {
       observer.next(state.cart);
@@ -52,7 +50,6 @@ export class CartService {
     });
     return itemsStream as Observable<CartItem[]>;
   }
-
   public cartTotalAmount(): Observable<number> {
     return this.getCartItems.pipe(
       map((product: CartItem[]) => {
@@ -66,26 +63,42 @@ export class CartService {
       })
     );
   }
-
   public addToCart(product): any {
-    const cartItem = state.cart.find((item) => item.id === product.id);
+    const cartItem = state.cart.find((item) => item.stockId === product.stockId);
+    console.log(product);
     const qty = product.quantity ? product.quantity : 1;
     const items = cartItem ? cartItem : product;
     const stock = this.calculateStockCounts(items, qty);
-
     if (!stock) {
       return false;
     }
-
     if (cartItem) {
       cartItem.quantity += qty;
+      state.cart.find((items, index) => {
+        if (items.stockId === product.stockId) {
+          const qty = state.cart[index].quantity + 1;
+          const stock = this.calculateStockCounts(state.cart[index], 1);
+          if (qty !== 0 && stock) {
+            state.cart[index].quantity = qty;
+          }
+          if (this.localStorageService.getAuthorizationData()) {
+            const newCartItem = [{ stockId: product.stockId, quantity: qty }];
+            this.httpClient
+              .put(
+                ROUTE_CONFIG.baseUrl + CART_API_CONFIG.UpdateCartItemsURL,
+                newCartItem
+              )
+              .subscribe((val) => { });
+          }
+        }
+      });
     } else {
       state.cart.push({
-        ...product,
-        quantity: qty,
+        ...product
       });
       if (this.localStorageService.getAuthorizationData()) {
-        const newCartItem: Cart = { stockId: product.stockId, quantity: qty };
+        const newCartItem: Cart[] = [{ stockId: product.stockId, quantity: qty }];
+        console.log(newCartItem);
         this.httpClient
           .post(
             ROUTE_CONFIG.baseUrl + CART_API_CONFIG.AddToCartURL,
@@ -94,11 +107,9 @@ export class CartService {
           .subscribe((val) => { });
       }
     }
-
     this.localStorageService.setCartData(state.cart);
     return true;
   }
-
   public updateCartQuantity(
     product: CartItem,
     quantity: number
@@ -124,7 +135,6 @@ export class CartService {
       }
     });
   }
-
   public calculateStockCounts(product, quantity) {
     const qty = product.quantity + quantity;
     const stock = product.stockQuantity;
@@ -138,7 +148,6 @@ export class CartService {
     }
     return true;
   }
-
   public removeCartItem(product: CartItem): any {
     const index = state.cart.indexOf(product);
     state.cart.splice(index, 1);

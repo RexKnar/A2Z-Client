@@ -27,11 +27,10 @@ import { ProductSliderComponent } from "./components/product-slider/product-slid
 import { SkeletonProductCardComponent } from "./components/skeleton/skeleton-product-card/skeleton-product-card.component";
 import { LazyLoadImageModule } from "ng-lazyload-image";
 import { ServiceInfoComponent } from "./components/service-info/service-info.component";
-import { CoreModule } from '../core/core.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './interceptors/AuthInterceptor';
-import { LocalStorageService } from './utility/LocalStorageService';
-
+import { CoreModule } from "../core/core.module";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { AuthInterceptor } from "./interceptors/AuthInterceptor";
+import { LocalStorageService } from "./utility/LocalStorageService";
 
 @NgModule({
   imports: [
@@ -101,6 +100,5 @@ import { LocalStorageService } from './utility/LocalStorageService';
       multi: true
     }, LocalStorageService
   ],
-
 })
 export class SharedModule { }

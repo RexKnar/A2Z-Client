@@ -43,7 +43,6 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
       multi: true,
     },
   ],
-
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

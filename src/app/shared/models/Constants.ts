@@ -17,13 +17,20 @@ export const PRODUCT_API_CONFIG = {
   reviewsRatingURL: '/Rating/AddRatingByStockIdandUserId',
   AddToCartURL: '/Cart/AddCartByUserId',
   AddToWishlistURL: '/Wishlist/AddToWhishlistByUserId',
-  ProductListURL: 'assets/product.json',
+  // ProductListURL: "assets/product.json",
+  ProductListURL: '/Product/GetProductsList',
 };
 export const CART_API_CONFIG = {
   AddToCartURL: '/Cart/AddCartByUserId',
   GetCartItemsURL: '/Cart/GetCartByUserId',
   UpdateCartItemsURL: '/Cart/UpdateCartByCartId',
   RemoveCartItemsURL: '/Cart/DeleteCartByCartId',
+};
+export const WISHLIST_API_CONFIG = {
+  GetWishlistItemsURL: '/Wishlist/GetWhishlistByUserId',
+  AddToWishlistURL: '/Wishlist/AddToWhishlistByUserId',
+  UpdateWishlistItemsURL: '/Wishlist/UpdateWhishlistByUserIdAndWhishlistId',
+  RemoveWishlistItemsURL: '/Wishlist/DeleteWhishlistByWhishlistId?id=',
 };
 export const SLIDER_API_CONFIG = {
   SliderURL: '/Banner/GetBannerByBannerLocation/',
@@ -41,6 +48,14 @@ export const USER_LOGIN_API_CONFIG = {
 export const PROFILE_API_CONFIG = {
   updateUserProfileURL: '/Profile/UpdateProfileByProfileIdAndUserId',
   getUserprofileURL: '/Profile/GetProfileByUserId',
+};
+export const ADDRESS_API_CONFIG = {
+  addUserAddressURL: '/Address/AddNewAddress',
+  getUserAddressURL: '/Address/GetAddressByUserId',
+  getUserCurrrentAddressURL: '/Address/GetAddressByUserId?id=',
+  updateAddressURL: '/Address/UpdateAddressByAddressId',
+  deleteAddressURL: '/Address/DeleteAddressByAddressId?id=',
+  defaultAddressURL: '/Address/MakeDefaultAddressById?id=',
 };
 export class Apiresponce {
   responseCode: string;

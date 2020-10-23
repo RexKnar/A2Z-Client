@@ -19,15 +19,16 @@ export class PriceFilterComponent implements OnInit {
     floor: 0,
     ceil: 20000,
   };
-
-  price = {
-    minPrice: this.min,
-    maxPrice: this.max,
-  };
+  price: { minPrice: number; maxPrice: number };
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.price = {
+      minPrice: this.min,
+      maxPrice: this.max,
+    };
+  }
 
   // Range Changed
   appliedFilter(event: any) {

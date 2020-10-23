@@ -26,9 +26,8 @@ export class AuthenticationService {
   changePassword(changePassword: UserLogin) {
     return this.httpClient.put(ROUTE_CONFIG.baseUrl + USER_LOGIN_API_CONFIG.changePasswordURL, changePassword, );
   }
-  changeNumberRequest(userName:any) {
+  changeNumberRequest(userName: any) {
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + USER_LOGIN_API_CONFIG.changeNumberRequestURL +userName, { responseType: "text" });
-
   }
   updateNewNumber(newNumber: UserLogin) {
     return this.httpClient.put(ROUTE_CONFIG.baseUrl + USER_LOGIN_API_CONFIG.updateNumberURL, newNumber);

@@ -20,8 +20,6 @@ export class LoginformComponent implements OnInit {
   @Output() registerBtnClick = new EventEmitter();
   @Output() forgetBtnClick = new EventEmitter();
   constructor(private formBuilder: FormBuilder,
-              private route: ActivatedRoute,
-              private readonly _router: Router,
               private modalService: NgbModal,
               private _authenticationService: AuthenticationService,
               private toastr: ToastrService
@@ -39,7 +37,6 @@ export class LoginformComponent implements OnInit {
     this._authenticationService.userLogin(this.loginForm.value).subscribe((data: any) => {
       sessionStorage.setItem("currentUser", JSON.stringify(data));
       if (data.isAuthorize) {
-        // this._router.navigate(["/home"]);
         this.toastr.success(MessageConstants.LOGIN_SUCCESS, "", { timeOut: 2000 });
         this.modalService.dismissAll();
       } else {

@@ -33,7 +33,6 @@ export class RegisterformComponent implements OnInit {
   }
   get o() {
     return this.otpForm.controls;
-
   }
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -77,7 +76,6 @@ export class RegisterformComponent implements OnInit {
         this.showDiv = true;
         this.showSuccessMessage = true;
         this.isRegisterForm = true;
-
       }
     });
   }
@@ -100,7 +98,6 @@ export class RegisterformComponent implements OnInit {
     this._authenticationService.verfiyUser(this.registerForm.value).subscribe((data: any) => {
       sessionStorage.setItem("currentUser", JSON.stringify(data));
       if (data.isAuthorize) {
-        // this._router.navigate(["/home"]);
         this.toastr.success(MessageConstants.REGISTER_SUCCESS, "", { timeOut: 2000, });
         this.modalService.dismissAll();
       } else {

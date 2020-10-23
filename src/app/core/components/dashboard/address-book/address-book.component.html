@@ -1,9 +1,8 @@
-
 <section class="section-b-space">
     <div class="container">
         <div class="row ">
             <div class="col-sm-12 ">
-                <span class="float-right back-btn-margin " >
+                <span class="float-right back-btn-margin ">
                     <a [routerLink]="['/dashboard']">
                         <i class="fa fa-angle-double-left back-btn btn-pr" aria-hidden="true">
                             back to dashboard
@@ -14,7 +13,7 @@
             <div class="col-sm-12 ">
                 <div class="dashboard-right">
                     <div class="dashboard box-margin">
-                        <a [routerLink]="['/address_form']">
+                        <a [href]="['/address_form?newType='+action]">
                             <h4>+ Add New Address</h4>
                         </a>
                     </div>
@@ -25,46 +24,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="dashboard-right">
-                    <div class="dashboard">
-                        <div class="box-account box-info">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="box address-box">
-                                        <input type="radio" >
-                                        <a [routerLink]="['/address_form']" class="edit-btn-margin">Edit</a>
-                                        <a  class="edit-btn-margin">Delete</a>
-                                        <h6>MARK JECNO</h6>
-                                   
-                                        <h6>MARK JECNO</h6>
-                                   
-                                        <h6>MARK JECNO</h6>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="box address-box">
-                                        <input type="radio" >
-                                        <a [routerLink]="['/address_form']" class="edit-btn-margin">Edit</a>
-                                        <a  class="edit-btn-margin">Delete</a>
-                                        <h6>MARK JECNO</h6>
-                                   
-                                        <h6>MARK JECNO</h6>
-                                   
-                                        <h6>MARK JECNO</h6>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="box address-box">
-                                        <input type="radio" >
-                                        <a [routerLink]="['/address_form']" class="edit-btn-margin">Edit</a>
-                                        <a  class="edit-btn-margin">Delete</a>
-                                        <h6>MARK JECNO</h6>
-                                   
-                                        <h6>MARK JECNO</h6>
-                                   
-                                        <h6>MARK JECNO</h6>
-                                    </div>
-                                </div>
+                <div class="box-account box-info">
+                    <div class="row">
+                        <div class="col-sm-6 dashboard-right" *ngFor="let address of addressDetails">
+                            <div class="box address-box dashboard">
+                                <a class="edit-btn-margin float-right btn-click" (click)="delete(address.id)">
+                                    <i class="fa fa-trash icon-Size" aria-hidden="true"></i>
+                                </a>
+                                <a [href]="['/address_form?id='+address.id+'&updateType='+action]"
+                                    class="edit-btns-margin float-right btn-click">
+                                    <i class="fa fa-pencil-square-o icon-Size" aria-hidden="true"></i>
+                                </a>
+                                <a class="edit-btn-margin float-right btn-click" *ngIf="address.status==1"
+                                    (click)="makeDefault(address.id)">Make
+                                    Default</a>
+                                <p class="default-btn-margin float-right" *ngIf="address.status==2">
+                                    Default</p>
+                                <h4 class="text-align">{{address?.name}}-{{address?.phonenumber}}</h4>
+                                <h6>{{address?.flatNo}},{{address?.address}},{{address?.locality}},</h6>
+                                <h6>{{address?.state}}-{{address?.pincode}}</h6>
+                                <h6>{{address?.landmark}}</h6>
                             </div>
                         </div>
                     </div>

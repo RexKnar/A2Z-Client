@@ -17,4 +17,6 @@ export const MessageConstants = {
   USER_NOT_FOUND: 'No User Found',
   PASSWORD_CHANGE_SUCCESS: 'Password changed successfully',
   INVALID_DATA: 'Invaild Otp',
+  REQUESTCHANGENUMBER_ERROR: 'Enter a Valid MobileNumber',
+  CHANGENUMBER_ERROR: 'Invaild Otp',
 };
