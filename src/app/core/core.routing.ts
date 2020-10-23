@@ -8,6 +8,8 @@ import { AddressFormComponent } from "./components/dashboard/address-book/addres
 import { MyorderComponent } from "./components/dashboard/myorder/myorder.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { WishlistComponent } from "./components/wishlist/wishlist.component";
+import { CheckoutOrderComponent } from './components/checkout-page/components/checkout-order/checkout-order.component';
+import { CheckoutAddressComponent } from './components/checkout-page/components/checkout-address/checkout-address.component';
 
 const routes: Routes = [
 
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: "checkout",
     component: CheckoutPageComponent
+  },
+  {
+    path: "checkout-order",
+    component: CheckoutOrderComponent
+  },
+  {
+    path: "checkout-address",
+    component: CheckoutAddressComponent
   },
   {
     path: "login",
