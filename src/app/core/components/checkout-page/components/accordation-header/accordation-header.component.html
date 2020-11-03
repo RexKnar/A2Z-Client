@@ -1,0 +1,26 @@
+<ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1">
+    <ngb-panel id="custom-panel-1">
+      <ng-template ngbPanelHeader let-opened="opened">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="m-0">Login {{ opened ? '✓' : '' }}</h5>
+          <button ngbPanelToggle class="btn btn-link p-0"> − </button>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <h3>Christal</h3>
+        <p>+91 9940761788</p>
+      </ng-template>
+    </ngb-panel>
+  
+    <ngb-panel >
+      <ng-template ngbPanelHeader>
+        <div class="d-flex align-items-center justify-content-between">
+          <button ngbPanelToggle class="btn btn-link container-fluid text-left pl-0">Delivery Address</button>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <app-address-book></app-address-book>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  

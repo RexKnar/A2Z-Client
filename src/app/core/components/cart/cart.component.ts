@@ -1,22 +1,22 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from "rxjs";
 import { CartService } from "src/app/shared/services/cart.service";
 
 @Component({
-  selector: "app-cart",
+  selector: "app-home-cart",
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.scss"],
 })
 export class CartComponent implements OnInit {
   cartItems: any;
-  constructor(public _cartService: CartService) {
-    const currentUser = {
-      accessToken:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI5OTUyMjUxMjQ0Iiwic3ViIjoiMCIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIwIiwiZXhwIjoxNjAxNTQzMzg3LCJpc3MiOiJFZHdpbiIsImF1ZCI6IkVkd2luIn0.JSpbGFBepejdWnOtBUWOpDrVJ8rXhI8Sy3HW1p0zDXM",
-    };
-    sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+  isCheckout:string="";
+  constructor(public _cartService: CartService,
+    private route: ActivatedRoute) {
+
   }
   ngOnInit(): void {
+    this.isCheckout=this.route.snapshot.queryParamMap.get('type');
     if (!localStorage.getItem("gotCart")) {
       this._cartService.getCartItems.subscribe((data) => {
         this.cartItems = data;

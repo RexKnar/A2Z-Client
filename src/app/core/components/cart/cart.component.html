@@ -107,7 +107,8 @@
                 <a [routerLink]="['/shop/collection/left/sidebar']" class="btn btn-solid">continue shopping</a>
             </div>
             <div class="col-6">
-                <a [routerLink]="['/shop/checkout']" class="btn btn-solid">check out</a>
+                <a [routerLink]="['/home/checkout-order']" [queryParams]="{ type: 'checkout'}" *ngIf="!isCheckout" class="btn btn-solid">Checkout</a>
+                <a [routerLink]="['/home/checkout-address']" *ngIf="isCheckout=='checkout'" class="btn btn-solid">Confirm Order</a>
             </div>
         </div>
     </div>
