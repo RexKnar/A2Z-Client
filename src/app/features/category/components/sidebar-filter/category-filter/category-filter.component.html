@@ -1,10 +1,10 @@
 <!-- category -->
-<div class="collection-collapse-block border-0" [class.open]="collapse" *ngIf="categories.length && isShowCategory">
-  <h3 class="collapse-block-title" (click)="collapse = !collapse">Category</h3>
+<div class="collection-collapse-block border-0" [class.open]="collapseCategory">
+  <h3 class="collapse-block-title" (click)="collapseCategory = !collapseCategory">Category</h3>
   <div class="collection-collapse-block-content">
     <div class="collection-brand-filter">
       <ul class="category-list">
-        <li *ngFor="let category of categories">
+        <li *ngFor="let category of categories" [ngClass]="{ active: activeCategory == category.id }">
           <a [routerLink]="['/category']" [queryParams]="{ category: category.id }">
             {{ category.categoryName }}
           </a>
@@ -18,16 +18,17 @@
 
 <div
   class="collection-collapse-block border-0"
-  [class.open]="collapse"
+  [class.open]="collapseSubCategory"
   *ngIf="selectedSubCategory.length && !isShowCategory"
 >
-  <h3 class="collapse-block-title" (click)="collapse = !collapse">SubCategory</h3>
+  <h3 class="collapse-block-title" (click)="collapseSubCategory = !collapseSubCategory">SubCategory</h3>
   <div class="collection-collapse-block-content">
     <div class="collection-brand-filter">
       <ul class="category-list">
-        <li *ngFor="let subcategory of selectedSubCategory">
+        <li *ngFor="let subcategory of selectedSubCategory" [ngClass]="{ active: activeSubCategory == subcategory.id }">
           <a
             [routerLink]="['/category']"
+            [routerLinkActive]="['/category']"
             [queryParams]="{ subcategory: subcategory.id }"
             queryParamsHandling="merge"
             (click)="onSelectSubCategory(subcategory)"

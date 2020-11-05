@@ -247,6 +247,8 @@ export class CategoryComponent implements OnInit {
     this._productFilterService.FilterSearchProduct(this.filteredSearch).subscribe((data: any) => {
       this.products = data.products;
       this.paginate = this.getPager(data.totalCount, +this.pageNo);
+      // this.minPrice = data.price.minPrice;
+      // this.maxPrice = data.price.maxPrice;
     });
   }
 
@@ -280,7 +282,7 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-  public getPager(totalItems: number, currentPage: number = 1, pageSize: number = 16) {
+  public getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
     // calculate total pages
     const totalPages = Math.ceil(totalItems / pageSize);
 
