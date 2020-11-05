@@ -9,29 +9,11 @@
       </div>
 
       <div class="mt-2 d-flex-space-between">
-        <select (change)="onMinChange($event)">
-          <option value="0">MIN</option>
-          <option value="250">250</option>
-          <option value="500">500</option>
-          <option value="1000">1000</option>
-          <option value="1500">1500</option>
-          <option value="2000">2000</option>
-          <option value="2500">2500</option>
-        </select>
+        <input type="number" class="width-75" [(ngModel)]="min" (input)="onMinChange($event)" name="min" />
 
         <span>to</span>
 
-        <select (change)="onMaxChange($event)">
-          <option value="2000">2000</option>
-          <option value="4000">4000</option>
-          <option value="7000">7000</option>
-          <option value="10000">10000</option>
-          <option value="13000">13000</option>
-          <option value="20000">20000</option>
-          <option value="25000">25000</option>
-          <option value="30000">30000</option>
-          <option value="50000">Max</option>
-        </select>
+        <input type="number" class="width-75" [(ngModel)]="max" (input)="onMaxChange($event)" name="max" />
       </div>
     </div>
   </div>
