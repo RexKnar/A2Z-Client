@@ -63,6 +63,9 @@ export class CartService {
       })
     );
   }
+  public orderAmount(){
+
+  }
   public addToCart(product): any {
     const cartItem = state.cart.find((item) => item.stockId === product.stockId);
     console.log(product);

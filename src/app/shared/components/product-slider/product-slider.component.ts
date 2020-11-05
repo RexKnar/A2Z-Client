@@ -9,10 +9,11 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ProductSliderComponent implements OnInit {
   public ProductSliderConfig: any = ProductSlider;
-  @Input() products: ProductList;
+  @Input() products: ProductList = new ProductList();
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
 
   }
+ 
 }

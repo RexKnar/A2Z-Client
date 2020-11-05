@@ -20,10 +20,9 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
 import { WishlistComponent } from "./components/wishlist/wishlist.component";
 import { ChangepasswordComponent } from "./components/dashboard/changepassword/changepassword.component";
-import { CheckoutOrderComponent } from './components/checkout-page/components/checkout-order/checkout-order.component';
 import { CheckoutAddressComponent } from './components/checkout-page/components/checkout-address/checkout-address.component';
 import { AccordationHeaderComponent } from './components/checkout-page/components/accordation-header/accordation-header.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { CheckoutOrderComponent } from './components/checkout-page/components/checkout-order/checkout-order.component';
 
 
 @NgModule({
@@ -34,7 +33,6 @@ import { BrowserModule } from '@angular/platform-browser';
     NgbModule,
     CoreRoutes,
     ReactiveFormsModule,
-    BrowserModule
   ],
   exports: [LoginComponent,
     LoginformComponent,
@@ -59,9 +57,9 @@ import { BrowserModule } from '@angular/platform-browser';
     DiscountPipe,
     WishlistComponent,
     ChangepasswordComponent,
-    CheckoutOrderComponent,
     CheckoutAddressComponent,
-    AccordationHeaderComponent
+    AccordationHeaderComponent,
+    CheckoutOrderComponent
   ],
   
 

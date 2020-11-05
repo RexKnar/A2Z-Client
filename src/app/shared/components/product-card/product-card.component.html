@@ -47,7 +47,7 @@
       <h6>{{ product?.productName | titlecase }}</h6>
     </a>
    <div class="d-flex">
-    <h4>₹{{this.product.stocks[this.currentStockPointer].price - 
+    <h4>₹{{this.product?.stocks[this.currentStockPointer]?.price - 
       (this.product.stocks[this.currentStockPointer].price * this.product.discount) / 100}}</h4>
     <del class="font-size price-space" *ngIf="product?.discount"><span
         class="money price-space">₹{{product?.stocks[currentStockPointer]?.price}}</span></del>

@@ -1,47 +1,73 @@
-<section class="section-b-space">
+<section class="cart-section section-b-space">
     <div class="container">
-        <div class="row ">
+        <div class="row">
             <div class="col-sm-12 ">
-                <span class="float-right back-btn-margin " >
+                <span class="float-right back-btn-margin ">
                     <a [routerLink]="['/dashboard']">
                         <i class="fa fa-angle-double-left back-btn btn-pr" aria-hidden="true">
                             back to dashboard
                         </i>
                     </a>
                 </span>
-                <h3 style="margin-bottom: 2rem">My Orders</h3>
-                <div class="dashboard-right">
-                    <div class="dashboard box-margin order-box-margin">
-                          <div class="col-sm-12 text-align ">
-                              <input type="radio">
-                              <label class="label-padding">Packed</label>
-                              <input type="radio">
-                              <label class="label-padding">Shipped</label>
-                              <input type="radio">
-                              <label class="label-padding">Delivered</label>
+                <h4 style="margin-bottom: 2rem">My Orders</h4>
 
-                           </div>
-                              <h4>hiii my fisrt orde</h4>
-                              <h4>₹100</h4>
+            </div>
+            <div class="col-lg-8">
+                <table class="table cart-table table-responsive-xs">
+                    <thead>
+                        <tr class="table-head">
+                            <!-- <th>Image</th> -->
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Date&Time</th>
+                            <th>Status</th>
+                            <th>Payment</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let order of currentOrder">
+                            <td>
+                                <h4>{{ order.productName | titlecase }}</h4>
+                                <img [src]="order.imageUrl" [alt]="order.imageUrl">
+                            </td>
+                            <td>
+                                ₹{{ order.orderPrice}}
+                            </td>
+                            <td>
+                                <p>{{order.quantity}}</p>
+                            </td>
+                            <td>
+                                {{ order.orderDate | date :'medium'}}
+                            </td>
+                            <td>
+                                <span *ngIf="order.deliveryStatus==1">Shipped</span>
+                                <span *ngIf="order.deliveryStatus==2" >Delivered</span>
+                                <span *ngIf="order.deliveryStatus==3">Refund</span>
+                            </td>
+                            <td class="grid">
+                                <div class='badge badge-success' *ngIf="order.paymentMethod==0">Cash on delivery
 
-                    </div>
-                </div>
-                <div class="dashboard-right">
-                    <div class="dashboard box-margin order-box-margin">
-                          <div class="col-sm-12 text-align ">
-                              <input type="radio">
-                              <label class="label-padding">Packed</label>
-                              <input type="radio">
-                              <label class="label-padding">Shipped</label>
-                              <input type="radio">
-                              <label class="label-padding">Delivered</label>
+                                </div>
+                                <div class='badge badge-info' *ngIf="order.paymentMethod==1">Online
+                                    
+                                </div>
+                                <div (click)="getInvoice(order.purchaseId)"
+                                    class='badge badge-danger invoice-margin' *ngIf="order.deliveryStatus==2"> Invoice
+                                </div>
+                               
+                               
+                            </td>
+                            <td>
+                                <div style="cursor: pointer" (click)="deleteMyOrder(order.purchaseId)">
+                                    <i class="fa fa-trash" style="font-size: 16px;color: crimson;"></i>
+                                  </div>
 
-                           </div>
-                              <h4>hiii my fisrt orde</h4>
-                              <h4>₹100</h4>
-
-                    </div>
-                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

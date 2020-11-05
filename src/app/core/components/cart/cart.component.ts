@@ -4,19 +4,19 @@ import { Observable } from "rxjs";
 import { CartService } from "src/app/shared/services/cart.service";
 
 @Component({
-  selector: "app-home-cart",
+  selector: "app-cart",
   templateUrl: "./cart.component.html",
   styleUrls: ["./cart.component.scss"],
 })
 export class CartComponent implements OnInit {
   cartItems: any;
-  isCheckout:string="";
+  isCheckout: string = "";
   constructor(public _cartService: CartService,
     private route: ActivatedRoute) {
 
   }
   ngOnInit(): void {
-    this.isCheckout=this.route.snapshot.queryParamMap.get('type');
+    this.isCheckout = this.route.snapshot.queryParamMap.get('type');
     if (!localStorage.getItem("gotCart")) {
       this._cartService.getCartItems.subscribe((data) => {
         this.cartItems = data;

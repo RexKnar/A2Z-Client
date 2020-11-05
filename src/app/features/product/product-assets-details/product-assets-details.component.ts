@@ -22,6 +22,8 @@ export class ProductAssetsDetailsComponent implements OnInit {
   stockAttributes: StockAttributes[] = [];
   unique1: StockAttributes[] = [];
   attributeGroups: any = {};
+  cart: Cart[] = [];
+  addCart: any;
   constructor(private readonly _ProductService: ProductService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -68,10 +70,11 @@ export class ProductAssetsDetailsComponent implements OnInit {
     });
   }
   addToCart(productDetail: ProductDetails) {
-    const cart: Cart = new Cart();
-    cart.stockId = 3;
-    cart.quantity = 5;
-    this._ProductService.addToCart(cart).subscribe((data) => {
+    this.addCart.stockId = 65;
+    this.addCart.quantity = 5;
+
+    this.cart.push(this.addCart);
+    this._ProductService.addToCart(this.cart).subscribe((data) => {
       this.toastr.success(MessageConstants.CART_SUCCESS, "", { timeOut: 2000 });
     });
   }

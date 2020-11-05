@@ -12,43 +12,41 @@
                             <app-accordation-header></app-accordation-header>
                         </div>
                         <div class="col-lg-4 col-sm-12 col-xs-12">
-                           
-                                <app-checkout-page></app-checkout-page>
-                                <div class="checkout-details">
-                                    <div class="payment-box">
-                                        <div class="upper-box">
-                                            <div class="payment-options">
-                                               
-                                                    <h5>Payment</h5>
-                                                
-                                                <ul>
-                                                    <li>
-                                                        <div class="radio-option">
-                                                            <input type="radio"  name="payment-group" id="payment-2">
-                                                            <label for="payment-2">Cash On Delivery
-                                                                <!-- <span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span> -->
-                                                            </label>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="radio-option paypal">
-                                                            <input type="radio" name="payment-group" id="payment-3">
-                                                            <label for="payment-3">Online<span class="image"></span></label>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="text-right">
-                                            <button type="submit" class="btn-solid btn">
-                                               Place Order
-                                            </button>
-                                            <ngx-paypal ></ngx-paypal>
+
+                            <app-checkout-order></app-checkout-order>
+                            <div class="checkout-details">
+                                <div class="payment-box">
+                                    <div class="upper-box">
+                                        <div class="payment-options">
+
+                                            <h5>Payment</h5>
+
+                                            <ul>
+                                                <li>
+                                                    <div class="radio-option">
+                                                        <input type="radio" name="payment-group" id="payment-2">
+                                                        <label for="payment-2">Cash On Delivery
+
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option paypal">
+                                                        <input type="radio" name="payment-group" id="payment-3">
+                                                        <label for="payment-3">Online<span class="image"></span></label>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn-solid btn">
+                                            Place Order
+                                        </button>
+                                        <ngx-paypal></ngx-paypal>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            
                         </div>
                     </div>
                 </form>

@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getProductListRequest = {
-      type: "product",
-      value: "1"
+      type: "category",
+      value: "2043"
     };
     this.topBannerData = this._bannerService.getBanner("banner1");
     this.bottomBannerData = this._bannerService.getBanner("banner2");

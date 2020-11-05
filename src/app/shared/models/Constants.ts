@@ -57,6 +57,12 @@ export const ADDRESS_API_CONFIG = {
     deleteAddressURL: "/Address/DeleteAddressByAddressId?id=",
     defaultAddressURL: "/Address/MakeDefaultAddressById?id="
 };
+export const PURCHASED_DETAILS_CONFIG = {
+     getUserOrdersURL: "/PurchaseDetails/GetPurchaseDetailsByUserId",
+     deleteOrderURL:"/PurchaseDetails/DeletePurchaseDetailsById?id=",
+};
 export class Apiresponce {
     responseCode: string;
 }
+
+
