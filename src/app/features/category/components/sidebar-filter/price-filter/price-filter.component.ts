@@ -17,7 +17,7 @@ export class PriceFilterComponent implements OnInit {
 
   options: any = {
     floor: 0,
-    ceil: 20000,
+    ceil: 50000,
   };
   price: { minPrice: number; maxPrice: number };
 
@@ -33,6 +33,18 @@ export class PriceFilterComponent implements OnInit {
   // Range Changed
   appliedFilter(event: any) {
     this.price = { minPrice: event.value, maxPrice: event.highValue };
+    this.priceFilter.emit(this.price);
+  }
+
+  onMinChange(event: any): void {
+    this.min = +event.target.value;
+    this.price = { minPrice: this.min, maxPrice: this.max };
+    this.priceFilter.emit(this.price);
+  }
+
+  onMaxChange(event: any): void {
+    this.max = +event.target.value;
+    this.price = { minPrice: this.min, maxPrice: this.max };
     this.priceFilter.emit(this.price);
   }
 }
