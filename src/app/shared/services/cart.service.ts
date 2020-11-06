@@ -26,21 +26,22 @@ export class CartService {
   public OpenCart = false;
   public get getCartItems(): Observable<CartItem[]> {
     if (
-      !localStorage.getItem("cartItems") &&
-      sessionStorage.getItem("currentUser") &&
-      !sessionStorage.getItem("gotCart")
+      // !localStorage.getItem("cartItems") &&
+      sessionStorage.getItem("currentUser") 
+      // &&
+      // !sessionStorage.getItem("gotCart")
     ) {
       const userCartData = this.httpClient.get<CartItem[]>(
         ROUTE_CONFIG.baseUrl + CART_API_CONFIG.GetCartItemsURL
       );
       return userCartData as Observable<CartItem[]>;
     } else {
-      const itemsStream = new Observable((observer) => {
+      const userCartData = new Observable((observer) => {
         observer.next(state.cart);
         observer.complete();
       });
-      sessionStorage.setItem("gotCart", "true");
-      return itemsStream as Observable<CartItem[]>;
+      // sessionStorage.setItem("gotCart", "true");
+      return userCartData as Observable<CartItem[]>;
     }
   }
   public get cartItems(): Observable<CartItem[]> {

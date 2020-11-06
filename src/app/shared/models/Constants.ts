@@ -59,8 +59,9 @@ export const ADDRESS_API_CONFIG = {
 };
 export const PURCHASED_DETAILS_CONFIG = {
      getUserOrdersURL: "/PurchaseDetails/GetPurchaseDetailsByUserId",
-     deleteOrderURL:"/PurchaseDetails/DeletePurchaseDetailsById?id=",
+     deleteOrderURL: "/PurchaseDetails/DeletePurchaseDetailsById?id=",
 };
+
 export class Apiresponce {
     responseCode: string;
 }

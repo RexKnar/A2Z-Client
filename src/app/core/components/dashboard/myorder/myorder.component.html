@@ -10,13 +10,11 @@
                     </a>
                 </span>
                 <h4 style="margin-bottom: 2rem">My Orders</h4>
-
             </div>
             <div class="col-lg-8">
                 <table class="table cart-table table-responsive-xs">
                     <thead>
                         <tr class="table-head">
-                            <!-- <th>Image</th> -->
                             <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -43,27 +41,22 @@
                             </td>
                             <td>
                                 <span *ngIf="order.deliveryStatus==1">Shipped</span>
-                                <span *ngIf="order.deliveryStatus==2" >Delivered</span>
+                                <span *ngIf="order.deliveryStatus==2">Delivered</span>
                                 <span *ngIf="order.deliveryStatus==3">Refund</span>
                             </td>
                             <td class="grid">
                                 <div class='badge badge-success' *ngIf="order.paymentMethod==0">Cash on delivery
-
                                 </div>
                                 <div class='badge badge-info' *ngIf="order.paymentMethod==1">Online
-                                    
                                 </div>
-                                <div (click)="getInvoice(order.purchaseId)"
-                                    class='badge badge-danger invoice-margin' *ngIf="order.deliveryStatus==2"> Invoice
+                                <div (click)="generatePdf(order)" class='badge badge-danger invoice-margin'
+                                    *ngIf="order.deliveryStatus==2"> Invoice
                                 </div>
-                               
-                               
                             </td>
                             <td>
                                 <div style="cursor: pointer" (click)="deleteMyOrder(order.purchaseId)">
                                     <i class="fa fa-trash" style="font-size: 16px;color: crimson;"></i>
-                                  </div>
-
+                                </div>
                             </td>
                         </tr>
                     </tbody>
