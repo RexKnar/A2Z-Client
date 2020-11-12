@@ -7,7 +7,7 @@ export class LocalStorageService {
     public setAuthorizationData(auth: Authorization): void {
         sessionStorage.setItem("currentUser", JSON.stringify(auth));
     }
-    public getAuthorizationData(): Authorization {
+    public getAuthorizationData() {
         let tokenData = JSON.parse(sessionStorage.getItem("currentUser"));
         return tokenData == null ? null : tokenData;
     }

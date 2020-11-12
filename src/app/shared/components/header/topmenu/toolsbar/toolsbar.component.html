@@ -12,37 +12,22 @@
             </span>
         </a>
     </li>
-    <!-- <li class="iconsize onhover-div mobile-setting d-lg-inline d-none">
+    <li class="account-icon onhover-dropdown mobile-account d-lg-inline d-none" >
         <i class="fa fa-user-o fa-icon-color " aria-hidden="true"></i>
-        <ul class="show-div setting ">
-            <li>
-                <a (click)="LoginModal.openModal()" class="fa-icon-color btn-pr" >
-                    Login
-                </a>
-            </li>
-            <li>
-                <a [routerLink]="['/dashboard']" class="fa-icon-color btn-pr" >
-                   Profile
-                </a>
-            </li>
-            <li>
-                <a (click)="logOut()" class="fa-icon-color btn-pr">
-                    Logout
-                </a>
-            </li>
-        </ul>
-    </li> -->
-    <li class="account-icon onhover-dropdown mobile-account d-lg-inline d-none">
-        <i class="fa fa-user-o fa-icon-color " aria-hidden="true"></i>
-        <ul class="onhover-show-div">
-            <li>
+        <ul class="onhover-show-div" >
+            <li *ngIf="!isLoggedin">
                 <a (click)="LoginModal.openModal()" class="fa-icon-color btn-pr">
                     Login
                 </a>
             </li>
-            <li>
+            <li *ngIf="isLoggedin">
                 <a [routerLink]="['/dashboard']" class="fa-icon-color btn-pr">
                     Profile
+                </a>
+            </li>
+            <li *ngIf="isLoggedin">
+                <a (click)="logOut()" class="fa-icon-color btn-pr">
+                    Logout
                 </a>
             </li>
         </ul>
@@ -68,13 +53,26 @@
             </span>
         </a>
     </li>
-    <li class="iconsize mobile-account">
-        <a [routerLink]="['/dashboard']" class="fa-icon-color btn-pr">
-            <i class="fa fa-user-o fa-icon-color-mobile" aria-hidden="true"></i>
-        </a>
-        <!-- <a (click)="LoginModal.openModal()" class="fa-icon-color btn-pr" >
-            Login
-        </a> -->
-    </li>
+    <!-- <li class="iconsize mobile-account menu">
+        <ul >
+        <i class="fa fa-user-o fa-icon-color-mobile" aria-hidden="true"></i>
+
+            <li *ngIf="!isLoggedin">
+                <a (click)="LoginModal.openModal()" class="fa-icon-color btn-pr">
+                    Login
+                </a>
+            </li>
+            <li *ngIf="isLoggedin">
+                <a [routerLink]="['/dashboard']" class="fa-icon-color btn-pr">
+                    Profile
+                </a>
+            </li>
+            <li *ngIf="isLoggedin">
+                <a (click)="logOut()" class="fa-icon-color btn-pr">
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </li> -->
 </ul>
 <app-login #loginModal></app-login>

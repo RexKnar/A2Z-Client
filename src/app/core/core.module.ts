@@ -23,6 +23,7 @@ import { ChangepasswordComponent } from "./components/dashboard/changepassword/c
 import { CheckoutAddressComponent } from './components/checkout-page/components/checkout-address/checkout-address.component';
 import { AccordationHeaderComponent } from './components/checkout-page/components/accordation-header/accordation-header.component';
 import { CheckoutOrderComponent } from './components/checkout-page/components/checkout-order/checkout-order.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import { CheckoutOrderComponent } from './components/checkout-page/components/ch
     NgbModule,
     CoreRoutes,
     ReactiveFormsModule,
+    DataTablesModule
+
   ],
   exports: [LoginComponent,
     LoginformComponent,

@@ -1,10 +1,12 @@
-import { Component, OnInit, SimpleChanges } from "@angular/core";
+import { Component, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { MyOrder } from "src/app/shared/models/Order";
 import { OrderService } from "src/app/shared/services/order.service";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import { Invoice } from "src/app/shared/models/Invoice";
+import { DataTableDirective } from 'angular-datatables';
 import { DatePipe } from "@angular/common";
+import { Subject } from 'rxjs';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
@@ -13,6 +15,11 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ["./myorder.component.scss"]
 })
 export class MyorderComponent implements OnInit {
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject();
+
   currentOrder: MyOrder[] = [];
   name: any;
   currentInvoice: Invoice;
@@ -28,12 +35,7 @@ export class MyorderComponent implements OnInit {
   public getMyOrder(): void {
     this._orderService.getOrder().subscribe((data: any) => {
       this.currentOrder = data;
-    });
-  }
-  public deleteMyOrder(id): void {
-    this._orderService.deleteOrder(id).subscribe((data: any) => {
-      this.getMyOrder();
-
+      this.dtTrigger.next();
     });
   }
 

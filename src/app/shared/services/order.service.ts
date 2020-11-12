@@ -14,7 +14,5 @@ export class OrderService {
   getOrder(): Observable<any> {
     return this.httpClient.get<any>(ROUTE_CONFIG.baseUrl + PURCHASED_DETAILS_CONFIG.getUserOrdersURL);
   }
-  deleteOrder(id: any) {
-    return this.httpClient.delete(ROUTE_CONFIG.baseUrl + PURCHASED_DETAILS_CONFIG. deleteOrderURL + id);
-  }
+
 }
