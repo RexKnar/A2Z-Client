@@ -1,12 +1,13 @@
 <div class="searchbar d-lg-inline d-none">
     <div class="search dropdown">
-        <select class="searchfilter dropdown-toggle dropdown-menu-left" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <option>ALL</option>
-            <option *ngFor="let menuItem of menuItems"> {{menuItem.categoryName}}</option>
+        <select class="searchfilter  dropdown-toggle dropdown-menu-left" type="button" 
+             aria-placeholder="ALL" [(ngModel)]="categoryId">
+        
+            <option aria-selected="true">All</option>
+            <option [ngValue]="menuItem.id" *ngFor="let menuItem of menuItems"> {{menuItem.categoryName}}</option>
         </select>
-        <input type="text" class="searchTerm" placeholder="What are you looking for?">
-        <button type="submit" class="searchButton">
+        <input type="text" [(ngModel)]="searchTerm" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" (click)="searchItems()" class="searchButton">
             <i class="fa fa-search"></i>
         </button>
     </div>
@@ -14,12 +15,12 @@
 <div class="searchbar-mobile d-lg-none">
     <div class="search dropdown">
         <select class="searchfilter-mobile dropdown-toggle dropdown-menu-left" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [(ngModel)]="categoryId">
             <option>ALL</option>
-            <option *ngFor="let menuItem of menuItems"> {{menuItem.categoryName}}</option>
+            <option [ngValue]="menuItem.id" *ngFor="let menuItem of menuItems"> {{menuItem.categoryName}}</option>
         </select>
-        <input type="text" class="searchTerm-mobile" placeholder="What are you looking for?">
-        <button type="submit" class="searchButton">
+        <input type="text" [(ngModel)]="searchTerm" class="searchTerm-mobile" placeholder="What are you looking for?">
+        <button type="submit" (click)="searchItems()" class="searchButton">
             <i class="fa fa-search"></i>
         </button>
     </div>

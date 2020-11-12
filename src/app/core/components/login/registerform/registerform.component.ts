@@ -100,6 +100,8 @@ export class RegisterformComponent implements OnInit {
       if (data.isAuthorize) {
         this.toastr.success(MessageConstants.REGISTER_SUCCESS, "", { timeOut: 2000, });
         this.modalService.dismissAll();
+        window.location.reload();
+
       } else {
         this.toastr.error(MessageConstants.REGISTER_ERROR, "", { timeOut: 2000 });
       }

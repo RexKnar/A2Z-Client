@@ -51,7 +51,10 @@
                         <div class="product-buttons text-center">
                             <a href="javascript:void(0)" *ngIf="counter <= currentStock?.quantity"
                                 class="btn btn-solid">add to cart</a>
-                            <a class="btn btn-solid">view detail</a>
+                            <a 
+                            (click)="viewDetails(product.productId)"
+                            class="btn btn-solid">view detail</a>
+
                         </div>
                     </div>
                 </div>

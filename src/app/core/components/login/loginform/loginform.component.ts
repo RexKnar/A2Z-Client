@@ -39,6 +39,7 @@ export class LoginformComponent implements OnInit {
       if (data.isAuthorize) {
         this.toastr.success(MessageConstants.LOGIN_SUCCESS, "", { timeOut: 2000 });
         this.modalService.dismissAll();
+        window.location.reload();
       } else {
         this.toastr.error(MessageConstants.LOGIN_ERROR, "", { timeOut: 2000 });
       }

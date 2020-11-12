@@ -1,23 +1,23 @@
-import { Component, OnInit, ViewChild, Input, SimpleChanges } from "@angular/core";
-import { ProductModalComponent } from "./product-modal/product-modal.component";
-import { Product } from "../../models/Product";
-import { ProductService } from "../../services/product.service";
-import { Cart } from "../../models/Cart";
-import { ToastrService } from "ngx-toastr";
-import { Wishlist } from "../../models/Wishlist";
-import { MessageConstants } from "../../models/messageConstants";
+import { Component, OnInit, ViewChild, Input, SimpleChanges } from '@angular/core';
+import { ProductModalComponent } from './product-modal/product-modal.component';
+import { Product } from '../../models/Product';
+import { ProductService } from '../../services/product.service';
+import { Cart } from '../../models/Cart';
+import { ToastrService } from 'ngx-toastr';
+import { Wishlist } from '../../models/Wishlist';
+import { MessageConstants } from '../../models/messageConstants';
 
 @Component({
-  selector: "app-product-card",
-  templateUrl: "./product-card.component.html",
-  styleUrls: ["./product-card.component.scss"],
+  selector: 'app-product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: Product = new Product();
   @Input() onHowerChangeImage = false;
   @Input() thumbnail = false;
   @Input() loader = false;
-  @ViewChild("productView") ProductView: ProductModalComponent;
+  @ViewChild('productView') ProductView: ProductModalComponent;
   public ImageSrc: string;
   public currentStockPointer: number = 0;
   public discountPrice: number;
@@ -58,7 +58,7 @@ export class ProductCardComponent implements OnInit {
     wishlist.stockId = 2;
     wishlist.quantity = 1;
     this._ProductService.addToWishlist(wishlist).subscribe((data) => {
-      this.toastr.success(MessageConstants.WISHLIST_SUCCESS, "", { timeOut: 2000 });
+      this.toastr.success(MessageConstants.WISHLIST_SUCCESS, '', { timeOut: 2000 });
       product.wishlistFlag = !product.wishlistFlag;
     });
   }

@@ -13,6 +13,7 @@ import { ProductService } from "src/app/shared/services/product.service";
 import { StockAttributes } from "src/app/shared/models/ProductAttributes";
 import { Stock } from "src/app/shared/models/Stock";
 import { isNgTemplate } from "@angular/compiler";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-product-modal",
@@ -36,7 +37,8 @@ export class ProductModalComponent implements OnInit, OnChanges {
   public price: any = 0;
   constructor(
     private modalService: NgbModal,
-    private readonly _ProductService: ProductService
+    private readonly _ProductService: ProductService,
+    private readonly _router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -101,6 +103,16 @@ export class ProductModalComponent implements OnInit, OnChanges {
       }
       index = index + 1;
     });
+  }
+
+  viewDetails(id): void {
+    this.modalService.dismissAll();
+    this._router.navigate(['/product'], {
+      queryParams: {
+        productId: id,
+      }
+    });
+
   }
 
 }
