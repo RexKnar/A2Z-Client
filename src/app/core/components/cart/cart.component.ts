@@ -16,35 +16,47 @@ export class CartComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.isCheckout = this.route.snapshot.queryParamMap.get('type');
-    if (!localStorage.getItem("gotCart")) {
-      this._cartService.getCartItems.subscribe((data) => {
-        this.cartItems = data;
-        console.log(this.cartItems.length);
-        localStorage.setItem("cartItems", JSON.stringify(data));
-      });
-    } else {
-      this._cartService.getCartItems.subscribe((data) => {
-        this.cartItems = data;
-        console.log(this.cartItems.length);
-      });
-    }
+    // this.isCheckout = this.route.snapshot.queryParamMap.get('type');
+    // if (!localStorage.getItem("gotCart")) {
+    //   this._cartService.getCartItems.subscribe((data) => {
+    //     this.cartItems = data;
+    //     console.log(this.cartItems.length);
+    //     localStorage.setItem("cartItems", JSON.stringify(data));
+    //   });
+    // } else {
+    //   this._cartService.getCartItems.subscribe((data) => {
+    //     this.cartItems = data;
+    //     console.log(this.cartItems.length);
+    //   });
+    // }
+    // this._cartService.getCart().subscribe((data) => {
+    //   this.cartItems = data;
+    //   console.log(this.cartItems.length);
+    // });
+    this.getAllCartItems();
   }
 
-  public get getTotal(): Observable<number> {
-    return this._cartService.cartTotalAmount();
-  }
-
-  increment(product, qty = 1) {
-    this._cartService.updateCartQuantity(product, qty);
-
-  }
-
-  decrement(product, qty = -1) {
-    this._cartService.updateCartQuantity(product, qty);
-  }
-
-  public removeItem(product: any) {
-    this._cartService.removeCartItem(product);
+  getAllCartItems() {
+    this._cartService.getCart().subscribe((data: any) => {
+      this.cartItems = data;
+      console.log(this.cartItems);
+    });
   }
 }
+  // public get getTotal(): Observable<number> {
+  //   return this._cartService.cartTotalAmount();
+  // }
+
+  // increment(product, qty = 1) {
+  //   this._cartService.updateCartQuantity(product, qty);
+
+  // }
+
+  // decrement(product, qty = -1) {
+  //   this._cartService.updateCartQuantity(product, qty);
+  // }
+
+  // public removeItem(product: any) {
+  //   this._cartService.removeCartItem(product);
+  // }
+

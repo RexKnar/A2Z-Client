@@ -18,7 +18,7 @@ import { CartComponent } from "./components/cart/cart.component";
 import { DiscountPipe } from "../shared/pipes/discount.pipe";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "../shared/interceptors/AuthInterceptor";
-import { WishlistComponent } from "./components/wishlist/wishlist.component";
+// import { WishlistComponent } from "./components/wishlist/wishlist.component";
 import { ChangepasswordComponent } from "./components/dashboard/changepassword/changepassword.component";
 import { CheckoutAddressComponent } from './components/checkout-page/components/checkout-address/checkout-address.component';
 import { AccordationHeaderComponent } from './components/checkout-page/components/accordation-header/accordation-header.component';
@@ -58,7 +58,7 @@ import { DataTablesModule } from 'angular-datatables';
     AddressFormComponent,
     CartComponent,
     DiscountPipe,
-    WishlistComponent,
+    // WishlistComponent,
     ChangepasswordComponent,
     CheckoutAddressComponent,
     AccordationHeaderComponent,

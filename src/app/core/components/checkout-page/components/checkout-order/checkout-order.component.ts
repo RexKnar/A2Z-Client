@@ -14,7 +14,7 @@ export class CheckoutOrderComponent implements OnInit {
   ngOnInit(): void {
      
   }
-  public get getTotal(): Observable<number> {
-    return this._cartService.cartTotalAmount();
-  }
+  // public get getTotal(): Observable<number> {
+  //   return this._cartService.cartTotalAmount();
+  // }
 }
