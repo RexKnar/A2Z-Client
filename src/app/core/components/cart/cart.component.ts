@@ -34,7 +34,8 @@ export class CartComponent implements OnInit {
       return alert('No Stock Found');
     } else {
       product.quantity++;
-      this.price += product.price;
+      const discountPrice = product.discount ? product.price - (product.price * product.discount) / 100 : product.price;
+      this.price += discountPrice;
       this.updateCartDetails({
         stockId: product.stockId,
         quantity: product.quantity,
@@ -47,7 +48,8 @@ export class CartComponent implements OnInit {
       return alert('Minimum quantity Reached');
     }
     product.quantity--;
-    this.price -= product.price;
+    const discountPrice = product.discount ? product.price - (product.price * product.discount) / 100 : product.price;
+    this.price -= discountPrice;
     this.updateCartDetails({
       stockId: product.stockId,
       quantity: product.quantity,
@@ -61,8 +63,9 @@ export class CartComponent implements OnInit {
 
   public cartTotalAmount() {
     this.price = 0;
-    for (let p of this.cartItems) {
-      this.price += p.price * p.quantity;
+    for (const p of this.cartItems) {
+      const discountPrice = p.discount ? p.price - (p.price * p.discount) / 100 : p.price;
+      this.price += discountPrice * p.quantity;
     }
     return this.price;
   }
