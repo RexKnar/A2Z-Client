@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
   getAllCartItems() {
     this._cartService.getCart().subscribe((data: any) => {
       this.cartItems = data;
-      console.log(this.cartItems);
     });
   }
 
@@ -73,7 +72,6 @@ export class CartComponent implements OnInit {
   public updateCartDetails(cart): void {
     const cartDetails = [];
     cartDetails.push(cart);
-    console.log(cartDetails);
     this._cartService.updateCartItems(cartDetails).subscribe((data) => {
       this.getAllCartItems();
     });
