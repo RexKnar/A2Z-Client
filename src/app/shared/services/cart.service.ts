@@ -1,9 +1,8 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Cart } from "../models/Cart";
-import { CART_API_CONFIG, ROUTE_CONFIG } from "../models/Constants";
-
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Cart } from '../models/Cart';
+import { CART_API_CONFIG, ROUTE_CONFIG } from '../models/Constants';
 
 // const state = {
 //   compare: JSON.parse(sessionStorage.getItem("compareItems") || "[]"),
@@ -11,12 +10,11 @@ import { CART_API_CONFIG, ROUTE_CONFIG } from "../models/Constants";
 // };
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class CartService {
-  constructor(
-    private readonly httpClient: HttpClient,) { }
-  public Currency = { name: "Rupee", currency: "INR", price: 1 };
+  constructor(private readonly httpClient: HttpClient) {}
+  public Currency = { name: 'Rupee', currency: 'INR', price: 1 };
   public OpenCart = false;
   // public get getCartItems(): Observable<CartItem[]> {
   //   if (
@@ -58,9 +56,7 @@ export class CartService {
   //     })
   //   );
   // }
-  public orderAmount() {
-
-  }
+  public orderAmount() {}
   // public addToCart(product): any {
   //   const cartItem = state.cart.find((item) => item.stockId === product.stockId);
   //   console.log(product);
@@ -163,7 +159,7 @@ export class CartService {
   //   return true;
   // }
   addToCart(cart: Cart[]): Observable<any> {
-    return this.httpClient.post(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.AddToCartURL, cart, { responseType: "text" });
+    return this.httpClient.post(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.AddToCartURL, cart, { responseType: 'text' });
   }
   getCart(): Observable<any> {
     return this.httpClient.get<any>(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.GetCartItemsURL);
