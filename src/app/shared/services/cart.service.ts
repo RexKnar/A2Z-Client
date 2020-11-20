@@ -16,6 +16,7 @@ export class CartService {
   constructor(private readonly httpClient: HttpClient) {}
   public Currency = { name: 'Rupee', currency: 'INR', price: 1 };
   public OpenCart = false;
+
   // public get getCartItems(): Observable<CartItem[]> {
   //   if (
   //     !localStorage.getItem("cartItems") &&
@@ -161,7 +162,18 @@ export class CartService {
   addToCart(cart: Cart[]): Observable<any> {
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.AddToCartURL, cart, { responseType: 'text' });
   }
+
   getCart(): Observable<any> {
     return this.httpClient.get<any>(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.GetCartItemsURL);
+  }
+
+  updateCartItems(updateCart: any): Observable<any> {
+    return this.httpClient.put(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.UpdateCartItemsURL, updateCart, {
+      responseType: 'text',
+    });
+  }
+
+  deleteCartItems(id): Observable<any> {
+    return this.httpClient.delete<any>(ROUTE_CONFIG.baseUrl + CART_API_CONFIG.RemoveCartItemsURL + `?stockId=${id}`);
   }
 }

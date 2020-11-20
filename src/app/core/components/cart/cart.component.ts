@@ -15,23 +15,6 @@ export class CartComponent implements OnInit {
   isCheckout: string = '';
   constructor(public _cartService: CartService, private route: ActivatedRoute) {}
   ngOnInit(): void {
-    // this.isCheckout = this.route.snapshot.queryParamMap.get('type');
-    // if (!localStorage.getItem("gotCart")) {
-    //   this._cartService.getCartItems.subscribe((data) => {
-    //     this.cartItems = data;
-    //     console.log(this.cartItems.length);
-    //     localStorage.setItem("cartItems", JSON.stringify(data));
-    //   });
-    // } else {
-    //   this._cartService.getCartItems.subscribe((data) => {
-    //     this.cartItems = data;
-    //     console.log(this.cartItems.length);
-    //   });
-    // }
-    // this._cartService.getCart().subscribe((data) => {
-    //   this.cartItems = data;
-    //   console.log(this.cartItems.length);
-    // });
     this.getAllCartItems();
   }
 
@@ -52,6 +35,10 @@ export class CartComponent implements OnInit {
     } else {
       product.quantity++;
       this.price += product.price;
+      this.updateCartDetails({
+        stockId: product.stockId,
+        quantity: product.quantity,
+      });
     }
   }
 
@@ -61,10 +48,15 @@ export class CartComponent implements OnInit {
     }
     product.quantity--;
     this.price -= product.price;
+    this.updateCartDetails({
+      stockId: product.stockId,
+      quantity: product.quantity,
+    });
   }
 
   public removeItem(product: any, index) {
     this.cartItems.splice(index, 1);
+    this.deleteCartDetails(product.stockId);
   }
 
   public cartTotalAmount() {
@@ -73,5 +65,20 @@ export class CartComponent implements OnInit {
       this.price += p.price * p.quantity;
     }
     return this.price;
+  }
+
+  public updateCartDetails(cart): void {
+    const cartDetails = [];
+    cartDetails.push(cart);
+    console.log(cartDetails);
+    this._cartService.updateCartItems(cartDetails).subscribe((data) => {
+      this.getAllCartItems();
+    });
+  }
+
+  public deleteCartDetails(id): void {
+    this._cartService.deleteCartItems(id).subscribe((data) => {
+      this.getAllCartItems();
+    });
   }
 }
