@@ -4,32 +4,32 @@
       <span class="lable3" *ngIf="product.newFlag">new</span>
     </div>
     <div class="front">
-      <a>
+      <a (click)="ProductView.openModal(currentStockPointer)">
         <img [defaultImage]="ImageSrc ? ImageSrc : './assets/images/product/placeholder.jpg'"
           [lazyLoad]="ImageSrc ? ImageSrc : product?.stocks[currentStockPointer]?.assets[0]?.assetUrl"
           class="img-size lazy-loading" alt="{{ product?.stocks[currentStockPointer]?.assets[0]?.assetType }}" />
       </a>
     </div>
     <div class="back" *ngIf="onHowerChangeImage">
-      <a>
+      <a (click)="ProductView.openModal(currentStockPointer)">
         <img [src]="ImageSrc ? ImageSrc : product?.stocks[currentStockPointer]?.assets[0]?.assetUrl"
-          class="img-size lazy-loading" alt="{{ product?.stocks[currentStockPointer]?.assets[0]?.assetType }}">
+          class="img-size lazy-loading" alt="{{ product?.stocks[currentStockPointer]?.assets[0]?.assetType }}" />
       </a>
     </div>
     <ul class="product-thumb-list" *ngIf="thumbnail">
       <li class="grid_thumb_img" [class.active]="ImageSrc == image.assetUrl"
         *ngFor="let image of product?.stocks[currentStockPointer]?.assets">
         <a href="javascript:void(0)" (mouseover)="ChangeVariantsImage(image.assetUrl)">
-          <img [lazyLoad]="image.assetUrl">
+          <img [lazyLoad]="image.assetUrl" />
         </a>
       </li>
     </ul>
-    <div class="cart-info cart-wrap">
-      <a href="javascript:void(0)" title="Add to cart" (click)="addToCart(product)">
+    <div class="cart-info cart-wrap hover-back-color">
+      <a href="javascript:void(0)" title="Add to cart" (click)="addToCart(this.product?.stocks[this.currentStockPointer]?.id)">
         <i class="ti-shopping-cart"></i>
       </a>
       <a href="javascript:void(0)" title="Add to Wishlist" (click)="addToWishlist(product)">
-        <i class="fa" [ngClass]="{'fa-heart' : product.wishlistFlag,'fa-heart-o' : !product.wishlistFlag}"
+        <i class="fa" [ngClass]="{ 'fa-heart': product.wishlistFlag, 'fa-heart-o': !product.wishlistFlag }"
           aria-hidden="true"></i>
       </a>
       <a href="javascript:void(0)" title="Product View" (click)="ProductView.openModal(currentStockPointer)">
@@ -41,18 +41,17 @@
     </div>
   </div>
   <div class="product-detail">
-
     <bar-rating [rate]="product?.rating" [readOnly]="true"></bar-rating>
     <a>
       <h6>{{ product?.productName | titlecase }}</h6>
     </a>
-   <div class="d-flex">
-    <h4>₹{{this.product.stocks[this.currentStockPointer].price - 
+    <div class="d-flex">
+      <h4>₹{{this.product?.stocks[this.currentStockPointer]?.price - 
       (this.product.stocks[this.currentStockPointer].price * this.product.discount) / 100}}</h4>
-    <del class="font-size price-space" *ngIf="product?.discount"><span
-        class="money price-space">₹{{product?.stocks[currentStockPointer]?.price}}</span></del>
-    <h4 *ngIf="product?.discount"><span class="discount-color price-space">{{product?.discount}}% off</span></h4>
-   </div>
+      <del class="font-size price-space" *ngIf="product?.discount"><span
+          class="money price-space">₹{{product?.stocks[currentStockPointer]?.price}}</span></del>
+      <h4 *ngIf="product?.discount"><span class="discount-color price-space">{{product?.discount}}% off</span></h4>
+    </div>
   </div>
 </div>
 <app-skeleton-product-card *ngIf="loader"></app-skeleton-product-card>

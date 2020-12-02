@@ -15,7 +15,9 @@
                     <div class="product-right text-left">
                         <h2>{{ product?.productName | titlecase }}</h2>
                         <div class="d-flex">
-                            <h3 class="price-margin">₹{{this.currentStock.price-(this.currentStock.price * this.product.discount) / 100}} </h3>
+                            <h3 class="price-margin">
+                                ₹{{this.currentStock.price-(this.currentStock.price * this.product.discount) / 100}}
+                            </h3>
                             <del class="font-size price-space discount-margin" *ngIf="product?.discount"><span
                                     class="money price-space">₹{{ currentStock?.price}}</span></del>
                             <h4 *ngIf="product?.discount" class="offer-margin"><span
@@ -49,9 +51,10 @@
                                 *ngIf="currentStock?.quantity >0"></app-quantity>
                         </div>
                         <div class="product-buttons text-center">
-                            <a href="javascript:void(0)" *ngIf="counter <= currentStock?.quantity"
-                                class="btn btn-solid">add to cart</a>
-                            <a class="btn btn-solid">view detail</a>
+                            <a  *ngIf="counter <= currentStock?.quantity"
+                                class="btn btn-solid" (click)="addToCart(product.stocks[currentStockPointer]?.id)" >add to cart</a>
+                            <a (click)="viewDetails(product.productId)" class="btn btn-solid">view detail</a>
+
                         </div>
                     </div>
                 </div>

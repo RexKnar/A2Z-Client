@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <owl-carousel-o class="product-m no-arrow" [options]="ProductSliderConfig">
-          <ng-container *ngFor="let product of this.products.products">
+        <owl-carousel-o *ngIf="this.products?.products!=null" class="product-m no-arrow" [options]="ProductSliderConfig">
+          <ng-container  *ngFor="let product of this.products.products">
             <ng-template carouselSlide>
               <div class="product-box">
-                <app-product-card *ngIf="product"
+                <app-product-card *ngIf="product && (product.stocks.length>0)"
                  [product]="product"
                  [onHowerChangeImage]="true"
                   [thumbnail]="true"

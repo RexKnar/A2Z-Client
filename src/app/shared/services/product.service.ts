@@ -29,13 +29,21 @@ export class ProductService {
   addReview(review: Ratings): Observable<any> {
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.reviewsRatingURL, review, { responseType: "text" });
   }
-  addToCart(cart: Cart): Observable<any> {
-    // state.cartList.push({
-    //   ...cart
-    // });
-    // localStorage.setItem("cartItems", JSON.stringify(state.cartList));
-    return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToCartURL, cart, { responseType: "text" });
+  // addToCart(cart: Cart[]): Observable<any> {
+  //   return this.httpClient.post<any>(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToCartURL, cart, { responseType: "text" });
+  // }
+
+  addToCart(cart: Cart[]): Observable<any> {
+    return this.httpClient.post(
+      ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToCartURL,
+      cart,
+      { responseType: "text" }
+    );
   }
+
+
+
+
   addToWishlist(wishlist: Wishlist): Observable<any> {
     return this.httpClient.post(ROUTE_CONFIG.baseUrl + PRODUCT_API_CONFIG.AddToWishlistURL, wishlist, { responseType: "text" });
   }

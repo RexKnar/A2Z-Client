@@ -1,3 +1,70 @@
-<p>
-  category works!
-</p>
+<!-- section start -->
+<section class="section-b-space">
+  <div class="collection-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <app-sidebar-filter
+            (updateFilterEvent)="updateFilter($event)"
+            (toggleMobileSidebarEvent)="toggleMobileSidebar()"
+            (updatePriceFilterEvent)="updatePriceFilterEvent($event)"
+            (selectSubCategoryEvent)="onSelectSubCategory($event)"
+            [mobileSidebar]="mobileSidebar"
+            [minPrice]="minPrice"
+            [maxPrice]="maxPrice"
+            [products]="products"
+            [attributes]="attributes"
+            [categories]="categories"
+            [isShowCategory]="isShowCategory"
+            [selectedSubCategory]="selectedSubCategory"
+          ></app-sidebar-filter>
+        </div>
+        <div class="collection-content col">
+          <div class="page-main-content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="filter-main-btn" (click)="toggleMobileSidebar()">
+                      <span class="filter-btn btn btn-theme">
+                        <i class="fa fa-filter" aria-hidden="true"></i> Filter
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="collection-product-wrapper" id="products">
+                  <app-filter
+                    [products]="products"
+                    [paginate]="paginate"
+                    [layoutView]="layoutView"
+                    (sortedBy)="sortByFilter($event)"
+                    (setGrid)="updateGridLayout($event)"
+                    (setLayout)="updateLayoutView($event)"
+                  ></app-filter>
+                  <div class="product-wrapper-grid" [ngClass]="layoutView">
+                    <div class="row">
+                      <div class="col-grid-box" [ngClass]="grid" *ngFor="let product of products">
+                        <div class="product-box">
+                          <app-product-card [product]="product"></app-product-card>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 text-center section-b-space mt-5 no-found" *ngIf="!products.length">
+                        <img src="assets/images/empty-search.jpg" class="img-fluid mb-4" />
+                        <h3>Sorry! Couldn't find the product you were looking For!!!</h3>
+                        <p>Please check if you have misspelt something or try searching with other words.</p>
+                        <a [routerLink]="['/shop/collection/left/sidebar']" class="btn btn-solid">continue shopping</a>
+                      </div>
+                    </div>
+                  </div>
+                  <app-pagination [products]="products" [paginate]="paginate" (setPage)="setPage($event)">
+                </app-pagination>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section End -->

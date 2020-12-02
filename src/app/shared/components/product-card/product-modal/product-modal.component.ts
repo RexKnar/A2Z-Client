@@ -13,6 +13,11 @@ import { ProductService } from "src/app/shared/services/product.service";
 import { StockAttributes } from "src/app/shared/models/ProductAttributes";
 import { Stock } from "src/app/shared/models/Stock";
 import { isNgTemplate } from "@angular/compiler";
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { MessageConstants } from 'src/app/shared/models/messageConstants';
+import { ToastrService } from 'ngx-toastr';
+import { Cart } from 'src/app/shared/models/Cart';
 
 @Component({
   selector: "app-product-modal",
@@ -34,9 +39,14 @@ export class ProductModalComponent implements OnInit, OnChanges {
   public discountPrice = 0;
   public discount: any = 0;
   public price: any = 0;
+  addingCart: Cart = new Cart();
+  cart: Cart[] = [];
   constructor(
     private modalService: NgbModal,
-    private readonly _ProductService: ProductService
+    private readonly _ProductService: ProductService,
+    private readonly _router: Router,
+    private readonly _CartService: CartService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -100,6 +110,24 @@ export class ProductModalComponent implements OnInit, OnChanges {
         return;
       }
       index = index + 1;
+    });
+  }
+
+  viewDetails(id): void {
+    this.modalService.dismissAll();
+    this._router.navigate(['/product'], {
+      queryParams: {
+        productId: id,
+      }
+    });
+
+  }
+  addToCart(id) {
+    this.addingCart.stockId = id;
+    this.addingCart.quantity =  this.counter;
+    this.cart.push(this.addingCart);
+    this._CartService.addToCart(this.cart).subscribe((data) => {
+      this.toastr.success(MessageConstants.CART_SUCCESS, '', { timeOut: 2000 });
     });
   }
 

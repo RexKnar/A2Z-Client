@@ -22,7 +22,9 @@
           <ul [class.opensub1]="menuItem.active" *ngIf="menuItem.subcategory">
             <ng-container>
               <li *ngFor="let subcategories of menuItem.subcategory">
-                <a [routerLink]="" *ngIf="menuItem.subcategory">
+                <a [routerLink]="['/category']" [queryParams]="{
+                  category: menuItem.id,
+                  subcategory: subcategories.id }" (click)="leftMenuToggle()" *ngIf="menuItem.subcategory">
                   {{subcategories.subcategoryName}}
                 </a>
               </li>

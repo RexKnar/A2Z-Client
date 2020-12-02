@@ -1,6 +1,6 @@
-import { Stock } from "./Stock";
-import { ProductAttributes } from "./ProductAttributes";
-import { Ratings } from "./Ratings";
+import { Stock } from './Stock';
+import { ProductAttributes } from './ProductAttributes';
+import { Ratings } from './Ratings';
 
 export class Product {
   productId: string;
@@ -36,7 +36,6 @@ export class ProductDetails {
   productAttributes: ProductAttributes[];
   reviews: Ratings[];
   stock: Stock[];
-
 }
 export class GetProductList {
   type: string;

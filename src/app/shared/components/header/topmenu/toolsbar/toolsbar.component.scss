@@ -79,3 +79,9 @@
     left: -15% !important;
     bottom: 100% !important;
 }
+.menu:hover ul li:hover {
+  position: absolute;
+  margin-top: 1px;
+  font: 10px;
+  bottom: 100%; 
+}

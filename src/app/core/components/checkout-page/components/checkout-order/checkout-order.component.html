@@ -1,0 +1,38 @@
+<div class="checkout-details">
+    <div class="order-box">
+        <div class="title-box">
+            <div>Price Detail</div>
+        </div>
+        <ul class="qty">
+            <li>
+                Price (n items)
+                <span>
+                    <!-- <h2> {{ getTotal | async | currency:_cartService?.Currency.currency:'symbol'}}</h2> -->
+                </span>
+            </li>
+            <li>
+                Delivery Charge
+                <span>
+                    ₹ 40
+                </span>
+            </li>
+        </ul>
+        <ul class="sub-total">
+            <li>
+                Subtotal <span class="count">₹ 2000</span>
+            </li>
+        </ul>
+        <ul class="coupon">
+            <li class="couponstyle">
+                <input type="string" value="" class="form-control" placeholder="Coupon"
+                    required="">
+            </li>
+            <center><button class="btn btn-sm btn-solid" type="submit">Apply</button>
+            </center>
+        </ul>
+        <ul class="total">
+            <li>Total <span class="count">₹ 2000</span>
+            </li>
+        </ul>
+    </div>
+</div>
