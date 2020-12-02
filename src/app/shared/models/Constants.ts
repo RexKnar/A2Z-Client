@@ -1,5 +1,5 @@
 export const ROUTE_CONFIG = {
-  baseUrl: 'http://a2zkumari-001-site1.atempurl.com/api',
+  baseUrl: 'http://atwozkumari-001-site1.ctempurl.com/api',
 };
 export const FOOTER_API_CONFIG = {
   topSellingCategoryURL: '/Category/GetTopSellingCategory/5',
